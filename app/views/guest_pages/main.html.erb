@@ -7,8 +7,8 @@
 			<% end  %>
 		<% end %>
 	</div>
-	<div class="arrows arrow-left" ><%= image_tag "arrow-white.png", alt:"left"  %></div>
-	<div class="arrows arrow-right"><%= image_tag "arrow-white.png", alt:"rigth" %></div>
+	<div class="arrows arrow-left" ><%= image_tag "wpimg/arrow-white.png", alt:"left"  %></div>
+	<div class="arrows arrow-right"><%= image_tag "wpimg/arrow-white.png", alt:"rigth" %></div>
 	<div class="block"><div class="spec-block">
 		<h2>Проверьте<br>свободна ли<br>ваша дата</h2>
 		<div class="spec-calendar"></div>
@@ -23,11 +23,8 @@
 			<% photo = Photo.find_by(id: one_category.icon) %>
 			<% if photo.nil? %>
 			<% else %><%= image_tag(photo.image.url) %>
-			<% end  %>
+			<% end %>
 		</div>
-		<div class="album-title">
-			<p><%= one_category.title %></p>
-			<h4>подробнее</h4>
-		</div>
+		<div class="album-title"><p><%= one_category.title %></p><h4>подробнее</h4></div>
 	</a><% end %></div>
 </div></div>

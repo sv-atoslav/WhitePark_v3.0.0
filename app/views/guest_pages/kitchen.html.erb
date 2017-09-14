@@ -3,7 +3,6 @@
 	<hr class = "spec-hr"/>
 	<p>Гордостью WhitePark при проведении частных мероприятий является высококлассный кейтеринг. Здесь гениальные повара под руководством своего уникального шефа создают настоящие шедевры кулинарного искусства. В зависимости от темы и общей направленности вечеринки, вы сможете заказать классический фуршет с закусками из дорогих видов мяса и рыбы, банкет с кухней в стиле фьюжн или легкий бранч для всей семьи. Выбор всегда остается за клиентом, а ресторан WhitePark воплощает желания в действительность.</p>
 </div></div>
-<!-- START Most Warning Part -->
 <% if @visible_part %><div class="dishes-block">
 	<div class="dishes-block-points block"></div>
 	<div class="owl-carousel owl-kit">
@@ -21,12 +20,11 @@
 			</div></div>
 		</div><% end %>
 	</div>
-	<div class="arrows arrow-left" ><% image_tag "arrow-left.png" %></div>
-	<div class="arrows arrow-right"><% image_tag "arrow-left.png" %></div>
+	<div class="arrows arrow-left" ><%= image_tag "wpimg/arrow-left.png" %></div>
+	<div class="arrows arrow-right"><%= image_tag "wpimg/arrow-left.png" %></div>
 </div><% end %>
-<!-- END Most Warning Part -->
 <div class="chef-block big-block"><div class="block">
-	<div class="chef-image"><%= image_tag("chef-image.png") %></div>
+	<div class="chef-image"><%= image_tag("wpimg/chef-image.png") %></div>
 	<div class="chef-content">
 		<h2>Трифонов Сергей Викторович</h2>
 		<hr class="spec-hr">
