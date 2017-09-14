@@ -1,0 +1,2 @@
+class NotPublishedOpinion < ApplicationRecord
+end

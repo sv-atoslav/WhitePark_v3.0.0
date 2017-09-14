@@ -1,0 +1,2 @@
+class Slayder < ApplicationRecord
+end

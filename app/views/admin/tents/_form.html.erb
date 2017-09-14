@@ -1,0 +1,23 @@
+<%= form_with(model: [:admin, tent], local: true) do |form| %>
+  <% if tent.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(tent.errors.count, "error") %> prohibited this tent from being saved:</h2>
+      <ul><% tent.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %></ul>
+    </div>
+  <% end %>
+  <div class="field"><%= form.label :namesize    %><%= form.text_field :namesize,    id: :tent_namesize     %></div>
+  <div class="field"><%= form.label :description %><%= form.text_field :description, id: :tent_description %></div>
+  <p>Icon</p>
+  <div class="field"><% @photo_list.each do |one_photo| %>
+    <%= image_tag(one_photo.image.url, alt: one_photo.description, style: "width: 100px;" ) %>
+    <%= form.radio_button(:icon, one_photo.id) %>
+    <%= form.label(:icon, one_photo.image.url) %><br>
+  <% end %></div>
+  <div class="field"><%= form.label :min_size %><%= form.number_field :min_size, id: :tent_min_size  %></div>
+  <div class="field"><%= form.label :max_size %><%= form.number_field :max_size, id: :tent_max_size  %></div>
+  <div class="field">Как много людей поместиться на банкете<%= form.label :hpb %><%= form.number_field :hpb, id: :tent_hpb %></div>
+  <div class="field">Как много людей поместиться на фуршете<%= form.label :hpf %><%= form.number_field :hpf, id: :tent_hpf %></div>
+  <div class="actions"><%= form.submit %></div>
+<% end %>

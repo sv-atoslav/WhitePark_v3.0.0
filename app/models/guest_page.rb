@@ -1,0 +1,2 @@
+class GuestPage < ApplicationRecord
+end

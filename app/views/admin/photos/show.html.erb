@@ -1,0 +1,9 @@
+<p id="notice"><%= notice %></p>
+<% unless @photo.image_stored? %><%= $INE.html_safe %>
+<% else %>
+	<strong>Title:</strong><%= @photo.image.name %><% des = @photo.description %>
+	<%= image_tag(@photo.image.url, width: "100%", alt: @photo.description) %>
+<% end %>
+<p><strong>Description:</strong><%= @photo.description %></p>
+<%= link_to 'Edit', action: "edit" %> | 
+<%= link_to 'Back', action: "index" %>

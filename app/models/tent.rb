@@ -1,0 +1,2 @@
+class Tent < ApplicationRecord
+end

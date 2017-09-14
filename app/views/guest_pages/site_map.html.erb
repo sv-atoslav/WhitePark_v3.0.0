@@ -1,0 +1,18 @@
+<div class="big-block about-us-block"><div class="block">
+	<h2>Карта сайта</h2><hr class="spec-hr">
+	<br><%= link_to "Главная", action: "main", controller: "guest_pages" %>
+	<br><%= link_to "Статьи" , action: "list_of_articles" %>
+	<br><%= link_to "События", action: "eventlist" %>
+	<% CategoryEvent.all.each do |one_category| %>
+		<% ssilka ="//localhost:3000/category_events/" %>
+		<% ssilka += one_category.id.to_s %>
+		<% ssilka += $WORD_TO_SEE %>
+		<br><a href="<%= ssilka %>"><%= one_category.title %></a>
+	<% end %>
+	<br><%= link_to "Карта площадки",	action: "map_park"	%>
+	<br><%= link_to "Кухня",			action: "kitchen"	%>
+	<br><%= link_to "О нас"	,  			action: "about_us"	%>
+	<br><%= link_to "Отзывы" ,			action: "review"	%>
+	<br><%= link_to "Контакты", 		action: "contacts"	%>
+	<br><a href="/sitemap.xml">xml version</a>
+</div></div>

@@ -1,0 +1,2 @@
+class PhotoInArticle < ApplicationRecord
+end

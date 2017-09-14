@@ -1,0 +1,51 @@
+<p id="notice"><%= notice %></p>
+<h1>Slayders</h1>
+<% if @list_of_slayders.first.nil? %>
+  <i>эта таблица пустая</i>
+<% else %><table>
+  <tbody align="center"><% @list_of_slayders.each do |one_slayder| %>
+    <% photo_list_of_this_slayder=PhotoInSlayder.where(slyder: one_slayder.id) %>
+      <!-- title or wiew -->
+      <tr>
+        <% photo_list_of_this_slayder.each do |one_phis| %>
+          <% if photo_list_of_this_slayder.index(one_phis) == 0 %>
+            <td><%= one_slayder.title %></td>
+          <% end %>
+          <td>
+            <% photo = Photo.find_by(id: one_phis.photo) %>
+            <% if photo.nil? %><%= $INE.html_safe %>
+            <% else %><%=image_tag( photo.image.url, size:"100x50")%>
+            <% end %>
+          </td>
+        <% end %>
+      </tr>
+      <!-- description -->
+      <tr>
+        <% photo_list_of_this_slayder.each do |one_phis| %>
+          <% if photo_list_of_this_slayder.index(one_phis) == 0 %>
+            <td></td>
+          <% end %>
+          <td width="100px"><%= one_phis.description %></td>
+        <% end %>
+      </tr>
+      <!-- edit -->
+      <tr>
+        <% photo_list_of_this_slayder.each do |one_phis| %>
+          <% if photo_list_of_this_slayder.index(one_phis) == 0 %>
+            <td><%= link_to 'Edit', edit_admin_slayder_path(one_slayder) %></td>
+          <% end %>
+          <td><%= link_to 'Edit', edit_admin_photo_in_slayder_path(one_phis) %></td>
+        <% end %>
+      </tr>
+      <!-- delete -->
+      <tr>
+        <% photo_list_of_this_slayder.each do |one_phis| %>
+          <% if photo_list_of_this_slayder.index(one_phis) == 0 %>
+            <td><%=link_to 'Destroy', admin_slayder_path(one_phis), method: :delete, data: { confirm: 'Are you sure?' }%></td>
+          <% end %>
+          <td><%= link_to 'Destroy', admin_photo_in_slayder_path(one_phis), method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <% end %>
+      </tr>
+  <% end %></tbody>
+</table><% end %>
+<br><%= link_to 'New Slayder', action: "new" %>

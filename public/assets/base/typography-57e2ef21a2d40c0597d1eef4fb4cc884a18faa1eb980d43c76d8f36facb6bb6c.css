@@ -1,0 +1,41 @@
+@charset "UTF-8";
+/* line 1, /home/leetsworker/Документи/My_RP/syntez WhitePark with Inspinia/app/assets/stylesheets/base/typography.scss */
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 100;
+}
+
+/* line 3, /home/leetsworker/Документи/My_RP/syntez WhitePark with Inspinia/app/assets/stylesheets/base/typography.scss */
+h1 {
+  font-size: 30px;
+}
+
+/* line 4, /home/leetsworker/Документи/My_RP/syntez WhitePark with Inspinia/app/assets/stylesheets/base/typography.scss */
+h2 {
+  font-size: 24px;
+}
+
+/* line 5, /home/leetsworker/Документи/My_RP/syntez WhitePark with Inspinia/app/assets/stylesheets/base/typography.scss */
+h3 {
+  font-size: 16px;
+}
+
+/* line 6, /home/leetsworker/Документи/My_RP/syntez WhitePark with Inspinia/app/assets/stylesheets/base/typography.scss */
+h4 {
+  font-size: 14px;
+}
+
+/* line 7, /home/leetsworker/Документи/My_RP/syntez WhitePark with Inspinia/app/assets/stylesheets/base/typography.scss */
+h5 {
+  font-size: 12px;
+}
+
+/* line 8, /home/leetsworker/Документи/My_RP/syntez WhitePark with Inspinia/app/assets/stylesheets/base/typography.scss */
+h6 {
+  font-size: 10px;
+}
+
+/* line 10, /home/leetsworker/Документи/My_RP/syntez WhitePark with Inspinia/app/assets/stylesheets/base/typography.scss */
+h3, h4, h5 {
+  margin-top: 5px;
+  font-weight: 600;
+}

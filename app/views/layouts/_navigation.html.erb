@@ -1,0 +1,211 @@
+<nav class="navbar-default navbar-static-side" role="navigation"><div class="sidebar-collapse"><ul class="nav metismenu" id="side-menu">
+  <li class="<%= is_active_controller('tables') %>">
+    <a href="#">
+      <i class="fa fa-table"></i>
+      <span class="nav-label" data-i18n="nav.tables">Таблицы</span><span class="fa arrow"></span>
+    </a>
+    <ul class="nav nav-second-level collapse <%= is_active_controller('tables', 'in') %>">
+        <li><%= link_to "мнения", :controller => "not_published_opinions", :action => "index" %></li><br>
+        <li><%= link_to "фотки", :controller => "photos", :action => "index" %></li>
+        <li><%= link_to "пользователи", :controller => "users", :action => "index" %></li>
+        <li><%= link_to "отзывы", :controller => "opinions", :action => "index" %></li>
+        <li><%= link_to "шатры", :controller => "tents", :action => "index" %></li>
+        <li><%= link_to "слайдера", :controller => "slayders", :action => "index" %></li>
+        <li><%= link_to "события", :controller => "events", :action => "index" %></li>
+        <li><%= link_to "статьи", :controller => "articles", :action => "index" %></li>
+        <li><%= link_to "категории событий", :controller => "category_events", :action => "index" %></li>
+        <br><li class="<%= is_active_action('static_tables') %>"><%= link_to "Static Tables", :controller => "tables", :action => "static_tables" %></li>
+        <li class="<%= is_active_action('data_tables') %>"><%= link_to "Data Tables", :controller => "tables", :action => "data_tables" %></li>
+        <li class="<%= is_active_action('foo_tables') %>"><%= link_to "Foo Table", :controller => "tables", :action => "foo_tables" %></li>
+        <li class="<%= is_active_action('jqgrid') %>"><%= link_to "jqGrid", :controller => "tables", :action => "jqgrid" %></li>
+    </ul>
+  </li>
+  <li class="<%= is_active_controller('dashboards') %>">
+    <a href=""><i class="fa fa-th-large"></i> <span class="nav-label" data-i18n="nav.dashboard">Dashboards</span> <span class="fa arrow"></span></a>
+    <ul class="nav nav-second-level collapse <%= is_active_controller('dashboards', 'in') %>">
+            <li class="<%= is_active_action('dashboard_white_park') %>"><%= link_to "Dashboard for White Park", :controller => "dashboards", :action => "dashboard_white_park" %></li>
+            <li class="<%= is_active_action('dashboard_1') %>"><%= link_to "Dashboard v.1", :controller => "dashboards", :action => "dashboard_1" %></li>
+            <li class="<%= is_active_action('dashboard_2') %>"><%= link_to "Dashboard v.2", :controller => "dashboards", :action => "dashboard_2" %></li>
+            <li class="<%= is_active_action('dashboard_3') %>"><%= link_to "Dashboard v.3", :controller => "dashboards", :action => "dashboard_3" %></li>
+            <li class="<%= is_active_action('dashboard_4_1') %>"><%= link_to "Dashboard v.4", :controller => "dashboards", :action => "dashboard_4_1" %></li>
+            <li class="<%= is_active_action('dashboard_5') %>"><%= link_to "Dashboard v.5", :controller => "dashboards", :action => "dashboard_5" %></li>
+    </ul>
+  </li>
+  <li class="<%= is_active_controller('layoutsoptions') %>"><%= link_to admin_layoutsoptions_index_path do %>
+    <i class="fa fa-diamond"></i><span class="nav-label" data-i18n="nav.layouts">Layouts</span><span class="label label-primary pull-right">NEW</span>
+  <% end %></li>
+  <li class="<%= is_active_controller('graphs') %>">
+    <a href="#"><i class="fa fa-bar-chart-o"></i> <span class="nav-label" data-i18n="nav.graphs">Graphs</span><span class="fa arrow"></span></a>
+    <ul class="nav nav-second-level collapse <%= is_active_controller('graphs', 'in') %>">
+            <li class="<%= is_active_action('flot') %>"><%= link_to "Flot Charts", :controller => "graphs", :action => "flot" %></li>
+            <li class="<%= is_active_action('morris') %>"><%= link_to "Morris.js Charts", :controller => "graphs", :action => "morris" %></li>
+            <li class="<%= is_active_action('rickshaw') %>"><%= link_to "Rickshaw Charts", :controller => "graphs", :action => "rickshaw" %></li>
+            <li class="<%= is_active_action('chartjs') %>"><%= link_to "Chart.js", :controller => "graphs", :action => "chartjs" %></li>
+            <li class="<%= is_active_action('chartist') %>"><%= link_to "Chartist", :controller => "graphs", :action => "chartist" %></li>
+            <li class="<%= is_active_action('c3charts') %>"><%= link_to "c3 charts", :controller => "graphs", :action => "c3charts" %></li>
+            <li class="<%= is_active_action('peity') %>"><%= link_to "Peity Charts", :controller => "graphs", :action => "peity" %></li>
+            <li class="<%= is_active_action('sparkline') %>"><%= link_to "Sparkline Charts", :controller => "graphs", :action => "sparkline" %></li>
+    </ul>
+  </li>
+  <li class="<%= is_active_controller('mailbox') %>">
+    <a href="#"><i class="fa fa-envelope"></i> <span class="nav-label" data-i18n="nav.mailbox">Mailbox </span><span class="label label-warning pull-right">16/24</span></a>
+    <ul class="nav nav-second-level collapse <%= is_active_controller('mailbox', 'in') %>">
+            <li class="<%= is_active_action('inbox') %>"><%= link_to "Inbox", :controller => "mailbox", :action => "inbox" %></li>
+            <li class="<%= is_active_action('email_view') %>"><%= link_to "Email view", :controller => "mailbox", :action => "email_view" %></li>
+            <li class="<%= is_active_action('compose_email') %>"><%= link_to "Compose email", :controller => "mailbox", :action => "compose_email" %></li>
+            <li class="<%= is_active_action('email_templates') %>"><%= link_to "Email templates", :controller => "mailbox", :action => "email_templates" %></li>
+    </ul>
+  </li>
+  <li class="<%= is_active_controller('metrics') %>"><%= link_to admin_metrics_index_path do %>
+    <i class="fa fa-pie-chart"></i><span class="nav-label" data-i18n="nav.metrics">Metrics</span>
+  <% end %></li>
+  <li class="<%= is_active_controller('widgets') %>"><%= link_to admin_widgets_index_path do %>
+    <i class="fa fa-flask"></i> <span class="nav-label" data-i18n="nav.widgets">Widgets</span>
+  <% end %></li>
+  <li class="<%= is_active_controller('forms') %>">
+    <a href="#"><i class="fa fa-edit"></i> <span class="nav-label" data-i18n="nav.forms">Forms</span><span class="fa arrow"></span></a>
+    <ul class="nav nav-second-level collapse <%= is_active_controller('forms', 'in') %>">
+            <li class="<%= is_active_action('basic_forms') %>"><%= link_to "Basic form", :controller => "forms", :action => "basic_forms" %></li>
+            <li class="<%= is_active_action('advanced') %>"><%= link_to "Advanced Plugins", :controller => "forms", :action => "advanced" %></li>
+            <li class="<%= is_active_action('wizard') %>"><%= link_to "Wizard",  :controller => "forms", :action => "wizard" %></li>
+            <li class="<%= is_active_action('file_upload') %>"><%= link_to "File Upload",  :controller => "forms", :action => "file_upload" %></li>
+            <li class="<%= is_active_action('text_editor') %>"><%= link_to "Text Editor",  :controller => "forms", :action => "text_editor" %></li>
+            <li class="<%= is_active_action('autocomplete') %>"><%= link_to "Autocomplete", :controller => "forms", :action => "autocomplete" %></li>
+            <li class="<%= is_active_action('markdown') %>"><%= link_to "Markdown", :controller => "forms", :action => "markdown" %></li>
+    </ul>
+  </li>
+  <li class="<%= is_active_controller('appviews') %>">
+    <a href="#"><i class="fa fa-desktop"></i><span class="nav-label" data-i18n="nav.appviews">App Views</span><span class="pull-right label label-primary">SPECIAL</span></a>
+    <ul class="nav nav-second-level collapse <%= is_active_controller('appviews', 'in') %>">
+            <li class="<%= is_active_action('contacts') %>"><%= link_to "Contacts", :controller => "appviews", :action => "contacts" %></li>
+            <li class="<%= is_active_action('profile') %>"><%= link_to "Profile", :controller => "appviews", :action => "profile"  %></li>
+            <li class="<%= is_active_action('profile_two') %>"><%= link_to "Profile v.2", :controller => "appviews", :action => "profile_two" %></li>
+            <li class="<%= is_active_action('contacts_two') %>"><%= link_to "Contacts v.2", :controller => "appviews", :action => "contacts_two" %></li>
+            <li class="<%= is_active_action('projects') %>"><%= link_to "Projects", :controller => "appviews", :action => "projects" %></li>
+            <li class="<%= is_active_action('project_detail') %>"><%= link_to "Project detail", :controller => "appviews", :action => "project_detail" %></li>
+            <li class="<%= is_active_action('activity_stream') %>"><%= link_to "Activity stream", :controller => "appviews", :action => "activity_stream" %></li>
+            <li class="<%= is_active_action('teams_board') %>"><%= link_to "Teams board", :controller => "appviews", :action => "teams_board" %></li>
+            <li class="<%= is_active_action('social_feed') %>"><%= link_to "Social feed", :controller => "appviews", :action => "social_feed" %></li>
+            <li class="<%= is_active_action('clients') %>"><%= link_to "Clients", :controller => "appviews", :action => "clients" %> </li>
+            <li class="<%= is_active_action('outlook_view') %>"><%= link_to "Outlook view", :controller => "appviews", :action => "outlook_view" %></li>
+            <li class="<%= is_active_action('vote_list') %>"><%= link_to "Vote list", :controller => "appviews", :action => "vote_list" %> </li>
+            <li class="<%= is_active_action('file_menager') %>"><%= link_to "File manager", :controller => "appviews", :action => "file_menager" %></li>
+            <li class="<%= is_active_action('calendar') %>"><%= link_to "Calendar", :controller => "appviews", :action => "calendar" %> </li>
+            <li class="<%= is_active_action('issue_tracker') %>"><%= link_to "Issue trakcer", :controller => "appviews", :action => "issue_tracker" %></li>
+            <li class="<%= is_active_action('blog') %>"><%= link_to "Blog", :controller => "appviews", :action => "blog" %></li>
+            <li class="<%= is_active_action('article') %>"><%= link_to "Article", :controller => "appviews", :action => "article" %></li>
+            <li class="<%= is_active_action('faq') %>"><%= link_to "FAQ", :controller => "appviews", :action => "faq" %></li>
+            <li class="<%= is_active_action('timeline') %>"><%= link_to "Timeline", :controller => "appviews", :action => "timeline" %></li>
+            <li class="<%= is_active_action('pin_board') %>"><%= link_to "Pin board", :controller => "appviews", :action => "pin_board" %></li>
+    </ul>
+  </li>
+  <li class="<%= is_active_controller('pages') %>">
+    <a href="#"><i class="fa fa-files-o"></i> <span class="nav-label" data-i18n="nav.otherpages">Other Pages</span><span class="fa arrow"></span></a>
+    <ul class="nav nav-second-level collapse <%= is_active_controller('pages', 'in') %>">
+            <li class="<%= is_active_action('search_results') %>"><%= link_to "Search results", :controller => "pages", :action => "search_results" %> </li>
+            <li class="<%= is_active_action('lockscreen') %>"><%= link_to "Lockscreen", :controller => "pages", :action => "lockscreen" %></li>
+            <li class="<%= is_active_action('invoice') %>"><%= link_to "Invoice", :controller => "pages", :action => "invoice" %></li>
+            <li class="<%= is_active_action('login') %>"><%= link_to "Login", :controller => "pages", :action => "login" %></li>
+            <li class="<%= is_active_action('login_2') %>"><%= link_to "Login v.2", :controller => "pages", :action => "login_2" %></li>
+            <li class="<%= is_active_action('forgot_password') %>"><%= link_to "Forgot password", :controller => "pages", :action => "forgot_password" %></li>
+            <li class="<%= is_active_action('register') %>"><%= link_to "Register", :controller => "pages", :action => "register" %></li>
+            <li class="<%= is_active_action('not_found_error') %>"><%= link_to "404 Page", :controller => "pages", :action => "not_found_error" %></li>
+            <li class="<%= is_active_action('internal_server_error') %>"><%= link_to "500 Page", :controller => "pages", :action => "internal_server_error" %></li>
+            <li class="<%= is_active_action('empty_page') %>"><%= link_to "Empty page", :controller => "pages", :action => "empty_page" %></li>
+    </ul>
+  </li>
+  <li class="<%= is_active_controller('miscellaneous') %>">
+    <a href="#"><i class="fa fa-globe"></i> <span class="nav-label" data-i18n="nav.miscellaneous">Miscellaneous</span><span class="label label-info pull-right">NEW</span></a>
+    <ul class="nav nav-second-level collapse <%= is_active_controller('miscellaneous', 'in') %>">
+            <li class="<%= is_active_action('notification') %>"><%= link_to "Notification", :controller => "miscellaneous", :action => "notification" %></li>
+            <li class="<%= is_active_action('nestablelist') %>"><%= link_to "Nestable list", :controller => "miscellaneous", :action => "nestablelist" %></li>
+            <li class="<%= is_active_action('agile_board') %>"><%= link_to "Agile board", :controller => "miscellaneous", :action => "agile_board" %></li>
+            <li class="<%= is_active_action('timeline_second_version') %>"><%= link_to "Timeline v.2", :controller => "miscellaneous", :action => "timeline_second_version" %></li>
+            <li class="<%= is_active_action('diff') %>"><%= link_to "Diff", :controller => "miscellaneous", :action => "diff" %></li>
+            <li class="<%= is_active_action('pdf_viewer') %>"><%= link_to "PDF viewer", :controller => "miscellaneous", :action => "pdf_viewer" %></li>
+            <li class="<%= is_active_action('i18support') %>"><%= link_to "i18 support", :controller => "miscellaneous", :action => "i18support" %></li>
+            <li class="<%= is_active_action('sweet_alert') %>"><%= link_to "Sweet alert", :controller => "miscellaneous", :action => "sweet_alert" %></li>
+            <li class="<%= is_active_action('idle_timer') %>"><%= link_to "Idle timer", :controller => "miscellaneous", :action => "idle_timer" %></li>
+            <li class="<%= is_active_action('truncate') %>"><%= link_to "Truncate", :controller => "miscellaneous", :action => "truncate" %></li>
+            <li class="<%= is_active_action('password_meter') %>"><%= link_to "Password meter", :controller => "miscellaneous", :action => "password_meter" %></li>
+            <li class="<%= is_active_action('spinners') %>"><%= link_to "Spinners", :controller => "miscellaneous", :action => "spinners" %></li>
+            <li class="<%= is_active_action('spinners_usage') %>"><%= link_to "Spinners usage", :controller => "miscellaneous", :action => "spinners_usage" %></li>
+            <li class="<%= is_active_action('live_favicon') %>"><%= link_to "Live favicon", :controller => "miscellaneous", :action => "live_favicon" %></li>
+            <li class="<%= is_active_action('google_maps') %>"><%= link_to "Google maps", :controller => "miscellaneous", :action => "google_maps" %></li>
+            <li class="<%= is_active_action('datamaps') %>"><%= link_to "Datamaps", :controller => "miscellaneous", :action => "datamaps" %></li>
+            <li class="<%= is_active_action('social_buttons') %>"><%= link_to "Social buttons", :controller => "miscellaneous", :action => "social_buttons" %></li>
+            <li class="<%= is_active_action('code_editor') %>"><%= link_to "Code editor", :controller => "miscellaneous", :action => "code_editor" %></li>
+            <li class="<%= is_active_action('modal_window') %>"><%= link_to "Modal window", :controller => "miscellaneous", :action => "modal_window" %></li>
+            <li class="<%= is_active_action('clipboard') %>"><%= link_to "Clipboard", :controller => "miscellaneous", :action => "clipboard" %></li>
+            <li class="<%= is_active_action('text_spinners') %>"><%= link_to "Text spinners", :controller => "miscellaneous", :action => "text_spinners" %></li>
+            <li class="<%= is_active_action('forum_view') %>"><%= link_to "Forum view", :controller => "miscellaneous", :action => "forum_view" %></li>
+            <li class="<%= is_active_action('validation') %>"><%= link_to "Validation", :controller => "miscellaneous", :action => "validation" %></li>
+            <li class="<%= is_active_action('tree_view') %>"><%= link_to "Tree view", :controller => "miscellaneous", :action => "tree_view" %></li>
+            <li class="<%= is_active_action('loading_buttons') %>"><%= link_to "Loading buttons", :controller => "miscellaneous", :action => "loading_buttons" %></li>
+            <li class="<%= is_active_action('chat_view') %>"><%= link_to "Chat view", :controller => "miscellaneous", :action => "chat_view" %></li>
+            <li class="<%= is_active_action('masonry') %>"><%= link_to "Masonry", :controller => "miscellaneous", :action => "masonry" %></li>
+            <li class="<%= is_active_action('tour') %>"><%= link_to "Tour", :controller => "miscellaneous", :action => "tour" %></li>
+    </ul>
+  </li>
+  <li class="<%= is_active_controller('uielements') %>">
+    <a href="#"><i class="fa fa-flask"></i><span class="nav-label" data-i18n="nav.uielements">UI Elements</span><span class="fa arrow"></span></a>
+    <ul class="nav nav-second-level collapse <%= is_active_controller('uielements', 'in') %>">
+            <li class="<%= is_active_action('typography') %>"><%= link_to "Typography", :controller => "uielements", :action => "typography" %></li>
+            <li class="<%= is_active_action('icons') %>"><%= link_to "Icons", :controller => "uielements", :action => "icons" %></li>
+            <li class="<%= is_active_action('draggable_panels') %>"><%= link_to "Draggable Panels", :controller => "uielements", :action => "draggable_panels" %></li>
+            <li class="<%= is_active_action('resizeable_panels') %>"><%= link_to "Resizeable Panels", :controller => "uielements", :action => "resizeable_panels" %></li>
+            <li class="<%= is_active_action('buttons') %>"><%= link_to "Buttons", :controller => "uielements", :action => "buttons" %></li>
+            <li class="<%= is_active_action('video') %>"><%= link_to "Video", :controller => "uielements", :action => "video" %></li>
+            <li class="<%= is_active_action('tables_panels') %>"><%= link_to "Panels", :controller => "uielements", :action => "tables_panels" %></li>
+            <li class="<%= is_active_action('tabs') %>"><%= link_to "Tabs", :controller => "uielements", :action => "tabs" %></li>
+            <li class="<%= is_active_action('notifications_tooltips') %>"><%= link_to "Notifications & Tooltips", :controller => "uielements", :action => "notifications_tooltips" %></li>
+            <li class="<%= is_active_action('helper_classes') %>"><%= link_to "Helper css classes", :controller => "uielements", :action => "helper_classes" %></li>
+            <li class="<%= is_active_action('badges_labels_progress') %>"><%= link_to "Badges, Labels, Progress", :controller => "uielements", :action => "badges_labels_progress" %></li>
+    </ul>
+  </li>
+  <li class="<%= is_active_controller('gridoptions') %>"><%= link_to admin_gridoptions_index_path do %>
+    <i class="fa fa-laptop"></i><span class="nav-label" data-i18n="nav.gridoptions">Grid options</span>
+  <% end %></li>
+  <li class="<%= is_active_controller('commerce') %>">
+    <a href="#"><i class="fa fa-shopping-cart"></i><span class="nav-label" data-i18n="nav.ecommerce">E-commerce</span><span class="fa arrow"></span></a>
+    <ul class="nav nav-second-level collapse <%= is_active_controller('commerce', 'in') %>">
+            <li class="<%= is_active_action('products_grid') %>"><%= link_to "Products grid", :controller => "commerce", :action => "products_grid" %></li>
+            <li class="<%= is_active_action('products_list') %>"><%= link_to "Products list", :controller => "commerce", :action => "products_list" %></li>
+            <li class="<%= is_active_action('product_edit') %>"><%= link_to "Product edit", :controller => "commerce", :action => "product_edit" %></li>
+            <li class="<%= is_active_action('product_detail') %>"><%= link_to "Product detail", :controller => "commerce", :action => "product_detail" %></li>
+            <li class="<%= is_active_action('cart') %>"><%= link_to "Cart", :controller => "commerce", :action => "cart" %></li>
+            <li class="<%= is_active_action('orders') %>"><%= link_to "Orders", :controller => "commerce", :action => "orders" %></li>
+            <li class="<%= is_active_action('payments') %>"><%= link_to "Credit Card form", :controller => "commerce", :action => "payments" %></li>
+    </ul>
+  </li>
+  <li class="<%= is_active_controller('gallery') %>">
+    <a href="#"><i class="fa fa-picture-o"></i><span class="nav-label" data-i18n="nav.gallery">Gallery</span><span class="fa arrow"></span></a>
+    <ul class="nav nav-second-level collapse <%= is_active_controller('gallery', 'in') %>">
+      <li class="<%= is_active_action('basic_gallery') %>"><%= link_to "Lightbox Gallery", :controller => "gallery", :action => "basic_gallery" %></li>
+      <li class="<%= is_active_action('slick_carusela') %>"><%= link_to "Slick Carousel", :controller => "gallery", :action => "slick_carusela" %></li>
+      <li class="<%= is_active_action('bootstrap_carusela') %>"><%= link_to "Bootstrap Carousel", :controller => "gallery", :action => "bootstrap_carusela" %></li>
+    </ul>
+  </li>
+  <li>
+    <a href="#"><i class="fa fa-sitemap"></i> <span class="nav-label" data-i18n="nav.menulevels">Menu Levels </span><span class="fa arrow"></span></a>
+    <ul class="nav nav-second-level">
+            <li>
+                <a href="#">Third Level <span class="fa arrow"></span></a>
+                <ul class="nav nav-third-level">
+                    <li><a href="#">Third Level Item</a></li>
+                    <li><a href="#">Third Level Item</a></li>
+                    <li><a href="#">Third Level Item</a></li>
+                </ul>
+            </li>
+            <li><a href="#">Second Level Item</a></li>
+            <li><a href="#">Second Level Item</a></li>
+            <li><a href="#">Second Level Item</a></li>
+    </ul>
+  </li>
+  <li class="<%= is_active_controller('cssanimations') %>"><%= link_to admin_cssanimations_index_path do %>
+    <i class="fa fa-magic"></i><span class="nav-label" data-i18n="nav.animations">CSS Animations</span><span class="label label-info pull-right">62</span>
+  <% end %></li>
+  <li class="landing_link"><%= link_to admin_landing_index_path do %>
+    <i class="fa fa-star"></i><span class="nav-label" data-i18n="nav.landing">Landing page</span>
+  <% end %></li>
+</ul></div></nav>

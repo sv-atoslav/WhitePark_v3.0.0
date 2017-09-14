@@ -1,0 +1,37 @@
+<%= form_with(model: [:admin, category_event], local: true) do |form| %>
+  <% if category_event.errors.any? %><div id="error_explanation">
+    <h2><%= pluralize(category_event.errors.count, "error") %> prohibited this category_event from being saved:</h2>
+    <ul><% category_event.errors.full_messages.each do |message| %>
+      <li><%= message %></li>
+    <% end %></ul>
+  </div><% end %>
+  <table width="100%">
+    <tr>
+      <td><div class="actions"><%= form.submit %></div></td>
+      <td><div class="field" ><%= form.text_field :title, id: :category_event_title, style: "width: 100%;", placeholder: "Название" %></div></td>
+    </tr>
+    <tr>
+      <td width="120px">
+        <p>Icon</p>
+        <div class="field"><% @photo_list.each do |onefoto| %>
+          <%= image_tag(onefoto.image.url, style: "width: 100px;", alt: onefoto.description) %>
+          <%= form.radio_button(:icon, onefoto.id) %>
+          <br>
+        <% end %></div>
+      </td>
+      <td><div class="field"><%= form.text_area :description, id: :category_event_description, class: "summernote", placeholder: "Описание", style: "heigth: 100px;" %></div></td>
+    </tr>
+  </table>
+<% end %>
+
+<%= stylesheet_link_tag "summernote/summernote.css" %>
+
+<%= javascript_include_tag "summernote.min" %>
+<script type="text/javascript">
+  $(function() {
+    $('.summernote').summernote();
+    var edit = function () {
+      $('.click2edit').summernote({ focus: true });
+    };
+  });
+</script>

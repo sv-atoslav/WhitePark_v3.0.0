@@ -1,0 +1,658 @@
+@charset "UTF-8";
+/* line 3, /home/leetsworker/Документи/My_RP/syntez WhitePark with Inspinia/app/assets/stylesheets/base/navigation.scss */
+.nav > li > a {
+  color: #a7b1c2;
+  font-weight: 600;
+}
+
+/* line 8, /home/leetsworker/Документи/My_RP/syntez WhitePark with Inspinia/app/assets/stylesheets/base/navigation.scss */
+.nav.navbar-right > li > a {
+  color: #999c9e;
+}
+
+/* line 12, /home/leetsworker/Документи/My_RP/syntez WhitePark with Inspinia/app/assets/stylesheets/base/navigation.scss */
+.nav > li.active > a {
+  color: #ffffff;
+}
+
+/* line 16, /home/leetsworker/Документи/My_RP/syntez WhitePark with Inspinia/app/assets/stylesheets/base/navigation.scss */
+.navbar-default .nav > li > a:hover, .navbar-default .nav > li > a:focus {
+  background-color: #293846;
+  color: white;
+}
+
+/* line 21, /home/leetsworker/Документи/My_RP/syntez WhitePark with Inspinia/app/assets/stylesheets/base/navigation.scss */
+.nav .open > a, .nav .open > a:hover, .nav .open > a:focus {
+  background: #fff;
+}
+
+/* line 25, /home/leetsworker/Документи/My_RP/syntez WhitePark with Inspinia/app/assets/stylesheets/base/navigation.scss */
+.nav.navbar-top-links > li > a:hover, .nav.navbar-top-links > li > a:focus {
+  background-color: transparent;
+}
+
+/* line 29, /home/leetsworker/Документи/My_RP/syntez WhitePark with Inspinia/app/assets/stylesheets/base/navigation.scss */
+.nav > li > a i {
+  margin-right: 6px;
+}
+
+/* line 33, /home/leetsworker/Документи/My_RP/syntez WhitePark with Inspinia/app/assets/stylesheets/base/navigation.scss */
+.navbar {
+  border: 0;
+}
+
+/* line 37, /home/leetsworker/Документи/My_RP/syntez WhitePark with Inspinia/app/assets/stylesheets/base/navigation.scss */
+.navbar-default {
+  background-color: transparent;
+  border-color: #2F4050;
+}
+
+/* line 42, /home/leetsworker/Документи/My_RP/syntez WhitePark with Inspinia/app/assets/stylesheets/base/navigation.scss */
+.navbar-top-links li {
+  display: inline-block;
+}
+
+/* line 46, /home/leetsworker/Документи/My_RP/syntez WhitePark with Inspinia/app/assets/stylesheets/base/navigation.scss */
+.navbar-top-links li:last-child {
+  margin-right: 40px;
+}
+
+/* line 50, /home/leetsworker/Документи/My_RP/syntez WhitePark with Inspinia/app/assets/stylesheets/base/navigation.scss */
+.body-small .navbar-top-links li:last-child {
+  margin-right: 0;
+}
+
+/* line 54, /home/leetsworker/Документи/My_RP/syntez WhitePark with Inspinia/app/assets/stylesheets/base/navigation.scss */
+.navbar-top-links li a {
+  padding: 20px 10px;
+  min-height: 50px;
+}
+
+/* line 59, /home/leetsworker/Документи/My_RP/syntez WhitePark with Inspinia/app/assets/stylesheets/base/navigation.scss */
+.dropdown-menu {
+  border: medium none;
+  border-radius: 3px;
+  box-shadow: 0 0 3px rgba(86, 96, 117, 0.7);
+  display: none;
+  float: left;
+  font-size: 12px;
+  left: 0;
+  list-style: none outside none;
+  padding: 0;
+  position: absolute;
+  text-shadow: none;
+  top: 100%;
+  z-index: 1000;
+}
+
+/* line 75, /home/leetsworker/Документи/My_RP/syntez WhitePark with Inspinia/app/assets/stylesheets/base/navigation.scss */
+.dropdown-menu > li > a {
+  border-radius: 3px;
+  color: inherit;
+  line-height: 25px;
+  margin: 4px;
+  text-align: left;
+  font-weight: normal;
+}
+
+/* line 84, /home/leetsworker/Документи/My_RP/syntez WhitePark with Inspinia/app/assets/stylesheets/base/navigation.scss */
+.dropdown-menu > .active > a,
+.dropdown-menu > .active > a:focus,
+.dropdown-menu > .active > a:hover {
+  color: #fff;
+  text-decoration: none;
+  background-color: #1ab394;
+  outline: 0;
+}
+
+/* line 93, /home/leetsworker/Документи/My_RP/syntez WhitePark with Inspinia/app/assets/stylesheets/base/navigation.scss */
+.dropdown-menu > li > a.font-bold {
+  font-weight: 600;
+}
+
+/* line 97, /home/leetsworker/Документи/My_RP/syntez WhitePark with Inspinia/app/assets/stylesheets/base/navigation.scss */
+.navbar-top-links .dropdown-menu li {
+  display: block;
+}
+
+/* line 101, /home/leetsworker/Документи/My_RP/syntez WhitePark with Inspinia/app/assets/stylesheets/base/navigation.scss */
+.navbar-top-links .dropdown-menu li:last-child {
+  margin-right: 0;
+}
+
+/* line 105, /home/leetsworker/Документи/My_RP/syntez WhitePark with Inspinia/app/assets/stylesheets/base/navigation.scss */
+.navbar-top-links .dropdown-menu li a {
+  padding: 3px 20px;
+  min-height: 0;
+}
+
+/* line 110, /home/leetsworker/Документи/My_RP/syntez WhitePark with Inspinia/app/assets/stylesheets/base/navigation.scss */
+.navbar-top-links .dropdown-menu li a div {
+  white-space: normal;
+}
+
+/* line 114, /home/leetsworker/Документи/My_RP/syntez WhitePark with Inspinia/app/assets/stylesheets/base/navigation.scss */
+.navbar-top-links .dropdown-messages,
+.navbar-top-links .dropdown-tasks,
+.navbar-top-links .dropdown-alerts {
+  width: 310px;
+  min-width: 0;
+}
+
+/* line 121, /home/leetsworker/Документи/My_RP/syntez WhitePark with Inspinia/app/assets/stylesheets/base/navigation.scss */
+.navbar-top-links .dropdown-messages {
+  margin-left: 5px;
+}
+
+/* line 125, /home/leetsworker/Документи/My_RP/syntez WhitePark with Inspinia/app/assets/stylesheets/base/navigation.scss */
+.navbar-top-links .dropdown-tasks {
+  margin-left: -59px;
+}
+
+/* line 129, /home/leetsworker/Документи/My_RP/syntez WhitePark with Inspinia/app/assets/stylesheets/base/navigation.scss */
+.navbar-top-links .dropdown-alerts {
+  margin-left: -123px;
+}
+
+/* line 133, /home/leetsworker/Документи/My_RP/syntez WhitePark with Inspinia/app/assets/stylesheets/base/navigation.scss */
+.navbar-top-links .dropdown-user {
+  right: 0;
+  left: auto;
+}
+
+/* line 138, /home/leetsworker/Документи/My_RP/syntez WhitePark with Inspinia/app/assets/stylesheets/base/navigation.scss */
+.dropdown-messages, .dropdown-alerts {
+  padding: 10px 10px 10px 10px;
+}
+
+/* line 142, /home/leetsworker/Документи/My_RP/syntez WhitePark with Inspinia/app/assets/stylesheets/base/navigation.scss */
+.dropdown-messages li a, .dropdown-alerts li a {
+  font-size: 12px;
+}
+
+/* line 146, /home/leetsworker/Документи/My_RP/syntez WhitePark with Inspinia/app/assets/stylesheets/base/navigation.scss */
+.dropdown-messages li em, .dropdown-alerts li em {
+  font-size: 10px;
+}
+
+/* line 150, /home/leetsworker/Документи/My_RP/syntez WhitePark with Inspinia/app/assets/stylesheets/base/navigation.scss */
+.nav.navbar-top-links .dropdown-alerts a {
+  font-size: 12px;
+}
+
+/* line 154, /home/leetsworker/Документи/My_RP/syntez WhitePark with Inspinia/app/assets/stylesheets/base/navigation.scss */
+.nav-header {
+  padding: 33px 25px;
+  background-color: #2F4050;
+  background-image: url("patterns/header-profile.png");
+}
+
+/* line 161, /home/leetsworker/Документи/My_RP/syntez WhitePark with Inspinia/app/assets/stylesheets/base/navigation.scss */
+.pace-done .nav-header {
+  transition: all 0.4s;
+}
+
+/* line 165, /home/leetsworker/Документи/My_RP/syntez WhitePark with Inspinia/app/assets/stylesheets/base/navigation.scss */
+ul.nav-second-level {
+  background: #293846;
+}
+
+/* line 169, /home/leetsworker/Документи/My_RP/syntez WhitePark with Inspinia/app/assets/stylesheets/base/navigation.scss */
+.nav > li.active {
+  border-left: 4px solid #19aa8d;
+  background: #293846;
+}
+
+/* line 174, /home/leetsworker/Документи/My_RP/syntez WhitePark with Inspinia/app/assets/stylesheets/base/navigation.scss */
+.nav.nav-second-level > li.active {
+  border: none;
+}
+
+/* line 178, /home/leetsworker/Документи/My_RP/syntez WhitePark with Inspinia/app/assets/stylesheets/base/navigation.scss */
+.nav.nav-second-level.collapse[style] {
+  height: auto !important;
+}
+
+/* line 182, /home/leetsworker/Документи/My_RP/syntez WhitePark with Inspinia/app/assets/stylesheets/base/navigation.scss */
+.nav-header a {
+  color: #DFE4ED;
+}
+
+/* line 186, /home/leetsworker/Документи/My_RP/syntez WhitePark with Inspinia/app/assets/stylesheets/base/navigation.scss */
+.nav-header .text-muted {
+  color: #8095a8;
+}
+
+/* line 190, /home/leetsworker/Документи/My_RP/syntez WhitePark with Inspinia/app/assets/stylesheets/base/navigation.scss */
+.minimalize-styl-2 {
+  padding: 4px 12px;
+  margin: 14px 5px 5px 20px;
+  font-size: 14px;
+  float: left;
+}
+
+/* line 197, /home/leetsworker/Документи/My_RP/syntez WhitePark with Inspinia/app/assets/stylesheets/base/navigation.scss */
+.navbar-form-custom {
+  float: left;
+  height: 50px;
+  padding: 0;
+  width: 200px;
+  display: block;
+}
+
+/* line 205, /home/leetsworker/Документи/My_RP/syntez WhitePark with Inspinia/app/assets/stylesheets/base/navigation.scss */
+.navbar-form-custom .form-group {
+  margin-bottom: 0;
+}
+
+/* line 209, /home/leetsworker/Документи/My_RP/syntez WhitePark with Inspinia/app/assets/stylesheets/base/navigation.scss */
+.nav.navbar-top-links a {
+  font-size: 14px;
+}
+
+/* line 213, /home/leetsworker/Документи/My_RP/syntez WhitePark with Inspinia/app/assets/stylesheets/base/navigation.scss */
+.navbar-form-custom .form-control {
+  background: none repeat scroll 0 0 rgba(0, 0, 0, 0);
+  border: medium none;
+  font-size: 14px;
+  height: 60px;
+  margin: 0;
+  z-index: 2000;
+}
+
+/* line 222, /home/leetsworker/Документи/My_RP/syntez WhitePark with Inspinia/app/assets/stylesheets/base/navigation.scss */
+.count-info .label {
+  line-height: 12px;
+  padding: 2px 5px;
+  position: absolute;
+  right: 6px;
+  top: 12px;
+}
+
+/* line 230, /home/leetsworker/Документи/My_RP/syntez WhitePark with Inspinia/app/assets/stylesheets/base/navigation.scss */
+.arrow {
+  float: right;
+}
+
+/* line 234, /home/leetsworker/Документи/My_RP/syntez WhitePark with Inspinia/app/assets/stylesheets/base/navigation.scss */
+.fa.arrow:before {
+  content: "\f104";
+}
+
+/* line 238, /home/leetsworker/Документи/My_RP/syntez WhitePark with Inspinia/app/assets/stylesheets/base/navigation.scss */
+.active > a > .fa.arrow:before {
+  content: "\f107";
+}
+
+/* line 242, /home/leetsworker/Документи/My_RP/syntez WhitePark with Inspinia/app/assets/stylesheets/base/navigation.scss */
+.nav-second-level li,
+.nav-third-level li {
+  border-bottom: none !important;
+}
+
+/* line 247, /home/leetsworker/Документи/My_RP/syntez WhitePark with Inspinia/app/assets/stylesheets/base/navigation.scss */
+.nav-second-level li:last-child {
+  margin-bottom: 10px;
+}
+
+/* line 251, /home/leetsworker/Документи/My_RP/syntez WhitePark with Inspinia/app/assets/stylesheets/base/navigation.scss */
+body:not(.fixed-sidebar):not(.canvas-menu).mini-navbar .nav li:hover > .nav-second-level,
+.mini-navbar .nav li:focus > .nav-second-level {
+  display: block;
+  border-radius: 0 2px 2px 0;
+  min-width: 140px;
+  height: auto;
+}
+
+/* line 259, /home/leetsworker/Документи/My_RP/syntez WhitePark with Inspinia/app/assets/stylesheets/base/navigation.scss */
+body.mini-navbar .navbar-default .nav > li > .nav-second-level li a {
+  font-size: 12px;
+  border-radius: 3px;
+}
+
+/* line 264, /home/leetsworker/Документи/My_RP/syntez WhitePark with Inspinia/app/assets/stylesheets/base/navigation.scss */
+.fixed-nav .slimScrollDiv #side-menu {
+  padding-bottom: 60px;
+}
+
+/* line 268, /home/leetsworker/Документи/My_RP/syntez WhitePark with Inspinia/app/assets/stylesheets/base/navigation.scss */
+.mini-navbar .nav .nav-second-level {
+  position: absolute;
+  left: 70px;
+  top: 0;
+  background-color: #2F4050;
+  padding: 10px 10px 10px 10px;
+  font-size: 12px;
+}
+
+/* line 277, /home/leetsworker/Документи/My_RP/syntez WhitePark with Inspinia/app/assets/stylesheets/base/navigation.scss */
+.canvas-menu.mini-navbar .nav-second-level {
+  background: #293846;
+}
+
+/* line 281, /home/leetsworker/Документи/My_RP/syntez WhitePark with Inspinia/app/assets/stylesheets/base/navigation.scss */
+.mini-navbar li.active .nav-second-level {
+  left: 65px;
+}
+
+/* line 285, /home/leetsworker/Документи/My_RP/syntez WhitePark with Inspinia/app/assets/stylesheets/base/navigation.scss */
+.navbar-default .special_link a {
+  background: #1ab394;
+  color: white;
+}
+
+/* line 290, /home/leetsworker/Документи/My_RP/syntez WhitePark with Inspinia/app/assets/stylesheets/base/navigation.scss */
+.navbar-default .special_link a:hover {
+  background: #17987e !important;
+  color: white;
+}
+
+/* line 295, /home/leetsworker/Документи/My_RP/syntez WhitePark with Inspinia/app/assets/stylesheets/base/navigation.scss */
+.navbar-default .special_link a span.label {
+  background: #fff;
+  color: #1ab394;
+}
+
+/* line 300, /home/leetsworker/Документи/My_RP/syntez WhitePark with Inspinia/app/assets/stylesheets/base/navigation.scss */
+.navbar-default .landing_link a {
+  background: #1cc09f;
+  color: white;
+}
+
+/* line 305, /home/leetsworker/Документи/My_RP/syntez WhitePark with Inspinia/app/assets/stylesheets/base/navigation.scss */
+.navbar-default .landing_link a:hover {
+  background: #1ab394 !important;
+  color: white;
+}
+
+/* line 310, /home/leetsworker/Документи/My_RP/syntez WhitePark with Inspinia/app/assets/stylesheets/base/navigation.scss */
+.navbar-default .landing_link a span.label {
+  background: #fff;
+  color: #1cc09f;
+}
+
+/* line 315, /home/leetsworker/Документи/My_RP/syntez WhitePark with Inspinia/app/assets/stylesheets/base/navigation.scss */
+.logo-element {
+  text-align: center;
+  font-size: 18px;
+  font-weight: 600;
+  color: white;
+  display: none;
+  padding: 18px 0;
+}
+
+/* line 324, /home/leetsworker/Документи/My_RP/syntez WhitePark with Inspinia/app/assets/stylesheets/base/navigation.scss */
+.pace-done .navbar-static-side, .pace-done .nav-header, .pace-done li.active, .pace-done #page-wrapper, .pace-done .footer {
+  -webkit-transition: all 0.4s;
+  -moz-transition: all 0.4s;
+  -o-transition: all 0.4s;
+  transition: all 0.4s;
+}
+
+/* line 331, /home/leetsworker/Документи/My_RP/syntez WhitePark with Inspinia/app/assets/stylesheets/base/navigation.scss */
+.navbar-fixed-top {
+  background: #fff;
+  transition-duration: 0.4s;
+  border-bottom: 1px solid #e7eaec !important;
+  z-index: 2030;
+}
+
+/* line 338, /home/leetsworker/Документи/My_RP/syntez WhitePark with Inspinia/app/assets/stylesheets/base/navigation.scss */
+.navbar-fixed-top, .navbar-static-top {
+  background: #f3f3f4;
+}
+
+/* line 342, /home/leetsworker/Документи/My_RP/syntez WhitePark with Inspinia/app/assets/stylesheets/base/navigation.scss */
+.fixed-nav #wrapper {
+  margin-top: 0;
+}
+
+/* line 346, /home/leetsworker/Документи/My_RP/syntez WhitePark with Inspinia/app/assets/stylesheets/base/navigation.scss */
+.nav-tabs > li.active > a, .nav-tabs > li.active > a:hover, .nav-tabs > li.active > a:focus {
+  -moz-border-bottom-colors: none;
+  -moz-border-left-colors: none;
+  -moz-border-right-colors: none;
+  -moz-border-top-colors: none;
+  background: none;
+  border-color: #DDDDDD #DDDDDD rgba(0, 0, 0, 0);
+  border-bottom: #f3f3f4;
+  border-image: none;
+  border-style: solid;
+  border-width: 1px;
+  color: #555555;
+  cursor: default;
+}
+
+/* line 361, /home/leetsworker/Документи/My_RP/syntez WhitePark with Inspinia/app/assets/stylesheets/base/navigation.scss */
+.nav.nav-tabs li {
+  background: none;
+  border: none;
+}
+
+/* line 366, /home/leetsworker/Документи/My_RP/syntez WhitePark with Inspinia/app/assets/stylesheets/base/navigation.scss */
+body.fixed-nav #wrapper .navbar-static-side,
+body.fixed-nav #wrapper #page-wrapper {
+  margin-top: 60px;
+}
+
+/* line 371, /home/leetsworker/Документи/My_RP/syntez WhitePark with Inspinia/app/assets/stylesheets/base/navigation.scss */
+body.top-navigation.fixed-nav #wrapper #page-wrapper {
+  margin-top: 0;
+}
+
+/* line 375, /home/leetsworker/Документи/My_RP/syntez WhitePark with Inspinia/app/assets/stylesheets/base/navigation.scss */
+body.fixed-nav.fixed-nav-basic .navbar-fixed-top {
+  left: 220px;
+}
+
+/* line 379, /home/leetsworker/Документи/My_RP/syntez WhitePark with Inspinia/app/assets/stylesheets/base/navigation.scss */
+body.fixed-nav.fixed-nav-basic.mini-navbar .navbar-fixed-top {
+  left: 70px;
+}
+
+/* line 383, /home/leetsworker/Документи/My_RP/syntez WhitePark with Inspinia/app/assets/stylesheets/base/navigation.scss */
+body.fixed-nav.fixed-nav-basic.fixed-sidebar.mini-navbar .navbar-fixed-top {
+  left: 0;
+}
+
+/* line 387, /home/leetsworker/Документи/My_RP/syntez WhitePark with Inspinia/app/assets/stylesheets/base/navigation.scss */
+body.fixed-nav.fixed-nav-basic #wrapper .navbar-static-side {
+  margin-top: 0;
+}
+
+/* line 391, /home/leetsworker/Документи/My_RP/syntez WhitePark with Inspinia/app/assets/stylesheets/base/navigation.scss */
+body.fixed-nav.fixed-nav-basic.body-small .navbar-fixed-top {
+  left: 0;
+}
+
+/* line 395, /home/leetsworker/Документи/My_RP/syntez WhitePark with Inspinia/app/assets/stylesheets/base/navigation.scss */
+body.fixed-nav.fixed-nav-basic.fixed-sidebar.mini-navbar.body-small .navbar-fixed-top {
+  left: 220px;
+}
+
+/* line 399, /home/leetsworker/Документи/My_RP/syntez WhitePark with Inspinia/app/assets/stylesheets/base/navigation.scss */
+.fixed-nav .minimalize-styl-2 {
+  margin: 14px 5px 5px 15px;
+}
+
+/* line 403, /home/leetsworker/Документи/My_RP/syntez WhitePark with Inspinia/app/assets/stylesheets/base/navigation.scss */
+.body-small .navbar-fixed-top {
+  margin-left: 0;
+}
+
+/* line 407, /home/leetsworker/Документи/My_RP/syntez WhitePark with Inspinia/app/assets/stylesheets/base/navigation.scss */
+body.mini-navbar .navbar-static-side {
+  width: 70px;
+}
+
+/* line 411, /home/leetsworker/Документи/My_RP/syntez WhitePark with Inspinia/app/assets/stylesheets/base/navigation.scss */
+body.mini-navbar .profile-element, body.mini-navbar .nav-label, body.mini-navbar .navbar-default .nav li a span {
+  display: none;
+}
+
+/* line 415, /home/leetsworker/Документи/My_RP/syntez WhitePark with Inspinia/app/assets/stylesheets/base/navigation.scss */
+body.canvas-menu .profile-element {
+  display: block;
+}
+
+/* line 419, /home/leetsworker/Документи/My_RP/syntez WhitePark with Inspinia/app/assets/stylesheets/base/navigation.scss */
+body:not(.fixed-sidebar):not(.canvas-menu).mini-navbar .nav-second-level {
+  display: none;
+}
+
+/* line 423, /home/leetsworker/Документи/My_RP/syntez WhitePark with Inspinia/app/assets/stylesheets/base/navigation.scss */
+body.mini-navbar .navbar-default .nav > li > a {
+  font-size: 16px;
+}
+
+/* line 427, /home/leetsworker/Документи/My_RP/syntez WhitePark with Inspinia/app/assets/stylesheets/base/navigation.scss */
+body.mini-navbar .logo-element {
+  display: block;
+}
+
+/* line 431, /home/leetsworker/Документи/My_RP/syntez WhitePark with Inspinia/app/assets/stylesheets/base/navigation.scss */
+body.canvas-menu .logo-element {
+  display: none;
+}
+
+/* line 435, /home/leetsworker/Документи/My_RP/syntez WhitePark with Inspinia/app/assets/stylesheets/base/navigation.scss */
+body.mini-navbar .nav-header {
+  padding: 0;
+  background-color: #1ab394;
+}
+
+/* line 440, /home/leetsworker/Документи/My_RP/syntez WhitePark with Inspinia/app/assets/stylesheets/base/navigation.scss */
+body.canvas-menu .nav-header {
+  padding: 33px 25px;
+}
+
+/* line 444, /home/leetsworker/Документи/My_RP/syntez WhitePark with Inspinia/app/assets/stylesheets/base/navigation.scss */
+body.mini-navbar #page-wrapper {
+  margin: 0 0 0 70px;
+}
+
+/* line 448, /home/leetsworker/Документи/My_RP/syntez WhitePark with Inspinia/app/assets/stylesheets/base/navigation.scss */
+body.fixed-sidebar.mini-navbar .footer,
+body.canvas-menu.mini-navbar .footer {
+  margin: 0 0 0 0 !important;
+}
+
+/* line 453, /home/leetsworker/Документи/My_RP/syntez WhitePark with Inspinia/app/assets/stylesheets/base/navigation.scss */
+body.canvas-menu.mini-navbar #page-wrapper,
+body.canvas-menu.mini-navbar .footer {
+  margin: 0 0 0 0;
+}
+
+/* line 458, /home/leetsworker/Документи/My_RP/syntez WhitePark with Inspinia/app/assets/stylesheets/base/navigation.scss */
+body.fixed-sidebar .navbar-static-side,
+body.canvas-menu .navbar-static-side {
+  position: fixed;
+  width: 220px;
+  z-index: 2001;
+  height: 100%;
+}
+
+/* line 466, /home/leetsworker/Документи/My_RP/syntez WhitePark with Inspinia/app/assets/stylesheets/base/navigation.scss */
+body.fixed-sidebar.mini-navbar .navbar-static-side {
+  width: 0;
+}
+
+/* line 470, /home/leetsworker/Документи/My_RP/syntez WhitePark with Inspinia/app/assets/stylesheets/base/navigation.scss */
+body.fixed-sidebar.mini-navbar #page-wrapper {
+  margin: 0 0 0 0;
+}
+
+/* line 474, /home/leetsworker/Документи/My_RP/syntez WhitePark with Inspinia/app/assets/stylesheets/base/navigation.scss */
+body.body-small.fixed-sidebar.mini-navbar #page-wrapper {
+  margin: 0 0 0 220px;
+}
+
+/* line 478, /home/leetsworker/Документи/My_RP/syntez WhitePark with Inspinia/app/assets/stylesheets/base/navigation.scss */
+body.body-small.fixed-sidebar.mini-navbar .navbar-static-side {
+  width: 220px;
+}
+
+/* line 482, /home/leetsworker/Документи/My_RP/syntez WhitePark with Inspinia/app/assets/stylesheets/base/navigation.scss */
+.fixed-sidebar.mini-navbar .nav li:focus > .nav-second-level,
+.canvas-menu.mini-navbar .nav li:focus > .nav-second-level {
+  display: block;
+  height: auto;
+}
+
+/* line 488, /home/leetsworker/Документи/My_RP/syntez WhitePark with Inspinia/app/assets/stylesheets/base/navigation.scss */
+body.fixed-sidebar.mini-navbar .navbar-default .nav > li > .nav-second-level li a {
+  font-size: 12px;
+  border-radius: 3px;
+}
+
+/* line 493, /home/leetsworker/Документи/My_RP/syntez WhitePark with Inspinia/app/assets/stylesheets/base/navigation.scss */
+body.canvas-menu.mini-navbar .navbar-default .nav > li > .nav-second-level li a {
+  font-size: 13px;
+  border-radius: 3px;
+}
+
+/* line 498, /home/leetsworker/Документи/My_RP/syntez WhitePark with Inspinia/app/assets/stylesheets/base/navigation.scss */
+.fixed-sidebar.mini-navbar .nav-second-level li a,
+.canvas-menu.mini-navbar .nav-second-level li a {
+  padding: 10px 10px 10px 15px;
+}
+
+/* line 503, /home/leetsworker/Документи/My_RP/syntez WhitePark with Inspinia/app/assets/stylesheets/base/navigation.scss */
+.fixed-sidebar.mini-navbar .nav-second-level,
+.canvas-menu.mini-navbar .nav-second-level {
+  position: relative;
+  padding: 0;
+  font-size: 13px;
+}
+
+/* line 510, /home/leetsworker/Документи/My_RP/syntez WhitePark with Inspinia/app/assets/stylesheets/base/navigation.scss */
+.fixed-sidebar.mini-navbar li.active .nav-second-level,
+.canvas-menu.mini-navbar li.active .nav-second-level {
+  left: 0;
+}
+
+/* line 515, /home/leetsworker/Документи/My_RP/syntez WhitePark with Inspinia/app/assets/stylesheets/base/navigation.scss */
+body.fixed-sidebar.mini-navbar .navbar-default .nav > li > a,
+body.canvas-menu.mini-navbar .navbar-default .nav > li > a {
+  font-size: 13px;
+}
+
+/* line 520, /home/leetsworker/Документи/My_RP/syntez WhitePark with Inspinia/app/assets/stylesheets/base/navigation.scss */
+body.fixed-sidebar.mini-navbar .nav-label,
+body.fixed-sidebar.mini-navbar .navbar-default .nav li a span,
+body.canvas-menu.mini-navbar .nav-label,
+body.canvas-menu.mini-navbar .navbar-default .nav li a span {
+  display: inline;
+}
+
+/* line 527, /home/leetsworker/Документи/My_RP/syntez WhitePark with Inspinia/app/assets/stylesheets/base/navigation.scss */
+body.canvas-menu.mini-navbar .navbar-default .nav li .profile-element a span {
+  display: block;
+}
+
+/* line 531, /home/leetsworker/Документи/My_RP/syntez WhitePark with Inspinia/app/assets/stylesheets/base/navigation.scss */
+.canvas-menu.mini-navbar .nav-second-level li a,
+.fixed-sidebar.mini-navbar .nav-second-level li a {
+  padding: 7px 10px 7px 52px;
+}
+
+/* line 536, /home/leetsworker/Документи/My_RP/syntez WhitePark with Inspinia/app/assets/stylesheets/base/navigation.scss */
+.fixed-sidebar.mini-navbar .nav-second-level,
+.canvas-menu.mini-navbar .nav-second-level {
+  left: 0;
+}
+
+/* line 541, /home/leetsworker/Документи/My_RP/syntez WhitePark with Inspinia/app/assets/stylesheets/base/navigation.scss */
+body.canvas-menu nav.navbar-static-side {
+  z-index: 2001;
+  background: #2f4050;
+  height: 100%;
+  position: fixed;
+  display: none;
+}
+
+/* line 549, /home/leetsworker/Документи/My_RP/syntez WhitePark with Inspinia/app/assets/stylesheets/base/navigation.scss */
+body.canvas-menu.mini-navbar nav.navbar-static-side {
+  display: block;
+  width: 220px;
+}

@@ -1,0 +1,46 @@
+<%= form_with(model: [:admin, event], local: true) do |form| %>
+  <% if event.errors.any? %><div id="error_explanation">
+    <h2><%= pluralize(event.errors.count, "error") %> prohibited this event from being saved:</h2>
+    <ul><% event.errors.full_messages.each do |message| %>
+      <li><%= message %></li>
+    <% end %></ul>
+  </div><% end %>
+  <div class="actions"><%= form.submit %></div>
+  <table width="100%">
+    <tr>
+      <td><div class="field"><%= form.label :category %><%= form.collection_select(:category, CategoryEvent.all, :id, :title) %></div></td>
+      <td><div class="field"><%= form.label :title %><%= form.text_field :title, id: :event_title, style: "width: 100%;"%></div></td>
+    </tr>
+    <tr>
+      <td width="222px"><table>
+        <thead><tr>
+          <td>Previev</td>
+          <td>Icon</td>
+          <td>Many photos</td>
+        </tr></thead>
+        <% have_some_photo = @old_list.to_a.any? %>
+        <tbody align="center"><% @photo_list.each do |one_photo| %><tr>
+          <td><%= image_tag(one_photo.image.url, style: "width: 100px;") %></td>
+          <td><%= form.radio_button(:icon, one_photo.id) %></td>
+          <!-- checkbox I parametr without [] need be == in controller params["word"] -->
+          <td><% if have_some_photo %><%= check_box_tag("many_photo_ids[]", one_photo.id, @old_list.include?(one_photo.id) )%>
+          <% else %><%= check_box_tag("many_photo_ids[]", one_photo.id) %>
+          <% end  %></td>
+        </tr><% end %></tbody>
+      </table></td>
+      <td><div class="field"><%= form.label :description %><%= form.text_area :description, id: :event_description, class: "summernote" %></div></td>
+    </tr>
+  </table>
+<% end %>
+
+<%= stylesheet_link_tag "summernote/summernote.css" %>
+
+<%= javascript_include_tag "summernote.min" %>
+<script type="text/javascript">
+$(function() {
+  $('.summernote').summernote();
+  var edit = function () {
+    $('.click2edit').summernote({ focus: true });
+  };
+});
+</script>

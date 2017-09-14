@@ -1,0 +1,36 @@
+<% if @visible_part %><div class="articles-block big-block comment-block"><div class="block">
+	<h2>Отзывы</h2>
+	<hr class = "spec-hr"/>
+	<div class="articles"><% @opinion_list.each do |one_opinion| %><div class="article">
+			<div class="article-img"><%= image_tag("comment-default.png" , alt:":-]")%></div>
+			<div class="article-content">
+				<h2><%= one_opinion.author %></h2>
+				<p class="article-date"><%= one_opinion.visit %></p>
+				<p><%= one_opinion.words %></p>
+				<!-- <a class="nice-button" href="">подробнее</a> -->
+			</div>
+	</div><% end %></div>
+	<u><%= will_paginate @opinion_list, :class => "special-links", :link_separator => "| |", :previous_label =>"предыдущая", :next_label =>"следующая"	%></u>
+</div></div><% end %>
+<div class="comment-form-block big-block"><div class="block"><div class="spec-block">
+<%= render template: "admin/not_published_opinions/new" %>
+<% if notice =='Not published opinion was successfully created.' %>
+<p id="notice">Ваш отзыв отправлен модератору.</p>
+<% end %>
+</div></div></div>
+<!-- <div class="comment-form-block big-block"><div class="block"><div class="spec-block">
+	<h2>Оставить отзыв</h2>
+	<hr class = "spec-hr"/>
+	<form action="">
+		<div>
+			<input type="text" placeholder="Имя">
+			<input type="text" placeholder="Дата посещения WhitePark" class="spec-calendar">
+			<input type="tel" placeholder="Телефон">
+			<input type="email" placeholder="E-mail">
+		</div>
+		<div>
+			<textarea placeholder="Сообщение"></textarea>
+			<input class="nice-button" type="submit" value="отправить">
+		</div>
+	</form>
+</div></div></div> -->

@@ -1,0 +1,12 @@
+<p id="notice"><%= notice %></p>
+<p><strong>Title:</strong><%= @slayder.title %></p>
+<p><strong>Many fotos:</strong></p>
+<% @old_list.each do |one_foto_id| %>
+	<% temp_icon = Photo.find_by(id: one_foto_id) %>
+    <% if temp_icon.nil? %><%= $INE.html_safe %>
+    <% else %>,<%= image_tag( temp_icon.image.url , style: "width: 100px;", alt: temp_icon.description ) %>
+    <% end %>
+<% end %>.
+<br>
+<%= link_to 'Edit', action: "edit"  %> | 
+<%= link_to 'Back', action: "index" %>

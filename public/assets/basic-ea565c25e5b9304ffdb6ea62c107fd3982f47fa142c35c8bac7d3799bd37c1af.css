@@ -1,0 +1,65 @@
+@charset "UTF-8";
+/*
+ * The MIT License
+ * Copyright (c) 2012 Matias Meno <m@tias.me>
+ */
+/* line 6, /home/leetsworker/Документи/My_RP/syntez WhitePark with Inspinia/app/assets/stylesheets/basic.scss */
+.dropzone, .dropzone * {
+  box-sizing: border-box;
+}
+
+/* line 9, /home/leetsworker/Документи/My_RP/syntez WhitePark with Inspinia/app/assets/stylesheets/basic.scss */
+.dropzone {
+  position: relative;
+}
+
+/* line 11, /home/leetsworker/Документи/My_RP/syntez WhitePark with Inspinia/app/assets/stylesheets/basic.scss */
+.dropzone .dz-preview {
+  position: relative;
+  display: inline-block;
+  width: 120px;
+  margin: 0.5em;
+}
+
+/* line 16, /home/leetsworker/Документи/My_RP/syntez WhitePark with Inspinia/app/assets/stylesheets/basic.scss */
+.dropzone .dz-preview .dz-progress {
+  display: block;
+  height: 15px;
+  border: 1px solid #aaa;
+}
+
+/* line 20, /home/leetsworker/Документи/My_RP/syntez WhitePark with Inspinia/app/assets/stylesheets/basic.scss */
+.dropzone .dz-preview .dz-progress .dz-upload {
+  display: block;
+  height: 100%;
+  width: 0;
+  background: green;
+}
+
+/* line 25, /home/leetsworker/Документи/My_RP/syntez WhitePark with Inspinia/app/assets/stylesheets/basic.scss */
+.dropzone .dz-preview .dz-error-message {
+  color: red;
+  display: none;
+}
+
+/* line 28, /home/leetsworker/Документи/My_RP/syntez WhitePark with Inspinia/app/assets/stylesheets/basic.scss */
+.dropzone .dz-preview.dz-error .dz-error-message, .dropzone .dz-preview.dz-error .dz-error-mark {
+  display: block;
+}
+
+/* line 30, /home/leetsworker/Документи/My_RP/syntez WhitePark with Inspinia/app/assets/stylesheets/basic.scss */
+.dropzone .dz-preview.dz-success .dz-success-mark {
+  display: block;
+}
+
+/* line 32, /home/leetsworker/Документи/My_RP/syntez WhitePark with Inspinia/app/assets/stylesheets/basic.scss */
+.dropzone .dz-preview .dz-error-mark, .dropzone .dz-preview .dz-success-mark {
+  position: absolute;
+  display: none;
+  left: 30px;
+  top: 30px;
+  width: 54px;
+  height: 58px;
+  left: 50%;
+  margin-left: -27px;
+}

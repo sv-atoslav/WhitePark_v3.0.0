@@ -1,0 +1,32 @@
+<%= form_with(model: [:admin, slayder], local: true) do |form| %>
+  <% if slayder.errors.any? %><div id="error_explanation">
+    <h2><%= pluralize(slayder.errors.count, "error") %> prohibited this slayder from being saved:</h2>
+    <ul><% slayder.errors.full_messages.each do |message| %>
+			<li><%= message %></li>
+    <% end %></ul>
+	</div><% end %>
+	<div class="field"><%= form.label :title %><%=form.text_field :title, id: :slayder_title%></div>
+	<table>
+        <thead align="center"><tr>
+			<td>Previev</td>
+	        <td>In slayder ?</td>
+	        <td>Description (if in slayder)</td>
+	    </tr></thead>
+        <% have_some_photo = @old_list.to_a.any? %>
+        <tbody align="center"><% @photo_list.each do |one_photo| %><tr>
+			<td><%= image_tag(one_photo.image.url, style: "width: 100px;") %></td>
+	        <!-- checkbox I parametr without [] need be == in controller params["word"] -->
+	        <td><% unless have_some_photo %><%= check_box_tag("many_photo_ids[]", one_photo.id) %>
+	        <% else %><%= check_box_tag("many_photo_ids[]", one_photo.id, @old_list.include?(one_photo.id) )%>
+	        <% end  %></td>
+	        <td align="left">
+		        <% temp_string = "" %>
+		        <% if have_some_photo && PhotoInSlayder.where(photo: one_photo.id, slyder: slayder.id).any? %>
+		        	<% temp_string = PhotoInSlayder.where(photo: one_photo.id, slyder: slayder.id).first.description %>
+		        <% end %>
+		        <%= text_area_tag "descriptions_to_phinsl[]", temp_string, placeholder: "поле должно быть пустым, если галочки нет, и непустым, если галочка есть " , style: "width: 300px; height: 50px;" %>
+	        </td>
+        </tr><% end %></tbody>
+     </table>
+	<div class="actions"><%= form.submit %></div>
+<% end %>

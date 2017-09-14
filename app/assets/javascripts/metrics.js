@@ -1,0 +1,1 @@
+//= require jquery/jquery.sparkline.min.js

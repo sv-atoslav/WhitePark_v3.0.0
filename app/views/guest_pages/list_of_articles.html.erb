@@ -1,0 +1,19 @@
+<% if @visible_part %><div class="articles-block big-block"><div class="block">
+	<h2>Статьи</h2>
+	<hr class = "spec-hr">
+	<div class="articles"><% @article_list.each do |state| %><div class="article">
+		<div class="article-img">
+		<% photo = Photo.find_by(id: state.icon)%>
+		<% if photo.nil? %><%= $INE.html_safe	%>
+		<% else %><%= image_tag(photo.image.url)%>
+		<% end  %>
+		</div>
+		<div class="article-content">
+			<h2><%= state.title %></h2>
+			<p class="article-date"><%= state.published %></p>
+			<p><%= state.description.html_safe %></p>
+			<a class="nice-button" href="//localhost:3000/articles/<%= state.id.to_s %><%= $WORD_TO_SEE %>">подробнее</a>
+		</div>
+	</div><% end %></div>
+	<u><%= will_paginate @article_list, :class => "special-links", :link_separator => "| |", :previous_label =>"предыдущая", :next_label =>"следующая" %></u>
+</div></div><% end %>

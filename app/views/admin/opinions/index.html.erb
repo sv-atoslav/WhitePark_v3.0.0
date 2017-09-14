@@ -1,0 +1,21 @@
+<p id="notice"><%= notice %></p>
+<h1>Opinions</h1>
+<% if @opinions.first.nil? %>
+  <i>эта таблица пустая</i>
+<% else %><table class="sv_table">
+  <thead><tr>
+    <th>Author</th>
+    <th>Words</th>
+    <th>Visit</th>
+    <th colspan="3"></th>
+  </tr></thead>
+  <tbody><% @opinions.each do |one_opinion| %><tr>
+    <td><%= one_opinion.author  %></td>
+    <td><%= one_opinion.words  %></td>
+    <td><%= one_opinion.visit %></td>
+    <td><%= link_to 'Show', admin_opinion_path(one_opinion) %></td>
+    <td><%= link_to 'Edit', edit_admin_opinion_path(one_opinion) %></td>
+    <td><%= link_to 'Destroy', admin_opinion_path(one_opinion), method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr><% end %></tbody>
+</table><% end %>
+<br><%= link_to 'New Opinion', action: "new" %>

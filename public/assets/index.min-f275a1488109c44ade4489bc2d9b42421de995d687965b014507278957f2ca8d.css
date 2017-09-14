@@ -1,0 +1,577 @@
+@charset "UTF-8";
+/* line 1, /home/leetsworker/Документи/My_RP/syntez WhitePark with Inspinia/app/assets/stylesheets/index.min.scss */
+#center h2, .welcome h2 {
+  font-family: 'Titillium Web',sans-serif;
+}
+
+/* line 1, /home/leetsworker/Документи/My_RP/syntez WhitePark with Inspinia/app/assets/stylesheets/index.min.scss */
+.technologies, .welcome h2, .work h2 {
+  text-align: center;
+}
+
+/* line 1, /home/leetsworker/Документи/My_RP/syntez WhitePark with Inspinia/app/assets/stylesheets/index.min.scss */
+body::-webkit-scrollbar {
+  width: 10px;
+  background: #000;
+}
+
+/* line 1, /home/leetsworker/Документи/My_RP/syntez WhitePark with Inspinia/app/assets/stylesheets/index.min.scss */
+body::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.6);
+}
+
+/* line 1, /home/leetsworker/Документи/My_RP/syntez WhitePark with Inspinia/app/assets/stylesheets/index.min.scss */
+body::-webkit-scrollbar-thumb:window-inactive {
+  background: rgba(255, 255, 255, 0.6);
+}
+
+/* line 1, /home/leetsworker/Документи/My_RP/syntez WhitePark with Inspinia/app/assets/stylesheets/index.min.scss */
+.arena {
+  position: relative;
+  width: 100vw;
+  max-width: 100%;
+  height: 100vh;
+  max-height: 100%;
+  overflow: hidden;
+}
+
+/* line 1, /home/leetsworker/Документи/My_RP/syntez WhitePark with Inspinia/app/assets/stylesheets/index.min.scss */
+.next-arena {
+  border-radius: 50%;
+  -webkit-box-shadow: 0 0 40px 0 rgba(255, 255, 255, 0.5);
+  -moz-box-shadow: 0 0 40px 0 rgba(255, 255, 255, 0.5);
+  box-shadow: 0 0 40px 0 rgba(255, 255, 255, 0.5);
+  position: absolute;
+  bottom: 5%;
+  left: 47.5%;
+  width: 5%;
+  font-size: 0;
+  padding: 0;
+  display: block;
+  z-index: 9999;
+}
+
+/* line 1, /home/leetsworker/Документи/My_RP/syntez WhitePark with Inspinia/app/assets/stylesheets/index.min.scss */
+.welcome {
+  display: flex;
+  justify-content: space-between;
+}
+
+/* line 1, /home/leetsworker/Документи/My_RP/syntez WhitePark with Inspinia/app/assets/stylesheets/index.min.scss */
+.welcome > div {
+  width: 50%;
+  color: #fff;
+  height: 100%;
+  position: relative;
+}
+
+/* line 1, /home/leetsworker/Документи/My_RP/syntez WhitePark with Inspinia/app/assets/stylesheets/index.min.scss */
+#center, .welcome h2, .work {
+  position: absolute;
+}
+
+/* line 1, /home/leetsworker/Документи/My_RP/syntez WhitePark with Inspinia/app/assets/stylesheets/index.min.scss */
+.welcome h2 {
+  font-weight: 300;
+  font-size: 40px;
+  width: 300px;
+  padding: 20px;
+  top: 50%;
+  left: 50%;
+  margin: -70px 0 0 -170px;
+}
+
+/* line 1, /home/leetsworker/Документи/My_RP/syntez WhitePark with Inspinia/app/assets/stylesheets/index.min.scss */
+.filter {
+  background: rgba(13, 37, 43, 0.55);
+  width: 100%;
+  height: 100%;
+}
+
+/* line 1, /home/leetsworker/Документи/My_RP/syntez WhitePark with Inspinia/app/assets/stylesheets/index.min.scss */
+#left, #right {
+  display: none;
+}
+
+/* line 1, /home/leetsworker/Документи/My_RP/syntez WhitePark with Inspinia/app/assets/stylesheets/index.min.scss */
+#center {
+  left: 33.3333333%;
+  height: 100vh;
+  background: #fff;
+  width: 33.3333333%;
+  -moz-transform: skew(-20deg, 0deg);
+  -webkit-transform: skew(-20deg, 0deg);
+  -o-transform: skew(-20deg, 0deg);
+  -ms-transform: skew(-20deg, 0deg);
+  transform: skew(-20deg, 0deg);
+  z-index: 1000;
+}
+
+/* line 1, /home/leetsworker/Документи/My_RP/syntez WhitePark with Inspinia/app/assets/stylesheets/index.min.scss */
+.work, .work h2 {
+  height: 250px;
+  width: 200px;
+}
+
+/* line 1, /home/leetsworker/Документи/My_RP/syntez WhitePark with Inspinia/app/assets/stylesheets/index.min.scss */
+#center h2 {
+  -moz-transform: skew(20deg, 0deg);
+  -webkit-transform: skew(20deg, 0deg);
+  -o-transform: skew(20deg, 0deg);
+  -ms-transform: skew(20deg, 0deg);
+  transform: skew(20deg, 0deg);
+  margin-top: -87.5px;
+  font-weight: 500;
+  font-size: 60px;
+  color: #0d262d;
+}
+
+/* line 1, /home/leetsworker/Документи/My_RP/syntez WhitePark with Inspinia/app/assets/stylesheets/index.min.scss */
+.works {
+  background: url(../img/website-redesign.jpg) no-repeat;
+  background-size: cover;
+}
+
+/* line 1, /home/leetsworker/Документи/My_RP/syntez WhitePark with Inspinia/app/assets/stylesheets/index.min.scss */
+.work {
+  border-radius: 2px;
+  z-index: 100;
+  right: 5%;
+  top: 35%;
+  background: #ededed;
+}
+
+/* line 1, /home/leetsworker/Документи/My_RP/syntez WhitePark with Inspinia/app/assets/stylesheets/index.min.scss */
+.work h2 {
+  vertical-align: middle;
+  font-family: Jura,sans-serif;
+  text-transform: uppercase;
+  font-weight: 500;
+}
+
+/* line 1, /home/leetsworker/Документи/My_RP/syntez WhitePark with Inspinia/app/assets/stylesheets/index.min.scss */
+.active {
+  z-index: 101;
+  -moz-transform: translate(-15px, 15px);
+  -webkit-transform: translate(-15px, 15px);
+  -o-transform: translate(-15px, 15px);
+  -ms-transform: translate(-15px, 15px);
+  transform: translate(-15px, 15px);
+  background: #fff;
+}
+
+/* line 1, /home/leetsworker/Документи/My_RP/syntez WhitePark with Inspinia/app/assets/stylesheets/index.min.scss */
+.active h2 {
+  display: table-cell;
+  font-size: 40px;
+}
+
+/* line 1, /home/leetsworker/Документи/My_RP/syntez WhitePark with Inspinia/app/assets/stylesheets/index.min.scss */
+.technologies {
+  background: #2e3f53;
+}
+
+/* line 1, /home/leetsworker/Документи/My_RP/syntez WhitePark with Inspinia/app/assets/stylesheets/index.min.scss */
+.technologies .filter {
+  padding: 4.5% 0 5%;
+  background: url(../img/filter.png);
+}
+
+/* line 1, /home/leetsworker/Документи/My_RP/syntez WhitePark with Inspinia/app/assets/stylesheets/index.min.scss */
+.technologies h2 {
+  font-size: 40px;
+  text-shadow: 0 0 60px #000;
+  text-transform: uppercase;
+  font-family: 'Titillium Web',sans-serif;
+  font-weight: 400;
+  color: #fff;
+}
+
+/* line 1, /home/leetsworker/Документи/My_RP/syntez WhitePark with Inspinia/app/assets/stylesheets/index.min.scss */
+.team > div h2, .technologies p {
+  font-family: 'Open Sans',sans-serif;
+}
+
+/* line 1, /home/leetsworker/Документи/My_RP/syntez WhitePark with Inspinia/app/assets/stylesheets/index.min.scss */
+.contacs .filter h2, .order h2, .team > div h2, .team > h2 {
+  text-transform: uppercase;
+  font-weight: 600;
+}
+
+/* line 1, /home/leetsworker/Документи/My_RP/syntez WhitePark with Inspinia/app/assets/stylesheets/index.min.scss */
+.technologies p {
+  color: #fff;
+  font-size: 18px;
+  margin: 12px;
+}
+
+/* line 1, /home/leetsworker/Документи/My_RP/syntez WhitePark with Inspinia/app/assets/stylesheets/index.min.scss */
+.technologies-stuck {
+  display: flex;
+  justify-content: space-around;
+}
+
+/* line 1, /home/leetsworker/Документи/My_RP/syntez WhitePark with Inspinia/app/assets/stylesheets/index.min.scss */
+.technologies-stuck div {
+  margin-top: 5vh;
+  min-width: 220px;
+  width: 18%;
+  max-width: 250px;
+  -webkit-box-shadow: 0 2px 20px 0 rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 0 2px 20px 0 rgba(0, 0, 0, 0.75);
+  box-shadow: 0 2px 20px 0 rgba(0, 0, 0, 0.5);
+  border: 1px solid #000;
+  height: 100%;
+  background: #024a2e;
+  border-radius: 3px;
+}
+
+/* line 1, /home/leetsworker/Документи/My_RP/syntez WhitePark with Inspinia/app/assets/stylesheets/index.min.scss */
+.technologies-stuck h2 {
+  background: url(../img/back_light.png) 50% 100% no-repeat;
+  background-size: cover;
+  text-shadow: 0 -2px 3px #000;
+  line-height: 50vh;
+}
+
+/* line 1, /home/leetsworker/Документи/My_RP/syntez WhitePark with Inspinia/app/assets/stylesheets/index.min.scss */
+#yii {
+  background: #f5a83d;
+}
+
+/* line 1, /home/leetsworker/Документи/My_RP/syntez WhitePark with Inspinia/app/assets/stylesheets/index.min.scss */
+#asp {
+  background: #2a86ce;
+}
+
+/* line 1, /home/leetsworker/Документи/My_RP/syntez WhitePark with Inspinia/app/assets/stylesheets/index.min.scss */
+#jQuery {
+  background: #131b28;
+}
+
+/* line 1, /home/leetsworker/Документи/My_RP/syntez WhitePark with Inspinia/app/assets/stylesheets/index.min.scss */
+#GSAP {
+  background: #91e700;
+}
+
+/* line 1, /home/leetsworker/Документи/My_RP/syntez WhitePark with Inspinia/app/assets/stylesheets/index.min.scss */
+#Bootstrap {
+  background: #5b4282;
+}
+
+/* line 1, /home/leetsworker/Документи/My_RP/syntez WhitePark with Inspinia/app/assets/stylesheets/index.min.scss */
+.team {
+  display: flex;
+  flex-wrap: wrap;
+  background: #000;
+}
+
+/* line 1, /home/leetsworker/Документи/My_RP/syntez WhitePark with Inspinia/app/assets/stylesheets/index.min.scss */
+.team > div {
+  width: 50%;
+  height: 50%;
+  border: 6px solid #080f11;
+}
+
+/* line 1, /home/leetsworker/Документи/My_RP/syntez WhitePark with Inspinia/app/assets/stylesheets/index.min.scss */
+#andry, #yana {
+  border-top: none;
+}
+
+/* line 1, /home/leetsworker/Документи/My_RP/syntez WhitePark with Inspinia/app/assets/stylesheets/index.min.scss */
+#andry, #gleb {
+  border-left: none;
+}
+
+/* line 1, /home/leetsworker/Документи/My_RP/syntez WhitePark with Inspinia/app/assets/stylesheets/index.min.scss */
+#vitaly, #yana {
+  border-right: none;
+}
+
+/* line 1, /home/leetsworker/Документи/My_RP/syntez WhitePark with Inspinia/app/assets/stylesheets/index.min.scss */
+#gleb, #vitaly {
+  border-bottom: none;
+  background: url(../img/team-1.jpg) 0 37.5% no-repeat;
+}
+
+/* line 1, /home/leetsworker/Документи/My_RP/syntez WhitePark with Inspinia/app/assets/stylesheets/index.min.scss */
+.team > div h2 {
+  padding-top: 5vh;
+  color: #fff;
+  font-size: 5vh;
+  text-align: center;
+}
+
+/* line 1, /home/leetsworker/Документи/My_RP/syntez WhitePark with Inspinia/app/assets/stylesheets/index.min.scss */
+.order h2, .team > div p, .team > h2 {
+  text-align: center;
+  font-family: 'Titillium Web',sans-serif;
+  color: #fff;
+}
+
+/* line 1, /home/leetsworker/Документи/My_RP/syntez WhitePark with Inspinia/app/assets/stylesheets/index.min.scss */
+.team > div p {
+  padding-top: 10px;
+  font-size: 3vh;
+}
+
+/* line 1, /home/leetsworker/Документи/My_RP/syntez WhitePark with Inspinia/app/assets/stylesheets/index.min.scss */
+.team .filter {
+  padding-top: 10%;
+}
+
+/* line 1, /home/leetsworker/Документи/My_RP/syntez WhitePark with Inspinia/app/assets/stylesheets/index.min.scss */
+#andry, #yana {
+  background: url(../img/team-1.jpg) 0 37.5% no-repeat;
+  background-size: cover;
+}
+
+/* line 1, /home/leetsworker/Документи/My_RP/syntez WhitePark with Inspinia/app/assets/stylesheets/index.min.scss */
+#gleb, #vitaly {
+  background-size: cover;
+}
+
+/* line 1, /home/leetsworker/Документи/My_RP/syntez WhitePark with Inspinia/app/assets/stylesheets/index.min.scss */
+#diamond {
+  -moz-transform: translate(-50%, -50%);
+  -webkit-transform: translate(-50%, -50%);
+  -o-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  width: 0;
+  height: 0;
+  border: 17.5vh solid transparent;
+  border-bottom-color: #080f11;
+  position: relative;
+  top: calc(-50% - 17.5vh);
+  left: 50%;
+}
+
+/* line 1, /home/leetsworker/Документи/My_RP/syntez WhitePark with Inspinia/app/assets/stylesheets/index.min.scss */
+#diamond:after {
+  content: '';
+  position: absolute;
+  left: -17.5vh;
+  top: 17.5vh;
+  width: 0;
+  height: 0;
+  border: 17.5vh solid transparent;
+  border-top-color: #080f11;
+}
+
+/* line 1, /home/leetsworker/Документи/My_RP/syntez WhitePark with Inspinia/app/assets/stylesheets/index.min.scss */
+.team > h2 {
+  transform: translate(-50%, -50%);
+  font-size: 10vh;
+  width: 300px;
+  padding: 20px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+}
+
+/* line 1, /home/leetsworker/Документи/My_RP/syntez WhitePark with Inspinia/app/assets/stylesheets/index.min.scss */
+.team .next-arena {
+  background: #fff;
+  border: 6px solid #080f11;
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow: none;
+}
+
+/* line 1, /home/leetsworker/Документи/My_RP/syntez WhitePark with Inspinia/app/assets/stylesheets/index.min.scss */
+.order {
+  background: url(../img/island.jpg) 50% 0;
+  background-size: cover;
+  text-align: center;
+  height: inherit;
+}
+
+/* line 1, /home/leetsworker/Документи/My_RP/syntez WhitePark with Inspinia/app/assets/stylesheets/index.min.scss */
+.order .filter {
+  text-align: center;
+  min-height: 100vh;
+}
+
+/* line 1, /home/leetsworker/Документи/My_RP/syntez WhitePark with Inspinia/app/assets/stylesheets/index.min.scss */
+.order h2 {
+  padding: 15px;
+  font-size: 60px;
+}
+
+/* line 1, /home/leetsworker/Документи/My_RP/syntez WhitePark with Inspinia/app/assets/stylesheets/index.min.scss */
+.order form {
+  margin: auto;
+  width: 95%;
+  max-width: 800px;
+}
+
+/* line 1, /home/leetsworker/Документи/My_RP/syntez WhitePark with Inspinia/app/assets/stylesheets/index.min.scss */
+.order form div {
+  margin: 5vh 0;
+  display: flex;
+  justify-content: space-between;
+}
+
+/* line 1, /home/leetsworker/Документи/My_RP/syntez WhitePark with Inspinia/app/assets/stylesheets/index.min.scss */
+.order form input, textarea {
+  border: none;
+  color: #fff;
+  border-radius: 3px;
+  font-size: 16px;
+  font-family: 'Open Sans',sans-serif;
+  background: rgba(0, 0, 0, 0.55);
+}
+
+/* line 1, /home/leetsworker/Документи/My_RP/syntez WhitePark with Inspinia/app/assets/stylesheets/index.min.scss */
+.order form textarea {
+  width: 100%;
+  max-width: 800px;
+  max-height: 800px;
+  padding: 20px;
+  height: 60vh;
+  margin-bottom: 30px;
+}
+
+/* line 1, /home/leetsworker/Документи/My_RP/syntez WhitePark with Inspinia/app/assets/stylesheets/index.min.scss */
+.order form input {
+  width: 45%;
+  padding: 10px;
+}
+
+/* line 1, /home/leetsworker/Документи/My_RP/syntez WhitePark with Inspinia/app/assets/stylesheets/index.min.scss */
+.contacs {
+  background: url(../img/bitch.jpg) no-repeat;
+  background-size: cover;
+  height: calc(100% - 120px);
+  background-position-y: 100%;
+}
+
+/* line 1, /home/leetsworker/Документи/My_RP/syntez WhitePark with Inspinia/app/assets/stylesheets/index.min.scss */
+.contacs .filter {
+  display: flex;
+  justify-content: space-around;
+}
+
+/* line 1, /home/leetsworker/Документи/My_RP/syntez WhitePark with Inspinia/app/assets/stylesheets/index.min.scss */
+.contacs .filter > div {
+  position: relative;
+  max-width: 250px;
+  top: 50%;
+  transform: translateY(-50%);
+  height: 210px;
+  margin: 1ex;
+}
+
+/* line 1, /home/leetsworker/Документи/My_RP/syntez WhitePark with Inspinia/app/assets/stylesheets/index.min.scss */
+.contacs .filter h2 {
+  color: #fff;
+  font-size: 50px;
+  font-family: 'Titillium Web',sans-serif;
+}
+
+/* line 1, /home/leetsworker/Документи/My_RP/syntez WhitePark with Inspinia/app/assets/stylesheets/index.min.scss */
+.contacs .filter a, .contacs .filter p {
+  color: #fff;
+  font-family: 'Open Sans',sans-serif;
+  text-transform: uppercase;
+  font-size: 16px;
+}
+
+/* line 1, /home/leetsworker/Документи/My_RP/syntez WhitePark with Inspinia/app/assets/stylesheets/index.min.scss */
+.contacs .filter a {
+  display: block;
+}
+
+/* line 1, /home/leetsworker/Документи/My_RP/syntez WhitePark with Inspinia/app/assets/stylesheets/index.min.scss */
+.contacs .filter a:hover {
+  color: #00edff;
+  font-weight: 700;
+}
+
+/* line 1, /home/leetsworker/Документи/My_RP/syntez WhitePark with Inspinia/app/assets/stylesheets/index.min.scss */
+.copyright {
+  height: 120px;
+  background: #0f2329;
+}
+
+/* line 1, /home/leetsworker/Документи/My_RP/syntez WhitePark with Inspinia/app/assets/stylesheets/index.min.scss */
+.copyright p {
+  text-transform: uppercase;
+  color: #fff;
+  font-size: 16px;
+  font-family: Jura,sans-serif;
+  padding: 52px 10%;
+}
+
+@media only screen and (min-width: 1024px) {
+  /* line 1, /home/leetsworker/Документи/My_RP/syntez WhitePark with Inspinia/app/assets/stylesheets/index.min.scss */
+  #left, #right {
+    display: block;
+  }
+
+  /* line 1, /home/leetsworker/Документи/My_RP/syntez WhitePark with Inspinia/app/assets/stylesheets/index.min.scss */
+  #left {
+    background: url(../img/welcome-left.png) 100% 25% no-repeat;
+    background-size: cover;
+  }
+
+  /* line 1, /home/leetsworker/Документи/My_RP/syntez WhitePark with Inspinia/app/assets/stylesheets/index.min.scss */
+  #right {
+    background: url(../img/welcome-right.jpg) 50% 50% no-repeat;
+    background-size: cover;
+  }
+}
+@media only screen and (max-width: 1024px) {
+  /* line 1, /home/leetsworker/Документи/My_RP/syntez WhitePark with Inspinia/app/assets/stylesheets/index.min.scss */
+  .technologies-stuck {
+    -webkit-flex-wrap: wrap;
+    -moz-flex-wrap: wrap;
+    -ms-flex-wrap: wrap;
+    -o-flex-wrap: wrap;
+    flex-wrap: wrap;
+  }
+
+  /* line 1, /home/leetsworker/Документи/My_RP/syntez WhitePark with Inspinia/app/assets/stylesheets/index.min.scss */
+  .technologies-stuck > div {
+    width: 50vh;
+    max-width: inherit;
+  }
+
+  /* line 1, /home/leetsworker/Документи/My_RP/syntez WhitePark with Inspinia/app/assets/stylesheets/index.min.scss */
+  .next-arena {
+    display: none;
+  }
+
+  /* line 1, /home/leetsworker/Документи/My_RP/syntez WhitePark with Inspinia/app/assets/stylesheets/index.min.scss */
+  .welcome .next-arena {
+    display: block;
+    width: 20%;
+    left: 40%;
+  }
+
+  /* line 1, /home/leetsworker/Документи/My_RP/syntez WhitePark with Inspinia/app/assets/stylesheets/index.min.scss */
+  .technologies {
+    max-height: none;
+    height: inherit;
+  }
+
+  /* line 1, /home/leetsworker/Документи/My_RP/syntez WhitePark with Inspinia/app/assets/stylesheets/index.min.scss */
+  .contacs .filter h2 {
+    font-size: 25px;
+  }
+
+  /* line 1, /home/leetsworker/Документи/My_RP/syntez WhitePark with Inspinia/app/assets/stylesheets/index.min.scss */
+  .contacs .filter a, .contacs .filter p {
+    font-size: 13px;
+  }
+
+  /* line 1, /home/leetsworker/Документи/My_RP/syntez WhitePark with Inspinia/app/assets/stylesheets/index.min.scss */
+  .copyright p {
+    padding: 10%;
+  }
+}
+/* line 1, /home/leetsworker/Документи/My_RP/syntez WhitePark with Inspinia/app/assets/stylesheets/index.min.scss */
+.cbalink {
+  display: none;
+}

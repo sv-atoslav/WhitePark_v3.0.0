@@ -1,0 +1,2 @@
+class PhotoInSlayder < ApplicationRecord
+end

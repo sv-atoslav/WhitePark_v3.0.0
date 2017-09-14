@@ -1,0 +1,27 @@
+<p id="notice"><%= notice %></p>
+<h1>Photo In Articles</h1>
+<% if @photo_in_articles.first.nil? %><i>эта таблица пустая</i>
+<% else %><table>
+  <thead><tr>
+    <th>Photo</th>
+    <th>Article</th>
+    <th colspan="3"></th>
+  </tr></thead>
+  <tbody><% @photo_in_articles.each do | one_photo_in_article| %><tr>
+    <td>
+      <% photo = Photo.find_by(id: one_photo_in_article.photo) %>
+      <% if photo.nil? %><%= $INE.html_safe %>
+      <% else %><%= image_tag(photo.image.url, style: "width: 100px;", alt: photo.description)%>
+    </td>
+    <td>
+      <% article = Article.find_by(id: one_photo_in_article.article) %>
+      <% if article.nil? %><i>article not exist</i>
+      <% else %><% article.title %>
+      <% end %>
+    </td>
+    <td><%= link_to 'Show', admin_photo_in_article_path(one_photo_in_article) %></td>
+    <td><%= link_to 'Edit', edit_admin_photo_in_article_path(one_photo_in_article) %></td>
+    <td><%= link_to 'Destroy', admin_photo_in_article_path(one_photo_in_article), method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr><% end %></tbody>
+</table><% end %>
+<br><%= link_to 'New Photo In Article', action: "new" %>

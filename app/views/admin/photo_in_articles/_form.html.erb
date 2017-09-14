@@ -1,0 +1,16 @@
+<%= form_with(model: [:admin, photo_in_article], local: true) do |form| %>
+  <% if photo_in_article.errors.any? %><div id="error_explanation">
+      <h2><%= pluralize(photo_in_article.errors.count, "error") %> prohibited this photo_in_article from being saved:</h2>
+      <ul><% photo_in_article.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %></ul>
+  </div><% end %>
+  <p>Photo</p>
+  <div class="field"><% @photo_list.each do |one_photo| %>
+      <%= image_tag(one_photo.image.url, alt: one_photo.description , style: "width: 100px;") %>
+      <%= form.radio_button(:photo, one_photo.id) %>
+      <%= form.label(:photo, one_photo.image.url) %><br>
+  <% end %></div>
+  <div class="field"><%= form.label :article %><%= form.collection_select(:photo, Article.all, :id, :title)%></div>
+  <div class="actions"><%= form.submit %></div>
+<% end %>

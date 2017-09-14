@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <!-- start load page -->
+        <meta charset = "utf-8">
+        <meta name = viewport content="width=device-width, initial-scale=1">
+        <title>кафе White Park</title>
+        <%= stylesheet_link_tag "reset.min",                           media: 'all' %>
+        <%= stylesheet_link_tag "index",                               media: 'all' %>
+        <%= stylesheet_link_tag "font-awesome.min",                    media: 'all' %>
+        <%= stylesheet_link_tag "owlcarousel/owl.carousel.min",        media: 'all' %>
+        <%= stylesheet_link_tag "owlcarousel/owl.theme.default.min",   media: 'all' %>
+    </head>
+    <body>
+        <!--  start header -->
+        <%=  render 'layouts/header_guest' %>
+        <!--    end header -->
+        <%=   yield %>
+        <!--  start footer -->
+        <%=  render 'layouts/footer_guest' %>
+        <!--    end footer -->
+    </body>
+</html>

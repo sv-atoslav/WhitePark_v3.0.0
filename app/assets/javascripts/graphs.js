@@ -1,0 +1,15 @@
+//= require jquery/jquery.flot.js
+//= require jquery/jquery.flot.tooltip.min.js
+//= require jquery/jquery.flot.resize.js
+//= require jquery/jquery.flot.pie.js
+//= require jquery/jquery.flot.time.js
+//= require jquery/jquery.flot.spline.js
+//= require jquery/jquery.sparkline.min.js
+//= require Chart.min.js
+//= require raphael-2.1.0.min.js
+//= require morris.js
+//= require d3.v3.js
+//= require rickshaw.min.js
+//= require chartist/chartist.min.js
+//= require d3.min.js
+//= require c3.min.js

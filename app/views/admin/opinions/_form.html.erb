@@ -1,0 +1,14 @@
+<%= form_with(model: [:admin, opinion], local: true) do |form| %>
+  <% if opinion.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(opinion.errors.count, "error") %> prohibited this opinion from being saved:</h2>
+      <ul><% opinion.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %></ul>
+    </div>
+  <% end %>
+  <div class="field"><%= form.label :author %><%= form.text_field  :author, id: :opinion_author  %></div>
+  <div class="field"><%= form.label :words  %><%= form.text_area   :words,  id: :opinion_words  %></div>
+  <div class="field"><%= form.label :visit  %><%= form.date_select :visit,  id: :opinion_visit %></div>
+  <div class="actions"><%= form.submit %></div>
+<% end %>

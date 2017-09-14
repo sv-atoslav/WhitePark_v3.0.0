@@ -1,0 +1,23 @@
+<p id="notice"><%= notice %></p>
+<h1>Not Published Opinions</h1>
+<table>
+  <thead><tr>
+    <th>Author</th>
+    <th>Words</th>
+    <th>Visit</th>
+    <th>Email</th>
+    <th>Phone</th>
+    <th colspan="3"></th>
+  </tr></thead>
+  <tbody><% @not_published_opinions.each do |one_not_published_opinion| %><tr>
+    <td><%= one_not_published_opinion.author    %></td>
+    <td><%= one_not_published_opinion.words    %></td>
+    <td><%= one_not_published_opinion.visit   %></td>
+    <td><%= one_not_published_opinion.email  %></td>
+    <td><%= one_not_published_opinion.phone %></td>
+    <td><%= link_to 'Show', admin_not_published_opinion_path(one_not_published_opinion) %></td>
+    <td><%= link_to 'Edit', edit_admin_not_published_opinion_path(one_not_published_opinion) %></td>
+    <td><%= link_to 'Destroy', admin_not_published_opinion_path(one_not_published_opinion), method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr><% end %></tbody>
+</table>
+<br><%= link_to 'New Not Published Opinion', action: "new" %>

@@ -1,0 +1,2 @@
+module PhotoInArticlesHelper
+end

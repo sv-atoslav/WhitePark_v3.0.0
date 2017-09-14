@@ -1,0 +1,2 @@
+class PhotoInEvent < ApplicationRecord
+end

@@ -1,0 +1,12 @@
+//= require bootstrap/b-sprockets/transition
+//= require bootstrap/b-sprockets/alert
+//= require bootstrap/b-sprockets/button
+//= require bootstrap/b-sprockets/carousel
+//= require bootstrap/b-sprockets/collapse
+//= require bootstrap/b-sprockets/dropdown
+//= require bootstrap/b-sprockets/modal
+//= require bootstrap/b-sprockets/tab
+//= require bootstrap/b-sprockets/affix
+//= require bootstrap/b-sprockets/scrollspy
+//= require bootstrap/b-sprockets/tooltip
+//= require bootstrap/b-sprockets/popover

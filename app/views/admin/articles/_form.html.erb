@@ -1,0 +1,48 @@
+<%= form_with(model: [:admin, @article], local: true) do |form| %>
+  <% if article.errors.any? %><div id="error_explanation">
+    <h2><%=pluralize(article.errors.count, "error")%> prohibited this article from being saved:</h2>
+    <ul><% article.errors.full_messages.each do |message| %>
+      <li><%= message %></li>
+    <% end %></ul>
+  </div><% end %>
+  <div class="actions"><%= form.submit %></div>
+  <table width="100%">
+    <tr>
+      <td><div class="field"><%= form.label :published %>
+      <br><%= form.date_select :published, id: :article_published %></div></td>
+      <td><div class="field"><%= form.label :title %><%= form.text_field :title, id: :article_title, style: "width: 100%;" %></div></td>
+    </tr>
+    <tr>
+      <td width="222px"><table>
+        <thead><tr>
+          <td>Previev</td>
+          <td>Icon</td>
+          <td>Many photos</td>
+        </tr></thead>
+        <% have_some_photo = @old_list.to_a.any? %>
+        <tbody><% @photo_list.each do |one_photo| %><tr>
+          <td><%= image_tag(one_photo.image.url, style: "width: 100px;") %></td>
+          <td><%= form.radio_button(:icon, one_photo.id) %></td>
+          <!-- checkbox I parametr without [] need be == in controller params["word"] -->
+          <td><% if have_some_photo %><%= check_box_tag("many_photo_ids[]", one_photo.id, @old_list.include?(one_photo.id) )%>
+          <% else %><%= check_box_tag("many_photo_ids[]", one_photo.id) %>
+          <% end  %></td>
+        </tr><% end %></tbody>
+      </table></td>
+      <td><div class="field"><%= form.label :description %><%= form.text_area :description, id: :article_description, class: "summernote" %></div></td>
+    </tr>
+  </table>
+<% end %>
+
+<link rel="stylesheet" media="screen" href="/assets/summernote/summernote.css">
+
+<script src="/assets/summernote.min.js"></script>
+
+<script type="text/javascript">
+$(function() {
+  $('.summernote').summernote();
+  var edit = function () {
+    $('.click2edit').summernote({ focus: true });
+  };
+});
+</script>

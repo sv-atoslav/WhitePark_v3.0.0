@@ -1,0 +1,27 @@
+<br><h3>Посторонним вход воспрещен!</h3>
+<p>Убедительная просьба, покиньте эту страницу, если вы не сотрудник White Park</p>
+<% if $nwtgis > 0 %>
+	<% raz ="раз" %>
+	<% raza=(2..4) %>
+	<% if (raza.member?($nwtgis%10) && ($nwtgis/10)%10 !=1) %>
+		<% raz+="а" %>
+	<% end %>
+	вы пытались зайти <%= $nwtgis %> <%= raz %>
+	<br>неправильный логин и/или пароль!
+<% end %>
+<div align="center">
+	<br>
+	<%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+	  <%= devise_error_messages! %>
+	  <%= f.email_field :email, autofocus: true, value: "email", class: "form-control", style: 'width: 274px;' %>
+	  <%= f.password_field :password, value:"password", class: "form-control",style:'width: 274px;'%>
+	  <!-- <% if devise_mapping.rememberable? -%>
+	  	<div class="field"><%= f.check_box :remember_me %><%= f.label :remember_me, "Запомнить меня" %></div>
+	  	<div class="form-group"><%= text_field_tag :try, "1", hidden: true %></div>
+	  <% end -%> --> 
+	  <br>
+	  <div class="actions"><%= f.submit "Войти" %></div>
+	<% end %>
+	<%= render "moderators/shared/links" %>
+	<p class="m-t"><!-- <small>Административная панель для... кому надо тот знает &copy; 2017</small> --></p>
+</div>

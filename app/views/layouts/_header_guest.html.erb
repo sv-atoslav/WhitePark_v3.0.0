@@ -1,0 +1,304 @@
+<!-- START SCRIPT -->	
+	<%= javascript_include_tag "jquery/jquery-2.2.3.min", "jquery/jquery-ui.min", "jquery/jquery-ui.multidatespicker", "jquery/jquery.maskedinput.min", "owl.carousel.min" %>
+	<script>
+		$(document).ready(function() {
+			var date=$(".spec-calendar").multiDatesPicker({
+				monthNames: ['Январь', 'Февраль', 'Март', 'Апрель',
+				'Май', 'Июнь', 'Июль', 'Август', 'Сентябрь',
+				'Октябрь', 'Ноябрь', 'Декабрь'],
+				dayNamesMin: ['Вс','Пн','Вт','Ср','Чт','Пт','Сб'],
+				firstDay: 1,
+				nextText: '<%= image_tag "arrow-black.png", alt:"left"  %>',
+				prevText: '<%= image_tag "arrow-black.png", alt:"right" %>'
+			});
+		});
+	</script>
+	<script>
+		$(document).ready(function(){
+			var owl = $('.calendar-block .background, .owl-kit').owlCarousel({
+				loop: 	false,
+				margin: 0,
+				nav: 	false,
+				items:  1,
+				dots: 	false
+			})
+			$('.arrow-left').click(function() {
+				owl.trigger('prev.owl.carousel');
+			})
+			$('.arrow-right').click(function() {
+				owl.trigger('next.owl.carousel');
+			})
+		});
+	</script>
+	<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCjlH02MSgohjleO76RRhKYE0fr7SwtlRk&callback=initMap"></script>
+	<script>
+		var map;
+		function initMap() {
+			var styles =[
+				{"featureType":"administrative","elementType":"labels.text.fill","stylers":[{"color":"#444444"}]},
+				{"featureType":"landscape","elementType":"all","stylers":[{"color":"#f2f2f2"}]},
+				{"featureType":"poi","elementType":"all","stylers":[{"visibility":"off"}]},
+				{"featureType":"road","elementType":"all","stylers":[{"saturation":-100},{"lightness":45}]},
+				{"featureType":"road.highway","elementType":"all","stylers":[{"visibility":"simplified"}]},
+				{"featureType":"road.arterial","elementType":"labels.icon","stylers":[{"visibility":"off"}]},
+				{"featureType":"transit","elementType":"all","stylers":[{"visibility":"off"}]},
+				{"featureType":"water","elementType":"all","stylers":[{"color":"#46bcec"},{"visibility":"on"}]}
+			]
+			var styledMap = new google.maps.StyledMapType(styles,{name: "Styled Map"});
+			var myLatLng = {lat: 55.797360, lng: 37.367081};
+			if($(window).width()<600){
+				var centerMap=myLatLng;
+				var zoomMap=14;
+			}else{
+				var centerMap={lat: 55.7973419,lng: 37.372381};
+				var zoomMap=16;
+			}
+			map = new google.maps.Map(document.getElementById('map'), {
+				center: centerMap,
+				zoom: zoomMap,
+				mapTypeControl: false,
+				streetViewControl: false,
+				zoomControlOptions: {
+					position: google.maps.ControlPosition.LEFT_BOTTOM
+				},
+				scrollwheel:false,
+				mapTypeControlOptions: {
+					mapTypeIds: [google.maps.MapTypeId.ROADMAP, 'map_style']
+				}
+			});
+			var image = {
+				url: '//localhost:3000/assets/wpimg/marker.png',
+				// This marker is 20 pixels wide by 32 pixels high.
+				size: new google.maps.Size(40, 56),
+				// The origin for this image is (0, 0).
+				origin: new google.maps.Point(0, 0),
+				// The anchor for this image is the base of the flagpole at (0, 32).
+				anchor: new google.maps.Point(0, 56),
+				scaledSize: new google.maps.Size(40, 56)
+			};
+			var marker = new google.maps.Marker({
+				position: myLatLng,
+				map: map,
+				icon: image,
+				title: 'ул.Волхонка, 23'
+			});
+			map.mapTypes.set('map_style', styledMap);
+			map.setMapTypeId('map_style');
+		}
+	</script>
+	<script type="text/javascript">
+		$("body").on("click",".main-switch",function(){
+			if($(".main-block").hasClass("active")){
+				$(".main-block").removeClass("active");
+				$(".main").find(".active").removeClass("active")
+				$(this).removeClass("active");
+			}
+			else{
+				$(".main-block").addClass("active");
+				$(this).addClass("active");
+
+				$(".address-block").removeClass("active");
+				$(".address-switch").removeClass("active");
+			}
+		})
+		$("body").on("click",".address-switch",function(){
+			if($(".address-block").hasClass("active")){
+				$(".address-block").removeClass("active");
+				$(this).removeClass("active");
+			}
+			else{
+				$(".address-block").addClass("active");
+				$(this).addClass("active");
+
+				$(".main-block").removeClass("active");
+				$(".main").find(".active").removeClass("active")
+				$(".main-switch").removeClass("active");
+			}
+		})
+		$(".main-block a").each(function(){
+			if(window.location.href.indexOf($(this).attr("href")) > -1 && $(this).attr("href")!="") {
+				$(this).addClass("current");
+				if ($(this).parent().hasClass("sub-main-main")) {
+					$(this).parent().addClass("current")
+				}
+			}
+		})
+
+		$("body").on("mouseenter" , ".sub-main-block" , function(){
+			if ($(window).width()>900) {
+				$(this).children(".sub-main").addClass("active");
+				$(this).addClass("active");
+			}
+		})
+		$("body").on("mouseleave" , ".sub-main-block" , function(){
+			if ($(window).width()>900) {
+				$(this).children(".sub-main").removeClass("active");
+				$(this).removeClass("active");
+			}
+		})
+		$("body").on("click" , ".sub-main-switch" , function(){
+			var who =$(this).parent().parent()
+			if(who.hasClass( "active" )){
+				who.children(".sub-main").removeClass("active");
+				who.removeClass("active");
+				who.find(".active").removeClass("active");
+			}else{
+				who.children(".sub-main").addClass("active");
+				who.addClass("active");
+			}
+		})
+	</script>
+	<script>$('input[type="tel"]').mask("+7 (999) 999-9999");</script>
+	<script>
+		$(".call-pop").click(function(){
+			$('html, body').css('overflowY', 'hidden');
+			$(".pop").addClass("active");
+			var dateValue="";
+			$(".spec-calendar").each(function(){
+				if($(this).multiDatesPicker('value')>dateValue){
+					dateValue=$(this).multiDatesPicker('value');
+				}
+			})
+			$(".pop .spec-calendar").multiDatesPicker('value', dateValue);
+			$(".pop .spec-calendar").val(dateValue)
+
+		})
+		$(".close-pop").click(function(){
+			$('html, body').css('overflowY', 'auto');
+			$(".pop").removeClass("active");
+			$(".pop .spec-calendar").multiDatesPicker('value', '');
+			$(".pop .spec-calendar").val("")
+		})
+	</script>
+	<% if action_name=="kitchen" %><script>
+		$(document).ready(function(){
+			var owl = $('.dishes-block .owl-carousel').owlCarousel({
+			    loop:false,
+			    margin:0,
+			    nav:false,
+			    items:1,
+			    dots:false
+			})
+			$('.arrow-left').click(function() {
+			    owl.trigger('prev.owl.carousel');
+			    SetActive();
+			})
+			$('.arrow-right').click(function() {
+			    owl.trigger('next.owl.carousel');
+			    SetActive();
+			})
+			$(".dishes-block h2").each(function(index) {
+				var point="point";
+				if(index==0){
+					point=point+" active";
+				}
+				$( ".dishes-block-points " ).append( '<div class="'+point+'" id="'+index +'">'+$(this).text()+"</div>" );
+				});
+			$("body").on("click",".point",function(){
+				owl.trigger('to.owl.carousel', $(this).attr("id"));
+				$(".point").removeClass("active");
+				$(this).addClass("active") ;
+			})
+			owl.on('changed.owl.carousel', function() {
+				SetActive();
+			});
+		});
+		function SetActive(){
+			var currentIndex = $('div.owl-carousel .active').index() ;
+			$(".point").removeClass("active");
+			$("#"+currentIndex+'.point').addClass("active") ;
+			var currentIndex = $('div.owl-carousel .active').index() ;
+			$(".point").removeClass("active");
+			$("#"+currentIndex+'.point').addClass("active") ;
+		}
+	</script><% end %>
+<!--  END  SCRIPT -->
+<div class="pop">
+	<div class="background close-pop"></div>
+	<div class="absolute_close close-pop"></div>
+	<div class="spec-block">
+		<h2>Проверьте<br />свободна ли<br />ваша дата</h2>
+		<hr class = "spec-hr"/>
+		<form action="">
+			<input type="text" placeholder="Имя">
+			<input type="tel" placeholder="Телефон">
+			<input type="text" placeholder="Дата посещения WhitePark" class="spec-calendar">
+			<input class="nice-button" type="submit" value="отправить">
+		</form>
+	</div>
+</div>
+<div class="main-block">
+	<div class="main">
+		<a href="/WhitePark">Главная</a>
+		<%# link_to "Главная", path: WhitePark_path %>
+		<a href="/statii">Статьи</a>
+		<%# link_to "Статьи",  action: "list_of_articles" %>
+		<div class="sub-main-block">
+			<div class="sub-main-main">
+			<%# link_to "События", action: "eventlist" %>
+			<a href="/sobitia">События</a>
+			<p class="sub-main-switch"><i class="fa fa-chevron-down" aria-hidden="true"></i></p></div>
+			<div class="sub-main"><% CategoryEvent.all.each do |one_category| %>
+				<a href="//localhost:3000/category_events/<%= one_category.id.to_s %><%= $WORD_TO_SEE %>"><%= one_category.title %></a>
+			<% end %></div>
+		</div>
+		<!-- <div class="sub-main-block">
+			<div class="sub-main-main">
+				<a href="service_page.html">Сервис</a>
+				<p class="sub-main-switch"><i class="fa fa-chevron-down" aria-hidden="true"></i></p>
+			</div>
+			<div class="sub-main">
+				<a href="">Сервис 1</a>
+				<a href="">Сервис 2</a>
+				<a href="">Сервис 3</a>
+				<div class="sub-main-block">
+					<div class="sub-main-main">
+						<a>Сервис 4</a>
+						<p class="sub-main-switch"><i class="fa fa-chevron-down" aria-hidden="true"></i></p>
+					</div>
+					<div class="sub-main">
+						<a href="">Под Сервис 1</a>
+						<a href="">Под Сервис 2</a>
+						<a href="">Под Сервис 3</a>
+					</div>
+				</div>
+				<a href="">Сервис 5</a>
+			</div>
+		</div> -->
+		<a href="/map">Карта площадки</a>
+		<%# link_to "Карта площадки", action: "map_park" %>
+		<a href="/kuhnya">Кухня</a>
+		<%# link_to "Кухня",	action: "kitchen"	%>
+		<a href="/o_nas">О нас</a>
+		<%# link_to "О нас",	action: "about_us"	%>
+		<a href="/otzivi">Отзывы</a>
+		<%# link_to "Отзывы",	action: "review"	%>
+		<a href="/kontakti">Контакты</a>
+		<%# link_to "Контакты", action: "contacts"	%>
+	</div>
+	<div class="main-switch"><span></span></div>
+</div>
+<div class="mobile-header big-block">
+	<div class="block">
+		<div class="main-switch"><span></span></div>
+		<a href="/WhitePark">White Park</a>
+		<div class="address-switch"><span></span></div>
+	</div>
+	<div class="address-block">
+		<p class="address">г. Москва, Мякининское ш., д.3<br>(Рублевский пляж)</p>
+		<a href="" class="tel">+ 7 (985) 777-4-555</a>
+	</div>
+</div>
+<div class="header big-block"><div class="block">
+	<div class="social">
+		<a href=""><%= image_tag "facebook.png",   alt:"facebook"  %></a>
+		<a href=""><%= image_tag "twitter.png",   alt:"twitter"   %></a>
+		<a href=""><%= image_tag "insta.png",   alt:"instagram"  %></a>
+		<a href=""><%= image_tag "vk.png",      alt:"vk.com"    %></a>
+	</div>
+	<a class="logo" href="/WhitePark"><%= image_tag "wpimg/logo.png" , alt:"WhitePark" %>
+	<div class="contacts-header">
+		<p class="address">г. Москва, Мякининское ш., д.3<br>(Рублевский пляж)</p>
+		<a href="" class="tel">+ 7 (985) 777-4-555</a>
+	</div>
+</div></div>

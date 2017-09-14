@@ -1,0 +1,11 @@
+<%= form_with(model: [:admin, photo_in_slayder], local: true) do |form| %>
+  <% if photo_in_slayder.errors.any? %><div id="error_explanation">
+      <h2><%= pluralize(photo_in_slayder.errors.count, "error") %> prohibited this photo_in_slayder from being saved:</h2>
+      <ul><% photo_in_slayder.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %></ul>
+  </div><% end %>
+  <%= image_tag( Photo.find_by(id: photo_in_slayder.photo).image.name ) %>
+  <div class="field"><%=form.label :description%><%=form.text_area :description%></div>
+  <div class="actions"><%= form.submit %></div>
+<% end %>

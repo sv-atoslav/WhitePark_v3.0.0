@@ -1,0 +1,21 @@
+<div align= "center">
+	<h2><%= @article.title %></h2>
+	<table  width="100%"><tbody><tr>
+		<td width="50%">
+			<% photo = Photo.find_by(id: @article.icon) %>
+			<% if photo.nil? %><%= $INE.html_safe %>
+			<% else %><%= image_tag(photo.image.url, width: "100%")%>
+			<% end  %>
+		</td>
+		<td width="50%">
+			<%= @article.description.html_safe %>
+			<p class="article-date" align="right" vertical-align="bottom"><%= @article.published %></p>
+		</td>
+	</tr></tbody></table>
+	<div align="left"><% @old_list.each do |one_photo_id| %>
+		<% photo = Photo.find_by(id: one_photo_id) %>
+		<% if photo.nil? %><%= $INE.html_safe %>
+		<% else %><%= image_tag(photo.image.url, height: "100px")%>
+		<% end  %>
+	<% end %></div>
+</div>

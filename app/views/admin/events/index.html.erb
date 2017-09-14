@@ -1,0 +1,34 @@
+<p id="notice"><%= notice %></p>
+<h1>Events</h1>
+<% if @events.first.nil? %>
+  <i>эта таблица пустая</i>
+<% else %><table class="sv_table">
+  <thead><tr>
+    <th>Icon</th>
+    <th>Category</th>
+    <th>Title</th>
+    <th>Description</th>
+    <th colspan="4"></th>
+  </tr></thead>
+  <tbody><% @events.each do |one_event| %><tr>
+      <td>
+        <% temp_icon = Photo.find_by(id: one_event.icon) %>
+        <% if temp_icon.nil? %><%= $INE.html_safe %>
+        <% else %><%= image_tag( temp_icon.image.url, style: "width: 100px;", alt: temp_icon.description )%>
+        <% end %>
+      </td>
+      <td>
+        <% category = CategoryEvent.find_by(id: one_event.category) %>
+        <% if category.nil? %><i>category not exist</i>
+        <% else %><%= category.title %>
+        <% end  %>
+      </td>
+      <td><%= one_event.title %></td>
+      <td><%= one_event.description.html_safe %></td>
+      <td><%= link_to 'Show', admin_event_path(one_event) %></td>
+      <td><%= link_to 'Edit', edit_admin_event_path(one_event) %></td>
+      <td><%= link_to 'Destroy', admin_event_path(one_event), method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      <td><a href= "//localhost:3000/events/<%= one_event.id.to_s %><%= $WORD_TO_SEE %>" >Beauty</a></td>
+  </tr><% end %></tbody>
+</table><% end %>
+<br><%= link_to 'New Event', action: "new" %>

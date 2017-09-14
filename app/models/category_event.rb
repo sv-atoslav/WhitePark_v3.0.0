@@ -1,0 +1,2 @@
+class CategoryEvent < ApplicationRecord
+end
