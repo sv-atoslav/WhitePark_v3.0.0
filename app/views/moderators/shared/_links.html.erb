@@ -19,3 +19,4 @@
     <%= link_to "Войти, используя #{OmniAuth::Utils.camelize(provider)}", omniauth_authorize_path(resource_name, provider) %><br>
   <% end %>
 <% end %>
+<%= link_to "Перейти на страницу для<br> неавторизированных пользователей", root_path %>
