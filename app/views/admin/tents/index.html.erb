@@ -16,7 +16,7 @@
     <td>
       <% photo = Photo.find_by(id: tent.icon) %>
       <% if photo.nil? %><%= $INE.html_safe %>
-      <% else %><%=image_tag(photo.image.url, style:"width: 100px;",alt: photo.description )%>
+      <% else %><%=image_tag(photo.avatar.url, style:"width: 100px;",alt: photo.description )%>
       <% end  %>
     </td>
     <td><%= tent.namesize   %></td>

@@ -1,7 +1,7 @@
 <p id="notice"><%= notice %></p>
 <p><strong>Title:</strong><%= @category_event.title %></p>
 <p><strong>Description:</strong><%= @category_event.description.html_safe %></p>
-<p><strong>Icon:</strong><%= @category_event.icon %></p>
+<p><strong>Icon:</strong><%= Photo.find_by(id: @category_event.icon).avatar_file_name %></p>
 <%= link_to 'Edit', action: "edit" %> |
 <%= link_to 'Back', action: "index" %> |
 <a href="//localhost:3000/category_events/<%= @category_event.id %><%= $WORD_TO_SEE %>">Beauty</a>

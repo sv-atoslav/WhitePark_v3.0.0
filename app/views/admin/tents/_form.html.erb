@@ -11,9 +11,9 @@
   <div class="field"><%= form.label :description %><%= form.text_field :description, id: :tent_description %></div>
   <p>Icon</p>
   <div class="field"><% @photo_list.each do |one_photo| %>
-    <%= image_tag(one_photo.image.url, alt: one_photo.description, style: "width: 100px;" ) %>
+    <%= image_tag(one_photo.avatar.url, alt: one_photo.description, style: "width: 100px;" ) %>
     <%= form.radio_button(:icon, one_photo.id) %>
-    <%= form.label(:icon, one_photo.image.url) %><br>
+    <%= form.label(:icon, one_photo.avatar.url) %><br>
   <% end %></div>
   <div class="field"><%= form.label :min_size %><%= form.number_field :min_size, id: :tent_min_size  %></div>
   <div class="field"><%= form.label :max_size %><%= form.number_field :max_size, id: :tent_max_size  %></div>

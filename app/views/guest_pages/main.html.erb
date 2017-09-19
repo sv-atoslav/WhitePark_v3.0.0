@@ -1,9 +1,9 @@
 <% if @visible_part %><div class="big-block calendar-block">
 	<div class="background owl-carousel">
 		<% @main_photo_list.to_a.each do |one_phot_in_sl| %>
-			<% photo = Photo.find_by(id: one_phot_in_sl)%>
-			<% if photo.nil? %><%= $INE.html_safe	%>
-			<% else %><%= image_tag(photo.image.url)%>
+			<% one_photo = Photo.find_by(id: one_phot_in_sl.photo) %>
+			<% if one_photo.nil? ||	one_photo.avatar.exists? %><%= $INE.html_safe %>
+			<% else %><%= image_tag( one_photo.avatar_file_name) %>
 			<% end  %>
 		<% end %>
 	</div>
@@ -22,8 +22,8 @@
 		<div class = "album-bg">
 			<% photo = Photo.find_by(id: one_category.icon) %>
 			<% if photo.nil? %>
-			<% else %><%= image_tag(photo.image.url) %>
-			<% end %>
+			<% else %><%= image_tag(photo.avatar.url) %>
+			<% end  %>
 		</div>
 		<div class="album-title"><p><%= one_category.title %></p><h4>подробнее</h4></div>
 	</a><% end %></div>

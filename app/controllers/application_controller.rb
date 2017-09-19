@@ -9,7 +9,7 @@ class ApplicationController < ActionController::Base
 	before_action :divider_access
 	
 	def set_photo_list
-		@photo_list = Photo.all.order(description: :asc)
+		@photo_list = Photo.all.order(avatar_file_name: :asc)
 	end
 
 	def legaly_actions

@@ -1,5 +1,5 @@
 <p id="notice"><%= notice %></p>
-<p><strong>Photo: </strong><%= image_tag(Photo.find_by(id: @photo_in_slayder.photo).image.name)%></p>
-<p><strong>Slyder: </strong><%= Slayder.find_by(id: @photo_in_slayder.slyder).title %></p>
+<p><strong>Photo: </strong><%= image_tag(Photo.find_by(id: @photo_in_slayder.photo).avatar.name)%></p>
+<p><strong>Slyder: </strong><%= Slayder.find_by(id: @photo_in_slayder.slyder).title%></p>
 <%= link_to 'Edit again',	action: "edit"  %> |
 <%= link_to  "Slayders",	action: "index" %>

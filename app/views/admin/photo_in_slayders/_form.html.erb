@@ -5,7 +5,7 @@
         <li><%= message %></li>
       <% end %></ul>
   </div><% end %>
-  <%= image_tag( Photo.find_by(id: photo_in_slayder.photo).image.name ) %>
+  <%= image_tag( Photo.find_by(id: photo_in_slayder.photo).avatar.name ) %>
   <div class="field"><%=form.label :description%><%=form.text_area :description%></div>
   <div class="actions"><%= form.submit %></div>
 <% end %>

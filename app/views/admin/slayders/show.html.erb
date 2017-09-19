@@ -4,7 +4,7 @@
 <% @old_list.each do |one_foto_id| %>
 	<% temp_icon = Photo.find_by(id: one_foto_id) %>
     <% if temp_icon.nil? %><%= $INE.html_safe %>
-    <% else %>,<%= image_tag( temp_icon.image.url , style: "width: 100px;", alt: temp_icon.description ) %>
+    <% else %>,<%= image_tag( temp_icon.avatar.url , style: "width: 100px;", alt: temp_icon.description ) %>
     <% end %>
 <% end %>.
 <br>

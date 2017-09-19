@@ -9,9 +9,9 @@
 		<% @kitchen_photo_list.each do |one_photo_in_sl| %><div class="big-block">
 			<div class="background">
 				<% photo = Photo.find_by(id: one_photo_in_sl.photo) %>
-				<% if photo.nil? %><%= $INE.html_safe %>
-				<% else %><%= image_tag(photo.image.url) %>
-				<% end  %>				
+				<% if photo.nil? || !photo.avatar.exists? %><%= $INE.html_safe %>
+				<% else %><%= image_tag(photo.avatar_file_name) %>
+				<% end  %>
 			</div>
 			<div class="block"><div class="spec-block spec-block-right">
 				<h2><%= one_photo_in_sl.description %></h2>

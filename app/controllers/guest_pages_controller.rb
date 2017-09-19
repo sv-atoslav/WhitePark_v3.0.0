@@ -22,9 +22,12 @@ class GuestPagesController < ApplicationController
 
 	def kitchen
 		@kitchen_slayder = Slayder.find_by(title: "кухня")
+		puts @kitchen_slayder
 		@visible_part = !(@kitchen_slayder.nil?)
+		puts @visible_part
 		if @visible_part
 			@kitchen_photo_list = PhotoInSlayder.where(slyder: @kitchen_slayder.id).to_a
+			puts @kitchen_photo_list
 			exist_list(@kitchen_photo_list)
 		end
 	end

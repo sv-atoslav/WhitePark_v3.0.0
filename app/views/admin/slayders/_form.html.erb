@@ -14,7 +14,7 @@
 	    </tr></thead>
         <% have_some_photo = @old_list.to_a.any? %>
         <tbody align="center"><% @photo_list.each do |one_photo| %><tr>
-			<td><%= image_tag(one_photo.image.url, style: "width: 100px;") %></td>
+			<td><%= image_tag(one_photo.avatar.url, style: "width: 100px;") %></td>
 	        <!-- checkbox I parametr without [] need be == in controller params["word"] -->
 	        <td><% unless have_some_photo %><%= check_box_tag("many_photo_ids[]", one_photo.id) %>
 	        <% else %><%= check_box_tag("many_photo_ids[]", one_photo.id, @old_list.include?(one_photo.id) )%>
