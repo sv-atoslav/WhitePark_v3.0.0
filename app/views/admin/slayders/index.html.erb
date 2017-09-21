@@ -41,7 +41,7 @@
       <tr>
         <% photo_list_of_this_slayder.each do |one_phis| %>
           <% if photo_list_of_this_slayder.index(one_phis) == 0 %>
-            <td><%=link_to 'Destroy', admin_slayder_path(one_phis), method: :delete, data: { confirm: 'Are you sure?' }%></td>
+            <td><%=link_to 'Destroy', admin_slayder_path(one_slayder), method: :delete, data: { confirm: 'Are you sure?' }%></td>
           <% end %>
           <td><%= link_to 'Destroy', admin_photo_in_slayder_path(one_phis), method: :delete, data: { confirm: 'Are you sure?' } %></td>
         <% end %>

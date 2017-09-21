@@ -56,6 +56,9 @@ class Admin::SlaydersController < ApplicationController
   # DELETE /slayders/1
   # DELETE /slayders/1.json
   def destroy
+    PhotoInSlayder.where(slyder: @slayder.id).to_a.each do |one_pair|
+      one_pair.destroy
+    end
     @slayder.destroy
     respond_to do |format|
       format.html { redirect_to action: "index", notice: 'Slayder was successfully destroyed.' }
