@@ -4,20 +4,20 @@
   <i>эта таблица пустая</i>
 <% else %><table class="sv_table">
   <thead><tr>
+    <th>Icon</th>
     <th>Title</th>
     <th>Description</th>
-    <th>Icon</th>
     <th colspan="4"></th>
   </tr></thead>
   <tbody><% @category_events.each do |category_event| %><tr>
-    <td><%= category_event.title %></td>
-    <td><%= category_event.description.html_safe %></td>
     <td>
       <% temp_icon = Photo.find_by(id: category_event.icon) %>
       <% if temp_icon.nil? %><%= $INE.html_safe %>
       <% else %><%= image_tag(temp_icon.avatar.url, style: "width: 100px;", alt: temp_icon.description)%>
       <% end %>
     </td>
+    <td><%= category_event.title %></td>
+    <td><%= category_event.description.html_safe %></td>
     <td><%= link_to 'Show', admin_category_event_path(category_event) %></td>
     <td><%= link_to 'Edit', edit_admin_category_event_path(category_event) %></td>
     <td><%= link_to 'Destroy', admin_category_event_path(category_event), method: :delete, data: { confirm: 'Are you sure?' } %></td>
