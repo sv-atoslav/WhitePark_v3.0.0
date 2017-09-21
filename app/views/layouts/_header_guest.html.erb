@@ -239,7 +239,7 @@
 			<a href="/sobitia">События</a>
 			<p class="sub-main-switch"><i class="fa fa-chevron-down" aria-hidden="true"></i></p></div>
 			<div class="sub-main"><% CategoryEvent.all.each do |one_category| %>
-				<a href="//localhost:3000/category_events/<%= one_category.id.to_s %><%= $WORD_TO_SEE %>"><%= one_category.title %></a>
+				<a href="/category_events/<%= one_category.id.to_s %><%= $WORD_TO_SEE %>"><%= one_category.title %></a>
 			<% end %></div>
 		</div>
 		<!-- <div class="sub-main-block">
@@ -296,7 +296,7 @@
 		<a href=""><%= image_tag "wpimg/insta.png",   alt:"instagram"  %></a>
 		<a href=""><%= image_tag "wpimg/vk.png",      alt:"vk.com"    %></a>
 	</div>
-	<a class="logo" href="/WhitePark"><%= image_tag "wpimg/logo.png" , alt:"WhitePark" %>
+	<a class="logo" href="/WhitePark"><%= image_tag "wpimg/logo.png", alt:"WhitePark" %>
 	<div class="contacts-header">
 		<p class="address">г. Москва, Мякининское ш., д.3<br>(Рублевский пляж)</p>
 		<a href="" class="tel">+ 7 (985) 777-4-555</a>

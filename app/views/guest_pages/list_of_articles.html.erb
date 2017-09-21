@@ -12,7 +12,7 @@
 			<h2><%= state.title %></h2>
 			<p class="article-date"><%= state.published %></p>
 			<p><%= state.description.html_safe %></p>
-			<a class="nice-button" href="//localhost:3000/articles/<%= state.id.to_s %><%= $WORD_TO_SEE %>">подробнее</a>
+			<a class="nice-button" href="/articles/<%= state.id.to_s %><%= $WORD_TO_SEE %>">подробнее</a>
 		</div>
 	</div><% end %></div>
 	<u><%= will_paginate @article_list, :class => "special-links", :link_separator => "| |", :previous_label =>"предыдущая", :next_label =>"следующая" %></u>

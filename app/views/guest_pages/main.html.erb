@@ -18,7 +18,7 @@
 <div class="photoreports-block  big-block"><div class="block">
 	<h2>Направления</h2>
 	<hr class="spec-hr">
-	<div class="photoreports"><% @category_list.each do |one_category|%><a href="//localhost:3000/category_events/<%= one_category.id.to_s %><%= $WORD_TO_SEE %>" class="album">
+	<div class="photoreports"><% @category_list.each do |one_category|%><a href="/category_events/<%= one_category.id.to_s %><%= $WORD_TO_SEE %>" class="album">
 		<div class = "album-bg">
 			<% photo = Photo.find_by(id: one_category.icon) %>
 			<% if photo.nil? %>
