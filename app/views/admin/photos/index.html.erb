@@ -11,15 +11,15 @@
   </tr></thead>
   <tbody><% @photos.each do |photo| %><tr>
     <% unless photo.avatar.exists? %>
-      <td colspan="2" align="center"><%= $INE.html_safe %></td>
+      <td align="center"><%= $INE.html_safe %></td>
     <% else %>
-      <td><%= image_tag(photo.avatar.url , style: "width: 100px;", alt: photo.description) %></td>
-      <td><%= photo.avatar_file_name %></td>
-    <% end %>
+      <td><%= image_tag(photo.avatar.url, style: "width: 100px;", alt: photo.description) %></td>
+    <%  end %>
+    <td><%= photo.avatar_file_name %></td>
     <td><%= photo.description %></td>
-    <td><%= link_to 'Show', admin_photo_path(photo) %></td>
+    <td><%= link_to 'Show',      admin_photo_path(photo) %></td>
     <td><%= link_to 'Edit', edit_admin_photo_path(photo) %></td>
-    <td><%= link_to 'Destroy', admin_photo_path(photo), method: :delete, data: { confirm: 'Are you sure?' } %></td>
-  </tr><% end %></tbody>
-</table><% end %>
+    <td><%= link_to 'Destroy',   admin_photo_path(photo), method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr><%   end %></tbody>
+</table><%  end %>
 <br><%= link_to 'New Photo', action: "new" %>
