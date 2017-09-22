@@ -54,10 +54,10 @@ class Admin::PhotosController < ApplicationController
   # DELETE /photos/1
   # DELETE /photos/1.json
   def destroy
-    list_what_need_destroy=[]
-    list_what_need_destroy=|  PhotoInEvent.where(photo: @photo.id).to_a
-    list_what_need_destroy=|PhotoInArticle.where(photo: @photo.id).to_a
-    list_what_need_destroy=|PhotoInSlayder.where(photo: @photo.id).to_a
+    list_what_need_destroy =[]
+    list_what_need_destroy+=PhotoInEvent.where(photo: @photo.id).to_a
+    list_what_need_destroy+=PhotoInArticle.where(photo: @photo.id).to_a
+    list_what_need_destroy+=PhotoInSlayder.where(photo: @photo.id).to_a
     list_what_need_destroy.each do |item|
       item.destroy
     end
