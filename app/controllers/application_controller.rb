@@ -1,19 +1,22 @@
 class ApplicationController < ActionController::Base
 	protect_from_forgery with: :exception
-	
+	before_action :divider_access
+
 	WillPaginate.per_page = 5
 
 	$INE = "<i>картинка отсутствует</i>" 
 	$WORD_TO_SEE = "/prosmotr"
-
-	before_action :divider_access
 	
-	def set_photo_list
-		@photo_list = Photo.all.order(avatar_file_name: :asc)
+	def alt_image
+		
 	end
 
-	def legaly_actions
-		return ["beauty", "robots"]
+	def robots
+
+	end
+
+	def set_photo_list
+		@photo_list = Photo.all.order(avatar_file_name: :desc)
 	end
 
 	def divider_access
@@ -29,21 +32,21 @@ class ApplicationController < ActionController::Base
 		puts "current viever =" + info_about_wiever
 		if moderator_signed_in?
 			if (controller_name == "guest_pages" && action_name == "main" )
-				# puts "go out"
 				sign_out
-				puts "current viever = " + info_about_wiever
+				# puts "current viever = " + info_about_wiever
 			end
 		else
 			unless (	controller_name == "guest_pages" || legaly_actions.include?(action_name) )
 				unless (controller_name ==  "sessions"   && action_name == "new")
 					# puts "go into site"
 					authenticate_moderator!
-					puts "current viever =" + info_about_wiever
+					# puts "current viever =" + info_about_wiever
 				end
 			end
 		end
 	end
 
-	def robots
+	def legaly_actions
+		return ["beauty", "robots"]
 	end
 end

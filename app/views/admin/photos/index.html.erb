@@ -1,5 +1,6 @@
 <p id="notice"><%= notice %></p>
 <h1>Photos</h1>
+<br><%= link_to 'New Photo', action: "new" %>
 <% if @photos.first.nil? %>
   <i>эта таблица пустая</i>
 <% else %><table class="sv_table">
@@ -22,4 +23,17 @@
     <td><%= link_to 'Destroy',   admin_photo_path(photo), method: :delete, data: { confirm: 'Are you sure?' } %></td>
   </tr><%   end %></tbody>
 </table><%  end %>
-<br><%= link_to 'New Photo', action: "new" %>
+<hr>
+<% @photos.each do |one_temp_photo| %>
+  <br><%= one_temp_photo.avatar.file? %>
+  <br><%= one_temp_photo.avatar.present? %>
+  <br><%= one_temp_photo.avatar.exists?  %>
+  <br><%= one_temp_photo.id %>
+  <br><%= one_temp_photo.avatar.to_s %>
+  <br><%= one_temp_photo.avatar.path %>
+  <br><%= image_tag(one_temp_photo.avatar.url ) %>
+  <% if one_temp_photo.id != 16 %>
+    <br><%= image_tag(one_temp_photo.avatar.path) %>
+  <% end %>
+  <hr>
+<% end %>
