@@ -23,12 +23,12 @@
         <% else %><%= category.title %>
         <% end  %>
       </td>
-      <td><%= one_event.title %></td>
+      <td><%= one_event.ru_title %></td>
       <td><%= one_event.description.html_safe %></td>
       <td><%= link_to 'Show', admin_event_path(one_event) %></td>
       <td><%= link_to 'Edit', edit_admin_event_path(one_event) %></td>
       <td><%= link_to 'Destroy', admin_event_path(one_event), method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      <td><a href = "/events/<%= one_event.id.to_s %><%= $WORD_TO_SEE %>">Beauty</a></td>
+      <td><a href = "/<%= one_event.eng_title %>">Beauty</a></td>
   </tr><% end %></tbody>
 </table><% end %>
 <br><%= link_to 'New Event', action: "new" %>

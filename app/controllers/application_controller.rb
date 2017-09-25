@@ -1,6 +1,7 @@
 class ApplicationController < ActionController::Base
 	protect_from_forgery with: :exception
 	before_action :divider_access
+	# before_action :eng_id_search
 
 	WillPaginate.per_page = 5
 
@@ -20,8 +21,9 @@ class ApplicationController < ActionController::Base
 	end
 
 	def divider_access
-		puts "controller_name = " + controller_name
-		puts "action_name = " + action_name
+		# puts "controller_name = " + controller_name
+		# puts "action_name = " + action_name
+		puts "params = " + params.to_s
 		info_about_wiever = " "
 		if current_moderator.nil?
 			info_about_wiever += "guest"
@@ -45,6 +47,12 @@ class ApplicationController < ActionController::Base
 			end
 		end
 	end
+
+	# def eng_id_search
+	# 	if params[]
+			
+	# 	end
+	# end
 
 	def legaly_actions
 		return ["beauty", "robots"]

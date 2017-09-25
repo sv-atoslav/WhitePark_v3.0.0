@@ -71,7 +71,11 @@ class Admin::EventsController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_event
-      @event = Event.find(params[:id])
+      unless params[:eng_title]==nil
+        @event = Event.find_by(eng_title: params[:eng_title])
+      else
+        @event = Event.find(params[:id])
+      end
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.

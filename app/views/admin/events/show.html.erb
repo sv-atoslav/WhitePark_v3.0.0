@@ -1,6 +1,6 @@
 <p id="notice"><%= notice %></p>
 <p><strong>Category:</strong><%= @event.category %></p>
-<p><strong>Title:</strong><%= @event.title %></p>
+<p><strong>Title:</strong><%=    @event.ru_title %></p>
 <p><strong>Description:</strong><%= @event.description.html_safe %></p>
 <p><strong>Icon:</strong>
 	<% temp_icon = Photo.find_by(id: @event.icon)%>
@@ -18,4 +18,4 @@
 <br>
 <%= link_to 'Edit', action: "edit"  %> |
 <%= link_to 'Back', action: "index" %> |
-<a href="/events/<%= @event.id %><%= $WORD_TO_SEE %>">Beauty</a>
+<a href="/<%= @event.eng_title %>">Beauty</a>

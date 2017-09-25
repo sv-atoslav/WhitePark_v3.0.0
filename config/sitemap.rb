@@ -3,12 +3,11 @@
 host "localhost:3000"
 
 sitemap :site do
+	Event.all.each do |state|
+		url state.eng_title
+	end
 	word = "category_events/"
 	CategoryEvent.all.each do |state|
-		url word+state.id.to_s+"/prosmotr"
-	end
-	word = "events/"
-	Event.all.each do |state|
 		url word+state.id.to_s+"/prosmotr"
 	end
 	word = "articles/"
@@ -25,9 +24,8 @@ sitemap :site do
 	url kontakti_path
 	url sitemap_path
 end
-# word = "events/"
 # sitemap_for Event.all do |state|
-# 	url word+state.id.to_s+"/prosmotr"
+# 	url state.eng_title
 # end
 # word = "category_events/"
 # sitemap_for CategoryEvent.all do |state|
@@ -69,4 +67,4 @@ end
 
 # Ping search engines after sitemap generation:
 #
-  ping_with "http://#{host}/sitemap.xml"
+ping_with "http://#{host}/sitemap.xml"

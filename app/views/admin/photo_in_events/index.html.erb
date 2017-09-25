@@ -18,7 +18,7 @@
     <td>
       <% event = Event.find_by(id: photo_in_event.event) %>
       <% if event.nil? %><i>event not exist</i>
-      <% else %><%= event.title %>
+      <% else %><%= event.ru_title %>
       <% end  %>
     </td>
     <td><%= link_to 'Show', admin_photo_in_event_path(photo_in_event) %></td>

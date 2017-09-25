@@ -1,7 +1,7 @@
 Myapp::Application.routes.draw do
 
   devise_for        :moderators, controllers: { 
-    unlocks:        'moderators/unlocks'        , 
+    unlocks:        'moderators/unlocks'		, 
     sessions:       'moderators/sessions'       ,
     passwords:      'moderators/passwords'      , 
     confirations:   'moderators/confirations'   , 
@@ -23,11 +23,6 @@ Myapp::Application.routes.draw do
     resources :articles, :events, :category_events, :not_published_opinions, :opinions, :photo_in_articles, :photo_in_events, :photo_in_slayders, :photos, :slayders, :tents, :users
   end
 
-  #for correct work the last word need be = ApplicationController.word_to_see
-  get "events/:id/prosmotr",          to: 'admin/events#beauty'
-  get "articles/:id/prosmotr",        to: 'admin/articles#beauty'
-  get "category_events/:id/prosmotr", to: 'admin/category_events#beauty'
-
   get 'WhitePark',to: 'guest_pages#main'
   get 'otzivi',   to: 'guest_pages#review'
   get 'kuhnya',   to: 'guest_pages#kitchen'
@@ -38,9 +33,12 @@ Myapp::Application.routes.draw do
   get 'sobitia',  to: 'guest_pages#eventlist'
   get 'download', to: 'guest_pages#download_menu'
   get 'statii',   to: 'guest_pages#list_of_articles'
-  # get "sitemap.xml",  to: 'guest_pages#site_map', format: :xml, as: :sitemap
 
-  # get '/moderators/sign_in', to: 'admin/pages#login_white_park'
+  #for correct work the last word need be = ApplicationController.word_to_see
+  get ":eng_title",						to: 'admin/events#beauty'
+  get "events/:id/prosmotr",			to: 'admin/events#beauty'
+  get "articles/:id/prosmotr",			to: 'admin/articles#beauty'
+  get "category_events/:id/prosmotr",	to: 'admin/category_events#beauty'
 
   #'inbox' routes # all in down completed
   get "admin/dashboards/dashboard_white_park"
