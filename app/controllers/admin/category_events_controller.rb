@@ -30,7 +30,10 @@ class Admin::CategoryEventsController < ApplicationController
   # POST /category_events
   # POST /category_events.json
   def create
+    # set_category_event 
+    # @category_event = CategoryEvent.new
     @category_event = CategoryEvent.new(category_event_params)
+    @category_event.eng_title=Translit.convert(params[:category_event][:ru_title])
     respond_to do |format|
       if @category_event.save
         format.html { redirect_to admin_category_event_path(@category_event), notice: 'Category event was successfully created.' }
@@ -45,6 +48,7 @@ class Admin::CategoryEventsController < ApplicationController
   # PATCH/PUT /category_events/1
   # PATCH/PUT /category_events/1.json
   def update
+    @category_event.eng_title=Translit.convert(params[:category_event][:ru_title])
     respond_to do |format|
       if @category_event.update(category_event_params)
         format.html { redirect_to admin_category_event_path(@category_event), notice: 'Category event was successfully updated.' }
@@ -72,12 +76,16 @@ class Admin::CategoryEventsController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_category_event
-      @category_event = CategoryEvent.find(params[:id])
+      unless params[:eng_title]==nil
+        @category_event = CategoryEvent.find_by(eng_title: params[:eng_title])
+      else
+        @category_event = CategoryEvent.find(params[:id])
+      end
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def category_event_params
-      params.require(:category_event).permit(:title, :description, :icon)
+      params.require(:category_event).permit(:ru_title, :description, :icon)
     end
 
     def search_my_group_event

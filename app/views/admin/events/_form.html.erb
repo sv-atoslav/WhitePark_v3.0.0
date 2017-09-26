@@ -8,8 +8,8 @@
   <div class="actions"><%= form.submit %></div>
   <table width="100%">
     <tr>
-      <td><div class="field"><%= form.label :category %><%= form.collection_select(:category, CategoryEvent.all, :id, :title) %></div></td>
-      <td><div class="field"><%= form.label :title %><%= form.text_field :title, id: :event_title, style: "width: 100%;"%></div></td>
+      <td><div class="field"><%= form.label :category %><%= form.collection_select(:category, CategoryEvent.all, :id, :ru_title) %></div></td>
+      <td><div class="field"><%= form.label :ru_title %><%= form.text_field :ru_title, id: :event_title, style: "width: 100%;"%></div></td>
     </tr>
     <tr>
       <td width="222px"><table>

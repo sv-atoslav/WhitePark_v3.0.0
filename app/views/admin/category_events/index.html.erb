@@ -13,15 +13,15 @@
     <td>
       <% temp_icon = Photo.find_by(id: category_event.icon) %>
       <% if temp_icon.nil? %><%= $INE.html_safe %>
-      <% else %><%= image_tag(temp_icon.avatar.url, style: "width: 100px;", alt: temp_icon.description)%>
+      <% else %><%= image_tag(temp_icon.avatar.url, style: "width: 100px;", alt: temp_icon.description) %>
       <% end %>
     </td>
-    <td><%= category_event.title %></td>
+    <td><%= category_event.ru_title %></td>
     <td><%= category_event.description.html_safe %></td>
     <td><%= link_to 'Show', admin_category_event_path(category_event) %></td>
     <td><%= link_to 'Edit', edit_admin_category_event_path(category_event) %></td>
     <td><%= link_to 'Destroy', admin_category_event_path(category_event), method: :delete, data: { confirm: 'Are you sure?' } %></td>
-    <td><a href="/category_events/<%= category_event.id %><%= $WORD_TO_SEE %>">Beauty</a></td>
+    <td><a href="/category_events/<%= category_event.eng_title %>">Beauty</a></td>
   </tr><% end %></tbody>
 </table><% end %>
 <br><%= link_to 'New Category Event', action: "new" %>

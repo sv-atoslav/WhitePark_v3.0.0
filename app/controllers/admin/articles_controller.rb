@@ -32,7 +32,10 @@ class Admin::ArticlesController < ApplicationController
   # POST /articles
   # POST /articles.json
   def create
+    # set_article
+    # @article = Article.new
     # @article = Article.new(article_params)
+    @article.eng_title=Translit.convert(params[:article][:ru_title])
     respond_to do |format|
       if @article.save
         format.html { redirect_to admin_article_path(@article), notice: 'Article was successfully created.' }
@@ -47,6 +50,7 @@ class Admin::ArticlesController < ApplicationController
   # PATCH/PUT /articles/1
   # PATCH/PUT /articles/1.json
   def update
+    @article.eng_title=Translit.convert(params[:article][:ru_title])
     respond_to do |format|
       if @article.update(article_params)
         format.html { redirect_to admin_article_path(@article), notice: 'Article was successfully updated.' }
@@ -76,7 +80,7 @@ class Admin::ArticlesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def article_params
-      params.require(:article).permit(:title, :description, :published, :icon)
+      params.require(:article).permit(:ru_title, :description, :published, :icon)
     end
 
     def search_my_group_photo

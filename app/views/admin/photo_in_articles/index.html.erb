@@ -16,7 +16,7 @@
     <td>
       <% article = Article.find_by(id: one_photo_in_article.article) %>
       <% if article.nil? %><i>article not exist</i>
-      <% else %><% article.title %>
+      <% else %><% article.ru_title %>
       <% end %>
     </td>
     <td><%= link_to 'Show', admin_photo_in_article_path(one_photo_in_article) %></td>

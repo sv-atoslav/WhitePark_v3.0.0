@@ -32,7 +32,10 @@ class Admin::EventsController < ApplicationController
   # POST /events
   # POST /events.json
   def create
-    # @event = Event.new(event_params)
+    # set_event 
+    # @event  = CategoryEvent.new
+    # @event  = CategoryEvent.new(article_params)
+    @event.eng_title=Translit.convert(params[:event][:ru_title])
     respond_to do |format|
       if @event.save
         format.html { redirect_to admin_event_path(@event), notice: 'Event was successfully created.' }
@@ -47,6 +50,7 @@ class Admin::EventsController < ApplicationController
   # PATCH/PUT /events/1
   # PATCH/PUT /events/1.json
   def update
+    @event.eng_title=Translit.convert(params[:event][:ru_title])
     respond_to do |format|
       if @event.update(event_params)
         format.html { redirect_to admin_event_path(@event), notice: 'Event was successfully updated.' }
@@ -80,7 +84,7 @@ class Admin::EventsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def event_params
-      params.require(:event).permit(:category, :title, :description, :icon)
+      params.require(:event).permit(:category, :ru_title, :description, :icon)
     end
 
     def search_my_group_photo

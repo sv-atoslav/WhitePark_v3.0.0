@@ -1,10 +1,10 @@
 Myapp::Application.routes.draw do
 
-  devise_for        :moderators, controllers: { 
-    unlocks:        'moderators/unlocks'		, 
-    sessions:       'moderators/sessions'       ,
-    passwords:      'moderators/passwords'      , 
-    confirations:   'moderators/confirations'   , 
+  devise_for 		:moderators, controllers: { 
+    unlocks: 		'moderators/unlocks'		, 
+    sessions: 		'moderators/sessions'       ,
+    passwords:  	'moderators/passwords'      , 
+    confirations: 	'moderators/confirations'   , 
     registrations:  'moderators/registrations'  , 
     # omniauth_callbacks: 'moderators/omniauth_callbacks', 
   }
@@ -35,9 +35,11 @@ Myapp::Application.routes.draw do
   get 'statii',   to: 'guest_pages#list_of_articles'
 
   #for correct work the last word need be = ApplicationController.word_to_see
-  get ":eng_title",						to: 'admin/events#beauty'
+  get "events/:eng_title",				to: 'admin/events#beauty'
   get "events/:id/prosmotr",			to: 'admin/events#beauty'
+  get "articles/:eng_title",			to: 'admin/events#beauty'
   get "articles/:id/prosmotr",			to: 'admin/articles#beauty'
+  get "category_events/:eng_title", 	to: 'admin/category_events#beauty'
   get "category_events/:id/prosmotr",	to: 'admin/category_events#beauty'
 
   #'inbox' routes # all in down completed

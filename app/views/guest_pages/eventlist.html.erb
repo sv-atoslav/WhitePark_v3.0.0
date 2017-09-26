@@ -2,7 +2,7 @@
 	<h2>События</h2>
 	<hr class="spec-hr">
 	<div class="about-us-image-set"><% @event_list.each do |state| %>
-		<a href = "<%= state.eng_title %>" class = "album">
+		<a href = "/events/<%= state.eng_title %>" class = "album">
 			<div class="album-bg">
 				<% temp_icon = Photo.find_by(id: state.icon) %>
 				<% if temp_icon.nil? %><%= $INE.html_safe %>	

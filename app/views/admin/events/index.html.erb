@@ -20,7 +20,7 @@
       <td>
         <% category = CategoryEvent.find_by(id: one_event.category) %>
         <% if category.nil? %><i>category not exist</i>
-        <% else %><%= category.title %>
+        <% else %><%= category.ru_title %>
         <% end  %>
       </td>
       <td><%= one_event.ru_title %></td>
@@ -28,7 +28,7 @@
       <td><%= link_to 'Show', admin_event_path(one_event) %></td>
       <td><%= link_to 'Edit', edit_admin_event_path(one_event) %></td>
       <td><%= link_to 'Destroy', admin_event_path(one_event), method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      <td><a href = "/<%= one_event.eng_title %>">Beauty</a></td>
+      <td><a href = "/events/<%= one_event.eng_title %>">Beauty</a></td>
   </tr><% end %></tbody>
 </table><% end %>
 <br><%= link_to 'New Event', action: "new" %>

@@ -5,12 +5,7 @@ class ApplicationController < ActionController::Base
 
 	WillPaginate.per_page = 5
 
-	$INE = "<i>картинка отсутствует</i>" 
-	$WORD_TO_SEE = "/prosmotr"
-	
-	def alt_image
-		
-	end
+	$INE = "<i>картинка отсутствует</i>"
 
 	def robots
 
@@ -47,12 +42,6 @@ class ApplicationController < ActionController::Base
 			end
 		end
 	end
-
-	# def eng_id_search
-	# 	if params[]
-			
-	# 	end
-	# end
 
 	def legaly_actions
 		return ["beauty", "robots"]

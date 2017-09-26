@@ -1,6 +1,8 @@
 <p id="notice"><%= notice %></p>
-<p><strong>Title:</strong><%= @article.title %></p>
-<p><strong>Description:</strong><%= @article.description.html_safe %></p>
+<p><strong>Title:</strong><%= @article.ru_title %></p>
+<% unless @article.description.nil? %>
+	<p><strong>Description:</strong><%= @article.description.html_safe %></p>
+<% end %>
 <p><strong>Published:</strong><%= @article.published %></p>
 <p><strong>Icon:</strong>
 	<% temp_icon = Photo.find_by(id: @article.icon) %>
@@ -18,4 +20,4 @@
 <br>
 <%= link_to 'Edit', action: "edit"  %> | 
 <%= link_to 'Back', action: "index" %> | 
-<a href="/articles/<%= @article.id %><%= $WORD_TO_SEE %>">Beauty</a>
+<a href="/articles/<%= @article.eng_title %>">Beauty</a>
