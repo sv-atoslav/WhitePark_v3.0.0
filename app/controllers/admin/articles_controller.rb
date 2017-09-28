@@ -75,7 +75,12 @@ class Admin::ArticlesController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_article
-      @article = Article.find(params[:id])
+      unless params[:eng_title]==nil
+        @article = Article.find_by(eng_title: params[:eng_title])
+      else
+        @article = Article.find(params[:id])
+      end
+      puts "dog_article = "+ @article.to_s
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.

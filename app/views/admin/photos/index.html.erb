@@ -1,7 +1,7 @@
 <p id="notice"><%= notice %></p>
 <h1>Photos</h1>
 <br><%= link_to 'New Photo', action: "new" %>
-<% if @photos.first.nil? %>
+<% if @good_photos.first.nil? %>
   <i>эта таблица пустая</i>
 <% else %><table class="sv_table">
   <thead><tr>
@@ -10,7 +10,8 @@
     <th>Description</th>
     <th colspan="3"></th>
   </tr></thead>
-  <tbody><% @photos.each do |photo| %><tr>
+  <% puts "good_photos = "+ @good_photos.to_s %>
+  <tbody><% @good_photos.each do |photo| %><tr>
     <% unless photo.avatar.exists? %>
       <td align="center"><%= $INE.html_safe %></td>
     <% else %>
@@ -24,10 +25,9 @@
   </tr><%   end %></tbody>
 </table><%  end %>
 <hr>
-<% @photos.each do |one_temp_photo| %>
-  <br><%= one_temp_photo.avatar.file? %>
-  <br><%= one_temp_photo.avatar.present? %>
-  <br><%= one_temp_photo.avatar.exists?  %>
+<% @bad_photos.each do |one_temp_photo|   %>
+  <br><%= one_temp_photo.avatar.file?     %>
+  <br><%= one_temp_photo.avatar.present?  %>
   <br><%= one_temp_photo.id %>
   <br><%= one_temp_photo.avatar.to_s %>
   <br><%= one_temp_photo.avatar.path %>
