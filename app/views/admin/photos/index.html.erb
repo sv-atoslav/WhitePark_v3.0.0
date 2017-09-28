@@ -15,10 +15,14 @@
     <% unless photo.avatar.exists? %>
       <td align="center"><%= $INE.html_safe %></td>
     <% else %>
-      <td><%= image_tag(photo.avatar.url, style: "width: 100px;", alt: photo.description) %></td>
+      <td><%=   image_tag(photo.avatar.url , style: "width: 100px;", alt: photo.description) %>
+        <br><%= image_tag(photo.avatar.path, style: "width: 100px;", alt: photo.description) %>
+      </td>
     <%  end %>
     <td><%= photo.avatar_file_name %></td>
-    <td><%= photo.description %></td>
+    <td><%= photo.description %> [ and
+      <%= photo.avatar.path=="/app/public" + photo.avatar.url[0...photo.avatar.url.index("?")] %> ]
+    </td>
     <td><%= link_to 'Show',      admin_photo_path(photo) %></td>
     <td><%= link_to 'Edit', edit_admin_photo_path(photo) %></td>
     <td><%= link_to 'Destroy',   admin_photo_path(photo), method: :delete, data: { confirm: 'Are you sure?' } %></td>
@@ -32,8 +36,11 @@
   <br><%= one_temp_photo.avatar.to_s %>
   <br><%= one_temp_photo.avatar.path %>
   <br><%= image_tag(one_temp_photo.avatar.url ) %>
-  <% if one_temp_photo.id != 16 %>
+  <% if !one_temp_photo.avatar.path.nil? %>
     <br><%= image_tag(one_temp_photo.avatar.path) %>
   <% end %>
+  <br><%= link_to 'Show',   admin_photo_path(one_temp_photo) %>
+  <%= link_to 'Edit',  edit_admin_photo_path(one_temp_photo) %>
+  <%= link_to 'Destroy',    admin_photo_path(one_temp_photo), method: :delete, data: { confirm: 'Are you sure?' } %>
   <hr>
 <% end %>
