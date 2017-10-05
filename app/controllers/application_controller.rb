@@ -1,20 +1,17 @@
 class ApplicationController < ActionController::Base
 	protect_from_forgery with: :exception
 	before_action :divider_access
-	# before_action :eng_id_search
-
 	WillPaginate.per_page = 5
 
 	$INE = "<i>картинка отсутствует</i>"
 
 	def robots
-
 	end
-
 	def set_photo_list
-		@photo_list = Photo.all.order(avatar_file_name: :desc)
+		@photo_list = Photo.all.order(description: :asc)
 	end
 
+	# defense for unauthorized acces
 	def divider_access
 		# puts "controller_name = " + controller_name
 		# puts "action_name = " + action_name

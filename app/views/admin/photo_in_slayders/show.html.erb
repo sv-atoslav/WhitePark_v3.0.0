@@ -1,5 +1,10 @@
 <p id="notice"><%= notice %></p>
+<<<<<<< HEAD
 <p><strong>Photo: </strong><%= image_tag(Photo.find_by(id: @photo_in_slayder.photo).avatar.name)%></p>
 <p><strong>Slyder: </strong><%= Slayder.find_by(id: @photo_in_slayder.slyder).title%></p>
+=======
+<p><strong>Photo: </strong><%= image_tag(Photo.find_by(id: @photo_in_slayder.photo).avatar.filename)%></p>
+<p><strong>Slyder:</strong><%= Slayder.find_by(id: @photo_in_slayder.slyder).title %></p>
+>>>>>>> work_with_paper_clip
 <%= link_to 'Edit again',	action: "edit"  %> |
 <%= link_to  "Slayders",	action: "index" %>

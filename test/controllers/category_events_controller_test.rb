@@ -17,7 +17,7 @@ class CategoryEventsControllerTest < ActionDispatch::IntegrationTest
 
   test "should create category_event" do
     assert_difference('CategoryEvent.count') do
-      post category_events_url, params: { category_event: { description: @category_event.description, icon: @category_event.icon, title: @category_event.title } }
+      post category_events_url, params: { category_event: { description: @category_event.description, icon: @category_event.icon, title: @category_event.ru_title } }
     end
 
     assert_redirected_to category_event_url(CategoryEvent.last)
@@ -34,7 +34,7 @@ class CategoryEventsControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should update category_event" do
-    patch category_event_url(@category_event), params: { category_event: { description: @category_event.description, icon: @category_event.icon, title: @category_event.title } }
+    patch category_event_url(@category_event), params: { category_event: { description: @category_event.description, icon: @category_event.icon, title: @category_event.ru_title } }
     assert_redirected_to category_event_url(@category_event)
   end
 

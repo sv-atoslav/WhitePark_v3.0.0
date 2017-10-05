@@ -1,11 +1,20 @@
 <p id="notice"><%= notice %></p>
 <p><strong>Category:</strong><%= @event.category %></p>
+<<<<<<< HEAD
 <p><strong>Title:</strong><%=    @event.ru_title %></p>
 <p><strong>Description:</strong><%= @event.description.html_safe %></p>
 <p><strong>Icon:</strong>
 	<% temp_icon = Photo.find_by(id: @event.icon)%>
 	<% if temp_icon.nil? %><%= $INE.html_safe %>
 	<% else %><%= temp_icon.avatar_file_name  %>
+=======
+<p><strong>Title:</strong><%= @event.ru_title %></p>
+<p><strong>Description:</strong><%= @event.description.html_safe %></p>
+<p><strong>Icon:</strong>
+	<% temp_icon = Photo.find_by(id: @event.icon) %>
+	<% if temp_icon.nil? %><%= $INE.html_safe  %>
+	<% else %><%= temp_icon.avatar.filename %>
+>>>>>>> work_with_paper_clip
 	<% end  %>
 </p>
 <p><strong>Many fotos:</strong></p>
@@ -13,7 +22,11 @@
 	<% temp_icon = Photo.find_by(id: one_foto_id) %>
 	<% if temp_icon.nil? %><%= $INE.html_safe %>
 	<% else %>, <%= image_tag(temp_icon.avatar.url, style: "height: 100px;") %>
+<<<<<<< HEAD
 	<% end  %>
+=======
+	<% end %>
+>>>>>>> work_with_paper_clip
 <% end %>.
 <br>
 <%= link_to 'Edit', action: "edit"  %> |

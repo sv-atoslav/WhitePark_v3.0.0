@@ -7,7 +7,7 @@
 <p><strong>Icon:</strong>
 	<% temp_icon = Photo.find_by(id: @article.icon) %>
 	<% if temp_icon.nil? %><%= $INE.html_safe %>
-	<% else %><%= temp_icon.avatar_file_name %>
+	<% else %><%= temp_icon.avatar %>
 	<% end %>
 </p>
 <p><strong>Many fotos:</strong></p>

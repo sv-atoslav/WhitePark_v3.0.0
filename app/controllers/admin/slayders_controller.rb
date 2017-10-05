@@ -56,8 +56,12 @@ class Admin::SlaydersController < ApplicationController
   # DELETE /slayders/1
   # DELETE /slayders/1.json
   def destroy
-    PhotoInSlayder.where(slyder: @slayder.id).to_a.each do |one_pair|
-      one_pair.destroy
+    PhotoInSlayder.where(slyder: @slayder.id).each do |trash|
+      puts "we delete " + trash.to_s
+      trash.destroy
+      trash.save
+      puts "trash need be destroyed"
+      puts trash.to_s
     end
     @slayder.destroy
     respond_to do |format|

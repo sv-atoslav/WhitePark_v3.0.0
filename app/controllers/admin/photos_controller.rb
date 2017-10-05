@@ -75,11 +75,11 @@ class Admin::PhotosController < ApplicationController
   # DELETE /photos/1
   # DELETE /photos/1.json
   def destroy
-    list_what_need_destroy =[]
-    list_what_need_destroy+=PhotoInEvent.where(photo: @photo.id).to_a
-    list_what_need_destroy+=PhotoInArticle.where(photo: @photo.id).to_a
-    list_what_need_destroy+=PhotoInSlayder.where(photo: @photo.id).to_a
-    list_what_need_destroy.each do |item|
+    list_to_destroy =[]
+    list_to_destroy += PhotoInEvent.where(  photo: @photo.id).all.to_a
+    list_to_destroy += PhotoInArticle.where(photo: @photo.id).all.to_a
+    list_to_destroy += PhotoInSlayder.where(photo: @photo.id).all.to_a
+    list_to_destroy.each do |item|
       item.destroy
     end
     @photo.destroy
@@ -97,7 +97,14 @@ class Admin::PhotosController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def photo_params
-      params.require(:photo).permit(:avatar, :description)
+      params.require(:photo).permit(:description, :avatar)
+    end
+
+    def upload
+      uploaded_io = params[:person][:picture]
+      File.open(Rails.root.join('assets', 'wpimg', uploaded_io.original_filename), 'wb') do |file|
+        file.write(uploaded_io.read)
+      end
     end
     
 end

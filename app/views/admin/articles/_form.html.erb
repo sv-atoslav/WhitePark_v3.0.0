@@ -21,7 +21,12 @@
         </tr></thead>
         <% have_some_photo = @old_list.to_a.any? %>
         <tbody><% @photo_list.each do |one_photo| %><tr>
-          <td><%= image_tag(one_photo.avatar.url, style: "width: 100px;") %></td>
+          <td>
+            <% way = Photo.try_get_way_to_img_tag_by_photo(one_photo) %>
+            <% if way.nil? %><%= $INE.html_safe %>
+            <% else %><%= image_tag(way, style: "width: 100px;") %>
+            <% end  %>
+          </td>
           <td><%= form.radio_button(:icon, one_photo.id) %></td>
           <!-- checkbox I parametr without [] need be == in controller params["word"] -->
           <td><% if have_some_photo %><%= check_box_tag("many_photo_ids[]", one_photo.id, @old_list.include?(one_photo.id) )%>
@@ -39,10 +44,10 @@
 <script src="/assets/summernote.min.js"></script>
 
 <script type="text/javascript">
-$(function() {
-  $('.summernote').summernote();
-  var edit = function () {
-    $('.click2edit').summernote({ focus: true });
-  };
-});
+  $(function() {
+    $('.summernote').summernote();
+    var edit = function () {
+      $('.click2edit').summernote({ focus: true });
+    };
+  });
 </script>

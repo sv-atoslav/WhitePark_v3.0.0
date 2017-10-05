@@ -44,6 +44,10 @@ GEM
     climate_control (0.2.0)
     cocaine (0.5.8)
       climate_control (>= 0.0.3, < 1.0)
+    carrierwave (1.1.0)
+      activemodel (>= 4.0.0)
+      activesupport (>= 4.0.0)
+      mime-types (>= 1.16)
     coffee-rails (4.2.2)
       coffee-script (>= 2.2.0)
       railties (>= 4.0.0)
@@ -78,11 +82,14 @@ GEM
       nokogiri (>= 1.5.9)
     mail (2.6.6)
       mime-types (>= 1.16, < 4)
-    method_source (0.8.2)
+    method_source (0.9.0)
     mime-types (3.1)
       mime-types-data (~> 3.2015)
     mime-types-data (3.2016.0521)
+<<<<<<< HEAD
     mimemagic (0.3.2)
+=======
+>>>>>>> work_with_paper_clip
     mini_portile2 (2.3.0)
     minitest (5.10.3)
     multi_json (1.12.2)
@@ -185,6 +192,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  carrierwave (~> 1.0)
   coffee-rails
   devise
   dynamic_sitemaps

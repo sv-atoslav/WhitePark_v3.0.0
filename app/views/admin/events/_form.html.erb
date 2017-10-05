@@ -9,7 +9,11 @@
   <table width="100%">
     <tr>
       <td><div class="field"><%= form.label :category %><%= form.collection_select(:category, CategoryEvent.all, :id, :ru_title) %></div></td>
+<<<<<<< HEAD
       <td><div class="field"><%= form.label :ru_title %><%= form.text_field :ru_title, id: :event_title, style: "width: 100%;"%></div></td>
+=======
+      <td><div class="field"><%= form.label :title %><%= form.text_field :ru_title, id: :event_title, style: "width: 100%;"%></div></td>
+>>>>>>> work_with_paper_clip
     </tr>
     <tr>
       <td width="222px"><table>
@@ -20,7 +24,16 @@
         </tr></thead>
         <% have_some_photo = @old_list.to_a.any? %>
         <tbody align="center"><% @photo_list.each do |one_photo| %><tr>
+<<<<<<< HEAD
           <td><%= image_tag(one_photo.avatar.url, style: "width: 100px;") %></td>
+=======
+          <% way = Photo.try_get_way_to_img_tag_by_photo(one_photo) %>
+          <td>
+            <% if way.nil? %><%= $INE.html_safe %>
+            <% else %><%= image_tag(way, style: "width: 100px;") %>
+            <% end  %>
+          </td>
+>>>>>>> work_with_paper_clip
           <td><%= form.radio_button(:icon, one_photo.id) %></td>
           <!-- checkbox I parametr without [] need be == in controller params["word"] -->
           <td><% if have_some_photo %><%= check_box_tag("many_photo_ids[]", one_photo.id, @old_list.include?(one_photo.id) )%>

@@ -12,10 +12,17 @@
   </tr></thead>
   <tbody><% @events.each do |one_event| %><tr>
       <td>
+<<<<<<< HEAD
         <% temp_icon = Photo.find_by(id: one_event.icon) %>
         <% if temp_icon.nil? %><%= $INE.html_safe %>
         <% else %><%= image_tag( temp_icon.avatar.url, style: "width: 100px;", alt: temp_icon.description )%>
         <% end %>
+=======
+        <% way = Photo.try_get_way_to_img_tag_by_id(one_event.icon) %>
+        <% if way.nil? %><%= $INE.html_safe %>
+        <% else %><%= image_tag(way, style: "width: 100px;") %>
+        <% end  %>
+>>>>>>> work_with_paper_clip
       </td>
       <td>
         <% category = CategoryEvent.find_by(id: one_event.category) %>

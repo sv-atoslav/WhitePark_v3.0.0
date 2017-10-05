@@ -4,8 +4,8 @@
 </div>
 <%if @old_list.any? %><div class="photoreports-block big-block"><div class="block">
 	<h2>События</h2>
-	<hr class="spec-hr">
-	<div class="about-us-image-set"><% @old_list.each do |state_id| %>
+	<hr  class = "spec-hr">
+	<div class = "about-us-image-set"><% @old_list.each do |state_id| %>
 		<% state = Event.find_by(id: state_id) %>
 		<% unless state.nil? %><a href="/events/<%= state.eng_title %>" class = "album">
 			<% temp_icon = Photo.find_by(id: state.icon) %>
@@ -13,7 +13,7 @@
         	<% else %><div class="album-bg"><%= image_tag(temp_icon.avatar.url)%></div>
         	<% end %>
 			<div class="album-title">
-				<p><%= state.ru_title %></p>
+				<p><%= one_event.ru_title %></p>
 				<h4>подробнее</h4>
 			</div>
 		</a><% end %>

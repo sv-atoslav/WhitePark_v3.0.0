@@ -4,7 +4,14 @@
 	<br><%= link_to "Статьи" , action: "list_of_articles" %>
 	<br><%= link_to "События", action: "eventlist" %>
 	<% CategoryEvent.all.each do |one_category| %>
+<<<<<<< HEAD
 		<br><a href="/category_events/<%= one_category.eng_title %>"><%= one_category.ru_title %></a>
+=======
+		<% ssilka ="//localhost:3000/category_events/" %>
+		<% ssilka += one_category.id.to_s %>
+		<% ssilka += $WORD_TO_SEE %>
+		<br><a href="<%= ssilka %>"><%= one_category.eng_title %></a>
+>>>>>>> work_with_paper_clip
 	<% end %>
 	<br><%= link_to "Карта площадки",	action: "map_park"	%>
 	<br><%= link_to "Кухня",			action: "kitchen"	%>

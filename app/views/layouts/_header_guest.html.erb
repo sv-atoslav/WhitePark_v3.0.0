@@ -239,7 +239,11 @@
 			<a href="/sobitia">События</a>
 			<p class="sub-main-switch"><i class="fa fa-chevron-down" aria-hidden="true"></i></p></div>
 			<div class="sub-main"><% CategoryEvent.all.each do |one_category| %>
+<<<<<<< HEAD
 				<a href="/category_events/<%= one_category.eng_title %>"><%= one_category.ru_title %></a>
+=======
+				<a href="//localhost:3000/category_events/<%= one_category.id.to_s %><%= $WORD_TO_SEE %>"><%= one_category.eng_title %></a>
+>>>>>>> work_with_paper_clip
 			<% end %></div>
 		</div>
 		<!-- <div class="sub-main-block">

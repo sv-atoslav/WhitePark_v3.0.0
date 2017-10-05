@@ -14,9 +14,15 @@
   </tr></thead>
   <tbody><% @tents.each do |tent| %><tr>
     <td>
+<<<<<<< HEAD
       <% photo = Photo.find_by(id: tent.icon) %>
       <% if photo.nil? %><%= $INE.html_safe %>
       <% else %><%=image_tag(photo.avatar.url, style:"width: 100px;",alt: photo.description )%>
+=======
+      <% way = Photo.try_get_way_to_img_tag_by_id(tent.icon) %>
+      <% if way.nil? %><%= $INE.html_safe %>
+      <% else %><%= image_tag(way, style: "width: 100px;") %>
+>>>>>>> work_with_paper_clip
       <% end  %>
     </td>
     <td><%= tent.namesize   %></td>

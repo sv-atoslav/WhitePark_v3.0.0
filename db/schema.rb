@@ -10,7 +10,11 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
+<<<<<<< HEAD
 ActiveRecord::Schema.define(version: 20170926164934) do
+=======
+ActiveRecord::Schema.define(version: 20170928163836) do
+>>>>>>> work_with_paper_clip
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -119,6 +123,10 @@ ActiveRecord::Schema.define(version: 20170926164934) do
     t.string "avatar_content_type"
     t.integer "avatar_file_size"
     t.datetime "avatar_updated_at"
+<<<<<<< HEAD
+=======
+    t.string "avatar"
+>>>>>>> work_with_paper_clip
   end
 
   create_table "slayders", force: :cascade do |t|

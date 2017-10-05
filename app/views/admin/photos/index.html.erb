@@ -6,10 +6,10 @@
 <% else %><table class="sv_table">
   <thead><tr>
     <th>Preview</th>
-    <th>Title</th>
     <th>Description</th>
     <th colspan="3"></th>
   </tr></thead>
+<<<<<<< HEAD
   <% puts "good_photos = "+ @good_photos.to_s %>
   <tbody><% @good_photos.each do |photo| %><tr>
     <% unless photo.avatar.exists? %>
@@ -49,3 +49,18 @@
   <%= link_to 'Destroy',    admin_photo_path(one_temp_photo), method: :delete, data: { confirm: 'Are you sure?' } %>
   <hr>
 <% end %>
+=======
+  <tbody><% @photos.each do |photo| %><tr>
+    <% unless photo.avatar? %>
+      <td colspan="2" align="center"><%= $INE.html_safe %></td>
+    <% else %>
+      <td><%= image_tag(photo.avatar.url , style: "width: 100px;", alt: photo.description) %></td>
+    <% end %>
+    <td><%= photo.description %></td>
+    <td><%= link_to 'Show',      admin_photo_path(photo) %></td>
+    <td><%= link_to 'Edit', edit_admin_photo_path(photo) %></td>
+    <td><%= link_to 'Destroy',   admin_photo_path(photo), method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr><% end %></tbody>
+</table><% end %>
+<br><%= link_to 'New Photo', action: "new" %>
+>>>>>>> work_with_paper_clip
