@@ -14,7 +14,7 @@
       <td width="120px">
         <p>Icon</p>
         <div class="field"><% @photo_list.each do |onefoto| %>
-          <%= image_tag(onefoto.image.url, style: "width: 100px;", alt: onefoto.description) %>
+          <%= image_tag(onefoto.avatar.url, style: "width: 100px;", alt: onefoto.description) %>
           <%= form.radio_button(:icon, onefoto.id) %>
           <br>
         <% end %></div>

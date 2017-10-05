@@ -14,11 +14,16 @@
 	    </tr></thead>
         <% have_some_photo = @old_list.to_a.any? %>
         <tbody align="center"><% @photo_list.each do |one_photo| %><tr>
-			<td><%= image_tag(one_photo.image.url, style: "width: 100px;") %></td>
+        	<% way = Photo.try_get_way_to_img_tag_by_photo(one_photo) %>
+        	<td>
+            	<% if way.nil? %><%= $INE.html_safe %>
+            	<% else %><%= image_tag(way, style: "width: 100px;") %>
+            	<% end  %>
+        	</td>
 	        <!-- checkbox I parametr without [] need be == in controller params["word"] -->
 	        <td><% unless have_some_photo %><%= check_box_tag("many_photo_ids[]", one_photo.id) %>
-	        <% else %><%= check_box_tag("many_photo_ids[]", one_photo.id, @old_list.include?(one_photo.id) )%>
-	        <% end  %></td>
+	        <% else %><%= check_box_tag( "many_photo_ids[]", one_photo.id, @old_list.include?(one_photo.id)  )%>
+	        <% end%></td>
 	        <td align="left">
 		        <% temp_string = "" %>
 		        <% if have_some_photo && PhotoInSlayder.where(photo: one_photo.id, slyder: slayder.id).any? %>

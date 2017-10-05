@@ -1,17 +1,17 @@
 class ApplicationController < ActionController::Base
 	protect_from_forgery with: :exception
+	before_action :divider_access
 	
 	WillPaginate.per_page = 5
 
 	$INE = "<i>картинка отсутствует</i>" 
 	$WORD_TO_SEE = "/prosmotr"
 
-	before_action :divider_access
-	
 	def set_photo_list
 		@photo_list = Photo.all.order(description: :asc)
 	end
 
+	# defense for unauthorized acces
 	def legaly_actions
 		return ["beauty", "robots"]
 	end

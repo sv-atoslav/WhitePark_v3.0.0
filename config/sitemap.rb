@@ -4,16 +4,16 @@ host "localhost:3000"
 
 sitemap :site do
 	word = "category_events/"
-	CategoryEvent.all.each do |state|
-		url word+state.id.to_s+"/prosmotr"
+	CategoryEvent.all.each do |one_category_event|
+		url word+one_category_event.id.to_s+"/prosmotr"
 	end
 	word = "events/"
-	Event.all.each do |state|
-		url word+state.id.to_s+"/prosmotr"
+	Event.all.each do |one_event|
+		url word+one_event.id.to_s+"/prosmotr"
 	end
 	word = "articles/"
-	Article.all.each do |state|
-		url word+state.id.to_s+"/prosmotr"
+	Article.all.each do |one_article|
+		url word+one_article.id.to_s+"/prosmotr"
 	end
 	url "/WhitePark"
 	url otzivi_path
@@ -25,19 +25,6 @@ sitemap :site do
 	url kontakti_path
 	url sitemap_path
 end
-# word = "events/"
-# sitemap_for Event.all do |state|
-# 	url word+state.id.to_s+"/prosmotr"
-# end
-# word = "category_events/"
-# sitemap_for CategoryEvent.all do |state|
-# 	url word+state.id.to_s+"/prosmotr"
-# end
-# word = "articles/"
-# sitemap_for Article.all do |state|
-# 	url word+state.id.to_s+"/prosmotr"
-# end
-
 # You can have multiple sitemaps like the above – just make sure their names are different.
 
 # Automatically link to all pages using the routes specified

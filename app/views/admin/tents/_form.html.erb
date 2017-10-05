@@ -7,17 +7,20 @@
       <% end %></ul>
     </div>
   <% end %>
-  <div class="field"><%= form.label :namesize    %><%= form.text_field :namesize,    id: :tent_namesize     %></div>
+  <div class="field"><%= form.label :namesize %><%= form.text_field :namesize, id: :tent_namesize %></div>
   <div class="field"><%= form.label :description %><%= form.text_field :description, id: :tent_description %></div>
   <p>Icon</p>
   <div class="field"><% @photo_list.each do |one_photo| %>
-    <%= image_tag(one_photo.image.url, alt: one_photo.description, style: "width: 100px;" ) %>
+    <% way = Photo.try_get_way_to_img_tag_by_photo(one_photo) %>
+    <% if way.nil? %><%= $INE.html_safe %>
+    <% else %><%= image_tag(way, alt: one_photo.description, style: "width: 100px;") %>
+    <% end  %>
     <%= form.radio_button(:icon, one_photo.id) %>
-    <%= form.label(:icon, one_photo.image.url) %><br>
+    <%= form.label(:icon, way) %><br>
   <% end %></div>
-  <div class="field"><%= form.label :min_size %><%= form.number_field :min_size, id: :tent_min_size  %></div>
-  <div class="field"><%= form.label :max_size %><%= form.number_field :max_size, id: :tent_max_size  %></div>
-  <div class="field">Как много людей поместиться на банкете<%= form.label :hpb %><%= form.number_field :hpb, id: :tent_hpb %></div>
-  <div class="field">Как много людей поместиться на фуршете<%= form.label :hpf %><%= form.number_field :hpf, id: :tent_hpf %></div>
+  <div class="field"><%= form.number_field :min_size, id: :tent_min_size %><%=form.label :min_size %></div>
+  <div class="field"><%= form.number_field :max_size, id: :tent_max_size %><%=form.label :max_size %></div>
+  <div class="field"><%= form.number_field :hpb, id: :tent_hpb %>Как много людей поместиться на банкете<%= form.label :hpb %></div>
+  <div class="field"><%= form.number_field :hpf, id: :tent_hpf %>Как много людей поместиться на фуршете<%= form.label :hpf %></div>
   <div class="actions"><%= form.submit %></div>
 <% end %>

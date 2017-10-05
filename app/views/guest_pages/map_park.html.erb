@@ -19,9 +19,9 @@
 					<p><%= one_tent.description %></p>
 				</div>
 				<div class = "karta-image">
-					<% photo = Photo.find_by(id: one_tent.icon) %>
-					<% if photo.nil? %><%= $INE.html_safe		%>
-					<% else %><%= image_tag(photo.image.url)	%>
+					<% way = Photo.try_get_way_to_img_tag_by_id(one_tent.icon) %>
+					<% if way.nil? %><%= $INE.html_safe %>
+					<% else %><%= image_tag(way) %>
 					<% end  %>
 				</div>
 				<div class="karta-options">

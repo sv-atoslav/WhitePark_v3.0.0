@@ -54,14 +54,12 @@ class Admin::PhotosController < ApplicationController
   # DELETE /photos/1
   # DELETE /photos/1.json
   def destroy
-    PhotoInEvent.where(  photo: @photo.id).each do |need_destroy|
-      need_destroy.destroy
-    end
-    PhotoInArticle.where(photo: @photo.id).each do |need_destroy|
-      need_destroy.destroy
-    end
-    PhotoInSlayder.where(photo: @photo.id).each do |need_destroy|
-      need_destroy.destroy
+    list_to_destroy =[]
+    list_to_destroy += PhotoInEvent.where(  photo: @photo.id).all.to_a
+    list_to_destroy += PhotoInArticle.where(photo: @photo.id).all.to_a
+    list_to_destroy += PhotoInSlayder.where(photo: @photo.id).all.to_a
+    list_to_destroy.each do |item|
+      item.destroy
     end
     @photo.destroy
     respond_to do |format|
@@ -78,7 +76,7 @@ class Admin::PhotosController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def photo_params
-      params.require(:photo).permit(:image, :description)
+      params.require(:photo).permit(:description, :avatar)
     end
 
     def upload

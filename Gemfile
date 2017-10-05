@@ -9,7 +9,7 @@ gem 'dynamic_sitemaps'
 gem 'will_paginate', '~> 3.1.0'
 
 # for upload picture
-
+gem 'carrierwave', '~> 1.0'
 
 # Use sqlite3 as the database for Active Record
 # gem 'sqlite3'
