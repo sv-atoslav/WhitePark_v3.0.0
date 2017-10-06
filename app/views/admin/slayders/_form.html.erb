@@ -1,5 +1,5 @@
 <%= form_with(model: [:admin, slayder], local: true) do |form| %>
-  <% if slayder.errors.any? %><div id="error_explanation">
+	<% if slayder.errors.any? %><div id="error_explanation">
     <h2><%= pluralize(slayder.errors.count, "error") %> prohibited this slayder from being saved:</h2>
     <ul><% slayder.errors.full_messages.each do |message| %>
 			<li><%= message %></li>
@@ -14,16 +14,12 @@
 	    </tr></thead>
         <% have_some_photo = @old_list.to_a.any? %>
         <tbody align="center"><% @photo_list.each do |one_photo| %><tr>
-<<<<<<< HEAD
-			<td><%= image_tag(one_photo.avatar.url, style: "width: 100px;") %></td>
-=======
-        	<% way = Photo.try_get_way_to_img_tag_by_photo(one_photo) %>
         	<td>
+        		<% way = Photo.try_get_way_to_img_tag_by_photo(one_photo) %>
             	<% if way.nil? %><%= $INE.html_safe %>
             	<% else %><%= image_tag(way, style: "width: 100px;") %>
             	<% end  %>
         	</td>
->>>>>>> work_with_paper_clip
 	        <!-- checkbox I parametr without [] need be == in controller params["word"] -->
 	        <td><% unless have_some_photo %><%= check_box_tag("many_photo_ids[]", one_photo.id) %>
 	        <% else %><%= check_box_tag( "many_photo_ids[]", one_photo.id, @old_list.include?(one_photo.id)  )%>

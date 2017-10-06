@@ -4,11 +4,7 @@
 <% @old_list.each do |one_foto_id| %>
 	<% temp_icon = Photo.find_by(id: one_foto_id) %>
     <% if temp_icon.nil? %><%= $INE.html_safe %>
-<<<<<<< HEAD
-    <% else %>,<%= image_tag( temp_icon.avatar.url , style: "width: 100px;", alt: temp_icon.description ) %>
-=======
     <% else %>,<%= image_tag( temp_icon.avatar.url , style: "width: 100px;", alt: temp_icon.description)%>
->>>>>>> work_with_paper_clip
     <% end %>
 <% end %>.
 <br>

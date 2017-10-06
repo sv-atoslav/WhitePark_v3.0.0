@@ -5,23 +5,14 @@
       <li><%= message %></li>
     <% end %></ul>
   </div><% end %>
-
-<<<<<<< HEAD
-  <div class="field">
-    <%= form.file_field :avatar %>
-  </div>
-=======
   <p>
     <label>My Avatar</label>
     <%= image_tag(photo.avatar_url) if photo.avatar? %>
     <%= form.file_field :avatar %>
   </p>
-
   <p><label>
     <%= form.check_box :remove_avatar %>Remove avatar
   </label></p>
-
->>>>>>> work_with_paper_clip
   <div class="field"><%= form.label :description %><%= form.text_field :description, id: :photo_description %></div>
   <div class="actions"><%= form.submit %></div>
 <% end %>

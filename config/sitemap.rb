@@ -3,23 +3,16 @@
 host "localhost:3000"
 
 sitemap :site do
-	Event.all.each do |state|
+	Event.all.each do |one_event|
 		url state.eng_title
 	end
 	word = "category_events/"
 	CategoryEvent.all.each do |one_category_event|
-		url word+one_category_event.id.to_s+"/prosmotr"
+		url word+one_category_event.eng_title
 	end
-<<<<<<< HEAD
-=======
-	word = "events/"
-	Event.all.each do |one_event|
-		url word+one_event.id.to_s+"/prosmotr"
-	end
->>>>>>> work_with_paper_clip
 	word = "articles/"
 	Article.all.each do |one_article|
-		url word+one_article.id.to_s+"/prosmotr"
+		url word+one_article.eng_title
 	end
 	url "/WhitePark"
 	url otzivi_path
@@ -31,7 +24,7 @@ sitemap :site do
 	url kontakti_path
 	url sitemap_path
 end
-<<<<<<< HEAD
+
 # sitemap_for Event.all do |state|
 # 	url state.eng_title
 # end
@@ -44,8 +37,6 @@ end
 # 	url word+state.id.to_s+"/prosmotr"
 # end
 
-=======
->>>>>>> work_with_paper_clip
 # You can have multiple sitemaps like the above – just make sure their names are different.
 
 # Automatically link to all pages using the routes specified
@@ -76,5 +67,4 @@ end
 #   end
 
 # Ping search engines after sitemap generation:
-#
 ping_with "http://#{host}/sitemap.xml"

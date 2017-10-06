@@ -7,18 +7,12 @@
   </div><% end %>
   <p>Photo</p>
   <div  class="field"><% @photo_list.each do |one_photo| %>
-<<<<<<< HEAD
-    <%= image_tag(one_photo.avatar.url,alt: one_photo.description,style: "width: 100px;")%>
-    <%= form.radio_button(:photo, one_photo.id) %>
-    <%= form.label(:photo, one_photo.avatar.url) %><br>
-=======
     <% way = Photo.try_get_way_to_img_tag_by_photo(one_photo) %>
     <% if way.nil? %><%= $INE.html_safe %>
     <% else %><%=  image_tag(way, alt: one_photo.description, style: "width: 100px;") %>
     <% end  %>
     <%= form.radio_button(:photo, one_photo.id) %>
     <%= form.label(:photo, way) %><br>
->>>>>>> work_with_paper_clip
   <%end %></div>
   <div  class="field"><%= form.label :event %><%= form.collection_select(:event, Event.all, :id, :title) %></div>
   <div class="actions"><%= form.submit %></div>

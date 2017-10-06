@@ -1,14 +1,7 @@
 <p id="notice"><%= notice %></p>
-<<<<<<< HEAD
-<% unless @photo.avatar.exists? %><%= $INE.html_safe %>
-<% else %>
-	<strong>Title:</strong><%= @photo.avatar.name %><% des = @photo.description %>
-=======
 <% unless @photo.avatar? %><%= $INE.html_safe %>
 <% else %>
 	<strong>Title:</strong><%= @photo.avatar %><% des = @photo.description %>
-	
->>>>>>> work_with_paper_clip
 	<%= image_tag(@photo.avatar.url, width: "100%", alt: @photo.description) %>
 <% end %>
 <p><strong>Description:</strong><%= @photo.description %></p>
