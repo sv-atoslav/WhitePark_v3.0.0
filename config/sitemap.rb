@@ -1,70 +1,55 @@
-# Change this to your host. See the readme at https://github.com/lassebunk/dynamic_sitemaps
-# for examples of multiple hosts and folders.
-host "localhost:3000"
+# Set the host name for URL creation
+SitemapGenerator::Sitemap.default_host = "https://shrouded-mountain-92881.herokuapp.com"
 
-sitemap :site do
-	Event.all.each do |one_event|
-		url state.eng_title
-	end
-	word = "category_events/"
-	CategoryEvent.all.each do |one_category_event|
-		url word+one_category_event.eng_title
-	end
-	word = "articles/"
-	Article.all.each do |one_article|
-		url word+one_article.eng_title
-	end
-	url "/WhitePark"
-	url otzivi_path
-	url kuhnya_path
-	url statii_path
-	url o_nas_path
-	url map_path
-	url sobitia_path
-	url kontakti_path
-	url sitemap_path
+SitemapGenerator::Sitemap.compress = false
+
+SitemapGenerator::Sitemap.create do
+  # Put links creation logic here.
+  #
+  # The root path '/' and sitemap index file are added automatically for you.
+  # Links are added to the Sitemap in the order they are specified.
+  #
+  # Usage: add(path, options={})
+  #        (default options are used if you don't specify)
+  #
+  # Defaults: :priority => 0.5, :changefreq => 'weekly',
+  #           :lastmod => Time.now, :host => default_host
+  #
+  # Examples:
+  #
+  # Add '/articles'
+  #
+  #   add articles_path, :priority => 0.7, :changefreq => 'daily'
+  #
+  # Add all articles:
+  #
+  #   Article.find_each do |article|
+  #     add article_path(article), :lastmod => article.updated_at
+  #   end
+  add '/WhitePark'
+  add '/otzivi'
+  add '/kuhnya'
+  add '/map'
+  add '/o_nas'
+  add '/kontakti'
+  add '/sobitia'
+  add '/download'
+  add '/statii'
+  add "/sitemap"
+
+  Article.find_each do |state|
+    way  = "articles/"
+    way += state.eng_title.to_s
+    add way, :lastmod => state.updated_at
+  end
+  Event.find_each do |state|
+    way  = "events/"
+    way += state.eng_title.to_s
+    add way, :lastmod => state.updated_at
+  end
+  CategoryEvent.find_each do |state|
+    way  = "category_events/"
+    way += state.eng_title.to_s
+    add way, :lastmod => state.updated_at
+  end
 end
-
-# sitemap_for Event.all do |state|
-# 	url state.eng_title
-# end
-# word = "category_events/"
-# sitemap_for CategoryEvent.all do |state|
-# 	url word+state.id.to_s+"/prosmotr"
-# end
-# word = "articles/"
-# sitemap_for Article.all do |state|
-# 	url word+state.id.to_s+"/prosmotr"
-# end
-
-# You can have multiple sitemaps like the above – just make sure their names are different.
-
-# Automatically link to all pages using the routes specified
-# using "resources :pages" in config/routes.rb. This will also
-# automatically set <lastmod> to the date and time in page.updated_at:
-#
-#   sitemap_for Page.scoped
-
-# For products with special sitemap name and priority, and link to comments:
-#
-#   sitemap_for Product.published, name: :published_products do |product|
-#     url product, last_mod: product.updated_at, priority: (product.featured? ? 1.0 : 0.7)
-#     url product_comments_url(product)
-#   end
-
-# If you want to generate multiple sitemaps in different folders (for example if you have
-# more than one domain, you can specify a folder before the sitemap definitions:
-# 
-#   Site.all.each do |site|
-#     folder "sitemaps/#{site.domain}"
-#     host site.domain
-#     
-#     sitemap :site do
-#       url root_url
-#     end
-# 
-#     sitemap_for site.products.scoped
-#   end
-
-# Ping search engines after sitemap generation:
-ping_with "http://#{host}/sitemap.xml"

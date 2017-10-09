@@ -15,11 +15,6 @@ ActiveRecord::Schema.define(version: 20170928163836) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "admins", force: :cascade do |t|
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
   create_table "articles", force: :cascade do |t|
     t.string "ru_title"
     t.text "description"
@@ -120,6 +115,7 @@ ActiveRecord::Schema.define(version: 20170928163836) do
     t.integer "avatar_file_size"
     t.datetime "avatar_updated_at"
     t.string "avatar"
+  end
 
   create_table "slayders", force: :cascade do |t|
     t.string "title"

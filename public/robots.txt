@@ -1,10 +1,9 @@
-# \        / |  |  | ---  __    |\   /\   |\  |/
-#  \  /\  /  |--|  |  |  |__    |/  /--\  |/  |\
-#   \/  \/   |  |  |  |  |__    |  /    \ |\  | \
-
 User-agent: *
-Disallow:  /admin
+Allow: /
+Disallow: /admin
 Disallow: /moderators
-
-Host: localhost:3000
-Sitemap: http://localhost:3000/sitemap.xml
+Sitemap: http://shrouded-mountain-92881.herokuapp.com/sitemap.xml
+#                      _____  __              _
+# \    /\    / |   | |   |   |     |\   /\   | \ | /
+#  \  /  \  /  |---| |   |   |--   |/  /__\  |_/ |- 
+#   \/    \/   |   | |   |   |__   |  /    \ | \ | \

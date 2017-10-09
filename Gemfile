@@ -4,13 +4,18 @@ source 'https://rubygems.org'
 gem 'rails'
 gem 'font-awesome-rails'
 
+# defend
 gem 'devise'
-gem 'dynamic_sitemaps'
+
+# 1, 2, n...
 gem 'will_paginate', '~> 3.1.0'
 
-# for upload picture
 gem "translit"
+# for upload picture
 gem 'carrierwave', '~> 1.0'
+
+# sitemap.xml
+gem 'sitemap_generator'
 
 # Use sqlite3 as the database for Active Record
 # gem 'sqlite3'

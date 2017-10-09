@@ -4,7 +4,10 @@
 	<br><%= link_to "Статьи" , action: "list_of_articles" %>
 	<br><%= link_to "События", action: "eventlist" %>
 	<% CategoryEvent.all.each do |one_category| %>
-		<br><a href="/category_events/<%= one_category.eng_title %>"><%= one_category.ru_title %></a>
+		<br><a href = "/category_events/<%= one_category.eng_title %>" style = "padding-left: 20px"><%= one_category.ru_title %></a>
+		<% Event.where(category: one_category.id).each do |one_event| %>
+		<br><a href = "/events/<%= one_event.eng_title %>" style="padding-left: 40px"><%= one_event.ru_title %></a>
+		<% end %>
 	<% end %>
 	<br><%= link_to "Карта площадки",	action: "map_park"	%>
 	<br><%= link_to "Кухня",			action: "kitchen"	%>

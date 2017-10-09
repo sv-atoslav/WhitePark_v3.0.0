@@ -5,16 +5,16 @@ class Admin::PhotosController < ApplicationController
   # GET /photos
   # GET /photos.json
   def index
-    @good_photos = []
-    @bad_photos  = []
-    # todo - have ph. data on server or haven't
-    @photo_list.each do |one_photo|
-      if one_photo.avatar.exists?
-        @good_photos<< one_photo
-      else
-        @bad_photos << one_photo
-      end
-    end
+    # @good_photos = []
+    # @bad_photos  = []
+    # # todo - have ph. data on server or haven't
+    # @photo_list.each do |one_photo|
+    #   if one_photo.avatar.exists?
+    #     @good_photos<< one_photo
+    #   else
+    #     @bad_photos << one_photo
+    #   end
+    # end
     # code under this sort it is simplifily solutions, but i get nil or error
     # @photo_list.to_a.group_by {|one_photo| one_photo.avatar.exists? ? :good_photos : :bad_photos}
     # @good_photos = :good_photos.to_a
