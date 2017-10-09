@@ -5,28 +5,6 @@ class Admin::PhotosController < ApplicationController
   # GET /photos
   # GET /photos.json
   def index
-    # @good_photos = []
-    # @bad_photos  = []
-    # # todo - have ph. data on server or haven't
-    # @photo_list.each do |one_photo|
-    #   if one_photo.avatar.exists?
-    #     @good_photos<< one_photo
-    #   else
-    #     @bad_photos << one_photo
-    #   end
-    # end
-    # code under this sort it is simplifily solutions, but i get nil or error
-    # @photo_list.to_a.group_by {|one_photo| one_photo.avatar.exists? ? :good_photos : :bad_photos}
-    # @good_photos = :good_photos.to_a
-    # @bad_photos  =  :bad_photos.to_a
-    # puts "g phs" + @good_photos.to_a.to_s
-    # puts "b phs" +  @bad_photos.to_s.to_s
-    # @good_photos = @photo_list.where("avatar.exists?" true)
-    # @bad_photos  = @photo_list.where("avatar.exists?" true)
-    # @good_photos = Photo.where("avatar.exists?" => true)
-    # @bad_photos  = Photo.where("avatar.exists?" => false)
-    # puts "g phs" + @good_photos.to_a.to_s
-    # puts "b phs" +  @bad_photos.to_s.to_s
   end
 
   # GET /photos/1
