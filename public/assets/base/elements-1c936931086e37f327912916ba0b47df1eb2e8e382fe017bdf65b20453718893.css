@@ -1,0 +1,2957 @@
+@charset "UTF-8";
+/* TOOGLE SWICH */
+/* line 6, /home/leetsworker/Документи/My_RP/WhitePark with Inspinia with unicorn/app/assets/stylesheets/base/elements.scss */
+.onoffswitch {
+  position: relative;
+  width: 64px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+}
+
+/* line 14, /home/leetsworker/Документи/My_RP/WhitePark with Inspinia with unicorn/app/assets/stylesheets/base/elements.scss */
+.onoffswitch-checkbox {
+  display: none;
+}
+
+/* line 18, /home/leetsworker/Документи/My_RP/WhitePark with Inspinia with unicorn/app/assets/stylesheets/base/elements.scss */
+.onoffswitch-label {
+  display: block;
+  overflow: hidden;
+  cursor: pointer;
+  border: 2px solid #1ab394;
+  border-radius: 2px;
+}
+
+/* line 26, /home/leetsworker/Документи/My_RP/WhitePark with Inspinia with unicorn/app/assets/stylesheets/base/elements.scss */
+.onoffswitch-inner {
+  width: 200%;
+  margin-left: -100%;
+  -moz-transition: margin 0.3s ease-in 0s;
+  -webkit-transition: margin 0.3s ease-in 0s;
+  -o-transition: margin 0.3s ease-in 0s;
+  transition: margin 0.3s ease-in 0s;
+}
+
+/* line 35, /home/leetsworker/Документи/My_RP/WhitePark with Inspinia with unicorn/app/assets/stylesheets/base/elements.scss */
+.onoffswitch-inner:before, .onoffswitch-inner:after {
+  float: left;
+  width: 50%;
+  height: 20px;
+  padding: 0;
+  line-height: 20px;
+  font-size: 12px;
+  color: white;
+  font-family: Trebuchet, Arial, sans-serif;
+  font-weight: bold;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+/* line 50, /home/leetsworker/Документи/My_RP/WhitePark with Inspinia with unicorn/app/assets/stylesheets/base/elements.scss */
+.onoffswitch-inner:before {
+  content: "ON";
+  padding-left: 10px;
+  background-color: #1ab394;
+  color: #FFFFFF;
+}
+
+/* line 57, /home/leetsworker/Документи/My_RP/WhitePark with Inspinia with unicorn/app/assets/stylesheets/base/elements.scss */
+.onoffswitch-inner:after {
+  content: "OFF";
+  padding-right: 10px;
+  background-color: #FFFFFF;
+  color: #999999;
+  text-align: right;
+}
+
+/* line 65, /home/leetsworker/Документи/My_RP/WhitePark with Inspinia with unicorn/app/assets/stylesheets/base/elements.scss */
+.onoffswitch-switch {
+  width: 20px;
+  margin: 0;
+  background: #FFFFFF;
+  border: 2px solid #1ab394;
+  border-radius: 2px;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 44px;
+  -moz-transition: all 0.3s ease-in 0s;
+  -webkit-transition: all 0.3s ease-in 0s;
+  -o-transition: all 0.3s ease-in 0s;
+  transition: all 0.3s ease-in 0s;
+}
+
+/* line 81, /home/leetsworker/Документи/My_RP/WhitePark with Inspinia with unicorn/app/assets/stylesheets/base/elements.scss */
+.onoffswitch-checkbox:checked + .onoffswitch-label .onoffswitch-inner {
+  margin-left: 0;
+}
+
+/* line 85, /home/leetsworker/Документи/My_RP/WhitePark with Inspinia with unicorn/app/assets/stylesheets/base/elements.scss */
+.onoffswitch-checkbox:checked + .onoffswitch-label .onoffswitch-switch {
+  right: 0;
+}
+
+/* line 89, /home/leetsworker/Документи/My_RP/WhitePark with Inspinia with unicorn/app/assets/stylesheets/base/elements.scss */
+.onoffswitch-checkbox:disabled + .onoffswitch-label .onoffswitch-inner:before {
+  background-color: #919191;
+}
+
+/* line 93, /home/leetsworker/Документи/My_RP/WhitePark with Inspinia with unicorn/app/assets/stylesheets/base/elements.scss */
+.onoffswitch-checkbox:disabled + .onoffswitch-label,
+.onoffswitch-checkbox:disabled + .onoffswitch-label .onoffswitch-switch {
+  border-color: #919191;
+}
+
+/* CHOSEN PLUGIN */
+/* line 99, /home/leetsworker/Документи/My_RP/WhitePark with Inspinia with unicorn/app/assets/stylesheets/base/elements.scss */
+.chosen-container-single .chosen-single {
+  background: #ffffff;
+  box-shadow: none;
+  -moz-box-sizing: border-box;
+  border-radius: 2px;
+  cursor: text;
+  height: auto !important;
+  margin: 0;
+  min-height: 30px;
+  overflow: hidden;
+  padding: 4px 12px;
+  position: relative;
+  width: 100%;
+}
+
+/* line 114, /home/leetsworker/Документи/My_RP/WhitePark with Inspinia with unicorn/app/assets/stylesheets/base/elements.scss */
+.chosen-container-multi .chosen-choices li.search-choice {
+  background: #f1f1f1;
+  border: 1px solid #e5e6e7;
+  border-radius: 2px;
+  box-shadow: none;
+  color: #333333;
+  cursor: default;
+  line-height: 13px;
+  margin: 3px 0 3px 5px;
+  padding: 3px 20px 3px 5px;
+  position: relative;
+}
+
+/* Tags Input Plugin */
+/* line 129, /home/leetsworker/Документи/My_RP/WhitePark with Inspinia with unicorn/app/assets/stylesheets/base/elements.scss */
+.bootstrap-tagsinput {
+  border: 1px solid #e5e6e7;
+  box-shadow: none;
+}
+
+/* PAGINATIN */
+/* line 137, /home/leetsworker/Документи/My_RP/WhitePark with Inspinia with unicorn/app/assets/stylesheets/base/elements.scss */
+.pagination > .active > a, .pagination > .active > span, .pagination > .active > a:hover, .pagination > .active > span:hover, .pagination > .active > a:focus, .pagination > .active > span:focus {
+  background-color: #f4f4f4;
+  border-color: #DDDDDD;
+  color: inherit;
+  cursor: default;
+  z-index: 2;
+}
+
+/* line 145, /home/leetsworker/Документи/My_RP/WhitePark with Inspinia with unicorn/app/assets/stylesheets/base/elements.scss */
+.pagination > li > a, .pagination > li > span {
+  background-color: #FFFFFF;
+  border: 1px solid #DDDDDD;
+  color: inherit;
+  float: left;
+  line-height: 1.42857;
+  margin-left: -1px;
+  padding: 4px 10px;
+  position: relative;
+  text-decoration: none;
+}
+
+/* TOOLTIPS */
+/* line 159, /home/leetsworker/Документи/My_RP/WhitePark with Inspinia with unicorn/app/assets/stylesheets/base/elements.scss */
+.tooltip-inner {
+  background-color: #2F4050;
+}
+
+/* line 163, /home/leetsworker/Документи/My_RP/WhitePark with Inspinia with unicorn/app/assets/stylesheets/base/elements.scss */
+.tooltip.top .tooltip-arrow {
+  border-top-color: #2F4050;
+}
+
+/* line 167, /home/leetsworker/Документи/My_RP/WhitePark with Inspinia with unicorn/app/assets/stylesheets/base/elements.scss */
+.tooltip.right .tooltip-arrow {
+  border-right-color: #2F4050;
+}
+
+/* line 171, /home/leetsworker/Документи/My_RP/WhitePark with Inspinia with unicorn/app/assets/stylesheets/base/elements.scss */
+.tooltip.bottom .tooltip-arrow {
+  border-bottom-color: #2F4050;
+}
+
+/* line 175, /home/leetsworker/Документи/My_RP/WhitePark with Inspinia with unicorn/app/assets/stylesheets/base/elements.scss */
+.tooltip.left .tooltip-arrow {
+  border-left-color: #2F4050;
+}
+
+/* EASY PIE CHART*/
+/* line 181, /home/leetsworker/Документи/My_RP/WhitePark with Inspinia with unicorn/app/assets/stylesheets/base/elements.scss */
+.easypiechart {
+  position: relative;
+  text-align: center;
+}
+
+/* line 186, /home/leetsworker/Документи/My_RP/WhitePark with Inspinia with unicorn/app/assets/stylesheets/base/elements.scss */
+.easypiechart .h2 {
+  margin-left: 10px;
+  margin-top: 10px;
+  display: inline-block;
+}
+
+/* line 192, /home/leetsworker/Документи/My_RP/WhitePark with Inspinia with unicorn/app/assets/stylesheets/base/elements.scss */
+.easypiechart canvas {
+  top: 0;
+  left: 0;
+}
+
+/* line 197, /home/leetsworker/Документи/My_RP/WhitePark with Inspinia with unicorn/app/assets/stylesheets/base/elements.scss */
+.easypiechart .easypie-text {
+  line-height: 1;
+  position: absolute;
+  top: 33px;
+  width: 100%;
+  z-index: 1;
+}
+
+/* line 205, /home/leetsworker/Документи/My_RP/WhitePark with Inspinia with unicorn/app/assets/stylesheets/base/elements.scss */
+.easypiechart img {
+  margin-top: -4px;
+}
+
+/* line 209, /home/leetsworker/Документи/My_RP/WhitePark with Inspinia with unicorn/app/assets/stylesheets/base/elements.scss */
+.jqstooltip {
+  -webkit-box-sizing: content-box;
+  -moz-box-sizing: content-box;
+  box-sizing: content-box;
+}
+
+/* FULLCALENDAR */
+/* line 217, /home/leetsworker/Документи/My_RP/WhitePark with Inspinia with unicorn/app/assets/stylesheets/base/elements.scss */
+.fc-state-default {
+  background-color: #ffffff;
+  background-image: none;
+  background-repeat: repeat-x;
+  box-shadow: none;
+  color: #333333;
+  text-shadow: none;
+}
+
+/* line 226, /home/leetsworker/Документи/My_RP/WhitePark with Inspinia with unicorn/app/assets/stylesheets/base/elements.scss */
+.fc-state-default {
+  border: 1px solid;
+}
+
+/* line 230, /home/leetsworker/Документи/My_RP/WhitePark with Inspinia with unicorn/app/assets/stylesheets/base/elements.scss */
+.fc-button {
+  color: inherit;
+  border: 1px solid #e7eaec;
+  cursor: pointer;
+  display: inline-block;
+  height: 1.9em;
+  line-height: 1.9em;
+  overflow: hidden;
+  padding: 0 0.6em;
+  position: relative;
+  white-space: nowrap;
+}
+
+/* line 243, /home/leetsworker/Документи/My_RP/WhitePark with Inspinia with unicorn/app/assets/stylesheets/base/elements.scss */
+.fc-state-active {
+  background-color: #1ab394;
+  border-color: #1ab394;
+  color: #ffffff;
+}
+
+/* line 249, /home/leetsworker/Документи/My_RP/WhitePark with Inspinia with unicorn/app/assets/stylesheets/base/elements.scss */
+.fc-header-title h2 {
+  font-size: 16px;
+  font-weight: 600;
+  color: inherit;
+}
+
+/* line 255, /home/leetsworker/Документи/My_RP/WhitePark with Inspinia with unicorn/app/assets/stylesheets/base/elements.scss */
+.fc-content .fc-widget-header, .fc-content .fc-widget-content {
+  border-color: #e7eaec;
+  font-weight: normal;
+}
+
+/* line 260, /home/leetsworker/Документи/My_RP/WhitePark with Inspinia with unicorn/app/assets/stylesheets/base/elements.scss */
+.fc-border-separate tbody {
+  background-color: #F8F8F8;
+}
+
+/* line 264, /home/leetsworker/Документи/My_RP/WhitePark with Inspinia with unicorn/app/assets/stylesheets/base/elements.scss */
+.fc-state-highlight {
+  background: none repeat scroll 0 0 #FCF8E3;
+}
+
+/* line 268, /home/leetsworker/Документи/My_RP/WhitePark with Inspinia with unicorn/app/assets/stylesheets/base/elements.scss */
+.external-event {
+  padding: 5px 10px;
+  border-radius: 2px;
+  cursor: pointer;
+  margin-bottom: 5px;
+}
+
+/* line 275, /home/leetsworker/Документи/My_RP/WhitePark with Inspinia with unicorn/app/assets/stylesheets/base/elements.scss */
+.fc-ltr .fc-event-hori.fc-event-end, .fc-rtl .fc-event-hori.fc-event-start {
+  border-radius: 2px;
+}
+
+/* line 279, /home/leetsworker/Документи/My_RP/WhitePark with Inspinia with unicorn/app/assets/stylesheets/base/elements.scss */
+.fc-event,
+.fc-agenda .fc-event-time,
+.fc-event a {
+  padding: 4px 6px;
+  background-color: #1ab394;
+  /* background color */
+  border-color: #1ab394;
+  /* border color */
+}
+
+/* line 287, /home/leetsworker/Документи/My_RP/WhitePark with Inspinia with unicorn/app/assets/stylesheets/base/elements.scss */
+.fc-event-time, .fc-event-title {
+  color: #717171;
+  padding: 0 1px;
+}
+
+/* line 292, /home/leetsworker/Документи/My_RP/WhitePark with Inspinia with unicorn/app/assets/stylesheets/base/elements.scss */
+.ui-calendar .fc-event-time, .ui-calendar .fc-event-title {
+  color: #fff;
+}
+
+/* Chat */
+/* line 297, /home/leetsworker/Документи/My_RP/WhitePark with Inspinia with unicorn/app/assets/stylesheets/base/elements.scss */
+.chat-activity-list .chat-element {
+  border-bottom: 1px solid #e7eaec;
+}
+
+/* line 301, /home/leetsworker/Документи/My_RP/WhitePark with Inspinia with unicorn/app/assets/stylesheets/base/elements.scss */
+.chat-element:first-child {
+  margin-top: 0;
+}
+
+/* line 305, /home/leetsworker/Документи/My_RP/WhitePark with Inspinia with unicorn/app/assets/stylesheets/base/elements.scss */
+.chat-element {
+  padding-bottom: 15px;
+}
+
+/* line 309, /home/leetsworker/Документи/My_RP/WhitePark with Inspinia with unicorn/app/assets/stylesheets/base/elements.scss */
+.chat-element, .chat-element .media {
+  margin-top: 15px;
+}
+
+/* line 313, /home/leetsworker/Документи/My_RP/WhitePark with Inspinia with unicorn/app/assets/stylesheets/base/elements.scss */
+.chat-element, .media-body {
+  overflow: hidden;
+}
+
+/* line 317, /home/leetsworker/Документи/My_RP/WhitePark with Inspinia with unicorn/app/assets/stylesheets/base/elements.scss */
+.chat-element .media-body {
+  display: block;
+  width: auto;
+}
+
+/* line 322, /home/leetsworker/Документи/My_RP/WhitePark with Inspinia with unicorn/app/assets/stylesheets/base/elements.scss */
+.chat-element > .pull-left {
+  margin-right: 10px;
+}
+
+/* line 326, /home/leetsworker/Документи/My_RP/WhitePark with Inspinia with unicorn/app/assets/stylesheets/base/elements.scss */
+.chat-element img.img-circle, .dropdown-messages-box img.img-circle {
+  width: 38px;
+  height: 38px;
+}
+
+/* line 331, /home/leetsworker/Документи/My_RP/WhitePark with Inspinia with unicorn/app/assets/stylesheets/base/elements.scss */
+.chat-element .well {
+  border: 1px solid #e7eaec;
+  box-shadow: none;
+  margin-top: 10px;
+  margin-bottom: 5px;
+  padding: 10px 20px;
+  font-size: 11px;
+  line-height: 16px;
+}
+
+/* line 341, /home/leetsworker/Документи/My_RP/WhitePark with Inspinia with unicorn/app/assets/stylesheets/base/elements.scss */
+.chat-element .actions {
+  margin-top: 10px;
+}
+
+/* line 345, /home/leetsworker/Документи/My_RP/WhitePark with Inspinia with unicorn/app/assets/stylesheets/base/elements.scss */
+.chat-element .photos {
+  margin: 10px 0;
+}
+
+/* line 350, /home/leetsworker/Документи/My_RP/WhitePark with Inspinia with unicorn/app/assets/stylesheets/base/elements.scss */
+.right.chat-element > .pull-right {
+  margin-left: 10px;
+}
+
+/* line 354, /home/leetsworker/Документи/My_RP/WhitePark with Inspinia with unicorn/app/assets/stylesheets/base/elements.scss */
+.chat-photo {
+  max-height: 180px;
+  border-radius: 4px;
+  overflow: hidden;
+  margin-right: 10px;
+  margin-bottom: 10px;
+}
+
+/* line 362, /home/leetsworker/Документи/My_RP/WhitePark with Inspinia with unicorn/app/assets/stylesheets/base/elements.scss */
+.chat {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+/* line 368, /home/leetsworker/Документи/My_RP/WhitePark with Inspinia with unicorn/app/assets/stylesheets/base/elements.scss */
+.chat li {
+  margin-bottom: 10px;
+  padding-bottom: 5px;
+  border-bottom: 1px dotted #B3A9A9;
+}
+
+/* line 374, /home/leetsworker/Документи/My_RP/WhitePark with Inspinia with unicorn/app/assets/stylesheets/base/elements.scss */
+.chat li.left .chat-body {
+  margin-left: 60px;
+}
+
+/* line 378, /home/leetsworker/Документи/My_RP/WhitePark with Inspinia with unicorn/app/assets/stylesheets/base/elements.scss */
+.chat li.right .chat-body {
+  margin-right: 60px;
+}
+
+/* line 382, /home/leetsworker/Документи/My_RP/WhitePark with Inspinia with unicorn/app/assets/stylesheets/base/elements.scss */
+.chat li .chat-body p {
+  margin: 0;
+  color: #777777;
+}
+
+/* line 387, /home/leetsworker/Документи/My_RP/WhitePark with Inspinia with unicorn/app/assets/stylesheets/base/elements.scss */
+.panel .slidedown .glyphicon,
+.chat .glyphicon {
+  margin-right: 5px;
+}
+
+/* line 392, /home/leetsworker/Документи/My_RP/WhitePark with Inspinia with unicorn/app/assets/stylesheets/base/elements.scss */
+.chat-panel .panel-body {
+  height: 350px;
+  overflow-y: scroll;
+}
+
+/* LIST GROUP */
+/* line 399, /home/leetsworker/Документи/My_RP/WhitePark with Inspinia with unicorn/app/assets/stylesheets/base/elements.scss */
+a.list-group-item.active, a.list-group-item.active:hover, a.list-group-item.active:focus {
+  background-color: #1ab394;
+  border-color: #1ab394;
+  color: #FFFFFF;
+  z-index: 2;
+}
+
+/* line 406, /home/leetsworker/Документи/My_RP/WhitePark with Inspinia with unicorn/app/assets/stylesheets/base/elements.scss */
+.list-group-item-heading {
+  margin-top: 10px;
+}
+
+/* line 410, /home/leetsworker/Документи/My_RP/WhitePark with Inspinia with unicorn/app/assets/stylesheets/base/elements.scss */
+.list-group-item-text {
+  margin: 0 0 10px;
+  color: inherit;
+  font-size: 12px;
+  line-height: inherit;
+}
+
+/* line 417, /home/leetsworker/Документи/My_RP/WhitePark with Inspinia with unicorn/app/assets/stylesheets/base/elements.scss */
+.no-padding .list-group-item {
+  border-left: none;
+  border-right: none;
+  border-bottom: none;
+}
+
+/* line 423, /home/leetsworker/Документи/My_RP/WhitePark with Inspinia with unicorn/app/assets/stylesheets/base/elements.scss */
+.no-padding .list-group-item:first-child {
+  border-left: none;
+  border-right: none;
+  border-bottom: none;
+  border-top: none;
+}
+
+/* line 430, /home/leetsworker/Документи/My_RP/WhitePark with Inspinia with unicorn/app/assets/stylesheets/base/elements.scss */
+.no-padding .list-group {
+  margin-bottom: 0;
+}
+
+/* line 434, /home/leetsworker/Документи/My_RP/WhitePark with Inspinia with unicorn/app/assets/stylesheets/base/elements.scss */
+.list-group-item {
+  background-color: inherit;
+  border: 1px solid #e7eaec;
+  display: block;
+  margin-bottom: -1px;
+  padding: 10px 15px;
+  position: relative;
+}
+
+/* line 443, /home/leetsworker/Документи/My_RP/WhitePark with Inspinia with unicorn/app/assets/stylesheets/base/elements.scss */
+.elements-list .list-group-item {
+  border-left: none;
+  border-right: none;
+  padding: 15px 25px;
+}
+
+/* line 450, /home/leetsworker/Документи/My_RP/WhitePark with Inspinia with unicorn/app/assets/stylesheets/base/elements.scss */
+.elements-list .list-group-item:first-child {
+  border-left: none;
+  border-right: none;
+  border-top: none !important;
+}
+
+/* line 456, /home/leetsworker/Документи/My_RP/WhitePark with Inspinia with unicorn/app/assets/stylesheets/base/elements.scss */
+.elements-list .list-group {
+  margin-bottom: 0;
+}
+
+/* line 460, /home/leetsworker/Документи/My_RP/WhitePark with Inspinia with unicorn/app/assets/stylesheets/base/elements.scss */
+.elements-list a {
+  color: inherit;
+}
+
+/* line 464, /home/leetsworker/Документи/My_RP/WhitePark with Inspinia with unicorn/app/assets/stylesheets/base/elements.scss */
+.elements-list .list-group-item.active,
+.elements-list .list-group-item:hover {
+  background: #f3f3f4;
+  color: inherit;
+  border-color: #e7eaec;
+  border-radius: 0;
+}
+
+/* line 472, /home/leetsworker/Документи/My_RP/WhitePark with Inspinia with unicorn/app/assets/stylesheets/base/elements.scss */
+.elements-list li.active {
+  transition: none;
+}
+
+/* line 476, /home/leetsworker/Документи/My_RP/WhitePark with Inspinia with unicorn/app/assets/stylesheets/base/elements.scss */
+.element-detail-box {
+  padding: 25px;
+}
+
+/* FLOT CHART  */
+/* line 482, /home/leetsworker/Документи/My_RP/WhitePark with Inspinia with unicorn/app/assets/stylesheets/base/elements.scss */
+.flot-chart {
+  display: block;
+  height: 200px;
+}
+
+/* line 487, /home/leetsworker/Документи/My_RP/WhitePark with Inspinia with unicorn/app/assets/stylesheets/base/elements.scss */
+.widget .flot-chart.dashboard-chart {
+  display: block;
+  height: 120px;
+  margin-top: 40px;
+}
+
+/* line 493, /home/leetsworker/Документи/My_RP/WhitePark with Inspinia with unicorn/app/assets/stylesheets/base/elements.scss */
+.flot-chart.dashboard-chart {
+  display: block;
+  height: 180px;
+  margin-top: 40px;
+}
+
+/* line 499, /home/leetsworker/Документи/My_RP/WhitePark with Inspinia with unicorn/app/assets/stylesheets/base/elements.scss */
+.flot-chart-content {
+  width: 100%;
+  height: 100%;
+}
+
+/* line 504, /home/leetsworker/Документи/My_RP/WhitePark with Inspinia with unicorn/app/assets/stylesheets/base/elements.scss */
+.flot-chart-pie-content {
+  width: 200px;
+  height: 200px;
+  margin: auto;
+}
+
+/* line 510, /home/leetsworker/Документи/My_RP/WhitePark with Inspinia with unicorn/app/assets/stylesheets/base/elements.scss */
+.jqstooltip {
+  position: absolute;
+  display: block;
+  left: 0;
+  top: 0;
+  visibility: hidden;
+  background: #2b303a;
+  background-color: rgba(43, 48, 58, 0.8);
+  color: white;
+  text-align: left;
+  white-space: nowrap;
+  z-index: 10000;
+  padding: 5px 5px 5px 5px;
+  min-height: 22px;
+  border-radius: 3px;
+}
+
+/* line 527, /home/leetsworker/Документи/My_RP/WhitePark with Inspinia with unicorn/app/assets/stylesheets/base/elements.scss */
+.jqsfield {
+  color: white;
+  text-align: left;
+}
+
+/* line 532, /home/leetsworker/Документи/My_RP/WhitePark with Inspinia with unicorn/app/assets/stylesheets/base/elements.scss */
+.fh-150 {
+  height: 150px;
+}
+
+/* line 536, /home/leetsworker/Документи/My_RP/WhitePark with Inspinia with unicorn/app/assets/stylesheets/base/elements.scss */
+.fh-200 {
+  height: 200px;
+}
+
+/* line 541, /home/leetsworker/Документи/My_RP/WhitePark with Inspinia with unicorn/app/assets/stylesheets/base/elements.scss */
+.h-150 {
+  min-height: 150px;
+}
+
+/* line 545, /home/leetsworker/Документи/My_RP/WhitePark with Inspinia with unicorn/app/assets/stylesheets/base/elements.scss */
+.h-200 {
+  min-height: 200px;
+}
+
+/* line 549, /home/leetsworker/Документи/My_RP/WhitePark with Inspinia with unicorn/app/assets/stylesheets/base/elements.scss */
+.h-300 {
+  min-height: 300px;
+}
+
+/* line 553, /home/leetsworker/Документи/My_RP/WhitePark with Inspinia with unicorn/app/assets/stylesheets/base/elements.scss */
+.w-150 {
+  min-width: 150px;
+}
+
+/* line 557, /home/leetsworker/Документи/My_RP/WhitePark with Inspinia with unicorn/app/assets/stylesheets/base/elements.scss */
+.w-200 {
+  min-width: 200px;
+}
+
+/* line 561, /home/leetsworker/Документи/My_RP/WhitePark with Inspinia with unicorn/app/assets/stylesheets/base/elements.scss */
+.w-300 {
+  min-width: 300px;
+}
+
+/* line 565, /home/leetsworker/Документи/My_RP/WhitePark with Inspinia with unicorn/app/assets/stylesheets/base/elements.scss */
+.legendLabel {
+  padding-left: 5px;
+}
+
+/* line 569, /home/leetsworker/Документи/My_RP/WhitePark with Inspinia with unicorn/app/assets/stylesheets/base/elements.scss */
+.stat-list li:first-child {
+  margin-top: 0;
+}
+
+/* line 573, /home/leetsworker/Документи/My_RP/WhitePark with Inspinia with unicorn/app/assets/stylesheets/base/elements.scss */
+.stat-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+/* line 579, /home/leetsworker/Документи/My_RP/WhitePark with Inspinia with unicorn/app/assets/stylesheets/base/elements.scss */
+.stat-percent {
+  float: right;
+}
+
+/* line 583, /home/leetsworker/Документи/My_RP/WhitePark with Inspinia with unicorn/app/assets/stylesheets/base/elements.scss */
+.stat-list li {
+  margin-top: 15px;
+  position: relative;
+}
+
+/* DATATABLES */
+/* line 590, /home/leetsworker/Документи/My_RP/WhitePark with Inspinia with unicorn/app/assets/stylesheets/base/elements.scss */
+table.dataTable thead .sorting,
+table.dataTable thead .sorting_asc:after,
+table.dataTable thead .sorting_desc,
+table.dataTable thead .sorting_asc_disabled,
+table.dataTable thead .sorting_desc_disabled {
+  background: transparent;
+}
+
+/* line 598, /home/leetsworker/Документи/My_RP/WhitePark with Inspinia with unicorn/app/assets/stylesheets/base/elements.scss */
+.dataTables_wrapper {
+  padding-bottom: 30px;
+}
+
+/* line 602, /home/leetsworker/Документи/My_RP/WhitePark with Inspinia with unicorn/app/assets/stylesheets/base/elements.scss */
+.dataTables_length {
+  float: left;
+}
+
+/* line 606, /home/leetsworker/Документи/My_RP/WhitePark with Inspinia with unicorn/app/assets/stylesheets/base/elements.scss */
+.dataTables_filter label {
+  margin-right: 5px;
+}
+
+/* line 610, /home/leetsworker/Документи/My_RP/WhitePark with Inspinia with unicorn/app/assets/stylesheets/base/elements.scss */
+.html5buttons {
+  float: right;
+}
+
+/* line 614, /home/leetsworker/Документи/My_RP/WhitePark with Inspinia with unicorn/app/assets/stylesheets/base/elements.scss */
+.html5buttons a {
+  border: 1px solid #e7eaec;
+  background: #fff;
+  color: #676a6c;
+  box-shadow: none;
+  padding: 6px 8px;
+  font-size: 12px;
+}
+/* line 622, /home/leetsworker/Документи/My_RP/WhitePark with Inspinia with unicorn/app/assets/stylesheets/base/elements.scss */
+.html5buttons a:hover, .html5buttons a:focus:active {
+  background-color: #eee;
+  color: inherit;
+  border-color: #d2d2d2;
+}
+
+/* line 629, /home/leetsworker/Документи/My_RP/WhitePark with Inspinia with unicorn/app/assets/stylesheets/base/elements.scss */
+div.dt-button-info {
+  z-index: 100;
+}
+
+@media (max-width: 768px) {
+  /* line 634, /home/leetsworker/Документи/My_RP/WhitePark with Inspinia with unicorn/app/assets/stylesheets/base/elements.scss */
+  .html5buttons {
+    float: none;
+    margin-top: 10px;
+  }
+
+  /* line 639, /home/leetsworker/Документи/My_RP/WhitePark with Inspinia with unicorn/app/assets/stylesheets/base/elements.scss */
+  .dataTables_length {
+    float: none;
+  }
+}
+/* CIRCLE */
+/* line 646, /home/leetsworker/Документи/My_RP/WhitePark with Inspinia with unicorn/app/assets/stylesheets/base/elements.scss */
+.img-circle {
+  border-radius: 50%;
+}
+
+/* line 650, /home/leetsworker/Документи/My_RP/WhitePark with Inspinia with unicorn/app/assets/stylesheets/base/elements.scss */
+.btn-circle {
+  width: 30px;
+  height: 30px;
+  padding: 6px 0;
+  border-radius: 15px;
+  text-align: center;
+  font-size: 12px;
+  line-height: 1.428571429;
+}
+
+/* line 660, /home/leetsworker/Документи/My_RP/WhitePark with Inspinia with unicorn/app/assets/stylesheets/base/elements.scss */
+.btn-circle.btn-lg {
+  width: 50px;
+  height: 50px;
+  padding: 10px 16px;
+  border-radius: 25px;
+  font-size: 18px;
+  line-height: 1.33;
+}
+
+/* line 669, /home/leetsworker/Документи/My_RP/WhitePark with Inspinia with unicorn/app/assets/stylesheets/base/elements.scss */
+.btn-circle.btn-xl {
+  width: 70px;
+  height: 70px;
+  padding: 10px 16px;
+  border-radius: 35px;
+  font-size: 24px;
+  line-height: 1.33;
+}
+
+/* line 678, /home/leetsworker/Документи/My_RP/WhitePark with Inspinia with unicorn/app/assets/stylesheets/base/elements.scss */
+.show-grid [class^="col-"] {
+  padding-top: 10px;
+  padding-bottom: 10px;
+  border: 1px solid #ddd;
+  background-color: #eee !important;
+}
+
+/* line 685, /home/leetsworker/Документи/My_RP/WhitePark with Inspinia with unicorn/app/assets/stylesheets/base/elements.scss */
+.show-grid {
+  margin: 15px 0;
+}
+
+/* ANIMATION */
+/* line 691, /home/leetsworker/Документи/My_RP/WhitePark with Inspinia with unicorn/app/assets/stylesheets/base/elements.scss */
+.css-animation-box h1 {
+  font-size: 44px;
+}
+
+/* line 695, /home/leetsworker/Документи/My_RP/WhitePark with Inspinia with unicorn/app/assets/stylesheets/base/elements.scss */
+.animation-efect-links a {
+  padding: 4px 6px;
+  font-size: 12px;
+}
+
+/* line 700, /home/leetsworker/Документи/My_RP/WhitePark with Inspinia with unicorn/app/assets/stylesheets/base/elements.scss */
+#animation_box {
+  background-color: #f9f8f8;
+  border-radius: 16px;
+  width: 80%;
+  margin: 0 auto;
+  padding-top: 80px;
+}
+
+/* line 708, /home/leetsworker/Документи/My_RP/WhitePark with Inspinia with unicorn/app/assets/stylesheets/base/elements.scss */
+.animation-text-box {
+  position: absolute;
+  margin-top: 40px;
+  left: 50%;
+  margin-left: -100px;
+  width: 200px;
+}
+
+/* line 716, /home/leetsworker/Документи/My_RP/WhitePark with Inspinia with unicorn/app/assets/stylesheets/base/elements.scss */
+.animation-text-info {
+  position: absolute;
+  margin-top: -60px;
+  left: 50%;
+  margin-left: -100px;
+  width: 200px;
+  font-size: 10px;
+}
+
+/* line 725, /home/leetsworker/Документи/My_RP/WhitePark with Inspinia with unicorn/app/assets/stylesheets/base/elements.scss */
+.animation-text-box h2 {
+  font-size: 54px;
+  font-weight: 600;
+  margin-bottom: 5px;
+}
+
+/* line 731, /home/leetsworker/Документи/My_RP/WhitePark with Inspinia with unicorn/app/assets/stylesheets/base/elements.scss */
+.animation-text-box p {
+  font-size: 12px;
+  text-transform: uppercase;
+}
+
+/* PEACE */
+/* line 738, /home/leetsworker/Документи/My_RP/WhitePark with Inspinia with unicorn/app/assets/stylesheets/base/elements.scss */
+.pace {
+  -webkit-pointer-events: none;
+  pointer-events: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  user-select: none;
+}
+
+/* line 747, /home/leetsworker/Документи/My_RP/WhitePark with Inspinia with unicorn/app/assets/stylesheets/base/elements.scss */
+.pace-inactive {
+  display: none;
+}
+
+/* line 751, /home/leetsworker/Документи/My_RP/WhitePark with Inspinia with unicorn/app/assets/stylesheets/base/elements.scss */
+.pace .pace-progress {
+  background: #1ab394;
+  position: fixed;
+  z-index: 2040;
+  top: 0;
+  right: 100%;
+  width: 100%;
+  height: 2px;
+}
+
+/* line 761, /home/leetsworker/Документи/My_RP/WhitePark with Inspinia with unicorn/app/assets/stylesheets/base/elements.scss */
+.pace-inactive {
+  display: none;
+}
+
+/* WIDGETS */
+/* line 767, /home/leetsworker/Документи/My_RP/WhitePark with Inspinia with unicorn/app/assets/stylesheets/base/elements.scss */
+.widget {
+  border-radius: 5px;
+  padding: 15px 20px;
+  margin-bottom: 10px;
+  margin-top: 10px;
+}
+
+/* line 774, /home/leetsworker/Документи/My_RP/WhitePark with Inspinia with unicorn/app/assets/stylesheets/base/elements.scss */
+.widget.style1 h2 {
+  font-size: 30px;
+}
+
+/* line 778, /home/leetsworker/Документи/My_RP/WhitePark with Inspinia with unicorn/app/assets/stylesheets/base/elements.scss */
+.widget h2, .widget h3 {
+  margin-top: 5px;
+  margin-bottom: 0;
+}
+
+/* line 783, /home/leetsworker/Документи/My_RP/WhitePark with Inspinia with unicorn/app/assets/stylesheets/base/elements.scss */
+.widget-text-box {
+  padding: 20px;
+  border: 1px solid #e7eaec;
+  background: #ffffff;
+}
+
+/* line 789, /home/leetsworker/Документи/My_RP/WhitePark with Inspinia with unicorn/app/assets/stylesheets/base/elements.scss */
+.widget-head-color-box {
+  border-radius: 5px 5px 0 0;
+  margin-top: 10px;
+}
+
+/* line 795, /home/leetsworker/Документи/My_RP/WhitePark with Inspinia with unicorn/app/assets/stylesheets/base/elements.scss */
+.widget .flot-chart {
+  height: 100px;
+}
+
+/* line 799, /home/leetsworker/Документи/My_RP/WhitePark with Inspinia with unicorn/app/assets/stylesheets/base/elements.scss */
+.vertical-align div {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+/* line 804, /home/leetsworker/Документи/My_RP/WhitePark with Inspinia with unicorn/app/assets/stylesheets/base/elements.scss */
+.vertical-align h2, .vertical-align h3 {
+  margin: 0;
+}
+
+/* line 808, /home/leetsworker/Документи/My_RP/WhitePark with Inspinia with unicorn/app/assets/stylesheets/base/elements.scss */
+.todo-list {
+  list-style: none outside none;
+  margin: 0;
+  padding: 0;
+  font-size: 14px;
+}
+
+/* line 815, /home/leetsworker/Документи/My_RP/WhitePark with Inspinia with unicorn/app/assets/stylesheets/base/elements.scss */
+.todo-list.small-list {
+  font-size: 12px;
+}
+
+/* line 819, /home/leetsworker/Документи/My_RP/WhitePark with Inspinia with unicorn/app/assets/stylesheets/base/elements.scss */
+.todo-list.small-list > li {
+  background: #f3f3f4;
+  border-left: none;
+  border-right: none;
+  border-radius: 4px;
+  color: inherit;
+  margin-bottom: 2px;
+  padding: 6px 6px 6px 12px;
+}
+
+/* line 829, /home/leetsworker/Документи/My_RP/WhitePark with Inspinia with unicorn/app/assets/stylesheets/base/elements.scss */
+.todo-list.small-list .btn-xs, .todo-list.small-list .btn-group-xs > .btn {
+  border-radius: 5px;
+  font-size: 10px;
+  line-height: 1.5;
+  padding: 1px 2px 1px 5px;
+}
+
+/* line 836, /home/leetsworker/Документи/My_RP/WhitePark with Inspinia with unicorn/app/assets/stylesheets/base/elements.scss */
+.todo-list > li {
+  background: #f3f3f4;
+  border-left: 6px solid #e7eaec;
+  border-right: 6px solid #e7eaec;
+  border-radius: 4px;
+  color: inherit;
+  margin-bottom: 2px;
+  padding: 10px;
+}
+
+/* line 846, /home/leetsworker/Документи/My_RP/WhitePark with Inspinia with unicorn/app/assets/stylesheets/base/elements.scss */
+.todo-list .handle {
+  cursor: move;
+  display: inline-block;
+  font-size: 16px;
+  margin: 0 5px;
+}
+
+/* line 853, /home/leetsworker/Документи/My_RP/WhitePark with Inspinia with unicorn/app/assets/stylesheets/base/elements.scss */
+.todo-list > li .label {
+  font-size: 9px;
+  margin-left: 10px;
+}
+
+/* line 858, /home/leetsworker/Документи/My_RP/WhitePark with Inspinia with unicorn/app/assets/stylesheets/base/elements.scss */
+.check-link {
+  font-size: 16px;
+}
+
+/* line 862, /home/leetsworker/Документи/My_RP/WhitePark with Inspinia with unicorn/app/assets/stylesheets/base/elements.scss */
+.todo-completed {
+  text-decoration: line-through;
+}
+
+/* line 866, /home/leetsworker/Документи/My_RP/WhitePark with Inspinia with unicorn/app/assets/stylesheets/base/elements.scss */
+.geo-statistic h1 {
+  font-size: 36px;
+  margin-bottom: 0;
+}
+
+/* line 871, /home/leetsworker/Документи/My_RP/WhitePark with Inspinia with unicorn/app/assets/stylesheets/base/elements.scss */
+.glyphicon.fa {
+  font-family: "FontAwesome";
+}
+
+/* INPUTS */
+/* line 876, /home/leetsworker/Документи/My_RP/WhitePark with Inspinia with unicorn/app/assets/stylesheets/base/elements.scss */
+.inline {
+  display: inline-block !important;
+}
+
+/* line 880, /home/leetsworker/Документи/My_RP/WhitePark with Inspinia with unicorn/app/assets/stylesheets/base/elements.scss */
+.input-s-sm {
+  width: 120px;
+}
+
+/* line 884, /home/leetsworker/Документи/My_RP/WhitePark with Inspinia with unicorn/app/assets/stylesheets/base/elements.scss */
+.input-s {
+  width: 200px;
+}
+
+/* line 888, /home/leetsworker/Документи/My_RP/WhitePark with Inspinia with unicorn/app/assets/stylesheets/base/elements.scss */
+.input-s-lg {
+  width: 250px;
+}
+
+/* line 892, /home/leetsworker/Документи/My_RP/WhitePark with Inspinia with unicorn/app/assets/stylesheets/base/elements.scss */
+.i-checks {
+  padding-left: 0;
+}
+
+/* line 896, /home/leetsworker/Документи/My_RP/WhitePark with Inspinia with unicorn/app/assets/stylesheets/base/elements.scss */
+.form-control, .single-line {
+  background-color: #FFFFFF;
+  background-image: none;
+  border: 1px solid #e5e6e7;
+  border-radius: 1px;
+  color: inherit;
+  display: block;
+  padding: 6px 12px;
+  transition: border-color 0.15s ease-in-out 0s, box-shadow 0.15s ease-in-out 0s;
+  width: 100%;
+}
+
+/* line 908, /home/leetsworker/Документи/My_RP/WhitePark with Inspinia with unicorn/app/assets/stylesheets/base/elements.scss */
+.form-control:focus, .single-line:focus {
+  border-color: #1ab394;
+}
+
+/* line 912, /home/leetsworker/Документи/My_RP/WhitePark with Inspinia with unicorn/app/assets/stylesheets/base/elements.scss */
+.has-success .form-control, .has-success .form-control:focus {
+  border-color: #1ab394;
+}
+
+/* line 916, /home/leetsworker/Документи/My_RP/WhitePark with Inspinia with unicorn/app/assets/stylesheets/base/elements.scss */
+.has-warning .form-control, .has-warning .form-control:focus {
+  border-color: #f8ac59;
+}
+
+/* line 920, /home/leetsworker/Документи/My_RP/WhitePark with Inspinia with unicorn/app/assets/stylesheets/base/elements.scss */
+.has-error .form-control, .has-error .form-control:focus {
+  border-color: #ED5565;
+}
+
+/* line 924, /home/leetsworker/Документи/My_RP/WhitePark with Inspinia with unicorn/app/assets/stylesheets/base/elements.scss */
+.has-success .control-label {
+  color: #1ab394;
+}
+
+/* line 928, /home/leetsworker/Документи/My_RP/WhitePark with Inspinia with unicorn/app/assets/stylesheets/base/elements.scss */
+.has-warning .control-label {
+  color: #f8ac59;
+}
+
+/* line 932, /home/leetsworker/Документи/My_RP/WhitePark with Inspinia with unicorn/app/assets/stylesheets/base/elements.scss */
+.has-error .control-label {
+  color: #ED5565;
+}
+
+/* line 936, /home/leetsworker/Документи/My_RP/WhitePark with Inspinia with unicorn/app/assets/stylesheets/base/elements.scss */
+.input-group-addon {
+  background-color: #fff;
+  border: 1px solid #E5E6E7;
+  border-radius: 1px;
+  color: inherit;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1;
+  padding: 6px 12px;
+  text-align: center;
+}
+
+/* line 948, /home/leetsworker/Документи/My_RP/WhitePark with Inspinia with unicorn/app/assets/stylesheets/base/elements.scss */
+.spinner-buttons.input-group-btn .btn-xs {
+  line-height: 1.13;
+}
+
+/* line 952, /home/leetsworker/Документи/My_RP/WhitePark with Inspinia with unicorn/app/assets/stylesheets/base/elements.scss */
+.spinner-buttons.input-group-btn {
+  width: 20%;
+}
+
+/* line 956, /home/leetsworker/Документи/My_RP/WhitePark with Inspinia with unicorn/app/assets/stylesheets/base/elements.scss */
+.noUi-connect {
+  background: none repeat scroll 0 0 #1ab394;
+  box-shadow: none;
+}
+
+/* line 961, /home/leetsworker/Документи/My_RP/WhitePark with Inspinia with unicorn/app/assets/stylesheets/base/elements.scss */
+.slider_red .noUi-connect {
+  background: none repeat scroll 0 0 #ED5565;
+  box-shadow: none;
+}
+
+/* UI Sortable */
+/* line 968, /home/leetsworker/Документи/My_RP/WhitePark with Inspinia with unicorn/app/assets/stylesheets/base/elements.scss */
+.ui-sortable .ibox-title {
+  cursor: move;
+}
+
+/* line 972, /home/leetsworker/Документи/My_RP/WhitePark with Inspinia with unicorn/app/assets/stylesheets/base/elements.scss */
+.ui-sortable-placeholder {
+  border: 1px dashed #cecece !important;
+  visibility: visible !important;
+  background: #e7eaec;
+}
+
+/* line 978, /home/leetsworker/Документи/My_RP/WhitePark with Inspinia with unicorn/app/assets/stylesheets/base/elements.scss */
+.ibox.ui-sortable-placeholder {
+  margin: 0 0 23px !important;
+}
+
+/* SWITCHES */
+/* line 983, /home/leetsworker/Документи/My_RP/WhitePark with Inspinia with unicorn/app/assets/stylesheets/base/elements.scss */
+.onoffswitch {
+  position: relative;
+  width: 54px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+}
+
+/* line 991, /home/leetsworker/Документи/My_RP/WhitePark with Inspinia with unicorn/app/assets/stylesheets/base/elements.scss */
+.onoffswitch-checkbox {
+  display: none;
+}
+
+/* line 995, /home/leetsworker/Документи/My_RP/WhitePark with Inspinia with unicorn/app/assets/stylesheets/base/elements.scss */
+.onoffswitch-label {
+  display: block;
+  overflow: hidden;
+  cursor: pointer;
+  border: 2px solid #1AB394;
+  border-radius: 3px;
+}
+
+/* line 1003, /home/leetsworker/Документи/My_RP/WhitePark with Inspinia with unicorn/app/assets/stylesheets/base/elements.scss */
+.onoffswitch-inner {
+  display: block;
+  width: 200%;
+  margin-left: -100%;
+  -moz-transition: margin 0.3s ease-in 0s;
+  -webkit-transition: margin 0.3s ease-in 0s;
+  -o-transition: margin 0.3s ease-in 0s;
+  transition: margin 0.3s ease-in 0s;
+}
+
+/* line 1013, /home/leetsworker/Документи/My_RP/WhitePark with Inspinia with unicorn/app/assets/stylesheets/base/elements.scss */
+.onoffswitch-inner:before, .onoffswitch-inner:after {
+  display: block;
+  float: left;
+  width: 50%;
+  height: 16px;
+  padding: 0;
+  line-height: 16px;
+  font-size: 10px;
+  color: white;
+  font-family: Trebuchet, Arial, sans-serif;
+  font-weight: bold;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+/* line 1029, /home/leetsworker/Документи/My_RP/WhitePark with Inspinia with unicorn/app/assets/stylesheets/base/elements.scss */
+.onoffswitch-inner:before {
+  content: "ON";
+  padding-left: 7px;
+  background-color: #1AB394;
+  color: #FFFFFF;
+}
+
+/* line 1036, /home/leetsworker/Документи/My_RP/WhitePark with Inspinia with unicorn/app/assets/stylesheets/base/elements.scss */
+.onoffswitch-inner:after {
+  content: "OFF";
+  padding-right: 7px;
+  background-color: #FFFFFF;
+  color: #919191;
+  text-align: right;
+}
+
+/* line 1044, /home/leetsworker/Документи/My_RP/WhitePark with Inspinia with unicorn/app/assets/stylesheets/base/elements.scss */
+.onoffswitch-switch {
+  display: block;
+  width: 18px;
+  margin: 0;
+  background: #FFFFFF;
+  border: 2px solid #1AB394;
+  border-radius: 3px;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 36px;
+  -moz-transition: all 0.3s ease-in 0s;
+  -webkit-transition: all 0.3s ease-in 0s;
+  -o-transition: all 0.3s ease-in 0s;
+  transition: all 0.3s ease-in 0s;
+}
+
+/* line 1061, /home/leetsworker/Документи/My_RP/WhitePark with Inspinia with unicorn/app/assets/stylesheets/base/elements.scss */
+.onoffswitch-checkbox:checked + .onoffswitch-label .onoffswitch-inner {
+  margin-left: 0;
+}
+
+/* line 1065, /home/leetsworker/Документи/My_RP/WhitePark with Inspinia with unicorn/app/assets/stylesheets/base/elements.scss */
+.onoffswitch-checkbox:checked + .onoffswitch-label .onoffswitch-switch {
+  right: 0;
+}
+
+/* jqGrid */
+/* line 1071, /home/leetsworker/Документи/My_RP/WhitePark with Inspinia with unicorn/app/assets/stylesheets/base/elements.scss */
+.ui-jqgrid {
+  -moz-box-sizing: content-box;
+}
+
+/* line 1075, /home/leetsworker/Документи/My_RP/WhitePark with Inspinia with unicorn/app/assets/stylesheets/base/elements.scss */
+.ui-jqgrid-btable {
+  border-collapse: separate;
+}
+
+/* line 1079, /home/leetsworker/Документи/My_RP/WhitePark with Inspinia with unicorn/app/assets/stylesheets/base/elements.scss */
+.ui-jqgrid-htable {
+  border-collapse: separate;
+}
+
+/* line 1083, /home/leetsworker/Документи/My_RP/WhitePark with Inspinia with unicorn/app/assets/stylesheets/base/elements.scss */
+.ui-jqgrid-titlebar {
+  height: 40px;
+  line-height: 15px;
+  color: #676a6c;
+  background-color: #F9F9F9;
+  text-shadow: 0 1px 0 rgba(255, 255, 255, 0.5);
+}
+
+/* line 1091, /home/leetsworker/Документи/My_RP/WhitePark with Inspinia with unicorn/app/assets/stylesheets/base/elements.scss */
+.ui-jqgrid .ui-jqgrid-title {
+  float: left;
+  margin: 1.1em 1em 0.2em;
+}
+
+/* line 1096, /home/leetsworker/Документи/My_RP/WhitePark with Inspinia with unicorn/app/assets/stylesheets/base/elements.scss */
+.ui-jqgrid .ui-jqgrid-titlebar {
+  position: relative;
+  border-left: 0 solid;
+  border-right: 0 solid;
+  border-top: 0 solid;
+}
+
+/* line 1103, /home/leetsworker/Документи/My_RP/WhitePark with Inspinia with unicorn/app/assets/stylesheets/base/elements.scss */
+.ui-widget-header {
+  background: none;
+  background-image: none;
+  background-color: #f5f5f6;
+  text-transform: uppercase;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+}
+
+/* line 1112, /home/leetsworker/Документи/My_RP/WhitePark with Inspinia with unicorn/app/assets/stylesheets/base/elements.scss */
+.ui-jqgrid tr.ui-row-ltr td {
+  border-right-color: inherit;
+  border-right-style: solid;
+  border-right-width: 1px;
+  text-align: left;
+  border-color: #DDDDDD;
+  background-color: inherit;
+}
+
+/* line 1121, /home/leetsworker/Документи/My_RP/WhitePark with Inspinia with unicorn/app/assets/stylesheets/base/elements.scss */
+.ui-search-toolbar input[type="text"] {
+  font-size: 12px;
+  height: 15px;
+  border: 1px solid #CCCCCC;
+  border-radius: 0;
+}
+
+/* line 1128, /home/leetsworker/Документи/My_RP/WhitePark with Inspinia with unicorn/app/assets/stylesheets/base/elements.scss */
+.ui-state-default, .ui-widget-content .ui-state-default, .ui-widget-header .ui-state-default {
+  background: #F9F9F9;
+  border: 1px solid #DDDDDD;
+  line-height: 15px;
+  font-weight: bold;
+  color: #676a6c;
+  text-shadow: 0 1px 0 rgba(255, 255, 255, 0.5);
+}
+
+/* line 1137, /home/leetsworker/Документи/My_RP/WhitePark with Inspinia with unicorn/app/assets/stylesheets/base/elements.scss */
+.ui-widget-content {
+  box-sizing: content-box;
+}
+
+/* line 1141, /home/leetsworker/Документи/My_RP/WhitePark with Inspinia with unicorn/app/assets/stylesheets/base/elements.scss */
+.ui-icon-triangle-1-n {
+  background-position: 1px -16px;
+}
+
+/* line 1145, /home/leetsworker/Документи/My_RP/WhitePark with Inspinia with unicorn/app/assets/stylesheets/base/elements.scss */
+.ui-jqgrid tr.ui-search-toolbar th {
+  border-top-width: 0 !important;
+  border-top-color: inherit !important;
+  border-top-style: ridge !important;
+}
+
+/* line 1151, /home/leetsworker/Документи/My_RP/WhitePark with Inspinia with unicorn/app/assets/stylesheets/base/elements.scss */
+.ui-state-hover, .ui-widget-content .ui-state-hover, .ui-state-focus, .ui-widget-content .ui-state-focus, .ui-widget-header .ui-state-focus {
+  background: #f5f5f5;
+  border-collapse: separate;
+}
+
+/* line 1156, /home/leetsworker/Документи/My_RP/WhitePark with Inspinia with unicorn/app/assets/stylesheets/base/elements.scss */
+.ui-state-highlight, .ui-widget-content .ui-state-highlight, .ui-widget-header .ui-state-highlight {
+  background: #f2fbff;
+}
+
+/* line 1160, /home/leetsworker/Документи/My_RP/WhitePark with Inspinia with unicorn/app/assets/stylesheets/base/elements.scss */
+.ui-state-active, .ui-widget-content .ui-state-active, .ui-widget-header .ui-state-active {
+  border: 1px solid #dddddd;
+  background: #ffffff;
+  font-weight: normal;
+  color: #212121;
+}
+
+/* line 1167, /home/leetsworker/Документи/My_RP/WhitePark with Inspinia with unicorn/app/assets/stylesheets/base/elements.scss */
+.ui-jqgrid .ui-pg-input {
+  font-size: inherit;
+  width: 50px;
+  border: 1px solid #CCCCCC;
+  height: 15px;
+}
+
+/* line 1174, /home/leetsworker/Документи/My_RP/WhitePark with Inspinia with unicorn/app/assets/stylesheets/base/elements.scss */
+.ui-jqgrid .ui-pg-selbox {
+  display: block;
+  font-size: 1em;
+  height: 25px;
+  line-height: 18px;
+  margin: 0;
+  width: auto;
+}
+
+/* line 1183, /home/leetsworker/Документи/My_RP/WhitePark with Inspinia with unicorn/app/assets/stylesheets/base/elements.scss */
+.ui-jqgrid .ui-pager-control {
+  position: relative;
+}
+
+/* line 1187, /home/leetsworker/Документи/My_RP/WhitePark with Inspinia with unicorn/app/assets/stylesheets/base/elements.scss */
+.ui-jqgrid .ui-jqgrid-pager {
+  height: 32px;
+  position: relative;
+}
+
+/* line 1192, /home/leetsworker/Документи/My_RP/WhitePark with Inspinia with unicorn/app/assets/stylesheets/base/elements.scss */
+.ui-pg-table .navtable .ui-corner-all {
+  border-radius: 0;
+}
+
+/* line 1196, /home/leetsworker/Документи/My_RP/WhitePark with Inspinia with unicorn/app/assets/stylesheets/base/elements.scss */
+.ui-jqgrid .ui-pg-button:hover {
+  padding: 1px;
+  border: 0;
+}
+
+/* line 1201, /home/leetsworker/Документи/My_RP/WhitePark with Inspinia with unicorn/app/assets/stylesheets/base/elements.scss */
+.ui-jqgrid .loading {
+  position: absolute;
+  top: 45%;
+  left: 45%;
+  width: auto;
+  height: auto;
+  z-index: 101;
+  padding: 6px;
+  margin: 5px;
+  text-align: center;
+  font-weight: bold;
+  display: none;
+  border-width: 2px !important;
+  font-size: 11px;
+}
+
+/* line 1217, /home/leetsworker/Документи/My_RP/WhitePark with Inspinia with unicorn/app/assets/stylesheets/base/elements.scss */
+.ui-jqgrid .form-control {
+  height: 10px;
+  width: auto;
+  display: inline;
+  padding: 10px 12px;
+}
+
+/* line 1224, /home/leetsworker/Документи/My_RP/WhitePark with Inspinia with unicorn/app/assets/stylesheets/base/elements.scss */
+.ui-jqgrid-pager {
+  height: 32px;
+}
+
+/* line 1228, /home/leetsworker/Документи/My_RP/WhitePark with Inspinia with unicorn/app/assets/stylesheets/base/elements.scss */
+.ui-corner-all, .ui-corner-top, .ui-corner-left, .ui-corner-tl {
+  border-top-left-radius: 0;
+}
+
+/* line 1232, /home/leetsworker/Документи/My_RP/WhitePark with Inspinia with unicorn/app/assets/stylesheets/base/elements.scss */
+.ui-corner-all, .ui-corner-top, .ui-corner-right, .ui-corner-tr {
+  border-top-right-radius: 0;
+}
+
+/* line 1236, /home/leetsworker/Документи/My_RP/WhitePark with Inspinia with unicorn/app/assets/stylesheets/base/elements.scss */
+.ui-corner-all, .ui-corner-bottom, .ui-corner-left, .ui-corner-bl {
+  border-bottom-left-radius: 0;
+}
+
+/* line 1240, /home/leetsworker/Документи/My_RP/WhitePark with Inspinia with unicorn/app/assets/stylesheets/base/elements.scss */
+.ui-corner-all, .ui-corner-bottom, .ui-corner-right, .ui-corner-br {
+  border-bottom-right-radius: 0;
+}
+
+/* line 1244, /home/leetsworker/Документи/My_RP/WhitePark with Inspinia with unicorn/app/assets/stylesheets/base/elements.scss */
+.ui-widget-content {
+  border: 1px solid #ddd;
+}
+
+/* line 1248, /home/leetsworker/Документи/My_RP/WhitePark with Inspinia with unicorn/app/assets/stylesheets/base/elements.scss */
+.ui-jqgrid .ui-jqgrid-titlebar {
+  padding: 0;
+}
+
+/* line 1252, /home/leetsworker/Документи/My_RP/WhitePark with Inspinia with unicorn/app/assets/stylesheets/base/elements.scss */
+.ui-jqgrid .ui-jqgrid-titlebar {
+  border-bottom: 1px solid #ddd;
+}
+
+/* line 1256, /home/leetsworker/Документи/My_RP/WhitePark with Inspinia with unicorn/app/assets/stylesheets/base/elements.scss */
+.ui-jqgrid tr.jqgrow td {
+  padding: 6px;
+}
+
+/* line 1260, /home/leetsworker/Документи/My_RP/WhitePark with Inspinia with unicorn/app/assets/stylesheets/base/elements.scss */
+.ui-jqdialog .ui-jqdialog-titlebar {
+  padding: 10px 10px;
+}
+
+/* line 1265, /home/leetsworker/Документи/My_RP/WhitePark with Inspinia with unicorn/app/assets/stylesheets/base/elements.scss */
+.ui-jqdialog .ui-jqdialog-title {
+  float: none !important;
+}
+
+/* line 1269, /home/leetsworker/Документи/My_RP/WhitePark with Inspinia with unicorn/app/assets/stylesheets/base/elements.scss */
+.ui-jqdialog > .ui-resizable-se {
+  position: absolute;
+}
+
+/* Nestable list */
+/* line 1275, /home/leetsworker/Документи/My_RP/WhitePark with Inspinia with unicorn/app/assets/stylesheets/base/elements.scss */
+.dd {
+  position: relative;
+  display: block;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  font-size: 13px;
+  line-height: 20px;
+}
+
+/* line 1285, /home/leetsworker/Документи/My_RP/WhitePark with Inspinia with unicorn/app/assets/stylesheets/base/elements.scss */
+.dd-list {
+  display: block;
+  position: relative;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+/* line 1293, /home/leetsworker/Документи/My_RP/WhitePark with Inspinia with unicorn/app/assets/stylesheets/base/elements.scss */
+.dd-list .dd-list {
+  padding-left: 30px;
+}
+
+/* line 1297, /home/leetsworker/Документи/My_RP/WhitePark with Inspinia with unicorn/app/assets/stylesheets/base/elements.scss */
+.dd-collapsed .dd-list {
+  display: none;
+}
+
+/* line 1301, /home/leetsworker/Документи/My_RP/WhitePark with Inspinia with unicorn/app/assets/stylesheets/base/elements.scss */
+.dd-item,
+.dd-empty,
+.dd-placeholder {
+  display: block;
+  position: relative;
+  margin: 0;
+  padding: 0;
+  min-height: 20px;
+  font-size: 13px;
+  line-height: 20px;
+}
+
+/* line 1313, /home/leetsworker/Документи/My_RP/WhitePark with Inspinia with unicorn/app/assets/stylesheets/base/elements.scss */
+.dd-handle {
+  display: block;
+  margin: 5px 0;
+  padding: 5px 10px;
+  color: #333;
+  text-decoration: none;
+  border: 1px solid #e7eaec;
+  background: #f5f5f5;
+  -webkit-border-radius: 3px;
+  border-radius: 3px;
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+}
+
+/* line 1327, /home/leetsworker/Документи/My_RP/WhitePark with Inspinia with unicorn/app/assets/stylesheets/base/elements.scss */
+.dd-handle span {
+  font-weight: bold;
+}
+
+/* line 1331, /home/leetsworker/Документи/My_RP/WhitePark with Inspinia with unicorn/app/assets/stylesheets/base/elements.scss */
+.dd-handle:hover {
+  background: #f0f0f0;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+/* line 1337, /home/leetsworker/Документи/My_RP/WhitePark with Inspinia with unicorn/app/assets/stylesheets/base/elements.scss */
+.dd-item > button {
+  display: block;
+  position: relative;
+  cursor: pointer;
+  float: left;
+  width: 25px;
+  height: 20px;
+  margin: 5px 0;
+  padding: 0;
+  text-indent: 100%;
+  white-space: nowrap;
+  overflow: hidden;
+  border: 0;
+  background: transparent;
+  font-size: 12px;
+  line-height: 1;
+  text-align: center;
+  font-weight: bold;
+}
+
+/* line 1357, /home/leetsworker/Документи/My_RP/WhitePark with Inspinia with unicorn/app/assets/stylesheets/base/elements.scss */
+.dd-item > button:before {
+  content: '+';
+  display: block;
+  position: absolute;
+  width: 100%;
+  text-align: center;
+  text-indent: 0;
+}
+
+/* line 1366, /home/leetsworker/Документи/My_RP/WhitePark with Inspinia with unicorn/app/assets/stylesheets/base/elements.scss */
+.dd-item > button[data-action="collapse"]:before {
+  content: '-';
+}
+
+/* line 1370, /home/leetsworker/Документи/My_RP/WhitePark with Inspinia with unicorn/app/assets/stylesheets/base/elements.scss */
+#nestable2 .dd-item > button {
+  font-family: FontAwesome;
+  height: 34px;
+  width: 33px;
+  color: #c1c1c1;
+}
+
+/* line 1378, /home/leetsworker/Документи/My_RP/WhitePark with Inspinia with unicorn/app/assets/stylesheets/base/elements.scss */
+#nestable2 .dd-item > button:before {
+  content: "\f067";
+}
+
+/* line 1382, /home/leetsworker/Документи/My_RP/WhitePark with Inspinia with unicorn/app/assets/stylesheets/base/elements.scss */
+#nestable2 .dd-item > button[data-action="collapse"]:before {
+  content: "\f068";
+}
+
+/* line 1386, /home/leetsworker/Документи/My_RP/WhitePark with Inspinia with unicorn/app/assets/stylesheets/base/elements.scss */
+.dd-placeholder,
+.dd-empty {
+  margin: 5px 0;
+  padding: 0;
+  min-height: 30px;
+  background: #f2fbff;
+  border: 1px dashed #b6bcbf;
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+}
+
+/* line 1397, /home/leetsworker/Документи/My_RP/WhitePark with Inspinia with unicorn/app/assets/stylesheets/base/elements.scss */
+.dd-empty {
+  border: 1px dashed #bbb;
+  min-height: 100px;
+  background-color: #e5e5e5;
+  background-image: -webkit-linear-gradient(45deg, #fff 25%, transparent 25%, transparent 75%, #fff 75%, #fff), -webkit-linear-gradient(45deg, #fff 25%, transparent 25%, transparent 75%, #fff 75%, #fff);
+  background-image: -moz-linear-gradient(45deg, #fff 25%, transparent 25%, transparent 75%, #fff 75%, #fff), -moz-linear-gradient(45deg, #fff 25%, transparent 25%, transparent 75%, #fff 75%, #fff);
+  background-image: linear-gradient(45deg, #fff 25%, transparent 25%, transparent 75%, #fff 75%, #fff), linear-gradient(45deg, #fff 25%, transparent 25%, transparent 75%, #fff 75%, #fff);
+  background-size: 60px 60px;
+  background-position: 0 0, 30px 30px;
+}
+
+/* line 1408, /home/leetsworker/Документи/My_RP/WhitePark with Inspinia with unicorn/app/assets/stylesheets/base/elements.scss */
+.dd-dragel {
+  position: absolute;
+  z-index: 9999;
+  pointer-events: none;
+}
+
+/* line 1414, /home/leetsworker/Документи/My_RP/WhitePark with Inspinia with unicorn/app/assets/stylesheets/base/elements.scss */
+.dd-dragel > .dd-item .dd-handle {
+  margin-top: 0;
+}
+
+/* line 1418, /home/leetsworker/Документи/My_RP/WhitePark with Inspinia with unicorn/app/assets/stylesheets/base/elements.scss */
+.dd-dragel .dd-handle {
+  -webkit-box-shadow: 2px 4px 6px 0 rgba(0, 0, 0, 0.1);
+  box-shadow: 2px 4px 6px 0 rgba(0, 0, 0, 0.1);
+}
+
+/**
+* Nestable Extras
+*/
+/* line 1426, /home/leetsworker/Документи/My_RP/WhitePark with Inspinia with unicorn/app/assets/stylesheets/base/elements.scss */
+.nestable-lists {
+  display: block;
+  clear: both;
+  padding: 30px 0;
+  width: 100%;
+  border: 0;
+  border-top: 2px solid #ddd;
+  border-bottom: 2px solid #ddd;
+}
+
+/* line 1436, /home/leetsworker/Документи/My_RP/WhitePark with Inspinia with unicorn/app/assets/stylesheets/base/elements.scss */
+#nestable-menu {
+  padding: 0;
+  margin: 10px 0 20px 0;
+}
+
+/* line 1441, /home/leetsworker/Документи/My_RP/WhitePark with Inspinia with unicorn/app/assets/stylesheets/base/elements.scss */
+#nestable-output,
+#nestable2-output {
+  width: 100%;
+  font-size: 0.75em;
+  line-height: 1.333333em;
+  font-family: open sans, lucida grande, lucida sans unicode, helvetica, arial, sans-serif;
+  padding: 5px;
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+}
+
+/* line 1452, /home/leetsworker/Документи/My_RP/WhitePark with Inspinia with unicorn/app/assets/stylesheets/base/elements.scss */
+#nestable2 .dd-handle {
+  color: inherit;
+  border: 1px dashed #e7eaec;
+  background: #f3f3f4;
+  padding: 10px;
+}
+
+/* line 1460, /home/leetsworker/Документи/My_RP/WhitePark with Inspinia with unicorn/app/assets/stylesheets/base/elements.scss */
+#nestable2 span.label {
+  margin-right: 10px;
+}
+
+/* line 1464, /home/leetsworker/Документи/My_RP/WhitePark with Inspinia with unicorn/app/assets/stylesheets/base/elements.scss */
+#nestable-output,
+#nestable2-output {
+  font-size: 12px;
+  padding: 25px;
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+}
+
+/* CodeMirror */
+/* line 1473, /home/leetsworker/Документи/My_RP/WhitePark with Inspinia with unicorn/app/assets/stylesheets/base/elements.scss */
+.CodeMirror {
+  border: 1px solid #eee;
+  height: auto;
+}
+
+/* line 1478, /home/leetsworker/Документи/My_RP/WhitePark with Inspinia with unicorn/app/assets/stylesheets/base/elements.scss */
+.CodeMirror-scroll {
+  overflow-y: hidden;
+  overflow-x: auto;
+}
+
+/* Google Maps */
+/* line 1484, /home/leetsworker/Документи/My_RP/WhitePark with Inspinia with unicorn/app/assets/stylesheets/base/elements.scss */
+.google-map {
+  height: 300px;
+}
+
+/* Validation */
+/* line 1489, /home/leetsworker/Документи/My_RP/WhitePark with Inspinia with unicorn/app/assets/stylesheets/base/elements.scss */
+label.error {
+  color: #cc5965;
+  display: inline-block;
+  margin-left: 5px;
+}
+
+/* line 1495, /home/leetsworker/Документи/My_RP/WhitePark with Inspinia with unicorn/app/assets/stylesheets/base/elements.scss */
+.form-control.error {
+  border: 1px dotted #cc5965;
+}
+
+/* ngGrid */
+/* line 1500, /home/leetsworker/Документи/My_RP/WhitePark with Inspinia with unicorn/app/assets/stylesheets/base/elements.scss */
+.gridStyle {
+  border: 1px solid #d4d4d4;
+  width: 100%;
+  height: 400px;
+}
+
+/* line 1506, /home/leetsworker/Документи/My_RP/WhitePark with Inspinia with unicorn/app/assets/stylesheets/base/elements.scss */
+.gridStyle2 {
+  border: 1px solid #d4d4d4;
+  width: 500px;
+  height: 300px;
+}
+
+/* line 1512, /home/leetsworker/Документи/My_RP/WhitePark with Inspinia with unicorn/app/assets/stylesheets/base/elements.scss */
+.ngH eaderCell {
+  border-right: none;
+  border-bottom: 1px solid #e7eaec;
+}
+
+/* line 1517, /home/leetsworker/Документи/My_RP/WhitePark with Inspinia with unicorn/app/assets/stylesheets/base/elements.scss */
+.ngCell {
+  border-right: none;
+}
+
+/* line 1521, /home/leetsworker/Документи/My_RP/WhitePark with Inspinia with unicorn/app/assets/stylesheets/base/elements.scss */
+.ngTopPanel {
+  background: #F5F5F6;
+}
+
+/* line 1525, /home/leetsworker/Документи/My_RP/WhitePark with Inspinia with unicorn/app/assets/stylesheets/base/elements.scss */
+.ngRow.even {
+  background: #f9f9f9;
+}
+
+/* line 1529, /home/leetsworker/Документи/My_RP/WhitePark with Inspinia with unicorn/app/assets/stylesheets/base/elements.scss */
+.ngRow.selected {
+  background: #EBF2F1;
+}
+
+/* line 1533, /home/leetsworker/Документи/My_RP/WhitePark with Inspinia with unicorn/app/assets/stylesheets/base/elements.scss */
+.ngRow {
+  border-bottom: 1px solid #e7eaec;
+}
+
+/* line 1537, /home/leetsworker/Документи/My_RP/WhitePark with Inspinia with unicorn/app/assets/stylesheets/base/elements.scss */
+.ngCell {
+  background-color: transparent;
+}
+
+/* line 1541, /home/leetsworker/Документи/My_RP/WhitePark with Inspinia with unicorn/app/assets/stylesheets/base/elements.scss */
+.ngHeaderCell {
+  border-right: none;
+}
+
+/* Toastr custom style */
+/* line 1547, /home/leetsworker/Документи/My_RP/WhitePark with Inspinia with unicorn/app/assets/stylesheets/base/elements.scss */
+#toast-container > .toast {
+  background-image: none !important;
+}
+
+/* line 1551, /home/leetsworker/Документи/My_RP/WhitePark with Inspinia with unicorn/app/assets/stylesheets/base/elements.scss */
+#toast-container > .toast:before {
+  position: fixed;
+  font-family: FontAwesome;
+  font-size: 24px;
+  line-height: 24px;
+  float: left;
+  color: #FFF;
+  padding-right: 0.5em;
+  margin: auto 0.5em auto -1.5em;
+}
+
+/* line 1562, /home/leetsworker/Документи/My_RP/WhitePark with Inspinia with unicorn/app/assets/stylesheets/base/elements.scss */
+#toast-container > .toast-warning:before {
+  content: "\f0e7";
+}
+
+/* line 1566, /home/leetsworker/Документи/My_RP/WhitePark with Inspinia with unicorn/app/assets/stylesheets/base/elements.scss */
+#toast-container > .toast-error:before {
+  content: "\f071";
+}
+
+/* line 1570, /home/leetsworker/Документи/My_RP/WhitePark with Inspinia with unicorn/app/assets/stylesheets/base/elements.scss */
+#toast-container > .toast-info:before {
+  content: "\f005";
+}
+
+/* line 1574, /home/leetsworker/Документи/My_RP/WhitePark with Inspinia with unicorn/app/assets/stylesheets/base/elements.scss */
+#toast-container > .toast-success:before {
+  content: "\f00C";
+}
+
+/* line 1578, /home/leetsworker/Документи/My_RP/WhitePark with Inspinia with unicorn/app/assets/stylesheets/base/elements.scss */
+#toast-container > div {
+  -moz-box-shadow: 0 0 3px #999;
+  -webkit-box-shadow: 0 0 3px #999;
+  box-shadow: 0 0 3px #999;
+  opacity: .9;
+  -ms-filter: alpha(Opacity=90);
+  filter: alpha(opacity=90);
+}
+
+/* line 1587, /home/leetsworker/Документи/My_RP/WhitePark with Inspinia with unicorn/app/assets/stylesheets/base/elements.scss */
+#toast-container > :hover {
+  -moz-box-shadow: 0 0 4px #999;
+  -webkit-box-shadow: 0 0 4px #999;
+  box-shadow: 0 0 4px #999;
+  opacity: 1;
+  -ms-filter: alpha(Opacity=100);
+  filter: alpha(opacity=100);
+  cursor: pointer;
+}
+
+/* line 1597, /home/leetsworker/Документи/My_RP/WhitePark with Inspinia with unicorn/app/assets/stylesheets/base/elements.scss */
+.toast {
+  background-color: #1ab394;
+}
+
+/* line 1601, /home/leetsworker/Документи/My_RP/WhitePark with Inspinia with unicorn/app/assets/stylesheets/base/elements.scss */
+.toast-success {
+  background-color: #1ab394;
+}
+
+/* line 1605, /home/leetsworker/Документи/My_RP/WhitePark with Inspinia with unicorn/app/assets/stylesheets/base/elements.scss */
+.toast-error {
+  background-color: #ED5565;
+}
+
+/* line 1609, /home/leetsworker/Документи/My_RP/WhitePark with Inspinia with unicorn/app/assets/stylesheets/base/elements.scss */
+.toast-info {
+  background-color: #23c6c8;
+}
+
+/* line 1613, /home/leetsworker/Документи/My_RP/WhitePark with Inspinia with unicorn/app/assets/stylesheets/base/elements.scss */
+.toast-warning {
+  background-color: #f8ac59;
+}
+
+/* line 1617, /home/leetsworker/Документи/My_RP/WhitePark with Inspinia with unicorn/app/assets/stylesheets/base/elements.scss */
+.toast-top-full-width {
+  margin-top: 20px;
+}
+
+/* line 1621, /home/leetsworker/Документи/My_RP/WhitePark with Inspinia with unicorn/app/assets/stylesheets/base/elements.scss */
+.toast-bottom-full-width {
+  margin-bottom: 20px;
+}
+
+/* Notifie */
+/* line 1626, /home/leetsworker/Документи/My_RP/WhitePark with Inspinia with unicorn/app/assets/stylesheets/base/elements.scss */
+.cg-notify-message.inspinia-notify {
+  background: #fff;
+  padding: 0;
+  box-shadow: 0 0 1px rgba(0, 0, 0, 0.1), 0 2px 4px rgba(0, 0, 0, 0.2);
+  -webkit-box-shadow: 0 0 1px rgba(0, 0, 0, 0.1), 0 2px 4px rgba(0, 0, 0, 0.2);
+  -moz-box-shadow: 0 0 1px rgba(0, 0, 0, 0.1), 0 2px 4px rgba(0, 0, 0, 0.2);
+  border: none;
+  margin-top: 30px;
+  color: inherit;
+}
+
+/* line 1637, /home/leetsworker/Документи/My_RP/WhitePark with Inspinia with unicorn/app/assets/stylesheets/base/elements.scss */
+.inspinia-notify.alert-warning {
+  border-left: 6px solid #f8ac59;
+}
+
+/* line 1641, /home/leetsworker/Документи/My_RP/WhitePark with Inspinia with unicorn/app/assets/stylesheets/base/elements.scss */
+.inspinia-notify.alert-success {
+  border-left: 6px solid #1c84c6;
+}
+
+/* line 1645, /home/leetsworker/Документи/My_RP/WhitePark with Inspinia with unicorn/app/assets/stylesheets/base/elements.scss */
+.inspinia-notify.alert-danger {
+  border-left: 6px solid #ED5565;
+}
+
+/* line 1649, /home/leetsworker/Документи/My_RP/WhitePark with Inspinia with unicorn/app/assets/stylesheets/base/elements.scss */
+.inspinia-notify.alert-info {
+  border-left: 6px solid #1ab394;
+}
+
+/* Image cropper style */
+/* line 1654, /home/leetsworker/Документи/My_RP/WhitePark with Inspinia with unicorn/app/assets/stylesheets/base/elements.scss */
+.img-container, .img-preview {
+  overflow: hidden;
+  text-align: center;
+  width: 100%;
+}
+
+/* line 1660, /home/leetsworker/Документи/My_RP/WhitePark with Inspinia with unicorn/app/assets/stylesheets/base/elements.scss */
+.img-preview-sm {
+  height: 130px;
+  width: 200px;
+}
+
+/* Forum styles  */
+/* line 1666, /home/leetsworker/Документи/My_RP/WhitePark with Inspinia with unicorn/app/assets/stylesheets/base/elements.scss */
+.forum-post-container .media {
+  margin: 10px 10px 10px 10px;
+  padding: 20px 10px 20px 10px;
+  border-bottom: 1px solid #f1f1f1;
+}
+
+/* line 1672, /home/leetsworker/Документи/My_RP/WhitePark with Inspinia with unicorn/app/assets/stylesheets/base/elements.scss */
+.forum-avatar {
+  float: left;
+  margin-right: 20px;
+  text-align: center;
+  width: 110px;
+}
+
+/* line 1679, /home/leetsworker/Документи/My_RP/WhitePark with Inspinia with unicorn/app/assets/stylesheets/base/elements.scss */
+.forum-avatar .img-circle {
+  height: 48px;
+  width: 48px;
+}
+
+/* line 1684, /home/leetsworker/Документи/My_RP/WhitePark with Inspinia with unicorn/app/assets/stylesheets/base/elements.scss */
+.author-info {
+  color: #676a6c;
+  font-size: 11px;
+  margin-top: 5px;
+  text-align: center;
+}
+
+/* line 1691, /home/leetsworker/Документи/My_RP/WhitePark with Inspinia with unicorn/app/assets/stylesheets/base/elements.scss */
+.forum-post-info {
+  padding: 9px 12px 6px 12px;
+  background: #f9f9f9;
+  border: 1px solid #f1f1f1;
+}
+
+/* line 1697, /home/leetsworker/Документи/My_RP/WhitePark with Inspinia with unicorn/app/assets/stylesheets/base/elements.scss */
+.media-body > .media {
+  background: #f9f9f9;
+  border-radius: 3px;
+  border: 1px solid #f1f1f1;
+}
+
+/* line 1703, /home/leetsworker/Документи/My_RP/WhitePark with Inspinia with unicorn/app/assets/stylesheets/base/elements.scss */
+.forum-post-container .media-body .photos {
+  margin: 10px 0;
+}
+
+/* line 1707, /home/leetsworker/Документи/My_RP/WhitePark with Inspinia with unicorn/app/assets/stylesheets/base/elements.scss */
+.forum-photo {
+  max-width: 140px;
+  border-radius: 3px;
+}
+
+/* line 1713, /home/leetsworker/Документи/My_RP/WhitePark with Inspinia with unicorn/app/assets/stylesheets/base/elements.scss */
+.media-body > .media .forum-avatar {
+  width: 70px;
+  margin-right: 10px;
+}
+
+/* line 1718, /home/leetsworker/Документи/My_RP/WhitePark with Inspinia with unicorn/app/assets/stylesheets/base/elements.scss */
+.media-body > .media .forum-avatar .img-circle {
+  height: 38px;
+  width: 38px;
+}
+
+/* line 1723, /home/leetsworker/Документи/My_RP/WhitePark with Inspinia with unicorn/app/assets/stylesheets/base/elements.scss */
+.mid-icon {
+  font-size: 66px;
+}
+
+/* line 1727, /home/leetsworker/Документи/My_RP/WhitePark with Inspinia with unicorn/app/assets/stylesheets/base/elements.scss */
+.forum-item {
+  margin: 10px 0;
+  padding: 10px 0 20px;
+  border-bottom: 1px solid #f1f1f1;
+}
+
+/* line 1733, /home/leetsworker/Документи/My_RP/WhitePark with Inspinia with unicorn/app/assets/stylesheets/base/elements.scss */
+.views-number {
+  font-size: 24px;
+  line-height: 18px;
+  font-weight: 400;
+}
+
+/* line 1739, /home/leetsworker/Документи/My_RP/WhitePark with Inspinia with unicorn/app/assets/stylesheets/base/elements.scss */
+.forum-container, .forum-post-container {
+  padding: 30px !important;
+}
+
+/* line 1743, /home/leetsworker/Документи/My_RP/WhitePark with Inspinia with unicorn/app/assets/stylesheets/base/elements.scss */
+.forum-item small {
+  color: #999;
+}
+
+/* line 1747, /home/leetsworker/Документи/My_RP/WhitePark with Inspinia with unicorn/app/assets/stylesheets/base/elements.scss */
+.forum-item .forum-sub-title {
+  color: #999;
+  margin-left: 50px;
+}
+
+/* line 1752, /home/leetsworker/Документи/My_RP/WhitePark with Inspinia with unicorn/app/assets/stylesheets/base/elements.scss */
+.forum-title {
+  margin: 15px 0 15px 0;
+}
+
+/* line 1756, /home/leetsworker/Документи/My_RP/WhitePark with Inspinia with unicorn/app/assets/stylesheets/base/elements.scss */
+.forum-info {
+  text-align: center;
+}
+
+/* line 1760, /home/leetsworker/Документи/My_RP/WhitePark with Inspinia with unicorn/app/assets/stylesheets/base/elements.scss */
+.forum-desc {
+  color: #999;
+}
+
+/* line 1764, /home/leetsworker/Документи/My_RP/WhitePark with Inspinia with unicorn/app/assets/stylesheets/base/elements.scss */
+.forum-icon {
+  float: left;
+  width: 30px;
+  margin-right: 20px;
+  text-align: center;
+}
+
+/* line 1771, /home/leetsworker/Документи/My_RP/WhitePark with Inspinia with unicorn/app/assets/stylesheets/base/elements.scss */
+a.forum-item-title {
+  color: inherit;
+  display: block;
+  font-size: 18px;
+  font-weight: 600;
+}
+
+/* line 1778, /home/leetsworker/Документи/My_RP/WhitePark with Inspinia with unicorn/app/assets/stylesheets/base/elements.scss */
+a.forum-item-title:hover {
+  color: inherit;
+}
+
+/* line 1782, /home/leetsworker/Документи/My_RP/WhitePark with Inspinia with unicorn/app/assets/stylesheets/base/elements.scss */
+.forum-icon .fa {
+  font-size: 30px;
+  margin-top: 8px;
+  color: #9b9b9b;
+}
+
+/* line 1789, /home/leetsworker/Документи/My_RP/WhitePark with Inspinia with unicorn/app/assets/stylesheets/base/elements.scss */
+.forum-item.active .fa {
+  color: #1ab394;
+}
+
+/* line 1793, /home/leetsworker/Документи/My_RP/WhitePark with Inspinia with unicorn/app/assets/stylesheets/base/elements.scss */
+.forum-item.active a.forum-item-title {
+  color: #1ab394;
+}
+
+@media (max-width: 992px) {
+  /* line 1799, /home/leetsworker/Документи/My_RP/WhitePark with Inspinia with unicorn/app/assets/stylesheets/base/elements.scss */
+  .forum-info {
+    margin: 15px 0 10px 0;
+    /* Comment this is you want to show forum info in small devices */
+    display: none;
+  }
+
+  /* line 1806, /home/leetsworker/Документи/My_RP/WhitePark with Inspinia with unicorn/app/assets/stylesheets/base/elements.scss */
+  .forum-desc {
+    float: none !important;
+  }
+}
+/* New Timeline style */
+/* line 1814, /home/leetsworker/Документи/My_RP/WhitePark with Inspinia with unicorn/app/assets/stylesheets/base/elements.scss */
+.vertical-container {
+  /* this class is used to give a max-width to the element it is applied to, and center it horizontally when it reaches that max-width */
+  width: 90%;
+  max-width: 1170px;
+  margin: 0 auto;
+}
+
+/* line 1821, /home/leetsworker/Документи/My_RP/WhitePark with Inspinia with unicorn/app/assets/stylesheets/base/elements.scss */
+.vertical-container::after {
+  /* clearfix */
+  content: '';
+  display: table;
+  clear: both;
+}
+
+/* line 1828, /home/leetsworker/Документи/My_RP/WhitePark with Inspinia with unicorn/app/assets/stylesheets/base/elements.scss */
+#vertical-timeline {
+  position: relative;
+  padding: 0;
+  margin-top: 2em;
+  margin-bottom: 2em;
+}
+
+/* line 1835, /home/leetsworker/Документи/My_RP/WhitePark with Inspinia with unicorn/app/assets/stylesheets/base/elements.scss */
+#vertical-timeline::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 18px;
+  height: 100%;
+  width: 4px;
+  background: #f1f1f1;
+}
+
+/* line 1845, /home/leetsworker/Документи/My_RP/WhitePark with Inspinia with unicorn/app/assets/stylesheets/base/elements.scss */
+.vertical-timeline-content .btn {
+  float: right;
+}
+
+/* line 1849, /home/leetsworker/Документи/My_RP/WhitePark with Inspinia with unicorn/app/assets/stylesheets/base/elements.scss */
+#vertical-timeline.light-timeline:before {
+  background: #e7eaec;
+}
+
+/* line 1853, /home/leetsworker/Документи/My_RP/WhitePark with Inspinia with unicorn/app/assets/stylesheets/base/elements.scss */
+.dark-timeline .vertical-timeline-content:before {
+  border-color: transparent #f5f5f5 transparent transparent;
+}
+
+/* line 1857, /home/leetsworker/Документи/My_RP/WhitePark with Inspinia with unicorn/app/assets/stylesheets/base/elements.scss */
+.dark-timeline.center-orientation .vertical-timeline-content:before {
+  border-color: transparent transparent transparent #f5f5f5;
+}
+
+/* line 1861, /home/leetsworker/Документи/My_RP/WhitePark with Inspinia with unicorn/app/assets/stylesheets/base/elements.scss */
+.dark-timeline .vertical-timeline-block:nth-child(2n) .vertical-timeline-content:before,
+.dark-timeline.center-orientation .vertical-timeline-block:nth-child(2n) .vertical-timeline-content:before {
+  border-color: transparent #f5f5f5 transparent transparent;
+}
+
+/* line 1866, /home/leetsworker/Документи/My_RP/WhitePark with Inspinia with unicorn/app/assets/stylesheets/base/elements.scss */
+.dark-timeline .vertical-timeline-content,
+.dark-timeline.center-orientation .vertical-timeline-content {
+  background: #f5f5f5;
+}
+
+@media only screen and (min-width: 1170px) {
+  /* line 1872, /home/leetsworker/Документи/My_RP/WhitePark with Inspinia with unicorn/app/assets/stylesheets/base/elements.scss */
+  #vertical-timeline.center-orientation {
+    margin-top: 3em;
+    margin-bottom: 3em;
+  }
+
+  /* line 1877, /home/leetsworker/Документи/My_RP/WhitePark with Inspinia with unicorn/app/assets/stylesheets/base/elements.scss */
+  #vertical-timeline.center-orientation:before {
+    left: 50%;
+    margin-left: -2px;
+  }
+}
+@media only screen and (max-width: 1170px) {
+  /* line 1884, /home/leetsworker/Документи/My_RP/WhitePark with Inspinia with unicorn/app/assets/stylesheets/base/elements.scss */
+  .center-orientation.dark-timeline .vertical-timeline-content:before {
+    border-color: transparent #f5f5f5 transparent transparent;
+  }
+}
+/* line 1889, /home/leetsworker/Документи/My_RP/WhitePark with Inspinia with unicorn/app/assets/stylesheets/base/elements.scss */
+.vertical-timeline-block {
+  position: relative;
+  margin: 2em 0;
+}
+
+/* line 1894, /home/leetsworker/Документи/My_RP/WhitePark with Inspinia with unicorn/app/assets/stylesheets/base/elements.scss */
+.vertical-timeline-block:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* line 1900, /home/leetsworker/Документи/My_RP/WhitePark with Inspinia with unicorn/app/assets/stylesheets/base/elements.scss */
+.vertical-timeline-block:first-child {
+  margin-top: 0;
+}
+
+/* line 1904, /home/leetsworker/Документи/My_RP/WhitePark with Inspinia with unicorn/app/assets/stylesheets/base/elements.scss */
+.vertical-timeline-block:last-child {
+  margin-bottom: 0;
+}
+
+@media only screen and (min-width: 1170px) {
+  /* line 1909, /home/leetsworker/Документи/My_RP/WhitePark with Inspinia with unicorn/app/assets/stylesheets/base/elements.scss */
+  .center-orientation .vertical-timeline-block {
+    margin: 4em 0;
+  }
+
+  /* line 1913, /home/leetsworker/Документи/My_RP/WhitePark with Inspinia with unicorn/app/assets/stylesheets/base/elements.scss */
+  .center-orientation .vertical-timeline-block:first-child {
+    margin-top: 0;
+  }
+
+  /* line 1917, /home/leetsworker/Документи/My_RP/WhitePark with Inspinia with unicorn/app/assets/stylesheets/base/elements.scss */
+  .center-orientation .vertical-timeline-block:last-child {
+    margin-bottom: 0;
+  }
+}
+/* line 1922, /home/leetsworker/Документи/My_RP/WhitePark with Inspinia with unicorn/app/assets/stylesheets/base/elements.scss */
+.vertical-timeline-icon {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  font-size: 16px;
+  border: 3px solid #f1f1f1;
+  text-align: center;
+}
+
+/* line 1934, /home/leetsworker/Документи/My_RP/WhitePark with Inspinia with unicorn/app/assets/stylesheets/base/elements.scss */
+.vertical-timeline-icon i {
+  display: block;
+  width: 24px;
+  height: 24px;
+  position: relative;
+  left: 50%;
+  top: 50%;
+  margin-left: -12px;
+  margin-top: -9px;
+}
+
+@media only screen and (min-width: 1170px) {
+  /* line 1946, /home/leetsworker/Документи/My_RP/WhitePark with Inspinia with unicorn/app/assets/stylesheets/base/elements.scss */
+  .center-orientation .vertical-timeline-icon {
+    width: 50px;
+    height: 50px;
+    left: 50%;
+    margin-left: -25px;
+    -webkit-transform: translateZ(0);
+    -webkit-backface-visibility: hidden;
+    font-size: 19px;
+  }
+
+  /* line 1956, /home/leetsworker/Документи/My_RP/WhitePark with Inspinia with unicorn/app/assets/stylesheets/base/elements.scss */
+  .center-orientation .vertical-timeline-icon i {
+    margin-left: -12px;
+    margin-top: -10px;
+  }
+
+  /* line 1961, /home/leetsworker/Документи/My_RP/WhitePark with Inspinia with unicorn/app/assets/stylesheets/base/elements.scss */
+  .center-orientation .cssanimations .vertical-timeline-icon.is-hidden {
+    visibility: hidden;
+  }
+}
+/* line 1966, /home/leetsworker/Документи/My_RP/WhitePark with Inspinia with unicorn/app/assets/stylesheets/base/elements.scss */
+.vertical-timeline-content {
+  position: relative;
+  margin-left: 60px;
+  background: white;
+  border-radius: 0.25em;
+  padding: 1em;
+}
+
+/* line 1974, /home/leetsworker/Документи/My_RP/WhitePark with Inspinia with unicorn/app/assets/stylesheets/base/elements.scss */
+.vertical-timeline-content:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* line 1980, /home/leetsworker/Документи/My_RP/WhitePark with Inspinia with unicorn/app/assets/stylesheets/base/elements.scss */
+.vertical-timeline-content h2 {
+  font-weight: 400;
+  margin-top: 4px;
+}
+
+/* line 1985, /home/leetsworker/Документи/My_RP/WhitePark with Inspinia with unicorn/app/assets/stylesheets/base/elements.scss */
+.vertical-timeline-content p {
+  margin: 1em 0;
+  line-height: 1.6;
+}
+
+/* line 1990, /home/leetsworker/Документи/My_RP/WhitePark with Inspinia with unicorn/app/assets/stylesheets/base/elements.scss */
+.vertical-timeline-content .vertical-date {
+  float: left;
+  font-weight: 500;
+}
+
+/* line 1995, /home/leetsworker/Документи/My_RP/WhitePark with Inspinia with unicorn/app/assets/stylesheets/base/elements.scss */
+.vertical-date small {
+  color: #1ab394;
+  font-weight: 400;
+}
+
+/* line 2000, /home/leetsworker/Документи/My_RP/WhitePark with Inspinia with unicorn/app/assets/stylesheets/base/elements.scss */
+.vertical-timeline-content::before {
+  content: '';
+  position: absolute;
+  top: 16px;
+  right: 100%;
+  height: 0;
+  width: 0;
+  border: 7px solid transparent;
+  border-right: 7px solid white;
+}
+
+@media only screen and (min-width: 768px) {
+  /* line 2012, /home/leetsworker/Документи/My_RP/WhitePark with Inspinia with unicorn/app/assets/stylesheets/base/elements.scss */
+  .vertical-timeline-content h2 {
+    font-size: 18px;
+  }
+
+  /* line 2016, /home/leetsworker/Документи/My_RP/WhitePark with Inspinia with unicorn/app/assets/stylesheets/base/elements.scss */
+  .vertical-timeline-content p {
+    font-size: 13px;
+  }
+}
+@media only screen and (min-width: 1170px) {
+  /* line 2023, /home/leetsworker/Документи/My_RP/WhitePark with Inspinia with unicorn/app/assets/stylesheets/base/elements.scss */
+  .center-orientation .vertical-timeline-content {
+    margin-left: 0;
+    padding: 1.6em;
+    width: 45%;
+  }
+
+  /* line 2029, /home/leetsworker/Документи/My_RP/WhitePark with Inspinia with unicorn/app/assets/stylesheets/base/elements.scss */
+  .center-orientation .vertical-timeline-content::before {
+    top: 24px;
+    left: 100%;
+    border-color: transparent;
+    border-left-color: white;
+  }
+
+  /* line 2036, /home/leetsworker/Документи/My_RP/WhitePark with Inspinia with unicorn/app/assets/stylesheets/base/elements.scss */
+  .center-orientation .vertical-timeline-content .btn {
+    float: left;
+  }
+
+  /* line 2040, /home/leetsworker/Документи/My_RP/WhitePark with Inspinia with unicorn/app/assets/stylesheets/base/elements.scss */
+  .center-orientation .vertical-timeline-content .vertical-date {
+    position: absolute;
+    width: 100%;
+    left: 122%;
+    top: 2px;
+    font-size: 14px;
+  }
+
+  /* line 2048, /home/leetsworker/Документи/My_RP/WhitePark with Inspinia with unicorn/app/assets/stylesheets/base/elements.scss */
+  .center-orientation .vertical-timeline-block:nth-child(even) .vertical-timeline-content {
+    float: right;
+  }
+
+  /* line 2052, /home/leetsworker/Документи/My_RP/WhitePark with Inspinia with unicorn/app/assets/stylesheets/base/elements.scss */
+  .center-orientation .vertical-timeline-block:nth-child(even) .vertical-timeline-content::before {
+    top: 24px;
+    left: auto;
+    right: 100%;
+    border-color: transparent;
+    border-right-color: white;
+  }
+
+  /* line 2060, /home/leetsworker/Документи/My_RP/WhitePark with Inspinia with unicorn/app/assets/stylesheets/base/elements.scss */
+  .center-orientation .vertical-timeline-block:nth-child(even) .vertical-timeline-content .btn {
+    float: right;
+  }
+
+  /* line 2064, /home/leetsworker/Документи/My_RP/WhitePark with Inspinia with unicorn/app/assets/stylesheets/base/elements.scss */
+  .center-orientation .vertical-timeline-block:nth-child(even) .vertical-timeline-content .vertical-date {
+    left: auto;
+    right: 122%;
+    text-align: right;
+  }
+
+  /* line 2070, /home/leetsworker/Документи/My_RP/WhitePark with Inspinia with unicorn/app/assets/stylesheets/base/elements.scss */
+  .center-orientation .cssanimations .vertical-timeline-content.is-hidden {
+    visibility: hidden;
+  }
+}
+/* Tabs */
+/* line 2079, /home/leetsworker/Документи/My_RP/WhitePark with Inspinia with unicorn/app/assets/stylesheets/base/elements.scss */
+.tabs-container .panel-body {
+  background: #fff;
+  border: 1px solid #e7eaec;
+  border-radius: 2px;
+  padding: 20px;
+  position: relative;
+}
+/* line 2087, /home/leetsworker/Документи/My_RP/WhitePark with Inspinia with unicorn/app/assets/stylesheets/base/elements.scss */
+.tabs-container .nav-tabs > li.active > a,
+.tabs-container .nav-tabs > li.active > a:hover,
+.tabs-container .nav-tabs > li.active > a:focus {
+  border: 1px solid #e7eaec;
+  border-bottom-color: transparent;
+  background-color: #fff;
+}
+/* line 2095, /home/leetsworker/Документи/My_RP/WhitePark with Inspinia with unicorn/app/assets/stylesheets/base/elements.scss */
+.tabs-container .nav-tabs > li {
+  float: left;
+  margin-bottom: -1px;
+}
+/* line 2100, /home/leetsworker/Документи/My_RP/WhitePark with Inspinia with unicorn/app/assets/stylesheets/base/elements.scss */
+.tabs-container .tab-pane .panel-body {
+  border-top: none;
+}
+/* line 2104, /home/leetsworker/Документи/My_RP/WhitePark with Inspinia with unicorn/app/assets/stylesheets/base/elements.scss */
+.tabs-container .nav-tabs > li.active > a, .tabs-container .nav-tabs > li.active > a:hover, .tabs-container .nav-tabs > li.active > a:focus {
+  border: 1px solid #e7eaec;
+  border-bottom-color: transparent;
+}
+/* line 2109, /home/leetsworker/Документи/My_RP/WhitePark with Inspinia with unicorn/app/assets/stylesheets/base/elements.scss */
+.tabs-container .nav-tabs {
+  border-bottom: 1px solid #e7eaec;
+}
+/* line 2113, /home/leetsworker/Документи/My_RP/WhitePark with Inspinia with unicorn/app/assets/stylesheets/base/elements.scss */
+.tabs-container .tab-pane .panel-body {
+  border-top: none;
+}
+/* line 2117, /home/leetsworker/Документи/My_RP/WhitePark with Inspinia with unicorn/app/assets/stylesheets/base/elements.scss */
+.tabs-container .tabs-left .tab-pane .panel-body, .tabs-container .tabs-right .tab-pane .panel-body {
+  border-top: 1px solid #e7eaec;
+}
+/* line 2121, /home/leetsworker/Документи/My_RP/WhitePark with Inspinia with unicorn/app/assets/stylesheets/base/elements.scss */
+.tabs-container .nav-tabs > li a:hover {
+  background: transparent;
+  border-color: transparent;
+}
+/* line 2126, /home/leetsworker/Документи/My_RP/WhitePark with Inspinia with unicorn/app/assets/stylesheets/base/elements.scss */
+.tabs-container .tabs-below > .nav-tabs,
+.tabs-container .tabs-right > .nav-tabs,
+.tabs-container .tabs-left > .nav-tabs {
+  border-bottom: 0;
+}
+/* line 2132, /home/leetsworker/Документи/My_RP/WhitePark with Inspinia with unicorn/app/assets/stylesheets/base/elements.scss */
+.tabs-container .tabs-left .panel-body {
+  position: static;
+}
+/* line 2136, /home/leetsworker/Документи/My_RP/WhitePark with Inspinia with unicorn/app/assets/stylesheets/base/elements.scss */
+.tabs-container .tabs-left > .nav-tabs, .tabs-container .tabs-right > .nav-tabs {
+  width: 20%;
+}
+/* line 2140, /home/leetsworker/Документи/My_RP/WhitePark with Inspinia with unicorn/app/assets/stylesheets/base/elements.scss */
+.tabs-container .tabs-left .panel-body {
+  width: 80%;
+  margin-left: 20%;
+}
+/* line 2145, /home/leetsworker/Документи/My_RP/WhitePark with Inspinia with unicorn/app/assets/stylesheets/base/elements.scss */
+.tabs-container .tabs-right .panel-body {
+  width: 80%;
+  margin-right: 20%;
+}
+/* line 2150, /home/leetsworker/Документи/My_RP/WhitePark with Inspinia with unicorn/app/assets/stylesheets/base/elements.scss */
+.tabs-container .tab-content > .tab-pane,
+.tabs-container .pill-content > .pill-pane {
+  display: none;
+}
+/* line 2155, /home/leetsworker/Документи/My_RP/WhitePark with Inspinia with unicorn/app/assets/stylesheets/base/elements.scss */
+.tabs-container .tab-content > .active,
+.tabs-container .pill-content > .active {
+  display: block;
+}
+/* line 2160, /home/leetsworker/Документи/My_RP/WhitePark with Inspinia with unicorn/app/assets/stylesheets/base/elements.scss */
+.tabs-container .tabs-below > .nav-tabs {
+  border-top: 1px solid #e7eaec;
+}
+/* line 2164, /home/leetsworker/Документи/My_RP/WhitePark with Inspinia with unicorn/app/assets/stylesheets/base/elements.scss */
+.tabs-container .tabs-below > .nav-tabs > li {
+  margin-top: -1px;
+  margin-bottom: 0;
+}
+/* line 2169, /home/leetsworker/Документи/My_RP/WhitePark with Inspinia with unicorn/app/assets/stylesheets/base/elements.scss */
+.tabs-container .tabs-below > .nav-tabs > li > a {
+  -webkit-border-radius: 0 0 4px 4px;
+  -moz-border-radius: 0 0 4px 4px;
+  border-radius: 0 0 4px 4px;
+}
+/* line 2175, /home/leetsworker/Документи/My_RP/WhitePark with Inspinia with unicorn/app/assets/stylesheets/base/elements.scss */
+.tabs-container .tabs-below > .nav-tabs > li > a:hover,
+.tabs-container .tabs-below > .nav-tabs > li > a:focus {
+  border-top-color: #e7eaec;
+  border-bottom-color: transparent;
+}
+/* line 2181, /home/leetsworker/Документи/My_RP/WhitePark with Inspinia with unicorn/app/assets/stylesheets/base/elements.scss */
+.tabs-container .tabs-left > .nav-tabs > li,
+.tabs-container .tabs-right > .nav-tabs > li {
+  float: none;
+}
+/* line 2186, /home/leetsworker/Документи/My_RP/WhitePark with Inspinia with unicorn/app/assets/stylesheets/base/elements.scss */
+.tabs-container .tabs-left > .nav-tabs > li > a,
+.tabs-container .tabs-right > .nav-tabs > li > a {
+  min-width: 74px;
+  margin-right: 0;
+  margin-bottom: 3px;
+}
+/* line 2193, /home/leetsworker/Документи/My_RP/WhitePark with Inspinia with unicorn/app/assets/stylesheets/base/elements.scss */
+.tabs-container .tabs-left > .nav-tabs {
+  float: left;
+  margin-right: 19px;
+}
+/* line 2198, /home/leetsworker/Документи/My_RP/WhitePark with Inspinia with unicorn/app/assets/stylesheets/base/elements.scss */
+.tabs-container .tabs-left > .nav-tabs > li > a {
+  margin-right: -1px;
+  -webkit-border-radius: 4px 0 0 4px;
+  -moz-border-radius: 4px 0 0 4px;
+  border-radius: 4px 0 0 4px;
+}
+/* line 2205, /home/leetsworker/Документи/My_RP/WhitePark with Inspinia with unicorn/app/assets/stylesheets/base/elements.scss */
+.tabs-container .tabs-left > .nav-tabs .active > a,
+.tabs-container .tabs-left > .nav-tabs .active > a:hover,
+.tabs-container .tabs-left > .nav-tabs .active > a:focus {
+  border-color: #e7eaec transparent #e7eaec #e7eaec;
+}
+/* line 2211, /home/leetsworker/Документи/My_RP/WhitePark with Inspinia with unicorn/app/assets/stylesheets/base/elements.scss */
+.tabs-container .tabs-right > .nav-tabs {
+  float: right;
+  margin-left: 19px;
+}
+/* line 2216, /home/leetsworker/Документи/My_RP/WhitePark with Inspinia with unicorn/app/assets/stylesheets/base/elements.scss */
+.tabs-container .tabs-right > .nav-tabs > li > a {
+  margin-left: -1px;
+  -webkit-border-radius: 0 4px 4px 0;
+  -moz-border-radius: 0 4px 4px 0;
+  border-radius: 0 4px 4px 0;
+}
+/* line 2223, /home/leetsworker/Документи/My_RP/WhitePark with Inspinia with unicorn/app/assets/stylesheets/base/elements.scss */
+.tabs-container .tabs-right > .nav-tabs .active > a,
+.tabs-container .tabs-right > .nav-tabs .active > a:hover,
+.tabs-container .tabs-right > .nav-tabs .active > a:focus {
+  border-color: #e7eaec #e7eaec #e7eaec transparent;
+  z-index: 1;
+}
+
+@media (max-width: 767px) {
+  /* line 2233, /home/leetsworker/Документи/My_RP/WhitePark with Inspinia with unicorn/app/assets/stylesheets/base/elements.scss */
+  .tabs-container .nav-tabs > li {
+    float: none !important;
+  }
+
+  /* line 2237, /home/leetsworker/Документи/My_RP/WhitePark with Inspinia with unicorn/app/assets/stylesheets/base/elements.scss */
+  .tabs-container .nav-tabs > li.active > a {
+    border-bottom: 1px solid #e7eaec !important;
+    margin: 0;
+  }
+}
+/* jsvectormap */
+/* line 2244, /home/leetsworker/Документи/My_RP/WhitePark with Inspinia with unicorn/app/assets/stylesheets/base/elements.scss */
+.jvectormap-container {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  overflow: hidden;
+}
+
+/* line 2251, /home/leetsworker/Документи/My_RP/WhitePark with Inspinia with unicorn/app/assets/stylesheets/base/elements.scss */
+.jvectormap-tip {
+  position: absolute;
+  display: none;
+  border: solid 1px #CDCDCD;
+  border-radius: 3px;
+  background: #292929;
+  color: white;
+  font-family: sans-serif, Verdana;
+  font-size: smaller;
+  padding: 5px;
+}
+
+/* line 2263, /home/leetsworker/Документи/My_RP/WhitePark with Inspinia with unicorn/app/assets/stylesheets/base/elements.scss */
+.jvectormap-zoomin, .jvectormap-zoomout, .jvectormap-goback {
+  position: absolute;
+  left: 10px;
+  border-radius: 3px;
+  background: #1ab394;
+  padding: 3px;
+  color: white;
+  cursor: pointer;
+  line-height: 10px;
+  text-align: center;
+  box-sizing: content-box;
+}
+
+/* line 2276, /home/leetsworker/Документи/My_RP/WhitePark with Inspinia with unicorn/app/assets/stylesheets/base/elements.scss */
+.jvectormap-zoomin, .jvectormap-zoomout {
+  width: 10px;
+  height: 10px;
+}
+
+/* line 2281, /home/leetsworker/Документи/My_RP/WhitePark with Inspinia with unicorn/app/assets/stylesheets/base/elements.scss */
+.jvectormap-zoomin {
+  top: 10px;
+}
+
+/* line 2285, /home/leetsworker/Документи/My_RP/WhitePark with Inspinia with unicorn/app/assets/stylesheets/base/elements.scss */
+.jvectormap-zoomout {
+  top: 30px;
+}
+
+/* line 2289, /home/leetsworker/Документи/My_RP/WhitePark with Inspinia with unicorn/app/assets/stylesheets/base/elements.scss */
+.jvectormap-goback {
+  bottom: 10px;
+  z-index: 1000;
+  padding: 6px;
+}
+
+/* line 2295, /home/leetsworker/Документи/My_RP/WhitePark with Inspinia with unicorn/app/assets/stylesheets/base/elements.scss */
+.jvectormap-spinner {
+  position: absolute;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+}
+
+/* line 2303, /home/leetsworker/Документи/My_RP/WhitePark with Inspinia with unicorn/app/assets/stylesheets/base/elements.scss */
+.jvectormap-legend-title {
+  font-weight: bold;
+  font-size: 14px;
+  text-align: center;
+}
+
+/* line 2309, /home/leetsworker/Документи/My_RP/WhitePark with Inspinia with unicorn/app/assets/stylesheets/base/elements.scss */
+.jvectormap-legend-cnt {
+  position: absolute;
+}
+
+/* line 2313, /home/leetsworker/Документи/My_RP/WhitePark with Inspinia with unicorn/app/assets/stylesheets/base/elements.scss */
+.jvectormap-legend-cnt-h {
+  bottom: 0;
+  right: 0;
+}
+
+/* line 2318, /home/leetsworker/Документи/My_RP/WhitePark with Inspinia with unicorn/app/assets/stylesheets/base/elements.scss */
+.jvectormap-legend-cnt-v {
+  top: 0;
+  right: 0;
+}
+
+/* line 2323, /home/leetsworker/Документи/My_RP/WhitePark with Inspinia with unicorn/app/assets/stylesheets/base/elements.scss */
+.jvectormap-legend {
+  background: black;
+  color: white;
+  border-radius: 3px;
+}
+
+/* line 2329, /home/leetsworker/Документи/My_RP/WhitePark with Inspinia with unicorn/app/assets/stylesheets/base/elements.scss */
+.jvectormap-legend-cnt-h .jvectormap-legend {
+  float: left;
+  margin: 0 10px 10px 0;
+  padding: 3px 3px 1px 3px;
+}
+
+/* line 2335, /home/leetsworker/Документи/My_RP/WhitePark with Inspinia with unicorn/app/assets/stylesheets/base/elements.scss */
+.jvectormap-legend-cnt-h .jvectormap-legend .jvectormap-legend-tick {
+  float: left;
+}
+
+/* line 2339, /home/leetsworker/Документи/My_RP/WhitePark with Inspinia with unicorn/app/assets/stylesheets/base/elements.scss */
+.jvectormap-legend-cnt-v .jvectormap-legend {
+  margin: 10px 10px 0 0;
+  padding: 3px;
+}
+
+/* line 2344, /home/leetsworker/Документи/My_RP/WhitePark with Inspinia with unicorn/app/assets/stylesheets/base/elements.scss */
+.jvectormap-legend-cnt-h .jvectormap-legend-tick {
+  width: 40px;
+}
+
+/* line 2348, /home/leetsworker/Документи/My_RP/WhitePark with Inspinia with unicorn/app/assets/stylesheets/base/elements.scss */
+.jvectormap-legend-cnt-h .jvectormap-legend-tick-sample {
+  height: 15px;
+}
+
+/* line 2352, /home/leetsworker/Документи/My_RP/WhitePark with Inspinia with unicorn/app/assets/stylesheets/base/elements.scss */
+.jvectormap-legend-cnt-v .jvectormap-legend-tick-sample {
+  height: 20px;
+  width: 20px;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+/* line 2359, /home/leetsworker/Документи/My_RP/WhitePark with Inspinia with unicorn/app/assets/stylesheets/base/elements.scss */
+.jvectormap-legend-tick-text {
+  font-size: 12px;
+}
+
+/* line 2363, /home/leetsworker/Документи/My_RP/WhitePark with Inspinia with unicorn/app/assets/stylesheets/base/elements.scss */
+.jvectormap-legend-cnt-h .jvectormap-legend-tick-text {
+  text-align: center;
+}
+
+/* line 2367, /home/leetsworker/Документи/My_RP/WhitePark with Inspinia with unicorn/app/assets/stylesheets/base/elements.scss */
+.jvectormap-legend-cnt-v .jvectormap-legend-tick-text {
+  display: inline-block;
+  vertical-align: middle;
+  line-height: 20px;
+  padding-left: 3px;
+}
+
+/*Slick Carousel */
+/* line 2376, /home/leetsworker/Документи/My_RP/WhitePark with Inspinia with unicorn/app/assets/stylesheets/base/elements.scss */
+.slick-prev:before,
+.slick-next:before {
+  color: #1ab394 !important;
+}
+
+/* Payments */
+/* line 2383, /home/leetsworker/Документи/My_RP/WhitePark with Inspinia with unicorn/app/assets/stylesheets/base/elements.scss */
+.payment-card {
+  background: #ffffff;
+  padding: 20px;
+  margin-bottom: 25px;
+  border: 1px solid #e7eaec;
+}
+
+/* line 2390, /home/leetsworker/Документи/My_RP/WhitePark with Inspinia with unicorn/app/assets/stylesheets/base/elements.scss */
+.payment-icon-big {
+  font-size: 60px;
+  color: #D1DADE;
+}
+
+/* line 2395, /home/leetsworker/Документи/My_RP/WhitePark with Inspinia with unicorn/app/assets/stylesheets/base/elements.scss */
+.payments-method.panel-group .panel + .panel {
+  margin-top: -1px;
+}
+
+/* line 2399, /home/leetsworker/Документи/My_RP/WhitePark with Inspinia with unicorn/app/assets/stylesheets/base/elements.scss */
+.payments-method .panel-heading {
+  padding: 15px;
+}
+
+/* line 2403, /home/leetsworker/Документи/My_RP/WhitePark with Inspinia with unicorn/app/assets/stylesheets/base/elements.scss */
+.payments-method .panel {
+  border-radius: 0;
+}
+
+/* line 2407, /home/leetsworker/Документи/My_RP/WhitePark with Inspinia with unicorn/app/assets/stylesheets/base/elements.scss */
+.payments-method .panel-heading h5 {
+  margin-bottom: 5px;
+}
+
+/* line 2411, /home/leetsworker/Документи/My_RP/WhitePark with Inspinia with unicorn/app/assets/stylesheets/base/elements.scss */
+.payments-method .panel-heading i {
+  font-size: 26px;
+}
+
+/* Select2 custom styles */
+/* line 2417, /home/leetsworker/Документи/My_RP/WhitePark with Inspinia with unicorn/app/assets/stylesheets/base/elements.scss */
+.select2-container--default .select2-selection--single,
+.select2-container--default .select2-selection--multiple {
+  border-color: #e7eaec;
+}
+
+/* line 2422, /home/leetsworker/Документи/My_RP/WhitePark with Inspinia with unicorn/app/assets/stylesheets/base/elements.scss */
+.select2-container--default.select2-container--focus .select2-selection--single,
+.select2-container--default.select2-container--focus .select2-selection--multiple {
+  border-color: #1ab394;
+}
+
+/* line 2427, /home/leetsworker/Документи/My_RP/WhitePark with Inspinia with unicorn/app/assets/stylesheets/base/elements.scss */
+.select2-container--default .select2-results__option--highlighted[aria-selected] {
+  background-color: #1ab394;
+}
+
+/* line 2431, /home/leetsworker/Документи/My_RP/WhitePark with Inspinia with unicorn/app/assets/stylesheets/base/elements.scss */
+.select2-container--default .select2-search--dropdown .select2-search__field {
+  border-color: #e7eaec;
+}
+
+/* line 2435, /home/leetsworker/Документи/My_RP/WhitePark with Inspinia with unicorn/app/assets/stylesheets/base/elements.scss */
+.select2-dropdown {
+  border-color: #e7eaec;
+}
+/* line 2438, /home/leetsworker/Документи/My_RP/WhitePark with Inspinia with unicorn/app/assets/stylesheets/base/elements.scss */
+.select2-dropdown input:focus {
+  outline: none;
+}
+
+/* line 2443, /home/leetsworker/Документи/My_RP/WhitePark with Inspinia with unicorn/app/assets/stylesheets/base/elements.scss */
+.select2-selection {
+  outline: none;
+}
+
+/* line 2448, /home/leetsworker/Документи/My_RP/WhitePark with Inspinia with unicorn/app/assets/stylesheets/base/elements.scss */
+.ui-select-container.ui-select-bootstrap .ui-select-choices-row.active > a {
+  background-color: #1ab394;
+}
+
+/* Tour */
+/* line 2454, /home/leetsworker/Документи/My_RP/WhitePark with Inspinia with unicorn/app/assets/stylesheets/base/elements.scss */
+.tour-tour .btn.btn-default {
+  background-color: #ffffff;
+  border: 1px solid #d2d2d2;
+  color: inherit;
+}
+
+/* line 2460, /home/leetsworker/Документи/My_RP/WhitePark with Inspinia with unicorn/app/assets/stylesheets/base/elements.scss */
+.tour-step-backdrop {
+  z-index: 2101;
+}
+
+/* line 2464, /home/leetsworker/Документи/My_RP/WhitePark with Inspinia with unicorn/app/assets/stylesheets/base/elements.scss */
+.tour-backdrop {
+  z-index: 2100;
+  opacity: .7;
+}
+
+/* line 2469, /home/leetsworker/Документи/My_RP/WhitePark with Inspinia with unicorn/app/assets/stylesheets/base/elements.scss */
+.popover[class*=tour-] {
+  z-index: 2100;
+}
+
+/* line 2473, /home/leetsworker/Документи/My_RP/WhitePark with Inspinia with unicorn/app/assets/stylesheets/base/elements.scss */
+body.tour-open .animated {
+  animation-fill-mode: initial;
+}
+
+/* Resizable */
+/* line 2480, /home/leetsworker/Документи/My_RP/WhitePark with Inspinia with unicorn/app/assets/stylesheets/base/elements.scss */
+.resizable-panels .ibox {
+  clear: none;
+  margin: 10px;
+  float: left;
+  overflow: hidden;
+}
+
+/* line 2487, /home/leetsworker/Документи/My_RP/WhitePark with Inspinia with unicorn/app/assets/stylesheets/base/elements.scss */
+.resizable-panels .ibox .ibox-content {
+  height: calc(100% - 49px);
+}
+
+/* line 2490, /home/leetsworker/Документи/My_RP/WhitePark with Inspinia with unicorn/app/assets/stylesheets/base/elements.scss */
+.ui-resizable-helper {
+  background: rgba(211, 211, 211, 0.4);
+}
+
+/* Wizard step fix */
+/* line 2496, /home/leetsworker/Документи/My_RP/WhitePark with Inspinia with unicorn/app/assets/stylesheets/base/elements.scss */
+.wizard > .content > .body {
+  position: relative;
+}
+
+/* PDF js style */
+/* line 2503, /home/leetsworker/Документи/My_RP/WhitePark with Inspinia with unicorn/app/assets/stylesheets/base/elements.scss */
+.pdf-toolbar {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+/* Dropzone */
+/* line 2510, /home/leetsworker/Документи/My_RP/WhitePark with Inspinia with unicorn/app/assets/stylesheets/base/elements.scss */
+.dropzone {
+  min-height: 140px;
+  border: 1px dashed #1ab394;
+  background: white;
+  padding: 20px 20px;
+}
+/* line 2516, /home/leetsworker/Документи/My_RP/WhitePark with Inspinia with unicorn/app/assets/stylesheets/base/elements.scss */
+.dropzone .dz-message {
+  font-size: 16px;
+}
+
+/* Activity stream */
+/* line 2524, /home/leetsworker/Документи/My_RP/WhitePark with Inspinia with unicorn/app/assets/stylesheets/base/elements.scss */
+.stream {
+  position: relative;
+  padding: 10px 0;
+}
+/* line 2529, /home/leetsworker/Документи/My_RP/WhitePark with Inspinia with unicorn/app/assets/stylesheets/base/elements.scss */
+.stream:first-child .stream-badge:before {
+  top: 10px;
+}
+/* line 2533, /home/leetsworker/Документи/My_RP/WhitePark with Inspinia with unicorn/app/assets/stylesheets/base/elements.scss */
+.stream:last-child .stream-badge:before {
+  height: 30px;
+}
+/* line 2538, /home/leetsworker/Документи/My_RP/WhitePark with Inspinia with unicorn/app/assets/stylesheets/base/elements.scss */
+.stream .stream-badge {
+  width: 50px;
+}
+/* line 2541, /home/leetsworker/Документи/My_RP/WhitePark with Inspinia with unicorn/app/assets/stylesheets/base/elements.scss */
+.stream .stream-badge i {
+  border: 1px solid #e7eaec;
+  border-radius: 50%;
+  padding: 6px;
+  color: #808486;
+  position: absolute;
+  background-color: #ffffff;
+  left: 8px;
+}
+/* line 2550, /home/leetsworker/Документи/My_RP/WhitePark with Inspinia with unicorn/app/assets/stylesheets/base/elements.scss */
+.stream .stream-badge i.fa-circle {
+  color: #ced0d1;
+}
+/* line 2555, /home/leetsworker/Документи/My_RP/WhitePark with Inspinia with unicorn/app/assets/stylesheets/base/elements.scss */
+.stream .stream-badge i.bg-success {
+  color: #ffffff;
+  background-color: #1c84c6;
+  border-color: #1c84c6;
+}
+/* line 2561, /home/leetsworker/Документи/My_RP/WhitePark with Inspinia with unicorn/app/assets/stylesheets/base/elements.scss */
+.stream .stream-badge i.bg-primary {
+  color: #ffffff;
+  background-color: #1ab394;
+  border-color: #1ab394;
+}
+/* line 2567, /home/leetsworker/Документи/My_RP/WhitePark with Inspinia with unicorn/app/assets/stylesheets/base/elements.scss */
+.stream .stream-badge i.bg-warning {
+  color: #ffffff;
+  background-color: #f8ac59;
+  border-color: #f8ac59;
+}
+/* line 2573, /home/leetsworker/Документи/My_RP/WhitePark with Inspinia with unicorn/app/assets/stylesheets/base/elements.scss */
+.stream .stream-badge i.bg-info {
+  color: #ffffff;
+  background-color: #23c6c8;
+  border-color: #23c6c8;
+}
+/* line 2579, /home/leetsworker/Документи/My_RP/WhitePark with Inspinia with unicorn/app/assets/stylesheets/base/elements.scss */
+.stream .stream-badge i.bg-danger {
+  color: #ffffff;
+  background-color: #ED5565;
+  border-color: #ED5565;
+}
+/* line 2587, /home/leetsworker/Документи/My_RP/WhitePark with Inspinia with unicorn/app/assets/stylesheets/base/elements.scss */
+.stream .stream-badge:before {
+  content: '';
+  width: 1px;
+  background-color: #e7eaec;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 20px;
+}
+/* line 2600, /home/leetsworker/Документи/My_RP/WhitePark with Inspinia with unicorn/app/assets/stylesheets/base/elements.scss */
+.stream .stream-info {
+  font-size: 12px;
+  margin-bottom: 5px;
+}
+/* line 2604, /home/leetsworker/Документи/My_RP/WhitePark with Inspinia with unicorn/app/assets/stylesheets/base/elements.scss */
+.stream .stream-info img {
+  border-radius: 50%;
+  width: 18px;
+  height: 18px;
+  margin-right: 2px;
+  margin-top: -4px;
+}
+/* line 2612, /home/leetsworker/Документи/My_RP/WhitePark with Inspinia with unicorn/app/assets/stylesheets/base/elements.scss */
+.stream .stream-info .date {
+  color: #9a9d9f;
+  font-size: 80%;
+}
+/* line 2619, /home/leetsworker/Документи/My_RP/WhitePark with Inspinia with unicorn/app/assets/stylesheets/base/elements.scss */
+.stream .stream-panel {
+  margin-left: 55px;
+}
+
+/* line 2626, /home/leetsworker/Документи/My_RP/WhitePark with Inspinia with unicorn/app/assets/stylesheets/base/elements.scss */
+.stream-small {
+  margin: 10px 0;
+}
+/* line 2629, /home/leetsworker/Документи/My_RP/WhitePark with Inspinia with unicorn/app/assets/stylesheets/base/elements.scss */
+.stream-small .label {
+  padding: 2px 6px;
+  margin-right: 2px;
+}

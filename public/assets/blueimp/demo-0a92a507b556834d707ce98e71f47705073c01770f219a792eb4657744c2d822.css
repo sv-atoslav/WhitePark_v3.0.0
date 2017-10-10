@@ -1,0 +1,65 @@
+@charset "UTF-8";
+/*
+ * blueimp Gallery Demo CSS 2.0.0
+ * https://github.com/blueimp/Gallery
+ *
+ * Copyright 2013, Sebastian Tschan
+ * https://blueimp.net
+ *
+ * Licensed under the MIT license:
+ * http://www.opensource.org/licenses/MIT
+ */
+/* line 13, /home/leetsworker/Документи/My_RP/WhitePark with Inspinia with unicorn/app/assets/stylesheets/blueimp/demo.scss */
+body {
+  max-width: 750px;
+  margin: 0 auto;
+  padding: 1em;
+  font-family: 'Lucida Grande', 'Lucida Sans Unicode', Arial, sans-serif;
+  font-size: 1em;
+  line-height: 1.4em;
+  background: #222;
+  color: #fff;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+}
+
+/* line 25, /home/leetsworker/Документи/My_RP/WhitePark with Inspinia with unicorn/app/assets/stylesheets/blueimp/demo.scss */
+a {
+  color: orange;
+  text-decoration: none;
+}
+
+/* line 29, /home/leetsworker/Документи/My_RP/WhitePark with Inspinia with unicorn/app/assets/stylesheets/blueimp/demo.scss */
+img {
+  border: 0;
+  vertical-align: middle;
+}
+
+/* line 33, /home/leetsworker/Документи/My_RP/WhitePark with Inspinia with unicorn/app/assets/stylesheets/blueimp/demo.scss */
+h1 {
+  line-height: 1em;
+}
+
+/* line 36, /home/leetsworker/Документи/My_RP/WhitePark with Inspinia with unicorn/app/assets/stylesheets/blueimp/demo.scss */
+h2,
+.links {
+  text-align: center;
+}
+
+@media (min-width: 481px) {
+  /* line 42, /home/leetsworker/Документи/My_RP/WhitePark with Inspinia with unicorn/app/assets/stylesheets/blueimp/demo.scss */
+  .navigation {
+    list-style: none;
+    padding: 0;
+  }
+
+  /* line 46, /home/leetsworker/Документи/My_RP/WhitePark with Inspinia with unicorn/app/assets/stylesheets/blueimp/demo.scss */
+  .navigation li {
+    display: inline-block;
+  }
+
+  /* line 49, /home/leetsworker/Документи/My_RP/WhitePark with Inspinia with unicorn/app/assets/stylesheets/blueimp/demo.scss */
+  .navigation li:not(:first-child):before {
+    content: '| ';
+  }
+}

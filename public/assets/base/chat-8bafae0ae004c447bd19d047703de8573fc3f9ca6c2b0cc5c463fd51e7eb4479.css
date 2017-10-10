@@ -1,0 +1,127 @@
+@charset "UTF-8";
+/* line 3, /home/leetsworker/Документи/My_RP/WhitePark with Inspinia with unicorn/app/assets/stylesheets/base/chat.scss */
+#small-chat {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 100;
+}
+
+/* line 10, /home/leetsworker/Документи/My_RP/WhitePark with Inspinia with unicorn/app/assets/stylesheets/base/chat.scss */
+#small-chat .badge {
+  position: absolute;
+  top: -3px;
+  right: -4px;
+}
+
+/* line 16, /home/leetsworker/Документи/My_RP/WhitePark with Inspinia with unicorn/app/assets/stylesheets/base/chat.scss */
+.open-small-chat {
+  height: 38px;
+  width: 38px;
+  display: block;
+  background: #1ab394;
+  padding: 9px 8px;
+  text-align: center;
+  color: #fff;
+  border-radius: 50%;
+}
+
+/* line 27, /home/leetsworker/Документи/My_RP/WhitePark with Inspinia with unicorn/app/assets/stylesheets/base/chat.scss */
+.open-small-chat:hover {
+  color: white;
+  background: #1ab394;
+}
+
+/* line 32, /home/leetsworker/Документи/My_RP/WhitePark with Inspinia with unicorn/app/assets/stylesheets/base/chat.scss */
+.small-chat-box {
+  display: none;
+  position: fixed;
+  bottom: 20px;
+  right: 75px;
+  background: #fff;
+  border: 1px solid #e7eaec;
+  width: 230px;
+  height: 320px;
+  border-radius: 4px;
+}
+
+/* line 44, /home/leetsworker/Документи/My_RP/WhitePark with Inspinia with unicorn/app/assets/stylesheets/base/chat.scss */
+.small-chat-box.ng-small-chat {
+  display: block;
+}
+
+/* line 49, /home/leetsworker/Документи/My_RP/WhitePark with Inspinia with unicorn/app/assets/stylesheets/base/chat.scss */
+.body-small .small-chat-box {
+  bottom: 70px;
+  right: 20px;
+}
+
+/* line 55, /home/leetsworker/Документи/My_RP/WhitePark with Inspinia with unicorn/app/assets/stylesheets/base/chat.scss */
+.small-chat-box.active {
+  display: block;
+}
+
+/* line 61, /home/leetsworker/Документи/My_RP/WhitePark with Inspinia with unicorn/app/assets/stylesheets/base/chat.scss */
+.small-chat-box .heading {
+  background: #2F4050;
+  padding: 8px 15px;
+  font-weight: bold;
+  color: #fff;
+}
+/* line 68, /home/leetsworker/Документи/My_RP/WhitePark with Inspinia with unicorn/app/assets/stylesheets/base/chat.scss */
+.small-chat-box .chat-date {
+  opacity: 0.6;
+  font-size: 10px;
+  font-weight: normal;
+}
+/* line 74, /home/leetsworker/Документи/My_RP/WhitePark with Inspinia with unicorn/app/assets/stylesheets/base/chat.scss */
+.small-chat-box .content {
+  padding: 15px 15px;
+}
+/* line 76, /home/leetsworker/Документи/My_RP/WhitePark with Inspinia with unicorn/app/assets/stylesheets/base/chat.scss */
+.small-chat-box .content .author-name {
+  font-weight: bold;
+  margin-bottom: 3px;
+  font-size: 11px;
+}
+/* line 82, /home/leetsworker/Документи/My_RP/WhitePark with Inspinia with unicorn/app/assets/stylesheets/base/chat.scss */
+.small-chat-box .content div {
+  padding-bottom: 20px;
+}
+/* line 86, /home/leetsworker/Документи/My_RP/WhitePark with Inspinia with unicorn/app/assets/stylesheets/base/chat.scss */
+.small-chat-box .content .chat-message {
+  padding: 5px 10px;
+  border-radius: 6px;
+  font-size: 11px;
+  line-height: 14px;
+  max-width: 80%;
+  background: #f3f3f4;
+  margin-bottom: 10px;
+}
+/* line 96, /home/leetsworker/Документи/My_RP/WhitePark with Inspinia with unicorn/app/assets/stylesheets/base/chat.scss */
+.small-chat-box .content .chat-message.active {
+  background: #1ab394;
+  color: #fff;
+}
+/* line 101, /home/leetsworker/Документи/My_RP/WhitePark with Inspinia with unicorn/app/assets/stylesheets/base/chat.scss */
+.small-chat-box .content .left {
+  text-align: left;
+  clear: both;
+}
+/* line 104, /home/leetsworker/Документи/My_RP/WhitePark with Inspinia with unicorn/app/assets/stylesheets/base/chat.scss */
+.small-chat-box .content .left .chat-message {
+  float: left;
+}
+/* line 109, /home/leetsworker/Документи/My_RP/WhitePark with Inspinia with unicorn/app/assets/stylesheets/base/chat.scss */
+.small-chat-box .content .right {
+  text-align: right;
+  clear: both;
+}
+/* line 112, /home/leetsworker/Документи/My_RP/WhitePark with Inspinia with unicorn/app/assets/stylesheets/base/chat.scss */
+.small-chat-box .content .right .chat-message {
+  float: right;
+}
+/* line 118, /home/leetsworker/Документи/My_RP/WhitePark with Inspinia with unicorn/app/assets/stylesheets/base/chat.scss */
+.small-chat-box .form-chat {
+  padding: 10px 10px;
+}

@@ -1,0 +1,82 @@
+@charset "UTF-8";
+/* line 3, /home/leetsworker/Документи/My_RP/WhitePark with Inspinia with unicorn/app/assets/stylesheets/base/badges_labels.scss */
+.label {
+  background-color: #D1DADE;
+  color: #5E5E5E;
+  font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-weight: 600;
+  padding: 3px 8px;
+  text-shadow: none;
+}
+
+/* line 12, /home/leetsworker/Документи/My_RP/WhitePark with Inspinia with unicorn/app/assets/stylesheets/base/badges_labels.scss */
+.nav .label, .ibox .label {
+  font-size: 10px;
+}
+
+/* line 16, /home/leetsworker/Документи/My_RP/WhitePark with Inspinia with unicorn/app/assets/stylesheets/base/badges_labels.scss */
+.badge {
+  background-color: #D1DADE;
+  color: #5E5E5E;
+  font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-size: 11px;
+  font-weight: 600;
+  padding-bottom: 4px;
+  padding-left: 6px;
+  padding-right: 6px;
+  text-shadow: none;
+}
+
+/* line 28, /home/leetsworker/Документи/My_RP/WhitePark with Inspinia with unicorn/app/assets/stylesheets/base/badges_labels.scss */
+.label-primary, .badge-primary {
+  background-color: #1ab394;
+  color: #FFFFFF;
+}
+
+/* line 33, /home/leetsworker/Документи/My_RP/WhitePark with Inspinia with unicorn/app/assets/stylesheets/base/badges_labels.scss */
+.label-success, .badge-success {
+  background-color: #1c84c6;
+  color: #FFFFFF;
+}
+
+/* line 38, /home/leetsworker/Документи/My_RP/WhitePark with Inspinia with unicorn/app/assets/stylesheets/base/badges_labels.scss */
+.label-warning, .badge-warning {
+  background-color: #f8ac59;
+  color: #FFFFFF;
+}
+
+/* line 43, /home/leetsworker/Документи/My_RP/WhitePark with Inspinia with unicorn/app/assets/stylesheets/base/badges_labels.scss */
+.label-warning-light, .badge-warning-light {
+  background-color: #f8ac59;
+  color: #ffffff;
+}
+
+/* line 48, /home/leetsworker/Документи/My_RP/WhitePark with Inspinia with unicorn/app/assets/stylesheets/base/badges_labels.scss */
+.label-danger, .badge-danger {
+  background-color: #ED5565;
+  color: #FFFFFF;
+}
+
+/* line 53, /home/leetsworker/Документи/My_RP/WhitePark with Inspinia with unicorn/app/assets/stylesheets/base/badges_labels.scss */
+.label-info, .badge-info {
+  background-color: #23c6c8;
+  color: #FFFFFF;
+}
+
+/* line 58, /home/leetsworker/Документи/My_RP/WhitePark with Inspinia with unicorn/app/assets/stylesheets/base/badges_labels.scss */
+.label-inverse, .badge-inverse {
+  background-color: #262626;
+  color: #FFFFFF;
+}
+
+/* line 63, /home/leetsworker/Документи/My_RP/WhitePark with Inspinia with unicorn/app/assets/stylesheets/base/badges_labels.scss */
+.label-white, .badge-white {
+  background-color: #FFFFFF;
+  color: #5E5E5E;
+}
+
+/* line 68, /home/leetsworker/Документи/My_RP/WhitePark with Inspinia with unicorn/app/assets/stylesheets/base/badges_labels.scss */
+.label-white, .badge-disable {
+  background-color: #2A2E36;
+  color: #8B91A0;
+}
