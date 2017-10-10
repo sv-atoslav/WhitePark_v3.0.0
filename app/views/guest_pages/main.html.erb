@@ -1,10 +1,9 @@
 <% if @visible_part %><div class="big-block calendar-block">
 	<div class="background owl-carousel">
 		<% @main_photo_list.to_a.each do |one_photo_in_sl| %>
-			<% way = Photo.try_get_way_to_img_tag_by_id(one_photo_in_sl.photo) %>
-			<% if way.nil? %><%= $INE.html_safe %>
-			<% else %><%= image_tag(way) %>
-			<% end  %>
+			<% variant_of_img = Photo.try_get_way_to_img_tag_by_id(one_photo_in_sl.photo) %>
+			<% variant_of_img = "lost.jpg" if variant_of_img.nil? %>
+			<%= image_tag variant_of_img %>
 		<% end %>
 	</div>
 	<div class="arrows arrow-left" ><%= image_tag "wpimg/arrow-white.png", alt:"left"  %></div>
@@ -18,13 +17,12 @@
 <div class="photoreports-block  big-block"><div class="block">
 	<h2>Направления</h2>
 	<hr class="spec-hr">
-	<div class="photoreports"><% @category_list.each do |one_category|%><a href="/category_events/<%= one_category.eng_title %>" class="album">
-		<div class = "album-bg">
-			<% way = Photo.try_get_way_to_img_tag_by_id(one_category.icon) %>
-			<% if way.nil? %><%= $INE.html_safe %>
-			<% else %><%= image_tag(way) %>
-			<% end  %>
-		</div>
-		<div class="album-title"><p><%= one_category.ru_title %></p><h4>подробнее</h4></div>
-	</a><% end %></div>
+	<div class="photoreports"><% @category_list.each do |one_category|%>
+		<a href="/category_events/<%= one_category.eng_title %>" class="album">
+			<% variant_of_img = Photo.try_get_way_to_img_tag_by_id(one_category.icon) %>
+			<% variant_of_img = "lost.jpg" if variant_of_img.nil? %>
+			<div class = "album-bg"><%= image_tag variant_of_img %></div>
+			<div class="album-title"><p><%= one_category.ru_title %></p><h4>подробнее</h4></div>
+		</a>
+	<% end %></div>
 </div></div>

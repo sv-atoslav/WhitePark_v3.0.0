@@ -11,10 +11,9 @@
   <div class="field"><%= form.label :description %><%= form.text_field :description, id: :tent_description %></div>
   <p>Icon</p>
   <div class="field"><% @photo_list.each do |one_photo| %>
-    <% way = Photo.try_get_way_to_img_tag_by_photo(one_photo) %>
-    <% if way.nil? %><%= $INE.html_safe %>
-    <% else %><%= image_tag(way, alt: one_photo.description, style: "width: 100px;") %>
-    <% end  %>
+    <% variant_of_img = Photo.try_get_way_to_img_tag_by_photo(one_photo) %>
+    <% variant_of_img = "lost.jpg" if variant_of_img.nil? %>
+    <%= image_tag variant_of_img, width: "100px" %>
     <%= form.radio_button(:icon, one_photo.id) %>
     <%= form.label(:icon, way) %><br>
   <% end %></div>

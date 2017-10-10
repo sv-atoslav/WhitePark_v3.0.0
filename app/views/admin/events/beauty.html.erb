@@ -3,10 +3,9 @@
 	<hr class="spec-hr">
 	<%= @event.description.html_safe %>
 	<div class="about-us-image-set"><% @old_list.each do |one_photo_id| %>
-		<% way = Photo.try_get_way_to_img_tag_by_id(one_photo_id) %>
-        <% if way.nil? %><%= $INE.html_safe %>
-        <% else %><%= image_tag(way, style: "height: 100px;") %>
-        <% end  %>
+		<% variant_of_img = Photo.try_get_way_to_img_tag_by_id(one_photo_id) %>
+		<% variant_of_img = "lost.jpg" if variant_of_img.nil? %>
+		<%= image_tag variant_of_img, height: "100px" %>
 	<% end %></div>
 	<br>
 </div>

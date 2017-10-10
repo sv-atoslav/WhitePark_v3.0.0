@@ -3,8 +3,6 @@ class ApplicationController < ActionController::Base
 	before_action :divider_access
 	WillPaginate.per_page = 5
 
-	$INE = "<i>картинка отсутствует</i>"
-
 	def robots
 	end
 	def set_photo_list

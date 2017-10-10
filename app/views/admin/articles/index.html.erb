@@ -11,10 +11,9 @@
   </tr></thead>
   <tbody><% @articles.each do |one_article| %><tr>
     <td>
-      <% temp_icon = Photo.find_by(id: one_article.icon) %>
-      <% if temp_icon.nil? %><%= $INE.html_safe %>
-      <% else %><%= image_tag( temp_icon.avatar.url, style: "width: 100px;", alt: temp_icon.description) %>
-      <% end %>
+      <% variant_of_img = Photo.try_get_way_to_img_tag_by_id(one_article.icon) %>
+      <% variant_of_img = "lost.jpg" if variant_of_img.nil? %>
+      <p><%= image_tag variant_of_img, width: "100%" %></p>
     </td>
     <td><%= one_article.ru_title %></td>
     <td><%= one_article.description.html_safe %></td>

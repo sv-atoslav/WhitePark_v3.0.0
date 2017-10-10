@@ -1,14 +1,11 @@
 <% if @visible_part %><div class="photoreports-block  big-block"><div class="block">
 	<h2>События</h2>
 	<hr class="spec-hr">
-	<div class="about-us-image-set"><% @event_list.each do |state| %>
-		<a href = "/events/<%= state.eng_title %>" class = "album">
-			<div class="album-bg">
-				<% temp_icon = Photo.find_by(id: one_event.icon) %>
-				<% if temp_icon.nil? %><%= $INE.html_safe %>	
-				<% else %><p><%= image_tag temp_icon.avatar.url %></p>
-				<% end  %>
-			</div>
+	<div class="about-us-image-set"><% @event_list.each do |one_event| %>
+		<a href = "/events/<%= one_event.eng_title %>" class = "album">
+			<% variant_of_img = Photo.try_get_way_to_img_tag_by_id(one_event.icon) %>
+			<% variant_of_img = "lost.jpg" if variant_of_img.nil? %>
+			<div class="album-bg"><p><%= image_tag variant_of_img %></p></div>
 			<div class="album-title"><p><%= one_event.ru_title %></p><h4>подробнее</h4></div>
 		</a>
 	<% end %></div>

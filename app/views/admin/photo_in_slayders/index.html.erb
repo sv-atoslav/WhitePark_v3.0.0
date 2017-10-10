@@ -1,20 +1,18 @@
-<p id="notice"><%= notice %></p>
+<!-- <p id="notice"><%= notice %></p>
+<%= link_to 'New Photo In Slayder', action: "new" %>
 <table>
 	<head><tr><% @list_of_slayders.each do |one_slayder| %>
 		<td><%= one_slayder.title %></td>
 	<% end %></tr></head>
 	<body><tr><% @list_of_slayders.each do |one_slayder| %>
-		<td>
-			<% PhotoInSlayder.where(slyder: one_slayder.id).each do |one_phis| %>
-			<% way = Photo.try_get_way_to_img_tag_by_id(one_phis.photo) %>
-			<% if way.nil? %><%= $INE.html_safe %>
-			<% else %><%= image_tag(way, style: "width: 100px;") %>
-			<% end  %>
+		<% PhotoInSlayder.where(slyder: one_slayder.id).each do |one_phis| %><td>
+			<% variant_of_img = Photo.try_get_way_to_img_tag_by_id(one_phis.photo) %>
+			<% variant_of_img = "lost.jpg" if variant_of_img.nil? %>
+			<%= image_tag variant_of_img, width: "100px" %>
 			<%= one_phis.description %>
 			<%= link_to 'Show', admin_photo_in_slayder_path(one_phis) %>
 			<%= link_to 'Edit', edit_admin_photo_in_slayder_path(one_phis) %>
 			<%= link_to 'Destroy', admin_photo_in_slayder_path(one_phis), method: :delete, data: { confirm: 'Are you sure?' } %><br>
-		</td>
+		</td><% end %>
 	<% end %></tr></body>
-</table>
-<%= link_to 'New Photo In Slayder', action: "new" %>
+</table> -->

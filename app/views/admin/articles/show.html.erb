@@ -1,23 +1,20 @@
 <p id="notice"><%= notice %></p>
+<%= link_to 'Edit', action: "edit"  %> | 
+<%= link_to 'Back', action: "index" %> | 
+<a href="/articles/<%= @article.eng_title %>">Beauty</a>
 <p><strong>Title:</strong><%= @article.ru_title %></p>
 <% unless @article.description.nil? %>
 	<p><strong>Description:</strong><%= @article.description.html_safe %></p>
 <% end %>
 <p><strong>Published:</strong><%= @article.published %></p>
 <p><strong>Icon:</strong>
-	<% temp_icon = Photo.find_by(id: @article.icon) %>
-	<% if temp_icon.nil? %><%= $INE.html_safe %>
-	<% else %><%= temp_icon.avatar %>
-	<% end %>
+	<% variant_of_img = Photo.try_get_way_to_img_tag_by_id(@article.icon) %>
+	<% variant_of_img = "lost.jpg" if variant_of_img.nil? %>
+	<p><%= image_tag variant_of_img, width: "100%" %></p>
 </p>
 <p><strong>Many fotos:</strong></p>
 <% @old_list.each do |one_foto_id| %>
-	<% temp_icon = Photo.find_by(id: one_foto_id) %>
-    <% if temp_icon.nil? %><%= $INE.html_safe %>
-    <% else %>,<%= image_tag( temp_icon.avatar.url , style: "width: 100px;", alt: temp_icon.description ) %>
-    <% end %>
+	<% variant_of_img = Photo.try_get_way_to_img_tag_by_id(one_foto_id) %>
+	<% variant_of_img = "lost.jpg" if variant_of_img.nil? %>
+	<%= image_tag variant_of_img, height: "100px" %>
 <% end %>.
-<br>
-<%= link_to 'Edit', action: "edit"  %> | 
-<%= link_to 'Back', action: "index" %> | 
-<a href="/articles/<%= @article.eng_title %>">Beauty</a>

@@ -7,12 +7,9 @@
 	<div class="dishes-block-points block"></div>
 	<div class="owl-carousel owl-kit">
 		<% @kitchen_photo_list.each do |one_photo_in_sl| %><div class="big-block">
-			<div class="background">
-				<% way = Photo.try_get_way_to_img_tag_by_id(one_photo_in_sl.photo) %>
-				<% if way.nil? %><%= $INE.html_safe %>
-				<% else %><%= image_tag(way) %>
-				<% end  %>
-			</div>
+			<% variant_of_img = Photo.try_get_way_to_img_tag_by_id(one_photo_in_sl.photo) %>
+			<% variant_of_img = "lost.jpg" if variant_of_img.nil? %>
+			<div class="background"><%= image_tag variant_of_img %></div>
 			<div class="block"><div class="spec-block spec-block-right">
 				<h2><%= one_photo_in_sl.description %></h2>
 				<hr class = "spec-hr"/>

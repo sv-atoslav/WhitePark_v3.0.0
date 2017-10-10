@@ -14,23 +14,18 @@
 	    </tr></thead>
         <% have_some_photo = @old_list.to_a.any? %>
         <tbody align="center"><% @photo_list.each do |one_photo| %><tr>
-        	<td>
-        		<% way = Photo.try_get_way_to_img_tag_by_photo(one_photo) %>
-            	<% if way.nil? %><%= $INE.html_safe %>
-            	<% else %><%= image_tag(way, style: "width: 100px;") %>
-            	<% end  %>
-        	</td>
+        	<% variant_of_img = Photo.try_get_way_to_img_tag_by_photo(one_photo) %>
+			<% variant_of_img = "lost.jpg" if variant_of_img.nil? %>
+        	<td><%= image_tag variant_of_img, width: "100%" %></td>
 	        <!-- checkbox I parametr without [] need be == in controller params["word"] -->
 	        <td><% unless have_some_photo %><%= check_box_tag("many_photo_ids[]", one_photo.id) %>
-	        <% else %><%= check_box_tag( "many_photo_ids[]", one_photo.id, @old_list.include?(one_photo.id)  )%>
-	        <% end%></td>
-	        <td align="left">
-		        <% temp_string = "" %>
-		        <% if have_some_photo && PhotoInSlayder.where(photo: one_photo.id, slyder: slayder.id).any? %>
-		        	<% temp_string = PhotoInSlayder.where(photo: one_photo.id, slyder: slayder.id).first.description %>
-		        <% end %>
-		        <%= text_area_tag "descriptions_to_phinsl[]", temp_string, placeholder: "поле должно быть пустым, если галочки нет, и непустым, если галочка есть " , style: "width: 300px; height: 50px;" %>
-	        </td>
+	        <%else %><%= check_box_tag("many_photo_ids[]",one_photo.id,@old_list.include?(one_photo.id) )%>
+	        <%end  %></td>
+		    <% temp_string = "" %>
+		    <% if have_some_photo && PhotoInSlayder.where(photo: one_photo.id, slyder: slayder.id).any? %>
+		       		<% temp_string = PhotoInSlayder.where(photo: one_photo.id, slyder: slayder.id).first.description %>
+		    <% end %>
+	        <td align="left"><%= text_area_tag "descriptions_to_phinsl[]", temp_string, placeholder: "поле должно быть пустым, если галочки нет, и непустым, если галочка есть " , style: "width: 300px; height: 50px;" %></td>
         </tr><% end %></tbody>
      </table>
 	<div class="actions"><%= form.submit %></div>

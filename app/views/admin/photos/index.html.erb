@@ -11,10 +11,10 @@
   </tr></thead>
   <tbody><% @photo_list.each do |photo| %><tr>
     <td align="center">
-      <% unless photo.avatar? %><%= $INE.html_safe %>
-      <% else %><%= image_tag(photo.avatar.url , style: "width: 100px;", alt: photo.description) %>
-      <% end  %>
-    </td>
+      <% variant_of_img = Photo.try_get_way_to_img_tag_by_photo(photo) %>
+      <% variant_of_img = "lost.jpg" if variant_of_img.nil? %>
+      <%= image_tag variant_of_img, width: "100px" %>
+      </td>
     <td><%= photo.description %></td>
     <td><%= link_to 'Show',      admin_photo_path(photo) %></td>
     <td><%= link_to 'Edit', edit_admin_photo_path(photo) %></td>
