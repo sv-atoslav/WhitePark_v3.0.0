@@ -1,9 +1,0 @@
-User-agent: *
-Allow: /
-Disallow: /admin
-Disallow: /moderators
-Sitemap: http://shrouded-mountain-92881.herokuapp.com/sitemap.xml
-#                      _____  __              _
-# \    /\    / |   | |   |   |     |\   /\   | \ | /
-#  \  /  \  /  |---| |   |   |--   |/  /__\  |_/ |- 
-#   \/    \/   |   | |   |   |__   |  /    \ | \ | \
