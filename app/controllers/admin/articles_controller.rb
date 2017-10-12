@@ -35,7 +35,7 @@ class Admin::ArticlesController < ApplicationController
     # set_article
     # @article = Article.new
     # @article = Article.new(article_params)
-    @article.eng_title=Translit.convert(params[:article][:ru_title])
+    @article.eng_title=Translit.convert(params[:article][:ru_title]).gsub("ü","u")
     respond_to do |format|
       if @article.save
         format.html { redirect_to admin_article_path(@article), notice: 'Article was successfully created.' }
@@ -50,7 +50,7 @@ class Admin::ArticlesController < ApplicationController
   # PATCH/PUT /articles/1
   # PATCH/PUT /articles/1.json
   def update
-    @article.eng_title=Translit.convert(params[:article][:ru_title])
+    @article.eng_title=Translit.convert(params[:article][:ru_title]).gsub("ü","u")
     respond_to do |format|
       if @article.update(article_params)
         format.html { redirect_to admin_article_path(@article), notice: 'Article was successfully updated.' }

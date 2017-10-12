@@ -33,7 +33,7 @@ class Admin::CategoryEventsController < ApplicationController
     # set_category_event 
     # @category_event = CategoryEvent.new
     @category_event = CategoryEvent.new(category_event_params)
-    @category_event.eng_title=Translit.convert(params[:category_event][:ru_title])
+    @category_event.eng_title = Translit.convert(params[:category_event][:ru_title]).gsub("ü","u")
     respond_to do |format|
       if @category_event.save
         format.html { redirect_to admin_category_event_path(@category_event), notice: 'Category event was successfully created.' }
@@ -48,7 +48,7 @@ class Admin::CategoryEventsController < ApplicationController
   # PATCH/PUT /category_events/1
   # PATCH/PUT /category_events/1.json
   def update
-    @category_event.eng_title=Translit.convert(params[:category_event][:ru_title])
+    @category_event.eng_title=Translit.convert(params[:category_event][:ru_title]).gsub("ü","u")
     respond_to do |format|
       if @category_event.update(category_event_params)
         format.html { redirect_to admin_category_event_path(@category_event), notice: 'Category event was successfully updated.' }
