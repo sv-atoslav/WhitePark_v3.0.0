@@ -5,8 +5,8 @@
 <%if @old_list.any? %><div class="photoreports-block big-block"><div class="block">
 	<h2>События</h2>
 	<hr  class = "spec-hr">
-	<div class = "about-us-image-set"><% @old_list.each do |state_id| %>
-		<% one_event = Event.find_by(id: state_id) %>
+	<div class = "about-us-image-set"><% @old_list.each do |one_event_id| %>
+		<% one_event = Event.find_by(id: one_event_id) %>
 		<% unless one_event.nil? %><a href="/events/<%= one_event.eng_title %>" class = "album">
 			<% variant_of_img = Photo.try_get_way_to_img_tag_by_id(one_event.icon) %>
 			<% variant_of_img = "lost.jpg" if variant_of_img.nil? %>

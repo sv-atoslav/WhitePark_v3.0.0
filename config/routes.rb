@@ -26,7 +26,7 @@ Myapp::Application.routes.draw do
 	get 'WhitePark',to: 'guest_pages#main'
 	get 'otzivi',	to: 'guest_pages#review'
 	get 'kuhnya',	to: 'guest_pages#kitchen'
-	get 'map',		to: 'guest_pages#map_park'
+	get 'karta',	to: 'guest_pages#map_park'
 	get 'o_nas',	to: 'guest_pages#about_us'
 	get "sitemap",	to: 'guest_pages#site_map'
 	get 'kontakti', to: 'guest_pages#contacts'
