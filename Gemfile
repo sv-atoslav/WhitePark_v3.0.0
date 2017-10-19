@@ -17,8 +17,7 @@ gem 'carrierwave', '~> 1.0'
 # sitemap.xml
 gem 'sitemap_generator'
 
-# Use sqlite3 as the database for Active Record
-# gem 'sqlite3'
+# gem 'gmail'
 
 # for change sqlite3 to postgre
 # gem 'yaml_db', :git => 'git://github.com/ludicast/yaml_db.git'
