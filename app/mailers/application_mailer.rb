@@ -1,5 +1,6 @@
 class ApplicationMailer < ActionMailer::Base
-  default from: 'sv7atoslav@gmail.com'
-  layout 'mailer'
+	$ADMIN_EMAIL = "White Park <sv7atoslav@gmail.com>"
+	default from: $ADMIN_EMAIL
+	layout 'mailer'
 end
 

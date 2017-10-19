@@ -6,16 +6,16 @@
     <% end %></ul>
   </div><% end %>
   <!-- this form can see guest -->
-  <table align="center" width="100%"><tbody><tr>
+  <table width="100%"><tbody><tr>
     <td>
       <div class="field"><%= form.text_field :author, id: :not_published_opinion_author, placeholder: "Имя"%></div>
-      <div class="field"><%= form.date_field :visit, id: :not_published_opinion_visit, placeholder: "Дата посещения WhitePark", class: "spec-calendar" %></div>
       <div class="field"><%= form.email_field :email, id: :not_published_opinion_email, placeholder: "E-mail" %></div>
       <div class="field"><%= form.telephone_field :phone, id: :not_published_opinion_phone, placeholder: "Телефон"%></div>
+      <div class="field"><%= form.date_field :visit, id: :not_published_opinion_visit, placeholder: "Дата посещения WhitePark", class: "spec-calendar" %></div>
     </td>
     <td>
-      <div class="field"><%= form.text_area :words, id: :not_published_opinion_words, placeholder: "Ваше мнение о нас" %></div>
       <%= form.submit "Отправить", class: "nice-button" %>
+      <div class="field"><%= form.text_area :words, id: :not_published_opinion_words, placeholder: "Ваше мнение о нас" %></div>
     </td>
   </tr></tbody></table>
 <% end %>

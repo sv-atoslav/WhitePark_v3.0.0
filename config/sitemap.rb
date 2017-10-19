@@ -1,5 +1,5 @@
 # Set the host name for URL creation
-SitemapGenerator::Sitemap.default_host = "https://shrouded-mountain-92881.herokuapp.com"
+SitemapGenerator::Sitemap.default_host = 'https://shrouded-mountain-92881.herokuapp.com'
 
 SitemapGenerator::Sitemap.compress = false
 

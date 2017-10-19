@@ -3,6 +3,8 @@ class ApplicationController < ActionController::Base
 	before_action :divider_access
 	WillPaginate.per_page = 5
 
+	$HEROKU_LINK = 'https://shrouded-mountain-92881.herokuapp.com'
+
 	def robots
 	end
 	def set_photo_list
@@ -29,11 +31,12 @@ class ApplicationController < ActionController::Base
 			end
 		else
 			unless (	controller_name == "guest_pages" || legaly_actions.include?(action_name) )
-				unless (controller_name ==  "sessions"   && action_name == "new")
+				# unless (controller_name ==  "sessions"   && action_name == "new") 
+				# new admin never in future. Only 1 on site
 					# puts "go into site"
 					authenticate_moderator!
 					# puts "current viever =" + info_about_wiever
-				end
+				# end
 			end
 		end
 	end
