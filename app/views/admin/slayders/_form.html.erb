@@ -5,7 +5,11 @@
 			<li><%= message %></li>
     <% end %></ul>
 	</div><% end %>
-	<div class="field"><%= form.label :title %><%=form.text_field :title, id: :slayder_title%></div>
+	<div class="field">
+		<%= form.label :title %>
+		<%= form.text_field :title, id: :slayder_title %>
+		<span>словесный указатель, с помощью которого выполняется часть кода, менять не рекомендуется</span>
+	</div>
 	<table>
         <thead align="center"><tr>
 			<td>Previev</td>

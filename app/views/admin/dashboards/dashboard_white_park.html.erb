@@ -60,72 +60,29 @@
             </div>
         </div></td>
     </tr></body></table>
-    <table width="100%" cellspacing="5px" valign="top"><body><tr>
-        <td width="49%"><div class="ibox float-e-margins">
-            <div class="ibox-title">
-                <h5>Мнения</h5>
-                <div class="ibox-tools">
-                    <a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
-                    <a class="close-link"><i class="fa fa-times"></i></a>
-                </div>
+    <div class="ibox float-e-margins">
+        <div class="ibox-title">
+            <h5>Мнения</h5>
+            <div class="ibox-tools">
+                <a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
+                <a class="close-link"><i class="fa fa-times"></i></a>
             </div>
-            <div class="ibox-content ibox-heading">
-                <h3><i class="fa fa-envelope-o"></i>Новые мнения</h3>
-                <small><i class="fa fa-tim"></i>У вас <%= NotPublishedOpinion.count %> немодерированых мнений.</small>
-            </div>
-            <div class="ibox-content"><div class="feed-activity-list"><% NotPublishedOpinion.all.each do |one_impression| %>
-                <div class="feed-element"><div>
-                    <strong><%= one_impression.author %></strong>
-                    <div><%= one_impression.words %></div>
-                    <small class="text-muted"><%= one_impression.visit %></small>
-                </div></div>
-            <% end %></div></div>
-        </div></td>
-        <td width="1px"></td>
-        <td width="49%"><div class="ibox float-e-margins">
-                    <div class="ibox-title">
-                        <h5>Small todo list</h5>
-                        <div class="ibox-tools">
-                            <a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
-                            <a class="close-link"><i class="fa fa-times"></i></a>
-                        </div>
-                    </div>
-                    <div class="ibox-content"><ul class="todo-list m-t small-list">
-                        <li>
-                            <a href="#" class="check-link"><i class="fa fa-check-square"></i></a>
-                            <span class="m-l-xs todo-completed">Buy a milk</span>
-                        </li>
-                        <li>
-                            <a href="#" class="check-link"><i class="fa fa-square-o"></i> </a>
-                            <span class="m-l-xs">Go to shop and find some products.</span>
-                        </li>
-                        <li>
-                            <a href="#" class="check-link"><i class="fa fa-square-o"></i> </a>
-                            <span class="m-l-xs">Send documents to Mike</span>
-                        </li>
-                        <li>
-                            <a href="#" class="check-link"><i class="fa fa-square-o"></i> </a>
-                            <span class="m-l-xs">Go to the doctor dr Smith</span>
-                        </li>
-                        <li>
-                            <a href="#" class="check-link"><i class="fa fa-check-square"></i> </a>
-                            <span class="m-l-xs todo-completed">Plan vacation</span>
-                        </li>
-                        <li>
-                            <a href="#" class="check-link"><i class="fa fa-square-o"></i> </a>
-                            <span class="m-l-xs">Create new stuff</span>
-                        </li>
-                        <li>
-                            <a href="#" class="check-link"><i class="fa fa-square-o"></i> </a>
-                            <span class="m-l-xs">Call to Anna for dinner</span>
-                        </li>
-                    </ul></div>
-        </div></td>
-    </tr></body></table>
+        </div>
+        <div class="ibox-content ibox-heading">
+            <h3><i class="fa fa-envelope-o"></i>Новые мнения</h3>
+            <small><i class="fa fa-tim"></i>У вас <%= NotPublishedOpinion.count %> немодерированых мнений.</small>
+        </div>
+        <div class="ibox-content"><div class="feed-activity-list"><% NotPublishedOpinion.all.each do |one_impression| %>
+            <div class="feed-element"><div>
+                <strong><%= one_impression.author %></strong>
+                <div><%= one_impression.words %></div>
+                <small class="text-muted"><%= one_impression.visit %></small>
+            </div></div>
+        <% end %></div></div>
+    </div>
 </div>
 
 <% content_for :javascript do %>
-
 <script type="text/javascript">
 
 $(function() {
@@ -237,7 +194,5 @@ $(function() {
     }
 });
 
-
 </script>
-
 <% end %>

@@ -1,6 +1,7 @@
 <p id="notice"><%= notice %></p>
-<h1>Users</h1>
-<% if @users.first.nil? %><i>эта таблица пустая</i>
+<h1>Users</h1><span>( список адресов для рассылки. (пока что только приветсвие при регистрации) )</span>
+<br><%= link_to 'New User', action: "new" %>
+<% if @users.first.nil? %><i>пусто</i>
 <% else %><table class="sv_table">
   <thead><tr>
     <th>Name</th>
@@ -17,4 +18,3 @@
     <td><%= link_to 'Destroy', admin_user_path(user), method: :delete, data: { confirm: 'Are you sure?' } %></td>
   </tr><% end %></tbody>
 </table><% end %>
-<br><%= link_to 'New User', action: "new" %>
