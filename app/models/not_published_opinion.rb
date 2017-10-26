@@ -1,2 +1,0 @@
-class NotPublishedOpinion < ApplicationRecord
-end

@@ -20,7 +20,7 @@ Myapp::Application.routes.draw do
 	#moderator_root to: "admin/dashboards#dashboard_white_park"
 
 	namespace :admin do
-	resources :articles, :events, :category_events, :not_published_opinions, :opinions, :photo_in_articles, :photo_in_events, :photo_in_slayders, :photos, :slayders, :tents, :users
+	resources :articles, :events, :category_events, :opinions, :photo_in_articles, :photo_in_events, :photo_in_slayders, :photos, :slayders, :tents, :users
 	end
 
 	get 'WhitePark',to: 'guest_pages#main'

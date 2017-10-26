@@ -10,10 +10,15 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170928163836) do
+ActiveRecord::Schema.define(version: 20171026141640) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "admins", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "articles", force: :cascade do |t|
     t.string "ru_title"
@@ -82,6 +87,9 @@ ActiveRecord::Schema.define(version: 20170928163836) do
     t.date "visit"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.boolean "published", default: false
+    t.string "email"
+    t.bigint "phone"
   end
 
   create_table "photo_in_articles", force: :cascade do |t|

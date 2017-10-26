@@ -1,3 +1,3 @@
-<h1>New Opinion</h1>
-<%= render 'form', opinion: @opinion %>
-<%= link_to 'Back', action: "index" %>
+<!-- this can see guest -->
+<% @opinion = Opinion.new %>
+<%= render 'admin/not_published_opinions/form', opinion: @opinion %>

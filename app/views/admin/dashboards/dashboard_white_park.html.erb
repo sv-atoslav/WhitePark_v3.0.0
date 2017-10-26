@@ -60,7 +60,7 @@
             </div>
         </div></td>
     </tr></body></table>
-    <div class="ibox float-e-margins">
+    <% if @not_published_opinions.any? %><div class="ibox float-e-margins">
         <div class="ibox-title">
             <h5>Мнения</h5>
             <div class="ibox-tools">
@@ -70,23 +70,20 @@
         </div>
         <div class="ibox-content ibox-heading">
             <h3><i class="fa fa-envelope-o"></i>Новые мнения</h3>
-            <small><i class="fa fa-tim"></i>У вас <%= NotPublishedOpinion.count %> немодерированых мнений.</small>
+            <small><i class="fa fa-tim"></i>У вас <%= @not_published_opinions.count %> немодерированых мнений.</small>
         </div>
-        <div class="ibox-content"><div class="feed-activity-list"><% NotPublishedOpinion.all.each do |one_impression| %>
+        <div class="ibox-content"><div class="feed-activity-list"><% @not_published_opinions.each do |one_opinion| %>
             <div class="feed-element"><div>
-                <strong><%= one_impression.author %></strong>
-                <div><%= one_impression.words %></div>
-                <small class="text-muted"><%= one_impression.visit %></small>
+                <strong><%= one_opinion.author %></strong>
+                <div><%= one_opinion.words %></div>
+                <small class="text-muted"><%= one_opinion.visit %></small>
             </div></div>
         <% end %></div></div>
-    </div>
+    </div><% end %>
 </div>
-
 <% content_for :javascript do %>
 <script type="text/javascript">
-
 $(function() {
-
     var data2 = [
         [gd(2012, 1, 1), 7], [gd(2012, 1, 2), 6], [gd(2012, 1, 3), 4], [gd(2012, 1, 4), 8],
         [gd(2012, 1, 5), 9], [gd(2012, 1, 6), 7], [gd(2012, 1, 7), 5], [gd(2012, 1, 8), 4],
@@ -109,7 +106,6 @@ $(function() {
         [gd(2012, 1, 29), 178], [gd(2012, 1, 30), 555], [gd(2012, 1, 31), 993]
     ];
 
-
     var dataset = [
         {
             label: "Number of orders",
@@ -121,7 +117,6 @@ $(function() {
                 barWidth: 24 * 60 * 60 * 600,
                 lineWidth: 0
             }
-
         }, {
             label: "Payments",
             data: data2,
@@ -148,7 +143,6 @@ $(function() {
         }
     ];
 
-
     var options = {
         xaxis: {
             mode: "time",
@@ -161,6 +155,7 @@ $(function() {
             axisLabelPadding: 10,
             color: "#d5d5d5"
         },
+
         yaxes: [{
             position: "left",
             max: 1070,
@@ -178,6 +173,7 @@ $(function() {
             axisLabelPadding: 67
         }
         ],
+
         legend: {
             noColumns: 1,
             labelBoxBorderColor: "#000000",

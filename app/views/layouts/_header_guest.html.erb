@@ -229,14 +229,14 @@
 </div>
 <div class="main-block">
 	<div class="main">
-		<a href="/WhitePark">Главная</a>
-		<%# link_to "Главная", path: WhitePark_path %>
-		<a href="/statii">Статьи</a>
-		<%# link_to "Статьи",  action: "list_of_articles" %>
+		<!-- <a href="/WhitePark">Главная</a> -->
+		<%= link_to "Главная", controller: "/guest_pages", action: "main" %>
+		<!-- <a href="/statii">Статьи</a> -->
+		<%= link_to "Статьи" , controller: "/guest_pages", action: "list_of_articles" %>
 		<div class="sub-main-block">
 			<div class="sub-main-main">
-			<%# link_to "События", action: "eventlist" %>
-			<a href="/sobitia">События</a>
+			<%= link_to "События", controller: "/guest_pages", action: "eventlist" %>
+			<!-- <a href="/sobitia">События</a> -->
 			<p class="sub-main-switch"><i class="fa fa-chevron-down" aria-hidden="true"></i></p></div>
 			<div class="sub-main"><% CategoryEvent.all.each do |one_category| %>
 				<a href="/category_events/<%= one_category.eng_title %>"><%= one_category.ru_title %></a>
@@ -265,16 +265,16 @@
 				<a href="">Сервис 5</a>
 			</div>
 		</div> -->
-		<a href="/kontakti">Карта площадки</a>
-		<%# link_to "Карта площадки", action: "map_park" %>
-		<a href="/kuhnya">Кухня</a>
-		<%# link_to "Кухня",	action: "kitchen"	%>
-		<a href="/o_nas">О нас</a>
-		<%# link_to "О нас",	action: "about_us"	%>
-		<a href="/otzivi">Отзывы</a>
-		<%# link_to "Отзывы",	action: "review"	%>
-		<a href="/kontakti">Контакты</a>
-		<%# link_to "Контакты", action: "contacts"	%>
+		<a href="/karta">Карта площадки</a>
+		<%= link_to "Карта площадки", action: "map_park" %>
+		<!-- <a href="/kuhnya">Кухня</a> -->
+		<!-- <a href="/o_nas">О нас</a> -->
+		<!-- <a href="/otzivi">Отзывы</a> -->
+		<!-- <a href="/kontakti">Контакты</a> -->
+		<%= link_to "Кухня",	controller: "/guest_pages", action: "kitchen" %>
+		<%= link_to "О нас",	controller: "/guest_pages", action: "about_us"%>
+		<%= link_to "Отзывы",	controller: "/guest_pages", action: "review"  %>
+		<%= link_to "Контакты", controller: "/guest_pages", action: "contacts"%>
 	</div>
 	<div class="main-switch"><span></span></div>
 </div>
@@ -291,10 +291,10 @@
 </div>
 <div class="header big-block"><div class="block">
 	<div class="social">
-		<a href=""><%= image_tag "wpimg/facebook.png",   alt:"facebook"  %></a>
-		<a href=""><%= image_tag "wpimg/twitter.png",   alt:"twitter"   %></a>
-		<a href=""><%= image_tag "wpimg/insta.png",   alt:"instagram"  %></a>
-		<a href=""><%= image_tag "wpimg/vk.png",      alt:"vk.com"    %></a>
+		<a href=""><%= image_tag "wpimg/facebook.png", alt:"facebook"  %></a>
+		<a href=""><%= image_tag "wpimg/twitter.png", alt:"twitter"   %></a>
+		<a href=""><%= image_tag "wpimg/insta.png",  alt:"instagram" %></a>
+		<a href=""><%= image_tag "wpimg/vk.png",    alt:"vk.com"    %></a>
 	</div>
 	<a class="logo" href="/WhitePark"><%= image_tag "wpimg/logo.png", alt:"WhitePark" %>
 	<div class="contacts-header">
