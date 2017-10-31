@@ -1,27 +1,18 @@
-<% if controller_name == "opinion" %>
-  <%= link_to 'Back', action: "index" %>
-  <% if action_name == "edit" %>
-  | <%= link_to 'Back', action: "show" %>
-  <% end %>
-<% end %>
-<%= form_with(model: [:admin, opinion], local: true) do |form| %>
-  <% if not_published_opinion.errors.any? %><div id="error_explanation">
+<%= form_with(model: [:admin, @opinion], local: true) do |form| %>
+  <% if @opinion.errors.any? %><div id="error_explanation">
     <h2><%= pluralize(not_published_opinion.errors.count, "error") %> prohibited this not_published_opinion from being saved:</h2>
     <ul><% not_published_opinion.errors.full_messages.each do |message| %>
       <li><%= message %></li>
     <% end %></ul>
   </div><% end %>
-  <!-- this form can see guest -->
-  <table width="100%"><tbody><tr>
-    <td>
-      <div class="field"><%= form.text_field :author, id: :opinion_author, placeholder: "Имя"%></div>
-      <div class="field"><%= form.email_field :email, id: :opinion_email, placeholder: "E-mail" %></div>
-      <div class="field"><%= form.telephone_field :phone, id: :opinion_phone, placeholder: "Телефон"%></div>
-      <div class="field"><%= form.date_field :visit, id:  :opinion_visit, placeholder: "Дата посещения WhitePark", class: "spec-calendar" %></div>
-    </td>
-    <td>
-      <%= form.submit "Отправить", class: "nice-button" %>
-      <div class="field"><%= form.text_area :words, id: :opinion_words, placeholder: "Ваше мнение о нас" %></div>
-    </td>
-  </tr></tbody></table>
+  <%= form.submit "Отправить" %>
+  <div class="field">
+  <%= form.check_box :published, {checked: !@opinion.published.nil? && @opinion.published, id: :published}%>
+  <span>published</span></div>
+  <div class="field"><%= form.text_field :author, id: :opinion_author, placeholder: "Имя"%></div>
+  <div class="field"><%= form.email_field :email, id: :opinion_email, placeholder: "E-mail" %></div>
+  <div class="field"><%= form.telephone_field :phone, id: :opinion_phone, placeholder: "Телефон"%></div>
+  <div class="field"><%= form.date_field :visit, id:  :opinion_visit, placeholder: "Дата посещения WhitePark", class: "spec-calendar" %></div>
+  <div class="field"><%= form.text_area :words, id: :opinion_words,placeholder: "Ваше мнение о нас" %></div>
 <% end %>
+<%= link_to 'to all', action: "index" %>

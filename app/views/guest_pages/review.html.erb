@@ -12,8 +12,6 @@
 	<u><%= will_paginate @opinion_list, :class => "special-links", :link_separator => "| |", :previous_label =>"предыдущая", :next_label =>"следующая"	%></u>
 </div></div><% end %>
 <div class="comment-form-block big-block"><div class="block"><div class="spec-block">
-	<%= render template: "admin/opinions/new" %>
-	<% if notice =='Not published opinion was successfully created.' %>
-		<p id="notice">Ваш отзыв отправлен модератору.</p>
-	<% end %>
+	<%= render template: "admin/opinions/new_from_guest" %>
+	<p id="notice"><%= @message %></p>
 </div></div></div>

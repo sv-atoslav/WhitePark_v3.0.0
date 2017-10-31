@@ -1,4 +1,5 @@
 class GuestPagesController < ApplicationController
+	before_action :try_create_opinion_from_guest, only: [:review]
 	
 	layout "application_guest"
 	
@@ -22,18 +23,18 @@ class GuestPagesController < ApplicationController
 
 	def kitchen
 		@kitchen_slayder = Slayder.find_by(title: "кухня")
-		puts @kitchen_slayder
+		# puts @kitchen_slayder
 		@visible_part = !(@kitchen_slayder.nil?)
-		puts @visible_part
+		# puts @visible_part
 		if @visible_part
 			@kitchen_photo_list = PhotoInSlayder.where(slyder: @kitchen_slayder.id).to_a
-			puts @kitchen_photo_list
+			# puts @kitchen_photo_list
 			exist_list(@kitchen_photo_list)
 		end
 	end
 
 	def review
-		@opinion_list = Opinion.paginate(:page => params[:page])
+		@opinion_list = Opinion.where(published: true).paginate(:page => params[:page])
 		exist_list(@opinion_list)
 	end
 
@@ -60,5 +61,27 @@ class GuestPagesController < ApplicationController
 
 	def exist_list(list)
 		@visible_part = (list.to_a.any?)
+	end
+
+	def try_create_opinion_from_guest
+		@message = "форма для отзыва "
+		unless (params[:opinion].nil? || params[:opinion][:author].nil? || params[:opinion][:email].nil? || params[:opinion][:phone].nil? || params[:opinion][:visit].nil? || params[:opinion][:words].nil?)
+			@message += "заполнена и отправлена на рассмотрение модератору."
+			# validation
+			correct = true
+			if params[:opinion][:visit].to_date.future?
+				@message = "дата посещения не может происходить в будущем"
+				correct = false
+			end
+			# if correct && next_cond
+			#	@message = "other message"
+			#	correct = false
+			# end
+			if correct
+				Opinion.CreateByGuest(params[:opinion][:author], params[:opinion][:email], params[:opinion][:phone], params[:opinion][:visit], params[:opinion][:words])
+			end
+		else
+			@message += "дожна быть заполнена полностью."
+		end
 	end
 end

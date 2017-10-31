@@ -1,10 +1,10 @@
 class Admin::OpinionsController < ApplicationController
-  before_action :set_opinion, only: [:show, :edit, :update, :destroy]
+  before_action :set_opinion, only: [:show, :edit, :update, :destroy, :become_public]
 
   # GET /opinions
   # GET /opinions.json
   def index
-    @opinions = Opinion.all.order(updated_at: :desc)
+    @opinions = Opinion.order(updated_at: :desc)
   end
 
   # GET /opinions/1
@@ -17,18 +17,27 @@ class Admin::OpinionsController < ApplicationController
     @opinion = Opinion.new
   end
 
+  def new_from_guest
+
+  end
+
   # GET /opinions/1/edit
   def edit
+  end
+
+  def become_public
+    @opinion.published = true
+    @opinion.save
+    redirect_to action: "index"
   end
 
   # POST /opinions
   # POST /opinions.json
   def create
     @opinion = Opinion.new(opinion_params)
-
     respond_to do |format|
       if @opinion.save
-        format.html { redirect_to admin_opinion_path(@opinion), notice: 'Opinion was successfully created.' }
+        format.html { redirect_to action: "index", notice: 'Opinion was successfully created.' }
         format.json { render :show, status: :created, location: @opinion }
       else
         format.html { render :new }
@@ -69,6 +78,10 @@ class Admin::OpinionsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def opinion_params
-      params.require(:opinion).permit(:author, :words, :visit)
+      params.require(:opinion).permit(:author, :email, :phone, :visit, :words, :published)
     end
+
+    # def guest_opinion_params
+    #   params.require(:opinion).permit(:author, :email, :phone, :visit, :words)
+    # end
 end

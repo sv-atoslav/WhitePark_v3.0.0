@@ -7,6 +7,7 @@ class ApplicationController < ActionController::Base
 
 	def robots
 	end
+
 	def set_photo_list
 		@photo_list = Photo.all.order(description: :asc)
 	end
@@ -31,12 +32,7 @@ class ApplicationController < ActionController::Base
 			end
 		else
 			unless (	controller_name == "guest_pages" || legaly_actions.include?(action_name) )
-				# unless (controller_name ==  "sessions"   && action_name == "new") 
-				# new admin never in future. Only 1 on site
-					# puts "go into site"
-					authenticate_moderator!
-					# puts "current viever =" + info_about_wiever
-				# end
+				authenticate_moderator! 
 			end
 		end
 	end

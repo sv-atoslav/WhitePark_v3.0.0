@@ -25,6 +25,7 @@ Myapp::Application.routes.draw do
 
 	get 'WhitePark',to: 'guest_pages#main'
 	get 'otzivi',	to: 'guest_pages#review'
+	post'otzivi',	to: 'guest_pages#review'
 	get 'kuhnya',	to: 'guest_pages#kitchen'
 	get 'karta',	to: 'guest_pages#map_park'
 	get 'o_nas',	to: 'guest_pages#about_us'
@@ -41,6 +42,9 @@ Myapp::Application.routes.draw do
 	get "articles/:id/prosmotr",		to: 'admin/articles#beauty'
 	get "category_events/:eng_title", 	to: 'admin/category_events#beauty'
 	get "category_events/:id/prosmotr",	to: 'admin/category_events#beauty'
+
+	#public opinions
+	get "/admin/opinions/:id/public",	to: 'admin/opinions#become_public'
 
 	#'inbox' routes # all in down completed
 	get "admin/dashboards/dashboard_white_park"

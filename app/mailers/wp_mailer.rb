@@ -6,8 +6,8 @@ class WpMailer < ApplicationMailer
 		mail(to: @user.email, subject: 'Добро пожаловать!')
 	end
 
-	def say_about_new_opinion(n_p_o)
-		@n_n_p_o = n_p_o # new not published opinion
+	def say_about_new_opinion(one_opinion)
+		@n_n_p_o = one_opinion # new (not published) opinion
 		@url = $HEROKU_LINK + '/admin/opinions'
 		mail(to: $ADMIN_EMAIL, subject: 'Новый отзыв про WhitePark')
 	end
