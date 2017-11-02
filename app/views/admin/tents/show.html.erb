@@ -1,10 +1,10 @@
 <p id="notice"><%= notice %></p>
 <p><strong>Namesize:</strong><%= @tent.namesize %></p>
 <p><strong>Description:</strong><%= @tent.description %></p>
-<p><strong>Icon:</strong><%= @tent.icon %></p>
+<p><strong>Icon:</strong><%= image_tag Photo.try_get_way_to_img_tag_by_id( @tent.icon ),height:"100px" %></p>
 <p><strong>Min size:</strong><%= @tent.min_size %></p>
 <p><strong>Max size:</strong><%= @tent.max_size %></p>
-<p><strong>Hpb:</strong><%= @tent.hpb %></p>
-<p><strong>Hpf:</strong><%= @tent.hpf %></p>
+<p><strong>Как много людей поместится на банкете: </strong><%= @tent.hpb %></p>
+<p><strong>Как много людей поместится на фуршете: </strong><%= @tent.hpf %></p>
 <%= link_to 'Edit', action: "edit"  %> | 
 <%= link_to 'Back', action: "index" %>
