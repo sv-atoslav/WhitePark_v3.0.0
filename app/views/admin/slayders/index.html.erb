@@ -5,9 +5,9 @@
   <i>эта таблица пустая</i>
 <% else %><table>
   <tbody align="center"><% @list_of_slayders.each do |one_slayder| %>
-    <% photo_list_of_this_slayder=PhotoInSlayder.where(slyder: one_slayder.id) %>
+    <% photo_list_of_this_slayder = PhotoInSlayder.where(slyder: one_slayder.id).order(updated_at: :asc) %>
     <% if photo_list_of_this_slayder.count == 0 %>
-      <span><%= one_slayder.title %> not contain any photo</span>
+      <span>у страницы "<%= link_to one_slayder.title, controller: "/guest_pages", action: Slayder.title_action_converter( one_slayder.title, true ) %>" сейчас слайдер пустой</span>
       <%= link_to 'Edit', edit_admin_slayder_path(one_slayder) %>
       <%= link_to 'Destroy',   admin_slayder_path(one_slayder), method: :delete, data: { confirm: 'Are you sure?' }%>
       <hr> 
@@ -16,7 +16,7 @@
       <tr>
         <% photo_list_of_this_slayder.each do |one_phis| %>
           <% if photo_list_of_this_slayder.index(one_phis) == 0 %>
-            <td><%= one_slayder.title %></td>
+            <td>слайдер для "<%= link_to one_slayder.title, controller: "/guest_pages", action: Slayder.title_action_converter( one_slayder.title, true ) %>" :</td>
           <% end %>
           <td><%= image_tag Photo.try_get_way_to_img_tag_by_id(one_phis.photo), style: "width: 100px; heigth: 50px;" %></td>
         <% end %>

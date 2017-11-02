@@ -1,5 +1,6 @@
 <p id="notice"><%= notice %></p>
-<p><strong>Photo: </strong><%= image_tag(Photo.find_by(id: @photo_in_slayder.photo).avatar.url)%></p>
-<p><strong>Slyder:</strong><%= Slayder.find_by(id: @photo_in_slayder.slyder).title %></p>
+<% sl_t = Slayder.find_by(id: @photo_in_slayder.slyder).title %>
+<p><strong>Slayder place:</strong><%= link_to sl_t, controller: "/guest_pages", action: Slayder.title_action_converter( sl_t, true ) %> |
 <%= link_to 'Edit again',	action: "edit"  %> |
-<%= link_to  "Slayders",	action: "index" %>
+<%= link_to  "Slayders",	action: "index" %></p>
+<p><strong>Photo: </strong><%= image_tag Photo.try_get_way_to_img_tag_by_id(@photo_in_slayder.photo) %></p>

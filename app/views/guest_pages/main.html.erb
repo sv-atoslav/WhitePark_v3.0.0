@@ -1,6 +1,6 @@
 <% if @visible_part %><div class="big-block calendar-block">
 	<div class="background owl-carousel">
-		<% @main_photo_list.to_a.each do |one_photo_in_sl| %>
+		<% @photo_list_of_slayder.to_a.each do |one_photo_in_sl| %>
 			<%= image_tag Photo.try_get_way_to_img_tag_by_id(one_photo_in_sl.photo) %>
 		<% end %>
 	</div>

@@ -13,24 +13,12 @@ class GuestPagesController < ApplicationController
 	end
 
 	def main
-		@main_slayder = Slayder.find_by(title: "главная")
-		if !@main_slayder.nil?
-			@main_photo_list = PhotoInSlayder.where(slyder: @main_slayder.id).to_a
-		end
 		@category_list = CategoryEvent.all
-		exist_list(@main_photo_list)
+		try_set_slayder("main")
 	end
 
 	def kitchen
-		@kitchen_slayder = Slayder.find_by(title: "кухня")
-		# puts @kitchen_slayder
-		@visible_part = !(@kitchen_slayder.nil?)
-		# puts @visible_part
-		if @visible_part
-			@kitchen_photo_list = PhotoInSlayder.where(slyder: @kitchen_slayder.id).to_a
-			# puts @kitchen_photo_list
-			exist_list(@kitchen_photo_list)
-		end
+		try_set_slayder("kitchen")
 	end
 
 	def review
@@ -59,8 +47,14 @@ class GuestPagesController < ApplicationController
 
 	private
 
+	def try_set_slayder(name_of_action)
+		@one_slayder = Slayder.find_by( title: Slayder.title_action_converter(name_of_action, false) )
+		@photo_list_of_slayder = PhotoInSlayder.where(slyder: @one_slayder.id).order(updated_at: :asc).to_a unless @one_slayder.nil?
+		exist_list(@photo_list_of_slayder)
+	end
+
 	def exist_list(list)
-		@visible_part = (list.to_a.any?)
+		@visible_part = list.to_a.any?
 	end
 
 	def try_create_opinion_from_guest

@@ -2,7 +2,7 @@
 <%= link_to 'New Photo In Slayder', action: "new" %>
 <table>
 	<head><tr><% @list_of_slayders.each do |one_slayder| %>
-		<td><%= one_slayder.title %></td>
+		<td><%= link_to one_slayder.title, controller: "guest_pages", action: Slayder.title_action_converter( one_slayder.title, true ) %></td>
 	<% end %></tr></head>
 	<body><tr><% @list_of_slayders.each do |one_slayder| %>
 		<% PhotoInSlayder.where(slyder: one_slayder.id).each do |one_phis| %><td>
