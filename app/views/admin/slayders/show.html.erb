@@ -4,7 +4,5 @@
 <p><strong>Title:</strong><%= @slayder.title %></p>
 <p><strong>Many fotos:</strong></p>
 <% @old_list.each do |one_foto_id| %>
-	<% variant_of_img = Photo.try_get_way_to_img_tag_by_id(one_photo_id) %>
-	<% variant_of_img = "lost.jpg" if variant_of_img.nil? %>
-	,<%= image_tag variant_of_img, width: "100px" %>
+	,<%= image_tag Photo.try_get_way_to_img_tag_by_id(one_photo_id), width: "100px" %>
 <% end %>.

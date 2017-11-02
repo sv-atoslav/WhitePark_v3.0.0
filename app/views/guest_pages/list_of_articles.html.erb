@@ -2,9 +2,7 @@
 	<h2>Статьи</h2>
 	<hr class = "spec-hr">
 	<div class="articles"><% @article_list.each do |one_article| %><div class="article">
-		<% variant_of_img = Photo.try_get_way_to_img_tag_by_id(one_article.icon) %>
-		<% variant_of_img = "lost.jpg" if variant_of_img.nil? %>
-		<div class="article-img"><%= image_tag variant_of_img %></div>
+		<div class="article-img"><%= image_tag Photo.try_get_way_to_img_tag_by_id(one_article.icon) %></div>
 		<div class = "article-content">
 			<h2><%= one_article.ru_title %></h2>
 			<p class = "article-date"><%= one_article.published %></p>

@@ -20,9 +20,7 @@
         </tr></thead>
         <% have_some_photo = @old_list.to_a.any? %>
         <tbody align="center"><% @photo_list.each do |one_photo| %><tr>
-          <% variant_of_img = Photo.try_get_way_to_img_tag_by_photo(one_photo) %>
-          <% variant_of_img = "lost.jpg" if variant_of_img.nil? %>
-          <td><%= image_tag variant_of_img, width: "100px" %></td>
+          <td><%= image_tag Photo.try_get_way_to_img_tag_by_photo(one_photo), width: "100px" %></td>
           <td><%= form.radio_button(:icon, one_photo.id) %></td>
           <!-- checkbox I parametr without [] need be == in controller params["word"] -->
           <td><% if have_some_photo %><%= check_box_tag("many_photo_ids[]", one_photo.id, @old_list.include?(one_photo.id) )%>

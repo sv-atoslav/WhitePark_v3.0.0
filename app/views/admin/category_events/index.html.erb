@@ -10,13 +10,7 @@
     <th colspan="4"></th>
   </tr></thead>
   <tbody><% @category_events.each do |category_event| %><tr>
-    <td><%= category_event.ru_title %></td>
-    <td><%= category_event.description.html_safe %></td>
-    <td>
-      <% variant_of_img = Photo.try_get_way_to_img_tag_by_id(category_event.icon) %>
-      <% variant_of_img = "lost.jpg" if variant_of_img.nil? %>
-      <%= image_tag variant_of_img, width: "100px" %>
-    </td>
+    <td><%= image_tag Photo.try_get_way_to_img_tag_by_id(category_event.icon), width: "100px" %></td>
     <td><%= category_event.ru_title %></td>
     <td><%= category_event.description.html_safe %></td>
     <td><%= link_to 'Show', admin_category_event_path(category_event) %></td>

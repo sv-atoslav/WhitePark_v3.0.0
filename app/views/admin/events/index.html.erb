@@ -11,9 +11,7 @@
     <th colspan="4"></th>
   </tr></thead>
   <tbody><% @events.each do |one_event| %><tr>
-    <% variant_of_img = Photo.try_get_way_to_img_tag_by_id(one_event.icon) %>
-    <% variant_of_img = "lost.jpg" if variant_of_img.nil? %>
-    <td><%= image_tag variant_of_img, width: "100px" %></td>
+    <td><%= image_tag Photo.try_get_way_to_img_tag_by_id(one_event.icon), width: "100px" %></td>
     <td>
       <% category = CategoryEvent.find_by(id: one_event.category) %>
       <% if category.nil? %><i>category not exist</i>

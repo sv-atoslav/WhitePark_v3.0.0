@@ -1,19 +1,13 @@
 <div align= "center">
 	<h2><%= @article.ru_title %></h2>
 	<table  width="100%"><tbody><tr>
-		<td width="50%">
-			<% variant_of_img = Photo.try_get_way_to_img_tag_by_id(@article.icon) %>
-			<% variant_of_img = "lost.jpg" if variant_of_img.nil? %>
-			<%= image_tag variant_of_img, width: "100%" %>
-		</td>
+		<td width="50%"><%=image_tag Photo.try_get_way_to_img_tag_by_id(@article.icon), width: "100%"%></td>
 		<td width="50%">
 			<%= @article.description.html_safe %>
 			<p class="article-date" align="right" vertical-align="bottom"><%= @article.published %></p>
 		</td>
 	</tr></tbody></table>
 	<div align="left"><% @old_list.each do |one_photo_id| %>
-		<% variant_of_img = Photo.try_get_way_to_img_tag_by_id(one_photo_id) %>
-		<% variant_of_img = "lost.jpg" if variant_of_img.nil? %>
-		<%= image_tag variant_of_img, width: "100px" %>
+		<%= image_tag Photo.try_get_way_to_img_tag_by_id(one_photo_id), width: "100px" %>
 	<% end %></div>
 </div>

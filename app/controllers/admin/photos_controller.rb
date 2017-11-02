@@ -1,7 +1,6 @@
 class Admin::PhotosController < ApplicationController
   before_action :set_photo, only: [:show, :edit, :update, :destroy]
   before_action :set_photo_list, only: [:index]
-  before_action :my_notice
 
   # GET /photos
   # GET /photos.json
@@ -84,10 +83,6 @@ class Admin::PhotosController < ApplicationController
       File.open(Rails.root.join('assets', 'wpimg', uploaded_io.original_filename), 'wb') do |file|
         file.write(uploaded_io.read)
       end
-    end
-
-    def my_notice
-      notice("i change default value")
     end
     
 end

@@ -8,7 +8,7 @@ class Photo < ApplicationRecord
 	
 	def self.try_get_way_to_img_tag_by_photo(one_photo)
 		if (one_photo.nil? || !one_photo.avatar || one_photo.avatar.blank?) 
-			return nil
+			return "lost.jpg" # WAY_TO_APP/assets/images/lost.jpg need be exist
 		else 
 			return one_photo.avatar.url.to_s
 		end

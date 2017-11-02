@@ -18,9 +18,7 @@
           <% if photo_list_of_this_slayder.index(one_phis) == 0 %>
             <td><%= one_slayder.title %></td>
           <% end %>
-          <% variant_of_img = Photo.try_get_way_to_img_tag_by_id(one_phis.photo) %>
-          <% variant_of_img = "lost.jpg" if variant_of_img.nil? %>
-          <td><%= image_tag variant_of_img, style: "width: 100px; heigth: 50px;" %></td>
+          <td><%= image_tag Photo.try_get_way_to_img_tag_by_id(one_phis.photo), style: "width: 100px; heigth: 50px;" %></td>
         <% end %>
       </tr>
       <!-- description -->

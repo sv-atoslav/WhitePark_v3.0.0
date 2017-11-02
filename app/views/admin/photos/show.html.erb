@@ -1,7 +1,5 @@
 <p id="notice"><%= notice %></p>
 <%= link_to 'Edit', action: "edit" %> | 
 <%= link_to 'Back', action: "index" %> 
-<strong>Description:</strong><%= @photo.description %><br>
-<% variant_of_img = Photo.try_get_way_to_img_tag_by_photo(@photo) %>
-<% variant_of_img = "lost.jpg" if variant_of_img.nil? %>
-<%= image_tag variant_of_img, width: "100%" %>
+<strong>Description:</strong><%= @photo.description %>
+<br><%= image_tag Photo.try_get_way_to_img_tag_by_photo(@photo), width: "100%" %>

@@ -7,14 +7,8 @@
 	<p><strong>Description:</strong><%= @article.description.html_safe %></p>
 <% end %>
 <p><strong>Published:</strong><%= @article.published %></p>
-<p><strong>Icon:</strong>
-	<% variant_of_img = Photo.try_get_way_to_img_tag_by_id(@article.icon) %>
-	<% variant_of_img = "lost.jpg" if variant_of_img.nil? %>
-	<p><%= image_tag variant_of_img, width: "100%" %></p>
-</p>
+<p><strong>Icon:</strong><p><%= image_tag Photo.try_get_way_to_img_tag_by_id(@article.icon), width: "100%" %></p></p>
 <p><strong>Many fotos:</strong></p>
 <% @old_list.each do |one_foto_id| %>
-	<% variant_of_img = Photo.try_get_way_to_img_tag_by_id(one_foto_id) %>
-	<% variant_of_img = "lost.jpg" if variant_of_img.nil? %>
-	<%= image_tag variant_of_img, height: "100px" %>
+	<%= image_tag Photo.try_get_way_to_img_tag_by_id(one_foto_id), height: "100px" %>
 <% end %>.

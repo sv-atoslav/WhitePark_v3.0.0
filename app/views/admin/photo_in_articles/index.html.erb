@@ -8,9 +8,7 @@
     <th colspan="3"></th>
   </tr></thead>
   <tbody><% @photo_in_articles.each do |one_photo_in_article| %><tr>
-    <% variant_of_img = Photo.try_get_way_to_img_tag_by_id(one_photo_in_article.photo) %>
-    <% variant_of_img = "lost.jpg" if variant_of_img.nil? %>
-    <td><%= image_tag variant_of_img, width: "100px" %></td>
+    <td><%= image_tag Photo.try_get_way_to_img_tag_by_photo(one_photo), width: "100px" %></td>
     <td>
       <% article = Article.find_by(id: one_photo_in_article.article) %>
       <% if article.nil? %><i>article not exist</i>

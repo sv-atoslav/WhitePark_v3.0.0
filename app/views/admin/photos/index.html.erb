@@ -10,11 +10,7 @@
     <th colspan="3"></th>
   </tr></thead>
   <tbody><% @photo_list.each do |photo| %><tr>
-    <td align="center">
-      <% variant_of_img = Photo.try_get_way_to_img_tag_by_photo(photo) %>
-      <% variant_of_img = "lost.jpg" if variant_of_img.nil? %>
-      <%= image_tag variant_of_img, width: "100px" %>
-      </td>
+    <td align="center"><%= image_tag Photo.try_get_way_to_img_tag_by_photo(photo), width: "100px" %></td>
     <td><%= photo.description %></td>
     <td><%= link_to 'Show',      admin_photo_path(photo) %></td>
     <td><%= link_to 'Edit', edit_admin_photo_path(photo) %></td>

@@ -16,11 +16,9 @@
 		<%= form.label :description %>
 		<%= form.text_area :description, style:'placeholder: "поле должно быть пустым, если галочки нет, и непустым, если галочка есть"'%>
 	</div>
-    <div  class="field"><% @photo_list.each do |one_photo| %>
-    <% variant_of_img = Photo.try_get_way_to_img_tag_by_photo(one_photo) %>
-    <% variant_of_img = "lost.jpg" if variant_of_img.nil? %>
-    <%= image_tag variant_of_img, width: "100px" %>
-    <%= form.radio_button(:photo, one_photo.id)  %>
+    <div class="field"><% @photo_list.each do |one_photo| %>
+    <%= image_tag Photo.try_get_way_to_img_tag_by_photo(one_photo), width: "100px" %>
+    <%= form.radio_button(:photo, one_photo.id) %>
     <%= form.label(:photo, one_photo.description) %><br>
 	<% end %></div>
 <% end %>

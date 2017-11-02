@@ -11,15 +11,13 @@
   <div class="field"><%= form.label :description %><%= form.text_field :description, id: :tent_description %></div>
   <p>Icon</p>
   <div class="field"><% @photo_list.each do |one_photo| %>
-    <% variant_of_img = Photo.try_get_way_to_img_tag_by_photo(one_photo) %>
-    <% variant_of_img = "lost.jpg" if variant_of_img.nil? %>
-    <%= image_tag variant_of_img, width: "100px" %>
+    <%= image_tag Photo.try_get_way_to_img_tag_by_photo(one_photo), width: "100px" %>
     <%= form.radio_button(:icon, one_photo.id) %>
     <%= form.label(:icon, way) %><br>
   <% end %></div>
   <div class="field"><%= form.number_field :min_size, id: :tent_min_size %><%=form.label :min_size %></div>
   <div class="field"><%= form.number_field :max_size, id: :tent_max_size %><%=form.label :max_size %></div>
-  <div class="field"><%= form.number_field :hpb, id: :tent_hpb %>Как много людей поместиться на банкете<%= form.label :hpb %></div>
-  <div class="field"><%= form.number_field :hpf, id: :tent_hpf %>Как много людей поместиться на фуршете<%= form.label :hpf %></div>
+  <div class="field"><%= form.number_field :hpb, id: :tent_hpb %><span>Как много людей поместится на банкете</span><%= form.label :hpb %></div>
+  <div class="field"><%= form.number_field :hpf, id: :tent_hpf %><span>Как много людей поместится на фуршете</span><%= form.label :hpf %></div>
   <div class="actions"><%= form.submit %></div>
 <% end %>

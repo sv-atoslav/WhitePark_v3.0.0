@@ -10,9 +10,7 @@
     <th colspan="3"></th>
   </tr></thead>
   <tbody><% @photo_in_events.each do |photo_in_event| %><tr>
-    <% variant_of_img = Photo.try_get_way_to_img_tag_by_id(photo_in_event.photo) %>
-    <% variant_of_img = "lost.jpg" if variant_of_img.nil? %>
-    <td><%= image_tag variant_of_img, width: "100px" %></td>
+    <td><%= image_tag Photo.try_get_way_to_img_tag_by_id(photo_in_event.photo), width: "100px" %></td>
     <td>
       <% event = Event.find_by(id: photo_in_event.event) %>
       <% if event.nil? %><i>event not exist</i>

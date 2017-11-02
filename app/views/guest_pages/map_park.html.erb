@@ -18,9 +18,7 @@
 					<p><span class="karta-name"><%= one_tent.namesize %></span></p>
 					<p><%= one_tent.description %></p>
 				</div>
-				<% variant_of_img = Photo.try_get_way_to_img_tag_by_id(one_tent.icon) %>
-				<% variant_of_img = "lost.jpg" if variant_of_img.nil? %>
-				<div class = "karta-image"><%= image_tag variant_of_img %></div>
+				<div class = "karta-image"><%= image_tag Photo.try_get_way_to_img_tag_by_id(one_tent.icon) %></div>
 				<div class="karta-options">
 					<div class="karta-option">
 						<div class="karta-option-image"><%= image_tag "wpimg/karta-option-image-1.png" , alt:" " %></div>

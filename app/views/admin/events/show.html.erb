@@ -5,12 +5,7 @@
 <p><strong>Category:</strong><%= @event.category %></p>
 <p><strong>Title:</strong><%=    @event.ru_title %></p>
 <p><strong>Description:</strong><%= @event.description.html_safe %></p>
-<% variant_of_img = Photo.try_get_way_to_img_tag_by_id(@event.icon) %>
-<% variant_of_img = "lost.jpg" if variant_of_img.nil? %>
-<p><strong>Icon:</strong><%= image_tag variant_of_img, height: "100px", width:"100px" %></p>
-<p><strong>Many fotos:</strong></p>
-<% @old_list.each do |one_foto_id| %>
-	<% variant_of_img = Photo.try_get_way_to_img_tag_by_id(one_foto_id) %>
-	<% variant_of_img = "lost.jpg" if variant_of_img.nil? %>
-	<%= image_tag variant_of_img, height: "100px" %>
+<p><strong>Icon:</strong><%= image_tag Photo.try_get_way_to_img_tag_by_id(@event.icon), height: "100px", width:"100px" %></p>
+<p><strong>Many fotos:</strong></p><% @old_list.each do |one_foto_id| %>
+	<%= image_tag Photo.try_get_way_to_img_tag_by_id(one_foto_id) , height: "100px" %>
 <% end %>.
