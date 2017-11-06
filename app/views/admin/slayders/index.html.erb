@@ -4,8 +4,9 @@
 <% if @list_of_slayders.first.nil? %>
   <i>эта таблица пустая</i>
 <% else %><table>
+  <span>Осторожно! Последняя измененная картинка показывается первой.</span>
   <tbody align="center"><% @list_of_slayders.each do |one_slayder| %>
-    <% photo_list_of_this_slayder = PhotoInSlayder.where(slyder: one_slayder.id).order(updated_at: :asc) %>
+    <% photo_list_of_this_slayder = PhotoInSlayder.where(slyder: one_slayder.id).order(updated_at: :desc) %>
     <% if photo_list_of_this_slayder.count == 0 %>
       <span>у страницы "<%= link_to one_slayder.title, controller: "/guest_pages", action: Slayder.title_action_converter( one_slayder.title, true ) %>" сейчас слайдер пустой</span>
       <%= link_to 'Edit', edit_admin_slayder_path(one_slayder) %>

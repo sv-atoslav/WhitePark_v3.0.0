@@ -265,16 +265,11 @@
 				<a href="">Сервис 5</a>
 			</div>
 		</div> -->
-		<a href="/karta">Карта площадки</a>
-		<%= link_to "Карта площадки", action: "map_park" %>
-		<!-- <a href="/kuhnya">Кухня</a> -->
-		<!-- <a href="/o_nas">О нас</a> -->
-		<!-- <a href="/otzivi">Отзывы</a> -->
-		<!-- <a href="/kontakti">Контакты</a> -->
-		<%= link_to "Кухня",	controller: "/guest_pages", action: "kitchen" %>
-		<%= link_to "О нас",	controller: "/guest_pages", action: "about_us"%>
-		<%= link_to "Отзывы",	controller: "/guest_pages", action: "review"  %>
-		<%= link_to "Контакты", controller: "/guest_pages", action: "contacts"%>
+		<%= link_to "Карта площадки", controller:"/guest_pages", action: "map_park" %>
+		<%= link_to "Контакты",controller:      "/guest_pages" , action: "contacts" %>
+		<%= link_to "Отзывы" , controller:     "/guest_pages"  , action: "review"   %>
+		<%= link_to "Кухня" ,  controller:    "/guest_pages"   , action: "kitchen"  %>
+		<%= link_to "О нас",   controller:   "/guest_pages"    , action: "about_us" %>
 	</div>
 	<div class="main-switch"><span></span></div>
 </div>

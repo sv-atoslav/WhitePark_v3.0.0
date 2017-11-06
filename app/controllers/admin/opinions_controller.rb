@@ -4,7 +4,7 @@ class Admin::OpinionsController < ApplicationController
   # GET /opinions
   # GET /opinions.json
   def index
-    @opinions = Opinion.order(updated_at: :desc)
+    @opinions = Opinion.order(published: :asc).order(updated_at: :desc)
   end
 
   # GET /opinions/1

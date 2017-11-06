@@ -8,6 +8,17 @@ class ApplicationController < ActionController::Base
 	def robots
 	end
 
+	def self.smart_remove_spasebars(tall_string)
+		tall_string.to_s
+		tall_string.gsub!("  "," ") until tall_string.gsub!("  "," ").nil?
+		# I can write
+		# puts " " until tall_string.gsub!("  "," ").nil?
+		# but now f(x) faster
+		tall_string = tall_string[1..-1] while tall_string[0] == " "
+		tall_string = tall_string[0...-1] while tall_string[-1] == " "
+		return tall_string
+	end
+
 	def set_photo_list
 		@photo_list = Photo.all.order(description: :asc)
 	end
@@ -39,5 +50,18 @@ class ApplicationController < ActionController::Base
 
 	def legaly_actions
 		return ["beauty", "robots"]
+	end
+
+	private
+
+	def smart_remove_spasebars(tall_string)
+		tall_string.to_s
+		tall_string.gsub!("  "," ") until tall_string.gsub!("  "," ").nil?
+		# I can write
+		# puts " " until tall_string.gsub!("  "," ").nil?
+		# but now f(x) faster
+		tall_string = tall_string[1..-1] while tall_string[0] == " "
+		tall_string = tall_string[0...-1] while tall_string[-1] == " "
+		return tall_string
 	end
 end

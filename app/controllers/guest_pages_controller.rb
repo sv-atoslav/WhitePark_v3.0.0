@@ -59,23 +59,41 @@ class GuestPagesController < ApplicationController
 
 	def try_create_opinion_from_guest
 		@message = "форма для отзыва "
-		unless (params[:opinion].nil? || params[:opinion][:author].nil? || params[:opinion][:email].nil? || params[:opinion][:phone].nil? || params[:opinion][:visit].nil? || params[:opinion][:words].nil?)
+		opinion_params = [ nil ]
+		opinion_params = [ params[:opinion][:email], params[:opinion][:phone], params[:opinion][:visit], params[:opinion][:words], params[:opinion][:author] ] unless params[:opinion].nil?
+		# opinion_params.array.map!{ |one_param| one_param.to_s }
+		@message += "дожна быть заполнена полностью." if ( opinion_params.any?{ |one_param| one_param.to_s == "" } )
+		if ( opinion_params.all?{ |one_param| one_param.to_s != "" } )
 			@message += "заполнена и отправлена на рассмотрение модератору."
 			# validation
 			correct = true
-			if params[:opinion][:visit].to_date.future?
-				@message = "дата посещения не может происходить в будущем"
-				correct = false
+			params[:opinion][:words]  = ApplicationController.smart_remove_spasebars( params[:opinion][:words].to_s  )
+			params[:opinion][:author] = ApplicationController.smart_remove_spasebars( params[:opinion][:author].to_s )
+			if correct && ( params[:opinion][:words] == "" || params[:opinion][:author] == "" )
+				@message  = "Мы не видим ваше"
+				@message += " мнение" if params[:opinion][:words] == ""
+				@message += " и" if ( params[:opinion][:words] == "" || params[:opinion][:author] == "" )
+				@message += " имя" if params[:opinion][:author] == ""
+				@message += "!"
+				correct   = false
+				return
+			end
+			if correct && params[:opinion][:phone].to_i < 1
+				@message  = "номер телефона должен быть положительным!"
+				correct   = false
+				return
+			end
+			if correct && !params[:opinion][:visit].nil? && params[:opinion][:visit].to_date.future?
+				@message  = "дата посещения не может происходить в будущем!"
+				correct   = false
+				return
 			end
 			# if correct && next_cond
-			#	@message = "other message"
-			#	correct = false
+			#	@message  = "other message"
+			#	correct   = false
+			#	return
 			# end
-			if correct
-				Opinion.CreateByGuest(params[:opinion][:author], params[:opinion][:email], params[:opinion][:phone], params[:opinion][:visit], params[:opinion][:words])
-			end
-		else
-			@message += "дожна быть заполнена полностью."
+			Opinion.CreateByGuest( params[:opinion][:author], params[:opinion][:email], params[:opinion][:phone], params[:opinion][:visit], params[:opinion][:words] ) if correct
 		end
 	end
 end
