@@ -33,7 +33,7 @@ Myapp::Application.configure do
     :port        => 587,
     :address     => "smtp.gmail.com",
     :domain      => "gmail.com",
-    :password    => "9p7wu9wct6",
+    :password    => "itrylogintoga",
     :user_name   => "sv7atoslav@gmail.com",
     :authentication       => :plain,
     :enable_starttls_auto => true
