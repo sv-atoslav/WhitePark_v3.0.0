@@ -12,7 +12,7 @@
   </tr></thead>
   <tbody><% @photo_list.each do |photo| %><tr>
     <td align="center"><%= image_tag Photo.try_get_way_to_img_tag_by_photo(photo), width: "100px" %></td>
-    <td><%= photo.description %> ( <% photo.avatar.file.file %> )</td>
+    <td><%= photo.description %></td>
     <td><%= link_to 'Show',      admin_photo_path(photo) %></td>
     <td><%= link_to 'Edit', edit_admin_photo_path(photo) %></td>
     <td><%= link_to 'Destroy',   admin_photo_path(photo), method: :delete, data: { confirm: 'Are you sure?' } %></td>
