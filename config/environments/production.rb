@@ -82,7 +82,7 @@ Myapp::Application.configure do
   config.action_mailer.smtp_settings = {
     :port        => 587,
     :address     => "smtp.gmail.com",
-    :domain      => "gmail.com",
+    :domain      => "shrouded-mountain-92881.herokuapp.com",
     :password    => "9p7wu9wct6",
     :user_name   => "sv7atoslav@gmail.com",
     :authentication       => :plain,
