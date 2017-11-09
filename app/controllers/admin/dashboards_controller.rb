@@ -24,7 +24,7 @@ class Admin::DashboardsController < ApplicationController
       current_moderator.email = params["new_email"]
       current_moderator.save
     end
-    @not_published_opinions = Opinion.where(published: true)
+    @not_published_opinions = Opinion.where(published: false)
   end
 
 end
