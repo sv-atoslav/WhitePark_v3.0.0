@@ -1,77 +1,12 @@
-<div class="wrapper wrapper-content">
-    <table width="100%" cellspacing="5px" valign="top"><body><tr>
-        <td width="33%"><div class="ibox float-e-margins" float="left">
-            <div class="ibox-title">
-                <h5>Фотогалерея</h5>
-                <div class="ibox-tools">
-                    <a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
-                    <a class="close-link"><i class="fa fa-times"></i></a>
-                </div>
-            </div>
-            <div class="ibox-content">
-                <h1 class="no-margins"><%= Photo.count %></h1>
-                <small>Фотографий всего</small>
-                <hr>
-                <h1 class="no-margins"><%= Photo.where(description: "").count %></h1>
-                <small>без описания</small>
-            </div>
-        </div></td>
-        <td width="5px"></td>
-        <td width="33%"><div class="ibox float-e-margins">
-            <div class="ibox-title">
-                <h5>Content</h5>
-                <div class="ibox-tools">
-                    <a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
-                    <a class="close-link"><i class="fa fa-times"></i></a>
-                </div>
-            </div>
-            <div class="ibox-content">
-                <h1 class="no-margins"><%= Article.count %></h1>
-                <small>статей</small>
-                <hr>
-                <h1 class="no-margins"><%= Event.count %></h1>
-                <small>опубликованых событий в <%= CategoryEvent.count %> категориях</small>
-            </div>
-        </div></td>
-        <td width="5px"></td>
-        <td width="33%"><div class="ibox float-e-margins">
-            <div class="ibox-title">
-                <h5>User activity</h5>
-                <div class="ibox-tools">
-                    <a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
-                    <a class="close-link"><i class="fa fa-times"></i></a>
-                </div>
-            </div>
-            <div class="ibox-content">
-                <h1 class="no-margins"><%= User.count %></h1>
-                <small>клиентов получают рассылку</small>
-                <hr>
-                <h1 class="no-margins"><%= Opinion.count %></h1>
-                <small>отзывов на сайте</small>
-            </div>
-        </div></td>
-    </tr></body></table>
-    <% if @not_published_opinions.any? %><div class="ibox float-e-margins">
-        <div class="ibox-title">
-            <h5>Мнения</h5>
-            <div class="ibox-tools">
-                <a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
-                <a class="close-link"><i class="fa fa-times"></i></a>
-            </div>
-        </div>
-        <div class="ibox-content ibox-heading">
-            <h3><i class="fa fa-envelope-o"></i><%= link_to "Новые мнения", :controller => "opinions", :action => "index" %></h3>
-            <small><i class="fa fa-tim"></i>У вас <%= @not_published_opinions.count %> немодерированых мнений.</small>
-        </div>
-        <div class="ibox-content"><div class="feed-activity-list"><% @not_published_opinions.each do |one_opinion| %>
-            <div class="feed-element"><div>
-                <strong><%= one_opinion.author %></strong>
-                <div><%= one_opinion.words %></div>
-                <small class="text-muted"><%= one_opinion.visit %></small>
-            </div></div>
-        <% end %></div></div>
-    </div><% end %>
+<%= form_tag('#') %>
+<div class="field">
+    <%= label_tag(:new_email, "email")%>
+    <br><%= email_field_tag :new_email, current_moderator.email, autofocus: false, autocomplete: "off" %>
 </div>
+<div class="field"><%# link_to "Forgot your password?", controller: "moderators/passwords", action: "new" %>
+    <!-- <a href="localhost:3000/moderators/password/new">Forgot your password?</a> -->
+</div>
+<div class="actions"><%= submit_tag "сменить" %></div>
 <% content_for :javascript do %>
 <script type="text/javascript">
 $(function() {
