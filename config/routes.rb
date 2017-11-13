@@ -15,13 +15,13 @@ Myapp::Application.routes.draw do
 	get 'robots' => 'application#robots', format: :text
 
 	#get '/admin',	to: 'admin/dashboards#dashboard_1'
-	 get "/admin",	to: "admin/dashboards#dashboard_white_park"
+	get  "/admin",	to: "admin/dashboards#dashboard_white_park"
 	post "/admin",	to: "admin/dashboards#dashboard_white_park"
-	 get "/log_out",	to: "admin/dashboards#log_out"
+	get  "/log_out",to: "admin/dashboards#log_out"
 	#moderator_root to: "admin/dashboards#dashboard_white_park"
 
 	namespace :admin do
-	resources :articles, :events, :category_events, :opinions, :photo_in_articles, :photo_in_events, :photo_in_slayders, :photos, :slayders, :tents, :users
+		resources :articles, :events, :category_events, :opinions, :photo_in_articles, :photo_in_events, :photo_in_slayders, :photos, :slayders, :tents, :users
 	end
 
 	get 'WhitePark',to: 'guest_pages#main'
@@ -48,9 +48,9 @@ Myapp::Application.routes.draw do
 	get "/admin/opinions/:id/public",	to: 'admin/opinions#become_public'
 
 	#'inbox' routes # all in down completed
-	get "admin/dashboards/dashboard_white_park"
+	get  "admin/dashboards/dashboard_white_park"
 
-	get "admin/dashboards/change_defence_info"
-	post"admin/dashboards/change_defence_info"
+	get  "admin/dashboards/change_defence_info"
+	post "admin/dashboards/change_defence_info"
 
 end
