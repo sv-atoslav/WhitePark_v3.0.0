@@ -49,7 +49,7 @@ class GuestPagesController < ApplicationController
 
 	def try_set_slayder(name_of_action)
 		@one_slayder = Slayder.find_by( title: Slayder.title_action_converter(name_of_action, false) )
-		@photo_list_of_slayder = PhotoInSlayder.where(slyder: @one_slayder.id).order(updated_at: :asc).to_a unless @one_slayder.nil?
+		@photo_list_of_slayder = PhotoInSlayder.where(slyder: @one_slayder.id).order(updated_at: :desc).to_a unless @one_slayder.nil?
 		exist_list(@photo_list_of_slayder)
 	end
 
