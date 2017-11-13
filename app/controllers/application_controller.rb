@@ -14,14 +14,14 @@ class ApplicationController < ActionController::Base
 
 	# defense for unauthorized acces
 	def divider_access
-		# info_about_wiever = " "
-		# if current_moderator.nil?
-		# 	info_about_wiever += "guest"
-		# else
-		# 	info_about_wiever += "moder "
-		# 	info_about_wiever += current_moderator.email
-		# end
-		# puts "current viever =" + info_about_wiever
+		info_about_wiever = " "
+		if current_moderator.nil?
+			info_about_wiever += "guest"
+		else
+			info_about_wiever += "moder "
+			info_about_wiever += current_moderator.email
+		end
+		puts "current viever =" + info_about_wiever
 		authenticate_moderator! unless moderator_signed_in? || controller_name == "guest_pages" || legaly_actions.include?(action_name)
 	end
 
