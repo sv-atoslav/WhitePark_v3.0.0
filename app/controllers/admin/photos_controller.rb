@@ -1,10 +1,10 @@
 class Admin::PhotosController < ApplicationController
   before_action :set_photo, only: [:show, :edit, :update, :destroy]
-  before_action :set_photo_list, only: [:index]
 
   # GET /photos
   # GET /photos.json
   def index
+    @photo_list = Photo.paginate(:page => params[:page])
   end
 
   # GET /photos/1
