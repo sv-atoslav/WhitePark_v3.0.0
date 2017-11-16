@@ -9,4 +9,5 @@
 //= require jquery/jquery.peity.min.js
 //= require jquery/jquery.slimscroll.min.js
 //= require inspinia.js
+//= require jquery/jquery.tablesorter.min.js
 //= require rails-ujs

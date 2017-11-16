@@ -47,5 +47,44 @@
         <!-- Include javascript per-view -->
         <!-- For demo purpose we include javascript in view but you can easily start SeedProject and organize it with Rails asset pipeline as you want -->
         <%= yield :javascript %>
+
+        <% if controller_name == "photos" && action_name =="index" %>
+            <%= javascript_include_tag "datatables.min.js" %>
+            <%# javascript_include_tag "jquery/jquery-3.1.1.min.js" %>
+            <%# javascript_include_tag "bootstrap/bootstrap.min.js" %>
+            <%# javascript_include_tag "jquery/jquery.metisMenu.js" %>
+            <%# javascript_include_tag "jquery/jquery.slimscroll.min.js" %>
+            <%# javascript_include_tag "inspinia.js" %>
+            <%# javascript_include_tag "pace.min.js" %>
+            <!-- Page-Level Scripts -->
+            <script>
+                $(document).ready(function(){
+                    $('.dataTables-example').DataTable({
+                        pageLength: 25,
+                        responsive: true,
+                        dom: '<"html5buttons"B>lTfgitp',
+                        buttons: [
+                            {extend: 'copy'},
+                            {extend: 'csv' },
+                            {extend: 'excel', title: 'ExampleFile'},
+                            {extend: 'pdf',   title: 'ExampleFile'},
+
+                            {extend: 'print',
+                             customize: function (win){
+                                    $(win.document.body).addClass('white-bg');
+                                    $(win.document.body).css('font-size', '10px');
+
+                                    $(win.document.body).find('table')
+                                            .addClass('compact')
+                                            .css('font-size', 'inherit');
+                            }
+                            }
+                        ]
+
+                    });
+
+                });
+            </script>
+        <% end %>
     </body>
 </html>

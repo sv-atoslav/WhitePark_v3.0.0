@@ -1,7 +1,7 @@
 class ApplicationController < ActionController::Base
 	protect_from_forgery with: :exception
 	before_action :divider_access
-	WillPaginate.per_page = 5
+	WillPaginate.per_page = 10
 
 	$HEROKU_LINK = 'https://shrouded-mountain-92881.herokuapp.com'
 

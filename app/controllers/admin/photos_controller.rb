@@ -4,7 +4,7 @@ class Admin::PhotosController < ApplicationController
   # GET /photos
   # GET /photos.json
   def index
-    @photo_list = Photo.paginate(:page => params[:page])
+    @photo_list = Photo.all
   end
 
   # GET /photos/1
