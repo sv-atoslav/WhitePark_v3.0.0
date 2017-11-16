@@ -1,32 +1,35 @@
-<p id="notice"><%= notice %></p>
-<h1>Opinions</h1>
-<span>Отзывы о сайте, опубликованые и нет.</span>
-<br><%= link_to 'New Opinion', action: "new" %>
-<% if @opinions.first.nil? %>
-  <i>эта таблица пустая</i>
-<% else %><table class="sv_table">
-  <thead><tr>
+<thead><tr role="row">
     <th>Published</th>
     <th>Author</th>
     <th>Words</th>
     <th>Visit</th>
-    <th colspan="2">Contacts</th>
-    <th colspan="4"></th>
-  </tr></thead>
-  <tbody><% @opinions.each do |one_opinion| %>
-    <% bc_rwgw = "LightSalmon" %><!-- bgcolor may be red and white, or green and white -->
-    <% bc_rwgw = "Lime" if one_opinion.published %>
-    <tr bgcolor="<%= bc_rwgw %>">
+    <th>Email</th>
+    <th>Phone</th>
+    <th>Last update</th>
+    <th>Actions</th>
+</tr></thead>
+<tbody><% @opinions.each do |one_opinion| %><tr class="gradeA even" role="row">
     <td><%= one_opinion.published %></td>
     <td><%= one_opinion.author   %></td>
     <td><%= one_opinion.words   %></td>
-    <td><%= one_opinion.visit  %></td>
+    <td><%= one_opinion.visit.strftime("%d %B %Y") %></td>
     <td><%= one_opinion.email %></td>
     <td><%= one_opinion.phone%></td>
-    <td><%= link_to "Public", action: "become_public", id: one_opinion.id %></td>
-    <% bc_rwgw = "white" %><!-- need be equal other bg color on page -->
-    <td bgcolor="<%= bc_rwgw %>"><%= link_to 'Show', admin_opinion_path(one_opinion) %></td>
-    <td bgcolor="<%= bc_rwgw %>"><%= link_to 'Edit', edit_admin_opinion_path(one_opinion) %></td>
-    <td bgcolor="<%= bc_rwgw %>"><%= link_to 'Destroy', admin_opinion_path(one_opinion), method: :delete, data: { confirm: 'Are you sure?' } %></td>
-  </tr><% end %></tbody>
-</table><% end %>
+    <td><%= one_opinion.updated_at.strftime("%T %d %B %Y") %></td>
+    <td>
+        <%= link_to 'Show',      admin_opinion_path(one_opinion) %>,
+        <%= link_to "Public", action: "become_public", id: one_opinion.id %>
+        <%= link_to 'Edit', edit_admin_opinion_path(one_opinion) %>,
+        <%= link_to 'Destroy',   admin_opinion_path(one_opinion), method: :delete, data: { confirm: 'Are you sure?' } %>
+    </td>    
+</tr><% end %></tbody>
+<tfoot><tr>
+    <th>Published</th>
+    <th>Author</th>
+    <th>Words</th>
+    <th>Visit</th>
+    <th>Email</th>
+    <th>Phone</th>
+    <th>Last update</th>
+    <th>Actions</th>
+</tr></tfoot>

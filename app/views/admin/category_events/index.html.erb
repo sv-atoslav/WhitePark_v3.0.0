@@ -1,23 +1,26 @@
-<p id="notice"><%= notice %></p>
-<h1>Category Events</h1>
 <span>обобщенные категории (типы, виды, разновидности) событий.</span>
-<% if @category_events.first.nil? %>
-  <i>эта таблица пустая</i>
-<% else %><table class="sv_table">
-  <thead><tr>
-    <th>Icon</th>
-    <th>Title</th>
-    <th>Description</th>
-    <th colspan="4"></th>
-  </tr></thead>
-  <tbody><% @category_events.each do |category_event| %><tr>
-    <td><%= image_tag Photo.try_get_way_to_img_tag_by_id(category_event.icon), width: "100px" %></td>
-    <td><%= category_event.ru_title %></td>
-    <td><%= category_event.description.html_safe %></td>
-    <td><%= link_to 'Show', admin_category_event_path(category_event) %></td>
-    <td><%= link_to 'Edit', edit_admin_category_event_path(category_event) %></td>
-    <td><%= link_to 'Destroy', admin_category_event_path(category_event), method: :delete, data: { confirm: 'Are you sure?' } %></td>
-    <td><a href="/category_events/<%= category_event.eng_title %>">Beauty</a></td>
-  </tr><% end %></tbody>
-</table><% end %>
-<br><%= link_to 'New Category Event', action: "new" %>
+<thead><tr role="row">
+  <th>Icon</th>
+  <th>Title</th>
+  <th>Description</th>
+  <th>Last update</th>
+  <th>Actions</th>
+</tr></thead>
+<tbody><% @category_events.each do |category_event| %><tr class="gradeA even" role="row">
+  <td><%= image_tag Photo.try_get_way_to_img_tag_by_id(category_event.icon), width: "100px" %></td>
+  <td><%= category_event.ru_title %></td>
+  <td><%= category_event.description.html_safe %></td>
+  <td><%= category_event.updated_at.strftime("%T %d %B %Y") %></td>
+  <td>
+    <%= link_to 'Show',     admin_category_event_path(category_event) %>
+    <%= link_to 'Edit',edit_admin_category_event_path(category_event) %>
+    <%= link_to 'Destroy',  admin_category_event_path(category_event), method: :delete, data: { confirm: 'Are you sure?' } %>
+  </td>
+</tr><% end %></tbody>
+<tfoot><tr>
+  <th>Icon</th>
+  <th>Title</th>
+  <th>Description</th>
+  <th>Last update</th>
+  <th>Actions</th>
+</tr></tfoot>

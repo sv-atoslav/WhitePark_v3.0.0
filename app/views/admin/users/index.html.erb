@@ -1,20 +1,26 @@
-<p id="notice"><%= notice %></p>
-<h1>Users</h1><span>(   список адресов для рассылки. (  пока что только приветсвие при регистрации ( при желании можно, (но не нужно) уведомлять о новых статьях и мероприятиях )  )   )</span>
-<br><%= link_to 'New User', action: "new" %>
-<% if @users.first.nil? %><i>пусто</i>
-<% else %><table class="sv_table">
-	<thead><tr>
-		<th>Name </th>
-		<th>Email</th>
-		<th>Login</th>
-		<th colspan="3"></th>
-	</tr></thead>
-	<tbody><% @users.each do |user| %><tr>
-		<td><%= user.name  %></td>
-		<td><%= user.email %></td>
-		<td><%= user.login %></td>
-		<td><%= link_to 'Show', admin_user_path(user) %></td>
-		<td><%= link_to 'Edit', edit_admin_user_path(user) %></td>
-		<td><%= link_to 'Destroy', admin_user_path(user), method: :delete, data: { confirm: 'Are you sure?' } %></td>
-	</tr><% end %></tbody>
-</table><% end %>
+<span>(   список адресов для рассылки. (  пока что только приветсвие при регистрации ( при желании можно, (но не нужно) уведомлять о новых статьях и мероприятиях )  )   )</span>
+<thead><tr role="row">
+	<th>Name </th>
+	<th>Email</th>
+	<th>Login</th>
+    <th>Last update</th>
+	<th>Actions</th>
+</tr></thead>
+<tbody><% @users.each do |user| %><tr class="gradeA even" role="row">
+	<td><%= user.name  %></td>
+	<td><%= user.email %></td>
+	<td><%= user.login %></td>
+    <td><%= user.updated_at.strftime("%T %d %B %Y") %></td>
+	<td>
+		<%= link_to 'Show', admin_user_path(user) %>,
+		<%= link_to 'Edit', edit_admin_user_path(user) %>,
+		<%= link_to 'Destroy', admin_user_path(user), method: :delete, data: { confirm: 'Are you sure?' } %>	
+	</td>  
+</tr><% end %></tbody>
+<tfoot><tr>
+	<th>Name </th>
+	<th>Email</th>
+	<th>Login</th>
+	<th>Last update</th>
+	<th>Actions</th>
+</tr></tfoot>

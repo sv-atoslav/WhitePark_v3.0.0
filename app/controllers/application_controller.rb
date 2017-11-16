@@ -1,6 +1,8 @@
 class ApplicationController < ActionController::Base
 	protect_from_forgery with: :exception
 	before_action :divider_access
+	# before_action :pust_info
+	before_action :try_set_template
 	WillPaginate.per_page = 10
 
 	$HEROKU_LINK = 'https://shrouded-mountain-92881.herokuapp.com'
@@ -12,8 +14,7 @@ class ApplicationController < ActionController::Base
 		@photo_list = Photo.all.order(description: :asc)
 	end
 
-	# defense for unauthorized acces
-	def divider_access
+	def pust_info
 		info_about_wiever = " "
 		if current_moderator.nil?
 			info_about_wiever += "guest"
@@ -22,6 +23,15 @@ class ApplicationController < ActionController::Base
 			info_about_wiever += current_moderator.email
 		end
 		puts "current viever =" + info_about_wiever
+		puts controller_name 
+		puts action_name
+	end
+
+	def try_set_template
+		@a_n_index = action_name == "index"
+	end
+	# defense for unauthorized acces
+	def divider_access
 		authenticate_moderator! unless moderator_signed_in? || controller_name == "guest_pages" || legaly_actions.include?(action_name)
 	end
 

@@ -1,24 +1,30 @@
-<p id="notice"><%= notice %></p>
-<h1>Articles</h1>
 <span>Статии, о которых стоит знать потенциальным клиентам.</span>
-<% if @articles.first.nil? %><i>эта таблица пустая</i>
-<% else %><table class="sv_table">
-  <thead><tr>
-    <th>Icon</th>
-    <th>Title</th>
-    <th>Description</th>
-    <th>Published</th>
-    <th colspan="4"></th>
-  </tr></thead>
-  <tbody><% @articles.each do |one_article| %><tr>
-    <td><%= image_tag Photo.try_get_way_to_img_tag_by_id(one_article.icon).to_s, width: "100px" %></td>
-    <td><%= one_article.ru_title %></td>
-    <td><%= one_article.description.html_safe %></td>
-    <td><%= one_article.published %></td>
-    <td><%= link_to 'Show', admin_article_path(one_article) %></td>
-    <td><%= link_to 'Edit', edit_admin_article_path(one_article)  %></td>
-    <td><%= link_to 'Destroy', admin_article_path(one_article), method: :delete, data: { confirm: 'Are you sure?' } %></td>
-    <td><a href="/articles/<%= one_article.eng_title %>">Beauty</a></td>
-  </tr><% end %></tbody>
-</table><% end %>
-<br><%= link_to 'New Article', action: "new" %>
+<thead><tr role="row">
+  <th>Icon</th>
+  <th>Title</th>
+  <th>Description</th>
+  <th>Published</th>
+  <th>Last update</th>
+  <th>Actions</th>
+</tr></thead>
+<tbody><% @articles.each do |one_article| %><tr class="gradeA even" role="row">
+  <td><%= image_tag Photo.try_get_way_to_img_tag_by_id(one_article.icon), width: "100px" %></td>
+  <td><%= one_article.ru_title %></td>
+  <td><%= one_article.description.html_safe %></td>
+  <td><%= one_article.published %></td>
+  <td><%= one_article.updated_at.strftime("%T %d %B %Y") %></td>
+  <td>
+    <a href="/articles/<%= one_article.eng_title %>">Beauty</a>
+    <%= link_to 'Show', admin_article_path(one_article) %>
+    <%= link_to 'Edit', edit_admin_article_path(one_article) %>
+    <%= link_to 'Destroy', admin_article_path(one_article), method: :delete, data: { confirm: 'Are you sure?' } %>
+  </td>
+</tr><% end %></tbody>
+<tfoot><tr>
+  <th>Icon</th>
+  <th>Title</th>
+  <th>Description</th>
+  <th>Published</th>
+  <th>Last update</th>
+  <th>Actions</th>
+</tr></tfoot>

@@ -1,8 +1,4 @@
-<p id="notice"><%= notice %></p>
-<h1>Tents</h1>
-<% if @tents.first.nil? %><i>эта таблица пустая</i>
-<% else %><table class="sv_table">
-  <thead><tr>
+<thead><tr role="row">
     <th>Icon</th>
     <th>Namesize</th>
     <th>Description</th>
@@ -10,9 +6,10 @@
     <th>Max size</th>
     <th>Как много людей поместится на банкете</th>
     <th>Как много людей поместится на фуршете</th>
-    <th colspan="3"></th>
-  </tr></thead>
-  <tbody><% @tents.each do |tent| %><tr>
+    <th>Last update</th>
+    <th>Actions</th>
+</tr></thead>
+<tbody><% @tents.each do |tent| %><tr class="gradeA even" role="row">
     <td><%= image_tag Photo.try_get_way_to_img_tag_by_id(tent.icon), width: "100px" %></td>
     <td><%= tent.namesize   %></td>
     <td><%= tent.description%></td>
@@ -20,9 +17,21 @@
     <td><%= tent.max_size   %></td>
     <td><%= tent.hpb        %></td>
     <td><%= tent.hpf        %></td>
-    <td><%= link_to 'Show', admin_tent_path(tent) %></td>
-    <td><%= link_to 'Edit', edit_admin_tent_path(tent) %></td>
-    <td><%= link_to 'Destroy', admin_tent_path(tent), method: :delete, data: { confirm: 'Are you sure?' } %></td>
-  </tr><% end %></tbody>
-</table><% end %>
-<br><%= link_to 'New Tent', action: "new" %>
+    <td><%= tent.updated_at.strftime("%T %d %B %Y") %></td>
+    <td>
+        <%= link_to 'Show', admin_tent_path(tent) %>
+        <%= link_to 'Edit', edit_admin_tent_path(tent) %>
+        <%= link_to 'Destroy', admin_tent_path(tent), method: :delete, data: { confirm: 'Are you sure?' } %>
+    </td>
+</tr><% end %></tbody>
+<tfoot><tr>
+    <th>Icon</th>
+    <th>Namesize</th>
+    <th>Description</th>
+    <th>Min size</th>
+    <th>Max size</th>
+    <th>Как много людей поместится на банкете</th>
+    <th>Как много людей поместится на фуршете</th>
+    <th>Last update</th>
+    <th>Actions</th>
+</tr></tfoot>
