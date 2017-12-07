@@ -7,7 +7,7 @@ class Admin::EventsController < ApplicationController
   # GET /events
   # GET /events.json
   def index
-    @events = Event.paginate(:page => params[:page])
+    @events = Event.paginate( page: params[:page] )
   end
 
   # GET /events/1
@@ -35,7 +35,7 @@ class Admin::EventsController < ApplicationController
     # set_event 
     # @event  = CategoryEvent.new
     # @event  = CategoryEvent.new(article_params)
-    @event.eng_title=Translit.convert(params[:event][:ru_title]).gsub("ü","u")
+    @event.eng_title = Translit.convert(params[:event][:ru_title]).gsub("ü","u")
     respond_to do |format|
       if @event.save
         format.html { redirect_to admin_event_path(@event), notice: 'Event was successfully created.' }
@@ -50,7 +50,7 @@ class Admin::EventsController < ApplicationController
   # PATCH/PUT /events/1
   # PATCH/PUT /events/1.json
   def update
-    @event.eng_title=Translit.convert(params[:event][:ru_title]).gsub("ü","u")
+    @event.eng_title = Translit.convert(params[:event][:ru_title]).gsub("ü","u")
     respond_to do |format|
       if @event.update(event_params)
         format.html { redirect_to admin_event_path(@event), notice: 'Event was successfully updated.' }
@@ -72,14 +72,36 @@ class Admin::EventsController < ApplicationController
     end
   end
 
+  def upload
+    # puts "params[:file] = "+ params[:file].to_s
+    pf = params[:file]
+    # puts params[:file].tempfile
+    # puts params[:file].original_filename
+    # puts params[:file].content_type
+    # puts params[:file].headers
+    # puts "-----"
+    # puts params[:file].size
+    puts "step0"
+    puts params[:file].read
+    puts "finish params"
+    # puts arr_paramsparams[:file][:Content-Disposition]
+    # par_n = 0
+    # arr_params.each do |one_param|
+    #   puts "param "+par_n.to_s+" = "+one_param.to_s
+    # end
+    # puts pf.file
+    # puts pf.original_filename
+    # uploaded_io = params[:file]
+    path_to_file = 'public' + pf.original_filename
+    # new_temp_file=File.open(path_to_file, "w") { |file| file.write(params[:file].read) }
+    redirect_to action: "index"
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_event
-      unless params[:eng_title]==nil
-        @event = Event.find_by(eng_title: params[:eng_title])
-      else
-        @event = Event.find(params[:id])
-      end
+      @event = Event.find_by(eng_title: params[:eng_title]) unless params[:eng_title].nil?
+      @event = Event.find(params[:id]) unless params[:id].nil?
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.

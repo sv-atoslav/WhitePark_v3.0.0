@@ -1,3 +1,12 @@
+<% if true || action_name != "new" %>
+<hr>
+<%= form_tag( {action: :upload}, multipart: true, class: "dropzone", id: "dropzoneForm", style: "data-original-title: Picture; ") do %>
+  <%= file_field_tag 'file' %>
+  <%= submit_tag %>
+<% end %>
+<hr>
+<% end %>
+
 <%= form_with(model: [:admin, event], local: true) do |form| %>
   <% if event.errors.any? %><div id="error_explanation">
     <h2><%= pluralize(event.errors.count, "error") %> prohibited this event from being saved:</h2>
@@ -5,42 +14,148 @@
       <li><%= message %></li>
     <% end %></ul>
   </div><% end %>
+
   <div class="actions"><%= form.submit %></div>
+  <%= hidden_field_tag("HiddenArrayOfCheckbox", @old_list) %>
   <table width="100%">
     <tr>
       <td><div class="field"><%= form.label :category %><%= form.collection_select(:category, CategoryEvent.all, :id, :ru_title) %></div></td>
       <td><div class="field"><%= form.label :ru_title %><%= form.text_field :ru_title, id: :event_title, style: "width: 100%;"%></div></td>
     </tr>
-    <tr>
-      <td width="222px"><table>
-        <thead><tr>
-          <td>Previev</td>
-          <td>Icon</td>
-          <td>Many photos</td>
-        </tr></thead>
-        <% have_some_photo = @old_list.to_a.any? %>
-        <tbody align="center"><% @photo_list.each do |one_photo| %><tr>
-          <td><%= image_tag Photo.try_get_way_to_img_tag_by_photo(one_photo), width: "100px" %></td>
-          <td><%= form.radio_button(:icon, one_photo.id) %></td>
-          <!-- checkbox I parametr without [] need be == in controller params["word"] -->
-          <td><% if have_some_photo %><%= check_box_tag("many_photo_ids[]", one_photo.id, @old_list.include?(one_photo.id) )%>
-          <% else %><%= check_box_tag("many_photo_ids[]", one_photo.id) %>
-          <% end  %></td>
-        </tr><% end %></tbody>
-      </table></td>
-      <td><div class="field"><%= form.label :description %><%= form.text_area :description, id: :event_description, class: "summernote" %></div></td>
-    </tr>
+    <tr><td colspan="2"><div class="field"><%= form.label :description %><%= form.text_area :description, id: :event_description, class: "summernote" %>
+  </div></td></tr>
+  </table>
+  <% have_some_photo = @old_list.to_a.any? %>
+  <!-- this variable need be later -->
+  <% if have_some_photo %>
+  <div style = "display: none;" >
+    <% @old_list.each do |id_photo_in_list| %>
+      <% pair = PhotoInEvent.where(photo: id_photo_in_list, event: @event.id).to_a %>
+      <% if pair.count == 1 %>
+        <% pair = pair[0] %>
+        <div style="display: inline-block;">
+          <%= image_tag Photo.try_get_way_to_img_tag_by_id(id_photo_in_list), width: "100px" %><br>
+          <%= link_to 'Edit', edit_admin_photo_in_event_path(pair) %>
+          <%= link_to 'Destroy', admin_photo_in_event_path(pair), method: :delete, data: { confirm: 'Are you sure?' } %>
+        </div>
+      <% end %>
+    <% end %>
+  </div>
+  <% end %>
+  <table class="table table-striped table-bordered table-hover dataTables-example dataTable" id="DataTables_Table_0" aria-describedby="DataTables_Table_0_info" role="grid">
+    <thead><tr role="row">
+      <th width="100px">Preview</th>
+      <th>Description</th>
+      <th width="200px">Last update</th>
+      <th width="10px">Use as icon?</th>
+      <th width="10px">Choose</th>
+      <th width="10px">Use as usual photo?</th>
+      <th width="10px">Choose</th>
+    </tr></thead>
+    <tbody><% @photo_list.each do |one_photo| %><tr class="gradeA even" role="row">
+      <td><%= image_tag Photo.try_get_way_to_img_tag_by_photo(one_photo), width: "100px" %></td>
+      <td>
+        <%= one_photo.description %>
+        <%= one_photo.id %>
+        <%= one_photo.avatar.to_s %>
+      </td>
+      <td><%= one_photo.updated_at.strftime("%T %d %B %Y") %></td>
+      <td><%= @event.icon == one_photo.id %></td>
+      <td><%= radio_button_tag(:icon, one_photo.id) %></td>
+      <!-- checkbox I parametr without [] need be == in controller params["word"] -->
+      <td><%= have_some_photo && @old_list.include?(one_photo.id) %></td>
+      <td>
+        <%= check_box_tag("many_photo_ids[]", one_photo.id, have_some_photo && @old_list.include?(one_photo.id), onclick: "ActionWhenClickChekbox(this)" )%></td>
+    </tr><% end %></tbody>
+    <tfoot><tr>
+      <th>Photo preview</th>
+      <th>Description</th>
+      <th>Last update</th>
+      <th>Use as icon?</th>
+      <th>Choose</th>
+      <th>Use as usual photo?</th>
+      <th>Choose</th>
+    </tr></tfoot>
   </table>
 <% end %>
 
-<%= stylesheet_link_tag "summernote/summernote.css" %>
+  <%= stylesheet_link_tag "summernote/summernote.css" %>
 
-<%= javascript_include_tag "summernote.min" %>
+  <%= javascript_include_tag "summernote.min" %>
+
+  <%= javascript_include_tag "datatables.min.js" %>
+
+  <!-- I'm sorry -->
+  <script type="text/javascript">
+    var fHAOC_text= document.getElementsByName("HiddenArrayOfCheckbox")[0]
+    var array_of_cheked_chb=fHAOC_text.value.split(' ');
+    var original_array_of_cheked_chb=fHAOC_text.value.split(' ');
+    console.log( array_of_cheked_chb );
+    ActionWhenClickChekbox=function(clicked_ch){
+      console.log(array_of_cheked_chb);
+      console.log(fHAOC_text);
+      console.log(clicked_ch);
+      console.log( typeof(array_of_cheked_chb) );
+      if (clicked_ch.checked) {
+        array_of_cheked_chb.push(clicked_ch.value);
+      }
+      else{
+        array_of_cheked_chb.splice(array_of_cheked_chb.indexOf(clicked_ch.value), 1);
+      }
+      console.log( array_of_cheked_chb );
+      fHAOC_text.value = array_of_cheked_chb.toString();
+      console.log( fHAOC_text.value )
+    }
+    // I try using Ajax
+    // Uncaught SyntaxError: Unexpected token .
+    // var try_send_ajax_method=function(array){
+    // $.ajax({
+    //     type: "GET",
+    //     url: '/show',
+    //     data: { value: array },
+    //     console.log(data);
+    //     success:(data) =>
+    //       alert data.value;
+    //       return false;
+    //     error:(data) =>
+    //       alert data.value;
+    //       return false;
+    //   })
+    // }
+    // console.log('RESPONDE=>'+data);
+    // I learn Ajax later 
+  </script>
+
 <script type="text/javascript">
   $(function() {
     $('.summernote').summernote();
     var edit = function () {
       $('.click2edit').summernote({ focus: true });
     };
+  });
+</script>
+
+<script>
+  $(document).ready(function(){
+    $('.dataTables-example').DataTable({
+      pageLength: 25,
+      responsive: true,
+      dom: '<"html5buttons"B>lTfgitp',
+      buttons: [
+        {extend: 'copy'},
+        {extend: 'csv' },
+        {extend: 'excel', title: 'ExampleFile'},
+        {extend: 'pdf',   title: 'ExampleFile'},
+        {extend: 'print',
+          customize: function (win){
+            $(win.document.body).addClass('white-bg');
+            $(win.document.body).css('font-size', '10px');
+            $(win.document.body).find('table')
+            .addClass('compact')
+            .css('font-size', 'inherit');
+          }
+        }
+      ]
+    });
   });
 </script>

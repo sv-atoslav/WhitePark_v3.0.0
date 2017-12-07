@@ -29,14 +29,11 @@ class ApplicationController < ActionController::Base
 
 	def try_set_template
 		@a_n_index = action_name == "index"
+		@a_n_edit  = action_name == "edit"
 	end
 	# defense for unauthorized acces
 	def divider_access
 		authenticate_moderator! unless moderator_signed_in? || controller_name == "guest_pages" || legaly_actions.include?(action_name)
-	end
-
-	def legaly_actions
-		return ["beauty", "robots"]
 	end
 
 	private
@@ -50,5 +47,9 @@ class ApplicationController < ActionController::Base
 		tall_string = tall_string[1..-1]  while tall_string[0]  == " "
 		tall_string = tall_string[0...-1] while tall_string[-1] == " "
 		return tall_string
+	end
+
+	def legaly_actions
+		return ["beauty", "robots"]
 	end
 end

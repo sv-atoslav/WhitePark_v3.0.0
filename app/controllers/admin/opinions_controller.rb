@@ -18,7 +18,6 @@ class Admin::OpinionsController < ApplicationController
   end
 
   def new_from_guest
-
   end
 
   # GET /opinions/1/edit
@@ -26,7 +25,7 @@ class Admin::OpinionsController < ApplicationController
   end
 
   def become_public
-    @opinion.published = true
+    @opinion.published  = true
     @opinion.save
     redirect_to action: "index"
   end
@@ -80,8 +79,4 @@ class Admin::OpinionsController < ApplicationController
     def opinion_params
       params.require(:opinion).permit(:author, :email, :phone, :visit, :words, :published)
     end
-
-    # def guest_opinion_params
-    #   params.require(:opinion).permit(:author, :email, :phone, :visit, :words)
-    # end
 end

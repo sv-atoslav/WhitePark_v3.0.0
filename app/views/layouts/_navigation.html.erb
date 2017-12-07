@@ -2,7 +2,8 @@
   <li class="<%= is_active_controller('tables') %>">
     <a href="#">
       <i class="fa fa-table"></i>
-      <span class="nav-label" data-i18n="nav.tables">Таблицы</span><span class="fa arrow"></span>
+      <span class="nav-label" data-i18n="nav.tables">Таблицы</span>
+      <span class="fa arrow"></span>
     </a>
     <ul class="nav nav-second-level collapse <%= is_active_controller('tables', 'in') %>">
         <li><%= link_to "мнения",       controller: "opinions", action: "index" %></li>
@@ -23,7 +24,11 @@
     </ul>
   </li>
   <li>
-    <a href="#"><i class="fa fa-sitemap"></i> <span class="nav-label" data-i18n="nav.menulevels">Menu Levels </span><span class="fa arrow"></span></a>
+    <a href="#">
+      <i class="fa fa-sitemap"></i>
+      <span class="nav-label" data-i18n="nav.menulevels">Menu Levels</span>
+      <span class="fa arrow"></span>
+    </a>
     <ul class="nav nav-second-level">
         <li>
             <a href="#">Third Level <span class="fa arrow"></span></a>

@@ -5,12 +5,57 @@
       <li><%= message %></li>
     <% end %></ul>
   </div><% end %>
-  <p>Photo</p>
-  <div  class="field"><% @photo_list.each do |one_photo| %>
-    <%= image_tag Photo.try_get_way_to_img_tag_by_photo(one_photo), width: "100px" %>
-    <%= form.radio_button(:photo, one_photo.id)  %>
-    <%= form.label(:photo, variant_of_img) %><br>
-  <%end %></div>
-  <div  class="field"><%= form.label :event %><%= form.collection_select(:event, Event.all, :id, :title) %></div>
   <div class="actions"><%= form.submit %></div>
+  <div class="field"><%= form.label :event %><%= form.collection_select(:event, Event.all, :id, :ru_title) %></div>
+  <p>Photo</p>
+    <table class="table table-striped table-bordered table-hover dataTables-example dataTable" id="DataTables_Table_0" aria-describedby="DataTables_Table_0_info" role="grid">
+    <thead><tr role="row">
+      <th width="100px">Preview</th>
+      <th>Description</th>
+      <th>Last update</th>
+      <th>previous?</th>
+      <th>checked</th>
+    </tr></thead>
+    <tbody><% @photo_list.each do |one_photo| %><tr class="gradeA even" role="row">
+      <td><%= image_tag Photo.try_get_way_to_img_tag_by_photo(one_photo), width: "100px" %></td>
+      <td><%= one_photo.description %></td>
+      <td><%= one_photo.updated_at.strftime("%T %d %B %Y") %></td>
+      <td><%= @photo_in_event.photo == one_photo.id %></td>
+      <td><%= form.radio_button(:photo, one_photo.id) %></td>
+    </tr><% end %></tbody>
+    <tfoot><tr>
+      <th>Photo preview</th>
+      <th>Description</th>
+      <th>Last update</th>
+      <th>previous?</th>
+      <th>checked</th>
+    </tr></tfoot>
+  </table>
 <% end %>
+
+<%= javascript_include_tag "datatables.min.js" %>
+
+<script>
+  $(document).ready(function(){
+    $('.dataTables-example').DataTable({
+      pageLength: 25,
+      responsive: true,
+      dom: '<"html5buttons"B>lTfgitp',
+      buttons: [
+        {extend: 'copy'},
+        {extend: 'csv' },
+        {extend: 'excel', title: 'ExampleFile'},
+        {extend: 'pdf',   title: 'ExampleFile'},
+        {extend: 'print',
+          customize: function (win){
+            $(win.document.body).addClass('white-bg');
+            $(win.document.body).css('font-size', '10px');
+            $(win.document.body).find('table')
+            .addClass('compact')
+            .css('font-size', 'inherit');
+          }
+        }
+      ]
+    });
+  });
+</script>
